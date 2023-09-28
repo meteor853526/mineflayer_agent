@@ -1,0 +1,20 @@
+{
+    "Jeff": {
+        "information": {
+            "text": [],
+            "vector": []
+        },
+        "internal_thought": {
+            "text": [],
+            "vector": []
+        },
+        "external_thought": {
+            "text": [],
+            "vector": []
+        },
+        "query": {
+            "text": [],
+            "vector": []
+        }
+    }
+}

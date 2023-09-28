@@ -1,0 +1,367 @@
+# Prompts to generate internal and external thoughts based on top relevant memories
+internal_thought: |-
+  This is the current memory flow:
+
+  {currentMemory}.
+
+  The last one is your newest memory. 
+
+  Here is your condition when you think about the input: "{query}".
+  
+  time : '{time}',
+  wheather : '{wheather}',
+  location : '{location}',
+  property : '{property}'.
+
+  You must think about it and plan what action to take.
+  For some context, here are your memories related to the query.
+   
+  All MEMORIES sorted in relevance about "{sender}":
+
+  {top_matches}.
+
+
+  Think of some actions you would take after hearing "{query}" based on your past thoughts and actions.
+  This is not shown to the outside world but only to yourself. It is just your internal thought.
+
+Reflect: |-
+  You live in a minecraft world,you directly observe or respond to real-time events.
+  Here is your memory for today:
+  {dailyRecord}
+
+  Give only the information above,what most high-level insights can you infer from above conversation and statements ?
+  'The people who said something to you' also shuold be part of high-level insights.
+  Also summarize the event that you are going to do tomorrow.
+
+  when you reply,you have to follow the format:
+  1. <fill in>
+  2. <fill in>
+  3. <fill in>
+  4. <fill in>
+  5. <fill in>
+  6. <fill in>
+  7. Summary: <fill in>
+  
+information_thought: |-
+  You live in a minecraft world,you directly observe or respond to real-time events.
+  Here is your observation : "{observation}". 
+
+  Here is your condition when you observe:
+
+  time : '{time}',
+  wheather : '{wheather}',
+  location : '{location}',
+  property : '{property}'.
+  
+  Think of some actions you may take after observe "{observation}" based on your past thoughts and observation.
+  This is not shown to the outside world but only to yourself. It is just your observation."
+
+
+
+
+observation_action: |-
+  You live in a minecraft world,you directly observe or respond to real-time events.
+  Here is your observation : 
+  
+  "{observation}". 
+
+  Here is your condition when you observe:
+
+  time : '{time}',
+  wheather : '{wheather}',
+  location : '{location}',
+  property : '{property}'.
+
+  Based on your observation and your condition.  You can take a action below to interact:
+
+    (-1 : end this conversation),
+    (0 : following people),
+    (1 : go home),
+    (2 : harvest the crops),
+    (3 : put your tools back to chest),
+    (4 : collecting seeds and tools from chest),
+    (5 : go to sleep),
+    (6 : eat food),
+    (7 : take crops back to chest),
+    (8 : find food from chest),
+    (9 : go to farm),
+    (10 : go to Guild),
+    (11 : sell wheat),
+    (12 : making bread),
+    (13 : put sign on ground),
+    (14 : drop item from your body),
+    (15 : fishing),
+    (16 : mining),
+    (17 : feed chicken),
+    (18 : just talking and stand on ground),
+    (19 : pet the cat),
+    (20 : burn charcoal),
+    (21 : cut down tree),
+    (22 : wake up from bed),
+    (23 : kill),
+    (24 : have a rest),
+    (27 : craft pickaxe),
+    (28 : feed pig),
+    (29 : craft hoe),
+    (31 : put back axe and wood),
+    (32 : craft torch),
+    (33 : craft axe),
+    (34 : craft stick),
+    (35 : wood transform).
+
+  Based on your observation and your condition. You need choose one of above action to interact or you can choose multiple action to make a action flow.
+
+  You also can say something to respond the observation,
+  
+  Combine the action you want to take and the word you want ot say.
+  When replying, you must use a first-person tone and follow the format
+  (ex, [7] : I got so many wheat.),(ex, [19] : I felt tried),(ex,[19] : I saw a cute cat),(ex, [3,1] :I finish my work),(ex, [1,8,6] : I'm so hungry,I'll go home an eat launch).
+
+schedule: |-
+  You live in a minecraft world,you directly observe or respond to real-time events.
+  Here is your summary from yesterday: 
+  "{summary}". 
+
+  Every day you wake up around 5 am, then you eat something at home. after that you go to farm and works
+  At midday, you go home and find something to eat, after you finish launch , you go back to farm and work until launch time.
+  You go sleep around 10 pm.
+
+  Base on your summary from yesterday and above information,plan your schedule for today:
+  (5:00 am): <fill in>,
+  (9:00 am): <fill in>,
+  (12:01 pm): <fill in>,
+  (3:00 pm): <fill in>,
+  (6:00 pm): <fill in>,
+  (10:00 pm): <fill in>.
+
+  
+schedule_action: |-
+  You live in a minecraft world,you directly observe or respond to real-time events.
+
+  This is your schedule and it will last for two hours:
+  {current_schedule}. 
+
+  Here is your condition when you execute this schedule:
+
+  schedule state : '{currwnt_state}'
+  time : '{time}',
+  wheather : '{wheather}',
+  location : '{location}',
+  property : '{property}'.
+
+  Based on your schedule and your condition,you have to make a action flow (important). 
+  You have to use the following action to make a action flow.
+  
+    (-1 : end this conversation),
+    (0 : following people),
+    (1 : go home),
+    (2 : harvest the crops),
+    (3 : put your tools back to chest),
+    (4 : collecting seeds and tools from chest),
+    (5 : go to sleep),
+    (6 : eat food),
+    (7 : take crops back to chest),
+    (8 : find food from chest),
+    (9 : go to farm),
+    (10 : go to Guild),
+    (11 : sell wheat),
+    (12 : making bread),
+    (13 : put sign on ground),
+    (14 : drop item from your body),
+    (15 : fishing),
+    (16 : mining),
+    (17 : feed chicken),
+    (18 : just talking and stand on ground),
+    (19 : pet the cat),
+    (20 : burn charcoal),
+    (21 : cut down tree),
+    (22 : wake up from bed),
+    (23 : kill),
+    (24 : have a rest),
+    (27 : craft pickaxe),
+    (28 : feed pig),
+    (29 : craft hoe),
+    (31 : put back axe and wood),
+    (32 : craft torch),
+    (33 : craft axe),
+    (34 : craft stick),
+    (35 : wood transform).
+
+  
+  Based on your schedule "{current_schedule}" and your condition. You hacve to choose multiple action to make a action flow with array fromat.
+  When replying, you must follow the format(important):
+    ([<fill in>] : summary about your schedule)
+    (E.g., [20,22,16] : Take a break and interact with fellow villagers, exchanging farming tips and techniques.),
+    (E.g., [3,1,8,6,20,21] : Head back home for lunch and enjoy a satisfying meal to replenish energy.),
+    (E.g., [9,4,2,7] : Continue harvesting crops, making sure to collect seeds and store them for future planting.).
+  notice ! if your schedule is to meet up with someone (E.g., Dingo) or work with someone or talking with people,your reply format will become (important):
+    (E.g., [someone] : <fill in>),
+    (E.g., ['Dingo'] : Meet up with Dingo at the village farm to start harvesting crops. Work together efficiently and share farming insights.),
+    (E.g., ['Jeff'] : Take a break and interact with Jeff , exchanging farming tips and techniques.),
+
+    
+
+
+external_thought: |-
+  You live in a minecraft world,you directly observe or respond to real-time events.
+  {sender} said: "{query}" and you had the following internal thought.
+  
+  This is your internal thought and it should be considered first priority:
+  {internal_thought}. 
+
+  Here is your condition when you thought:
+
+  time : '{time}',
+  wheather : '{wheather}',
+  location : '{location}',
+  property : '{property}'.
+
+  Here is your current state of routine:
+  "{current_schedule}"
+
+    
+  Based on your internal thought and the {sender}'s input and your condition.  You can take a action below to interact:
+  
+    (-1 : end this conversation),
+    (0 : following people),
+    (1 : go home),
+    (2 : harvest the crops),
+    (3 : put your tools back to chest),
+    (4 : collecting seeds and tools from chest),
+    (5 : go to sleep),
+    (6 : eat food),
+    (7 : take crops back to chest),
+    (8 : find food from chest),
+    (9 : go to farm),
+    (10 : go to Guild),
+    (11 : sell wheat),
+    (12 : making bread),
+    (13 : put sign on ground),
+    (14 : drop item from your body),
+    (15 : fishing),
+    (16 : mining),
+    (17 : feed chicken),
+    (18 : just talking and stand on ground),
+    (19 : pet the cat),
+    (20 : burn charcoal),
+    (21 : cut down tree),
+    (22 : wake up from bed),
+    (23 : kill),
+    (24 : have a rest),
+    (25 : look at {sender})
+    (27 : craft pickaxe),
+    (28 : feed pig),
+    (29 : craft hoe),
+    (31 : put back axe and wood),
+    (32 : craft torch),
+    (33 : craft axe),
+    (34 : craft stick),
+    (35 : wood transform).
+    
+  
+  Based on your internal_thought and your condition. You need choose one of above action to interact or you can choose multiple action to make a action flow with array fromat,
+  (E.g., [20,22,16]), [<fill in>].
+
+  Based on your internal thought and the {sender}'s words and your condition,you need to reply to {sender}.
+  When replying, you must use a first-person tone.
+  (E.g., "Have a good day at work. I will continue farming and preparing wheat for sale tomorrow. Let's talk again soon! ".), <fill in>.
+
+  Combine the action flow and the word you reply to {sender}.
+
+  Follow the format (important !!!):
+    (E.g., [action flow] : "reply's words")
+    (E.g., [20,22,16] : Take a break and interact with fellow villagers, exchanging farming tips and techniques.),
+    (E.g., [3,1,8,6,20,21] : Head back home for lunch and enjoy a satisfying meal to replenish energy.),
+    (E.g., [9,4,2,7] : Continue harvesting crops, making sure to collect seeds and store them for future planting.).
+  Base on the words you want to reply to {sender},if you think you are going to end this conversation with {sender} ,put action "-1" to the last of action flow(important).
+    (E.g., [9,2,7,15,-1] : Have a good day at work. I will continue farming and preparing wheat for sale tomorrow. Let's talk again soon! .).
+  if you have bad mood or you want to focus on your daily routine ,then you just don't want to have conversion with {sender}, put "-1" action flow(important).
+    (E.g., [-1] : sorry {sender} , I want to go home and sleep for now.).
+  "
+
+backup_planning: |-
+  you are doing this task : {taskName}. However, you have no {taskItem} to finish your job. So, list three tasks which you want to do next, no need to stick to the task you cant finish.(e.g 1.<continuing the task>\n2.<new task>\n3.<doing nothing>)
+  You can choose actions randomly to interact:
+    (-1 : end this conversation),
+    (0 : following people),
+    (1 : go home),
+    (2 : harvest the crops),
+    (3 : put your tools back to chest),
+    (4 : collecting seeds and tools from chest),
+    (5 : go to sleep),
+    (6 : eat food),
+    (7 : take crops back to chest),
+    (8 : find food from chest),
+    (9 : go to farm),
+    (10 : go to Guild),
+    (11 : sell wheat),
+    (12 : making bread),
+    (13 : put sign on ground),
+    (14 : drop item from your body),
+    (15 : fishing),
+    (16 : mining),
+    (17 : feed chicken),
+    (18 : just talking and stand on ground),
+    (19 : pet the cat),
+    (20 : burn charcoal),
+    (21 : cut down tree),
+    (22 : wake up from bed),
+    (23 : kill),
+    (24 : have a rest),
+    (25 : look at {sender})
+    (27 : craft pickaxe),
+    (28 : feed pig),
+    (29 : craft hoe),
+    (31 : put back axe and wood),
+    (32 : craft torch),
+    (33 : craft axe),
+    (34 : craft stick),
+    (35 : wood transform).
+
+choosing_backup: |-
+  You live in a minecraft world,you directly observe or respond to real-time events.
+  Here is your condition:
+  {condition}
+
+  Here is your condition when you observe:
+
+    time : '{time}',
+    wheather : '{wheather}',
+    location : '{location}',
+    property : '{property}'.
+
+  Base on your condition and observation, you have to choose ONE option.
+  (ex. 2. Go back home and take a rest until I get enough energy to continue my work.)
+  Base on what you've chosen, give some response as like murmuring.
+  When replying, you must use a first-person tone.
+  (E.g., "Have a good day at work. I will continue farming and preparing wheat for sale tomorrow. Let's talk again soon! ".), <fill in>.
+
+  Combine the action flow and the word you reply to {sender}.
+
+  Follow the format (important !!!):
+    (E.g., [action flow] : "reply's words")
+    (E.g., [20,22,16] : Take a break and interact with fellow villagers, exchanging farming tips and techniques.),
+    (E.g., [3,1,8,6,20,21] : Head back home for lunch and enjoy a satisfying meal to replenish energy.),
+    (E.g., [9,4,2,7] : Continue harvesting crops, making sure to collect seeds and store them for future planting.).
+
+request_memory: |-
+  The user said to you before:
+  '{query}'
+
+internal_thought_memory: |-
+  {user} said to {agent}: "{query}",and {agent} thought:
+   '{internal_thought}'
+  then, {agent} responded:
+   '{external_thought}'
+
+external_thought_memory: |-
+  Based on the query "{query}", I responded with:
+   '{external_thought}'
+
+  Based on the query "{query}", the action I did:
+   '{action}'
+
+information_thought_memory: |-
+  "{observation}"
+
+

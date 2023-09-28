@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "csv-parse": "^5.4.0",
+    "minecraft-protocol": "^1.43.1",
+    "minecraft-protocol-forge": "^1.0.0",
+    "mineflayer": "^4.10.0",
+    "mineflayer-statemachine": "^1.7.0",
+    "node-calls-python": "^1.7.7",
+    "prismarine-viewer": "^1.25.0",
+    "socket.io": "^4.7.1",
+    "socket.py": "^0.3.2"
+  }
+
+}
