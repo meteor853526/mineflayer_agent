@@ -1,0 +1,19 @@
+name: wood2
+starterNPC: 1
+repeatable: true
+manager:
+  branches:
+    '0':
+      stages:
+        '0':
+          npcID: 1
+          items:
+          - ==: org.bukkit.inventory.ItemStack
+            v: 2586
+            type: BIRCH_LOG
+          stageType: ITEMS
+          rewards:
+          - id: moneyReward
+            money: 1000.0
+      endingStages: {}
+id: 13

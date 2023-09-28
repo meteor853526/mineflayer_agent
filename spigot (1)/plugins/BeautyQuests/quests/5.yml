@@ -1,0 +1,16 @@
+name: test
+manager:
+  branches:
+    '0':
+      stages:
+        '0':
+          bucket: WATER
+          amount: 1
+          stageType: BUCKET
+          rewards:
+          - id: commandReward
+            commands:
+            - console: true
+              label: eco set Dingo_Kez 999
+      endingStages: {}
+id: 5

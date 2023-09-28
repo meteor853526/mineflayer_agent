@@ -1,0 +1,76 @@
+prefix: '&a[��� &r'
+shopinfo: |-
+  &a���縑�:
+  &f�����: &7%owner
+  &f摨怠��: &7%stock
+  &f����: &7%item
+shopinfo_buy: '&f鞈潸眺 &7%amount &f��� &7%price'
+shopinfo_sell: '&f�� &7%amount &f��� &7%price'
+iteminfo: '&a����: &r'
+iteminfo_fullname: '&f�����&7%item'
+iteminfo_shopname: '&f����內���: &7%item'
+iteminfo_repaircost: '&f靽桃�祥�: &7%cost'
+iteminfo_book: |-
+  &f����: &7%title
+  &f�蝐���: &7%author
+  &f����: &7%pages
+iteminfo_book_generation: '&f��銝誨: &7%generation'
+iteminfo_lore: |-
+  &f�霅�:
+  &r%lore
+METRICS: "&a[Shop] &f����� \n&f鞈祆嚗�&7%accounts\n&f撟喳�漱��活�嚗�&7%totalTransactions\
+  \ &f嚗uy嚗�&7%buyTransactions &fsell嚗�&7%sellTransactions&f嚗� \n&f撟喳�漱������\
+  &7%totalItems &f嚗ought嚗�&7%boughtItems &fsold嚗�&7%soldItems&f嚗�"
+ACCESS_DENIED: 雿��雲憭�迂�甈�!
+TRADE_DENIED: �瘝����府����脰�漱����
+TRADE_DENIED_ACCESS_PERMS: �銝������赤������脰�漱���!
+TRADE_DENIED_CREATIVE_MODE: '&c雿����芋撘�蝙����漱����'
+NOT_ENOUGH_MONEY: 雿��雲憭��!
+NOT_ENOUGH_MONEY_SHOP: �������雲憭��!
+CLIENT_DEPOSIT_FAILED: ��摮雿�董�憭望��!
+SHOP_DEPOSIT_FAILED: ��摮������董�憭望��!
+NO_ECONOMY_ACCOUNT: 摨蜓����閉�銝�嚗�
+NO_BUYING_HERE: 雿���ㄐ鞎�!
+NO_SELLING_HERE: 雿���ㄐ鞈�!
+NOT_ENOUGH_SPACE_IN_INVENTORY: ��拳摮��雲憭�澈摮�!
+NOT_ENOUGH_SPACE_IN_CHEST: ��拳摮��雲憭�征���!
+NOT_ENOUGH_ITEMS_TO_SELL: 雿��雲憭���隞亙�!
+NOT_ENOUGH_SPACE_IN_YOUR_SHOP: "[%price %item&7 摨撌脫遛嚗(&f%seller&7 ��岫�� \n&7銝\
+  ���&f%world\n&7�雿蔭嚗�&f%x/%y/%z)"
+NOT_ENOUGH_STOCK: �振���鞎其��.
+NOT_ENOUGH_STOCK_IN_YOUR_SHOP: 雿���� %material �鞎其��!
+YOU_BOUGHT_FROM_SHOP: 雿鞎� %price 鞎瑚�� %owner ����� %item .
+SOMEBODY_BOUGHT_FROM_YOUR_SHOP: '%buyer �鞎� %price 鞎瑚������ %item .'
+YOU_SOLD_TO_SHOP: 雿誑 %price ���鞈������ %item 蝯� %buyer .
+SOMEBODY_SOLD_TO_YOUR_SHOP: '%seller 隞� %price ���鞈������ %item 蝯虫��.'
+YOU_CANNOT_CREATE_SHOP: 雿��撱粹�車憿�����!
+NO_CHEST_DETECTED: �銝蝞勗��!
+INVALID_SHOP_DETECTED: ����瘜蝙�!
+INVALID_SHOP_PRICE: 閰脣��������!
+INVALID_SHOP_QUANTITY: �����������
+CANNOT_ACCESS_THE_CHEST: 雿��迂�甈����拳摮�!
+SELL_PRICE_HIGHER_THAN_BUY_PRICE: Sell price is above the buy price!
+SELL_PRICE_ABOVE_MAX: Sell price %price is above maximum %maxprice!
+SELL_PRICE_BELOW_MIN: Sell price %price is below minimum %minprice!
+BUY_PRICE_ABOVE_MAX: Buy price %price is above maximum %maxprice!
+BUY_PRICE_BELOW_MIN: Buy price %price is below minimum %minprice!
+CLICK_TO_AUTOFILL_ITEM: 暺�葆��府摨��������
+NO_ITEM_IN_HAND: ���������‵�������
+PROTECTED_SHOP: LWC����風鈭���!
+PROTECTED_SHOP_SIGN: �LWC����風鈭���!
+SHOP_CREATED: ���撱箸���!
+SHOP_FEE_PAID: ��雿� %amount
+SHOP_REFUNDED: ������ %amount
+ITEM_GIVEN: 撠�%item蝏�����%player
+RESTRICTED_SIGN_CREATED: ��內��撱箸���!
+PLAYER_NOT_FOUND: �摰嗆��
+NO_PERMISSION: 雿��迂�甈�!
+INCORRECT_ITEM_ID: 雿�����D����!
+INVALID_CLIENT_NAME: ������������ Minecraft ������
+NOT_ENOUGH_PROTECTIONS: �瘜撱箔�風!
+NO_SHOP_FOUND: 瘝������
+CANNOT_CREATE_SHOP_HERE: 雿���ㄐ�撱箏���!
+TOGGLE_MESSAGES_OFF: �撠���靘������.
+TOGGLE_MESSAGES_ON: ���撠�靘������.
+TOGGLE_ACCESS_ON: �銝������赤������脰�漱���
+TOGGLE_ACCESS_OFF: ����隞亙��隞亥赤������脰�漱���

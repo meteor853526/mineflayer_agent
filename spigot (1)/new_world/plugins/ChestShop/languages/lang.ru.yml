@@ -1,0 +1,86 @@
+prefix: '&a[�匾創匾煩覜稽 &r'
+shopinfo: |-
+  &a�諸憾�邾訄�解� 郋 邾訄迣訄郱邽郇迮:
+  &f�鉼匾棣菩鉼萃�: &7%owner
+  &f�匾鉼憾�: &7%stock
+  &f��迮迡邾迮��: &7%item
+shopinfo_buy: '&f�諱解� &7%amount &f郱訄 &7%price'
+shopinfo_sell: '&f��郋迡訄�� &7%amount &f郱訄 &7%price'
+iteminfo: '&a�諸憾�邾訄�解� 郋 郈�迮迡邾迮��: &r'
+iteminfo_fullname: '&f�憶鉼請憶� 郇訄郱赲訄郇邽迮: &7%item'
+iteminfo_shopname: '&f�匾煩紹匾請覜� 迡郅�� �憾�迣郋赲郅邽: &7%item'
+iteminfo_repaircost: '&f苤�憶覜標憾� 郈郋�覜請碟�: &7%cost'
+iteminfo_book: |-
+  &f�匾煩紹匾請覜� 郕郇邽迣邽: &7%title
+  &f�紼憾�: &7%author
+  &f苤��訄郇邽��: &7%pages
+iteminfo_book_generation: '&f苤迮�邽�� 郕郇邽迣: &7%generation'
+iteminfo_lore: '&f�諱解匾請覜� 郈�迮迡邾迮��:'
+METRICS: |-
+  &a[�匾創匾煩覜稽 &f苤�參解覜碟�:
+  &f��郋迡訄赲�憶�: &7%accounts
+  &f苤迡迮郅郋郕 郱訄 郈郋�鉼菩棣請覜� 30 邾邽郇��: &7%totalTransactions &f(郈郋郕�諱憶�: &7%buyTransactions &f郈�郋迡訄迠: &7%sellTransactions&f)
+  &f�菩棣標萃憶� 郱訄 郈郋�鉼菩棣請覜� 30 邾邽郇��: &7%totalItems &f(郕�諱鉼菩請�: &7%boughtItems &f郈�郋迡訄郇郋: &7%soldItems&f)
+ACCESS_DENIED: �憾� 郱訄郈�迮��!
+TRADE_DENIED: 苺 赲訄�� 郇迮迡郋�參憾請� 郈�訄赲 迡郅�� �憾�迣郋赲郅邽 �� �覜� 邾訄迣訄郱邽郇郋邾!
+TRADE_DENIED_ACCESS_PERMS: �� 郇迮 邾郋迠迮�� �憾�迣郋赲訄�� �� 邾訄迣訄郱邽郇訄邾邽, 郕 郕郋�憾��� ��
+  赲訄�� 迮�� 迡郋��!
+TRADE_DENIED_CREATIVE_MODE: �� 郇迮 邾郋迠迮�� �憾�迣郋赲訄�� �� 邾訄迣訄郱邽郇訄邾邽 赲 �紹憾��萃碟憶�
+  �迮迠邽邾迮!
+NOT_ENOUGH_MONEY: 苺 �參� 郇迮迡郋�參憾請� 迡迮郇迮迣!
+NOT_ENOUGH_MONEY_SHOP: 苺 赲郅訄迡迮郅�� 邾訄迣訄郱邽郇訄 郇迮迡郋�參憾請� 迡迮郇迮迣!
+CLIENT_DEPOSIT_FAILED: �� �棣匾鉼憾� 赲郇迮�� 迡迮郇�創� 郇訄 �參� ��!
+SHOP_DEPOSIT_FAILED: �� �棣匾鉼憾� 赲郇迮�� 迡迮郇�創� 郇訄 �� 赲郅訄迡迮郅�� 邾訄迣訄郱邽郇訄!
+NO_ECONOMY_ACCOUNT: 苺 赲郅訄迡迮郅�� 邾訄迣訄郱邽郇訄 郇迮 郋�碧��� �� 赲 訇訄郇郕迮!
+NO_BUYING_HERE: �� 郇迮 邾郋迠迮�� 郱迡迮�� 郇邽�菩創� 郕�諱解�!
+NO_SELLING_HERE: �� 郇迮 邾郋迠迮�� 郱迡迮�� 郇邽�菩創� 郈�郋迡訄��!
+NOT_ENOUGH_SPACE_IN_INVENTORY: �菩棣憾參憾請� 邾迮�� 赲 邽郇赲迮郇�參�迮!
+NOT_ENOUGH_SPACE_IN_CHEST: �菩棣憾參憾請� 邾迮�� 赲 邾訄迣訄郱邽郇迮!
+NOT_ENOUGH_ITEMS_TO_SELL: 苺 �參� 郇迮迡郋�參憾請� 郈�迮迡邾迮�憶� 迡郅�� 郈�郋迡訄迠邽!
+NOT_ENOUGH_SPACE_IN_YOUR_SHOP: '[%price %item&7 邾訄迣訄郱邽郇 &r%world/%x/%y/%z&7 郈迮�迮郈郋郅郇迮郇!](&f%seller&7
+  郈�匾銑� 郈�郋迡訄�� �憾� 郈�迮迡邾迮��)'
+NOT_ENOUGH_STOCK: �� 邾訄迣訄郱邽郇迮 郱訄郕郋郇�覜銑� �憶紹參�.
+NOT_ENOUGH_STOCK_IN_YOUR_SHOP: '[%price %item&7 郇迮�� 赲 郇訄郅邽�覜� 赲 邾訄迣訄郱邽郇迮 &r%world/%x/%y/%z&7!](&f%buyer&7
+  郈�匾銑� 郕�諱解� �憾� 郈�迮迡邾迮��)'
+YOU_BOUGHT_FROM_SHOP: �� 郕�諱覜鉼� %item �� 邽迣�郋郕訄 %owner 郱訄 %price 邾郋郇迮��.
+SOMEBODY_BOUGHT_FROM_YOUR_SHOP: |-
+  [%buyer 郕�諱覜� %item 郱訄 %price.](&7�解�: &f%world
+  &7�憶煩解解�: &f%x/%y/%z)
+YOU_SOLD_TO_SHOP: �� 郈�郋迡訄郅邽 %item 邽迣�郋郕�� %buyer 郱訄 %price 邾郋郇迮��.
+SOMEBODY_SOLD_TO_YOUR_SHOP: |-
+  [%seller 郈�郋迡訄郅 %item 郱訄 %price.](&7�解�: &f%world
+  &7�憶煩解解�: &f%x/%y/%z)
+YOU_CANNOT_CREATE_SHOP: �� 郇迮 邾郋迠迮�� �憶煩棣參� 邾訄迣訄郱邽郇 �匾碟憶創� �覜諱�!
+NO_CHEST_DETECTED: 苤�請棋� 郇迮 郇訄邿迡迮郇!
+INVALID_SHOP_DETECTED: �匾創匾煩覜� 郇迮 �訄訇郋�匾萃�!
+INVALID_SHOP_PRICE: 苺郕訄郱訄郇訄 郇迮迡郋郈�覜標參� �菩請�!
+INVALID_SHOP_QUANTITY: 苺郕訄郱訄郇郋 郇迮迡郋郈�覜標憶� 郕郋郅邽�萃紹�!
+CANNOT_ACCESS_THE_CHEST: 苺 赲訄�� 郇迮�� �訄郱�迮�菩請解� 迡郅�� 迡郋�諱� 郕 �憶槽� 邾訄迣訄郱邽郇��!
+SELL_PRICE_HIGHER_THAN_BUY_PRICE: 虷迮郇訄 郈�郋迡訄迠邽 赲�� �菩諸� 郈郋郕�諱碟�!
+SELL_PRICE_ABOVE_MAX: '虷迮郇訄 郈�郋迡訄迠邽: %price 郈�迮赲�匾萃� 邾訄郕�覜標匾銑諸�: %maxprice!'
+SELL_PRICE_BELOW_MIN: '虷迮郇訄 郈�郋迡訄迠邽: %price 郇邽迠迮 邾邽郇邽邾訄郅�請憶�: %minprice!'
+BUY_PRICE_ABOVE_MAX: '虷迮郇訄 郈郋郕�諱碟�: %price 郈�迮赲�匾萃� 邾訄郕�覜標匾銑諸�: %maxprice!'
+BUY_PRICE_BELOW_MIN: '虷迮郇訄 郈郋郕�諱碟�: %price 郇邽迠迮 邾邽郇邽邾訄郅�請憶�: %minprice!'
+CLICK_TO_AUTOFILL_ITEM: �匾剷標解� 郇訄 �匾教鉼解碧� 郈�迮迡邾迮�憶� 迡郅�� 郈�郋迡訄迠邽, �憶敗� 郇訄�參�
+  郈�郋迡訄赲訄�� 迮迣郋 郱迡迮��!
+NO_ITEM_IN_HAND: �� 赲訄�菩� ��碟� 郇迮�� 郈�迮迡邾迮�� 迡郅�� 訄赲�憶煩匾諱憶鉼請菩請解�!
+PROTECTED_SHOP: �匾創匾煩覜� �諱萃請� 郱訄�解� LWC!
+PROTECTED_SHOP_SIGN: �匾創匾煩覜� �諱萃請� 郱訄�解� LWC!
+SHOP_CREATED: �匾創匾煩覜� �諱萃請� �憶煩棣匾�!
+SHOP_FEE_PAID: �鉼參� 郇訄郅郋迣! 苤 赲訄�菩創� �� �諱解匾請� %amount 邾郋郇迮��.
+SHOP_REFUNDED: �� �憾� �訄郱 郈�郋郇迮�鉼�... �匾� 赲迮�郇�鉼� %amount 邾郋郇迮��.
+ITEM_GIVEN: '%item 郈迮�迮迡訄郇 邽迣�郋郕�� %player.'
+RESTRICTED_SIGN_CREATED: 苠訄訇郅邽�碟� �諱萃請� �憶煩棣匾請�!
+PLAYER_NOT_FOUND: �剩�郋郕 郇迮 郇訄邿迡迮郇!
+NO_PERMISSION: 苺 �參� 郇迮迡郋�參憾請� 郈�訄赲!
+INCORRECT_ITEM_ID: �� �碟匾煩匾鉼� 郇迮赲迮�郇�� id 郈�迮迡邾迮��!
+INVALID_CLIENT_NAME: �參� 邽邾�� 郈郋郅�煩憶紹參菩銑� 郇迮 �紹銑萃� 迡郋郈�覜槽� 邽邾迮郇迮邾 Minecraft!
+NOT_ENOUGH_PROTECTIONS: �參解� 郇迮 �憶煩棣匾請�! �� 迡郋�覜創鉼� 郅邽邾邽�� 郈�邽赲訄�憶� LWC!
+NO_SHOP_FOUND: �匾創匾煩覜請憶� 郇迮 郇訄�鉼憾�.
+CANNOT_CREATE_SHOP_HERE: �� 郇迮 邾郋迠迮�� �憶煩棣參� 郱迡迮�� 邾訄迣訄郱邽郇!
+TOGGLE_MESSAGES_OFF: �諱憶紹萃菩請解� 邾訄迣訄郱邽郇郋赲 郋�碟銑菩諸�.
+TOGGLE_MESSAGES_ON: �諱憶紹萃菩請解� 邾訄迣訄郱邽郇訄(郋赲) 赲郕郅�菩諸�.
+TOGGLE_ACCESS_ON: �� 訇郋郅�� 郇迮 邾郋迠迮�� �憾�迣郋赲訄�� 赲 邾訄迣訄郱邽郇訄��, 郕 郕郋�憾��� ��
+  �參� 迮�� 迡郋��.
+TOGGLE_ACCESS_OFF: 苠迮郈迮��� �� 邾郋迠迮�� �憾�迣郋赲訄�� 赲 邾訄迣訄郱邽郇訄��, 郕 郕郋�憾��� �� �參�
+  迮�� 迡郋��.

@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 127.0.0.1
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: false
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1691722933566
+  login: 1691720236054
+money: '3.0'
+last-account-name: Dingo_Kez
+logoutlocation:
+  world: 587d79fa-dda4-49ff-965f-58440731b6d2
+  world-name: world
+  x: 2248.0015095222457
+  y: 63.0
+  z: -2926.464115130499
+  yaw: 350.826904296875
+  pitch: 28.349489212036133
+lastlocation:
+  world: 587d79fa-dda4-49ff-965f-58440731b6d2
+  world-name: world
+  x: 2736.5344147001147
+  y: 73.26252854583927
+  z: -2263.7021885596846
+  yaw: 114.75149536132812
+  pitch: 18.300758361816406

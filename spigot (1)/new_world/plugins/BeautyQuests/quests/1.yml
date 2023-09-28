@@ -1,0 +1,16 @@
+name: buc
+manager:
+  branches:
+    '0':
+      stages:
+        '0':
+          bucket: WATER
+          amount: 1
+          stageType: BUCKET
+          customText: sdsdsss
+          text: hi
+          rewards:
+          - id: moneyReward
+            money: 9.999999999999E12
+      endingStages: {}
+id: 1

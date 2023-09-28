@@ -1,0 +1,10 @@
+identifier: f2230bc0-1ac5-3d55-9f5b-abfb37a60d0a
+quests:
+- questID: 22
+  currentStage: 0
+  datas:
+    starting_time: 1691720254233
+    stage0:
+      amount: 1
+  currentBranch: 0
+  timesFinished: 2

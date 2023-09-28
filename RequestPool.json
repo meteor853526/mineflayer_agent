@@ -1,0 +1,24 @@
+{
+    "diedie": {
+        "state": {
+            "stone_hoe": false,
+            "food": false,
+            "wheat_seeds": true
+        },
+        "id": {
+            "stone_hoe": 24,
+            "food": 25,
+            "wheat_seeds": 28
+        }
+    },
+    "Jeff": {
+        "state": {
+            "wheat_seeds": true,
+            "food": false
+        },
+        "id": {
+            "wheat_seeds": 26,
+            "food": 27
+        }
+    }
+}

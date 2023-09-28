@@ -1,0 +1,14 @@
+name: '12'
+manager:
+  branches:
+    '0':
+      stages:
+        '0':
+          bucket: WATER
+          amount: 1
+          stageType: BUCKET
+          rewards:
+          - id: moneyReward
+            money: 9999.0
+      endingStages: {}
+id: 4

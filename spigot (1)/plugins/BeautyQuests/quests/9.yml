@@ -1,0 +1,11 @@
+name: '445664554'
+manager:
+  branches:
+    '0':
+      stages:
+        '0':
+          npcID: 1
+          items: []
+          stageType: ITEMS
+      endingStages: {}
+id: 9

@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 0:0:0:0:0:0:0:1
+afk: true
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1691517972453
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1695760138070
+  login: 1695787498177
+money: '46.0'
+last-account-name: Guild
+logoutlocation:
+  world: 9dac70ed-8467-49ef-8617-08d872900ab9
+  world-name: world
+  x: -10492.5
+  y: 71.0
+  z: 12750.5
+  yaw: 113.91552734375
+  pitch: 17.18873405456543
+lastlocation:
+  world: 9dac70ed-8467-49ef-8617-08d872900ab9
+  world-name: world
+  x: -10507.5
+  y: 71.0
+  z: 12762.5
+  yaw: 0.0
+  pitch: 0.0

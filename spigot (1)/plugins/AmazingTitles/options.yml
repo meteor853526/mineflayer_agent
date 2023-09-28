@@ -1,0 +1,39 @@
+# Message that appears after dispatching Title
+DispatchingMessage:
+  Enabled: true
+  Message:
+  - ''
+  - '&eAT &7-> &eTitle &7dispatcher info:'
+  - ''
+  - '  &7Receivers: &e%receivers%'
+  - '  &7Animation: &e%animation%'
+  - '  &7Frames: &e%frames%'
+  - '  &7Duration: &e%duration%'
+  - '  &7Creation Took: &e%creation%ms'
+  - ''
+LineSeparator: '%subtitle%'
+StaticBar:
+  Enabled: true
+  Notifications: true
+  Animations: true
+  Animation: WAVES
+  Animation_Arguments:
+  - '#ffcc00'
+  - '#000000'
+  Speed: 1
+  Text: Welcome to our server!
+ExtensionsManager:
+  NONE: true
+  FLASHING_SYMBOL_WRAP: true
+  RAINBOW: true
+  WAVES: true
+  BOUNCE: true
+  FLASHING: true
+  SPLIT: true
+  WORDS_SPLIT: true
+  FROM_LEFT: true
+  FROM_RIGHT: true
+  FADE_IN: true
+  FADE_IN_WRITER: true
+  FROM_BOTH_SIDES: true
+  PULSING: true

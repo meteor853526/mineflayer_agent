@@ -1,0 +1,44 @@
+{
+  "name": "minecraft-protocol-forge",
+  "version": "1.0.0",
+  "description": "Adds FML/Forge support to node-minecraft-protocol",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/deathcap/node-minecraft-protocol-forge.git"
+  },
+  "scripts": {
+    "start": "(cd examples/client_forge; node client_forge.js localhost 25565)"
+  },
+  "keywords": [
+    "minecraft",
+    "protocol",
+    "parse",
+    "serialize",
+    "packet",
+    "bot",
+    "forge",
+    "fml"
+  ],
+  "author": "deathcap",
+  "license": "BSD-3-Clause",
+  "engines": {
+    "node": ">=4"
+  },
+  "dependencies": {
+    "csv-parse": "^5.4.0",
+    "minecraft-protocol": "^1.41.2",
+    "minecraft-protocol-forge": "^1.0.0",
+    "mineflayer": "^4.8.1",
+    "mineflayer-auto-eat": "^3.3.6",
+    "mineflayer-pathfinder": "^2.4.4",
+    "mineflayer-statemachine": "^1.7.0",
+    "mineflayer-tool": "^1.2.0",
+    "node-canvas-webgl": "github:PrismarineJS/node-canvas-webgl",
+    "prismarine-viewer": "^1.25.0",
+    "protodef": "^1.0.0",
+    "socket.engine": "^1.0.0",
+    "socket.io": "^4.7.1",
+    "socket.py": "^0.3.2",
+    "uuid": "^9.0.0"
+  }
+}

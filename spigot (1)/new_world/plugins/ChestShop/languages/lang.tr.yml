@@ -1,0 +1,84 @@
+prefix: '&a[Shop] &r'
+shopinfo: "&aD羹kkan Bilgisi:\n&fSahip: &7%owner \n&fStok: &7%stock \n&fE�a: &7%item"
+shopinfo_buy: '&7%price &f羹cret kar�彬覺�彫da &7%amount &fadet sat覺n al'
+shopinfo_sell: '&7%price &f羹cret kar�彬覺�彫da &7%amount &fadet sat'
+iteminfo: '&aE�a Bilgisi: &r'
+iteminfo_fullname: '&fTam 襤sim: &7%item'
+iteminfo_shopname: '&fD羹kkan Tabelas覺: &7%item'
+iteminfo_repaircost: '&fTamir �reti: &7%cost'
+iteminfo_book: |-
+  &fKitap Ba�覺��: &7%title
+  &fKitap Yazar覺: &7%author
+  &fKitap Sayfalar覺: &7%pages
+iteminfo_book_generation: '&fKitap Jenerasyonu: &7%generation'
+iteminfo_lore: |-
+  &fA癟覺klama:
+  &r%lore
+METRICS: |-
+  &a[Shop] &f�癟羹tler:
+  &fHesaplar:&7 %accounts
+  &f襤�em ortalamalar覺:&7 %totalTransactions &f(al覺��:&7 %buyTransactions &fsat覺��:&7 %sellTransactions&f)
+  &fE�a ticareti ortalamalar覺:&7 %totalItems &f(al覺nan:&7 %boughtItems &fsat覺lan:&7 %soldItems&f)
+ACCESS_DENIED: Bu d羹kkan覺n depo konteynerine eri�m izniniz yok!
+TRADE_DENIED: Bu d羹kkanda ticaret yapma izniniz yok!
+TRADE_DENIED_ACCESS_PERMS: Eri�miniz olan d羹kkanlarla ticarete giremezsiniz!
+TRADE_DENIED_CREATIVE_MODE: Yarat覺c覺 modda iken d羹kkanlarla ticarete giremezsiniz!
+NOT_ENOUGH_MONEY: Yeteri kadar paran覺z yok!
+NOT_ENOUGH_MONEY_SHOP: D羹kkan sahibinin yeteri kadar paras覺 yok!
+CLIENT_DEPOSIT_FAILED: Hesab覺n覺za depozito i�eminde bir sorun meydana geldi!
+SHOP_DEPOSIT_FAILED: D羹kkan sahibine depozito i�eminde bir sorun olu�u!
+NO_ECONOMY_ACCOUNT: D羹kkan sahibine ait bir ekonomi hesab覺 bulunmuyor!
+NO_BUYING_HERE: Burada bir �yler sat覺n alamazs覺n覺z!
+NO_SELLING_HERE: Burada bir �yler satamazs覺n覺z!
+NOT_ENOUGH_SPACE_IN_INVENTORY: Envanterinizde yeterli bo�uk yok!
+NOT_ENOUGH_SPACE_IN_CHEST: Sand覺kta yeterli bo�uk yok!
+NOT_ENOUGH_ITEMS_TO_SELL: Satacak kadar yeterli e�an覺z yok!
+NOT_ENOUGH_SPACE_IN_YOUR_SHOP: |-
+  [%price %item&7 d羹kkan dolul!](&f%seller&7 sat覺�� yapmaya 癟al覺�覺
+  &7D羹nya: &f%world
+  &7Lokasyon: &f%x/%y/%z)
+NOT_ENOUGH_STOCK: Bu d羹kkan覺n stoklar覺 t羹kenmi��.
+NOT_ENOUGH_STOCK_IN_YOUR_SHOP: |-
+  [%price %item&7 d羹kkan覺n stoklar覺 d羹kenmi��!](&f%buyer&7 sat覺n almaya 癟al覺�覺
+  &7D羹nya: &f%world
+  &7Lokasyon: &f%x/%y/%z)
+YOU_BOUGHT_FROM_SHOP: '%owner isimli ki�den %price para kar�彬覺�彫da %item sat覺n
+  ald覺n.'
+SOMEBODY_BOUGHT_FROM_YOUR_SHOP: |-
+  [%buyer %price kar�彬覺�彫da %item sat覺n ald覺.](&7D羹nya: &f%world
+  &7Lokasyon: &f%x/%y/%z)
+YOU_SOLD_TO_SHOP: '%buyer isimli ki�ye %price kar�彬覺�彫da %item satt覺n覺z.'
+SOMEBODY_SOLD_TO_YOUR_SHOP: |-
+  [%seller %price kar�彬覺�彫da %item satt覺.](&7D羹nya: &f%world
+  &7Lokasyon: &f%x/%y/%z)
+YOU_CANNOT_CREATE_SHOP: Bu t羹r bir d羹kkan olu�uramazs覺n覺z!
+NO_CHEST_DETECTED: Herhangi bir sand覺k bulunamad覺!
+INVALID_SHOP_DETECTED: D羹kkan kullan覺lamaz!
+INVALID_SHOP_PRICE: D羹kkan 羹creti ge癟ersiz!
+INVALID_SHOP_QUANTITY: D羹kkan 羹r羹n miktar覺 ge癟ersiz!
+CANNOT_ACCESS_THE_CHEST: Bu sand覺� eri�bilme yetkiniz yok!
+SELL_PRICE_HIGHER_THAN_BUY_PRICE: Sell price is above the buy price!
+SELL_PRICE_ABOVE_MAX: '%price sat覺�� 羹creti, %maxprice olan maksimum 羹cretten y羹ksek!'
+SELL_PRICE_BELOW_MIN: '%price sat覺�� 羹creti, %minprice olan minimum 羹cretten d羹�嶔!'
+BUY_PRICE_ABOVE_MAX: '%price sat覺n alma 羹creti, %maxprice olan maksimum 羹cretten y羹ksek!'
+BUY_PRICE_BELOW_MIN: '%price sat覺n alma 羹creti, %minprice olan minimum 羹cretten d羹�嶔!'
+CLICK_TO_AUTOFILL_ITEM: Bu d羹kkan i癟in bulunan 繹�nin bulundu� tabelaya t覺klay覺n!
+NO_ITEM_IN_HAND: Otomatik doldurmak i癟in elinde bir e�an yok!
+PROTECTED_SHOP: D羹kkan ba�r覺yla LWC ile korundu!
+PROTECTED_SHOP_SIGN: D羹kkan tabelas覺 ba�r覺yla LWC ile korundu!
+SHOP_CREATED: D羹kkan ba�r覺yla olu�uruldu!
+SHOP_FEE_PAID: '%amount 繹dedin.'
+SHOP_REFUNDED: '%amount iade ald覺n.'
+ITEM_GIVEN: '%player isimli ki�ye %item verildi.'
+RESTRICTED_SIGN_CREATED: Tabela ba�r覺yla olu�uruldu!
+PLAYER_NOT_FOUND: Oyuncu bulunamad覺!
+NO_PERMISSION: Bunu yapma yetkin yok!
+INCORRECT_ITEM_ID: Ge癟ersiz bir e�a kodu girdin!
+INVALID_CLIENT_NAME: Kullan覺c覺 ad覺n ge癟erli bir Minecraft kullan覺c覺 ad覺 de�l!
+NOT_ENOUGH_PROTECTIONS: Koruma olu�urulamad覺!
+NO_SHOP_FOUND: D羹kkan bulunamad覺.
+CANNOT_CREATE_SHOP_HERE: Burada d羹kkan olu�uramazs覺n!
+TOGGLE_MESSAGES_OFF: Art覺k d羹kkan(lar)覺ndan bildirimler almayacaks覺n.
+TOGGLE_MESSAGES_ON: Art覺k d羹kkan(lar)覺ndan bildirimler alacaks覺n.
+TOGGLE_ACCESS_ON: Art覺k eri�min olan d羹kkanlarda ticaret yapamayacaks覺n.
+TOGGLE_ACCESS_OFF: Art覺k eri�min olan d羹kkanlarda ticaret yapabileceksin.

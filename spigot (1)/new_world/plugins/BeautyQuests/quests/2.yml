@@ -1,0 +1,17 @@
+name: '123'
+endRewards:
+- id: moneyReward
+  money: 1.01010101E8
+manager:
+  branches:
+    '0':
+      stages:
+        '0':
+          bucket: WATER
+          amount: 1
+          stageType: BUCKET
+          rewards:
+          - id: moneyReward
+            money: 1.010101010101E12
+      endingStages: {}
+id: 2

@@ -1,0 +1,91 @@
+prefix: '&a[Kauppa] &r'
+shopinfo: |-
+  &aKaupan tiedot:
+  &fOmistaja: &7%owner
+  &fVarasto: &7%stock
+  &fTavara: &7%item
+shopinfo_buy: '&fOsta m瓣瓣r瓣 &7%amount &fhintaan &7%price'
+shopinfo_sell: '&fMyy m瓣瓣r瓣 &7%amount &fhintaan &7%price'
+iteminfo: '&aTavaran tiedot: &r'
+iteminfo_fullname: '&fKoko nimi: &7%item'
+iteminfo_shopname: '&fKaupan kyltti: &7%item'
+iteminfo_repaircost: '&fKorjaus maksaa: &7%cost'
+iteminfo_book: |-
+  &fKirjan otsikko: &7%title
+  &fKirjan tekij瓣: &7%author
+  &fKirjan sivum瓣瓣r瓣: &7%pages
+iteminfo_book_generation: '&fKirjan sukupolvi: &7%generation'
+iteminfo_lore: |-
+  &fInfoteksti:
+  &r%lore
+METRICS: |-
+  &a[Kauppa] &fMetriikat:
+  &K瓣ytt瓣ji瓣: &7%accounts
+  &fOstotapahtumia keskim瓣瓣rin: &7%totalTransactions &f(ostoja: &7%buyTransactions &fmyyntej瓣: &7%sellTransactions&f)
+  &fTavaroita vaihdettu keskim瓣瓣rin: &7%totalItems &f(ostettu: &7%boughtItems &fmyyty: &7%soldItems&f)
+ACCESS_DENIED: Sinulla ei ole lupaa k瓣ytt瓣瓣 kyseisen kaupan arkkua!
+TRADE_DENIED: Sinulla ei ole lupaa tehd瓣 vaihtokauppaa kyseisess瓣 kaupassa!
+TRADE_DENIED_ACCESS_PERMS: Et voi tehd瓣 vaihtokauppaa kauppojen kanssa, joihin sinulla
+  on p瓣瓣sy!
+TRADE_DENIED_CREATIVE_MODE: Et voi tehd瓣 vaihtokauppaa kauppojen kanssa, kun olet
+  luovassa tilassa!
+NOT_ENOUGH_MONEY: Sinulla ei ole tarpeeksi rahaa!
+NOT_ENOUGH_MONEY_SHOP: Kaupan omistajalla ei ole tarpeeksi rahaa!
+CLIENT_DEPOSIT_FAILED: Rahatalletus tilillesi ep瓣onnistui!
+SHOP_DEPOSIT_FAILED: Rahan talletus kaupan omistajalle ep瓣onnistui!
+NO_ECONOMY_ACCOUNT: Kaupan omistajalla ei ole Economy-tili瓣!
+NO_BUYING_HERE: Et voi ostaa t瓣st瓣 kaupasta!
+NO_SELLING_HERE: Et voi myyd瓣 t瓣h瓣n kauppaan!
+NOT_ENOUGH_SPACE_IN_INVENTORY: Sinulla ei ole tarpeeksi tilaa tavaraluettelossa!
+NOT_ENOUGH_SPACE_IN_CHEST: Arkussa ei ole tarpeeksi tilaa!
+NOT_ENOUGH_ITEMS_TO_SELL: Sinulla ei ole tarpeeksi tuotteita myyt瓣v瓣ksi!
+NOT_ENOUGH_SPACE_IN_YOUR_SHOP: |-
+  [%price %item&7 kauppa on t瓣ynn瓣!](&f%seller&7 yritti myyd瓣 kauppaan
+  &7Maassa: &f%world
+  &7Sijainnissa: &f%x/%y/%z)
+NOT_ENOUGH_STOCK: T瓣m瓣n kaupan varasto on tyhj瓣.
+NOT_ENOUGH_STOCK_IN_YOUR_SHOP: |-
+  [%price %item&7 kaupan varasto on tyhj瓣!](&f%buyer&7 yritti tehd瓣 ostoksen
+  &7Maassa: &f%world
+  &7Sijainnissa: &f%x/%y/%z)
+YOU_BOUGHT_FROM_SHOP: Ostit tavaran %item pelaajalta %owner hintaan %price.
+SOMEBODY_BOUGHT_FROM_YOUR_SHOP: |-
+  [%buyer osti tavaran %item hintaan %price.](&7Maassa: &f%world
+  &7Sijainnissa: &f%x/%y/%z)
+YOU_SOLD_TO_SHOP: Myit tavaran %item pelaajalle %buyer hintaan %price.
+SOMEBODY_SOLD_TO_YOUR_SHOP: |-
+  [%seller myi tavaran %item hintaan %price.](&7Maassa: &f%world
+  &7Sijainnissa: &f%x/%y/%z)
+YOU_CANNOT_CREATE_SHOP: Et voi luoda t瓣m瓣n tyyppist瓣 kauppaa!
+NO_CHEST_DETECTED: Arkkua ei l繹ydetty!
+INVALID_SHOP_DETECTED: Kauppaa ei voi k瓣ytt瓣瓣!
+INVALID_SHOP_PRICE: Kaupassa on virheellinen hinta!
+INVALID_SHOP_QUANTITY: Kaupassa on virheellinen tavaram瓣瓣r瓣!
+CANNOT_ACCESS_THE_CHEST: Sinulla ei ole oikeuksia k瓣ytt瓣瓣 t瓣t瓣 arkkua!
+SELL_PRICE_HIGHER_THAN_BUY_PRICE: Sell price is above the buy price!
+SELL_PRICE_ABOVE_MAX: Sell price %price is above maximum %maxprice!
+SELL_PRICE_BELOW_MIN: Sell price %price is below minimum %minprice!
+BUY_PRICE_ABOVE_MAX: Buy price %price is above maximum %maxprice!
+BUY_PRICE_BELOW_MIN: Buy price %price is below minimum %minprice!
+CLICK_TO_AUTOFILL_ITEM: Napsauta kyltti瓣 tuotteen kanssa, jota t瓣m瓣 kauppa ostaa/myy!
+NO_ITEM_IN_HAND: Sinulla ei ole kohdetta k瓣dess瓣si automaattista t瓣ytt瓣mist瓣 varten!
+PROTECTED_SHOP: Suojattu kauppa onnistuneesti LWC:ll瓣!
+PROTECTED_SHOP_SIGN: Suojattu kauppakyltti onnistuneesti LWC:ll瓣!
+SHOP_CREATED: Kauppa luotiin onnistuneesti!
+SHOP_FEE_PAID: Sinulta on veloitettu %amount
+SHOP_REFUNDED: Sinulle on hyvitetty %amount.
+ITEM_GIVEN: Annettiin tavara %item pelaajalle %player.
+RESTRICTED_SIGN_CREATED: Kyltti luotu onnistuneesti!
+PLAYER_NOT_FOUND: Pelaajaa ei l繹ydety!
+NO_PERMISSION: Sinulla ei ole siihen oikeuksia!
+INCORRECT_ITEM_ID: Olet m瓣瓣ritt瓣nyt virheellisen kohteen tunnuksen!
+INVALID_CLIENT_NAME: K瓣ytt瓣j瓣nimesi ei ole kelvollinen Minecraft-k瓣ytt瓣j瓣tunnus!
+NOT_ENOUGH_PROTECTIONS: Suojausta ei voitu luoda!
+NO_SHOP_FOUND: Kauppaa ei l繹ytynyt.
+CANNOT_CREATE_SHOP_HERE: Et voi luoda kauppaa t瓣瓣ll瓣!
+TOGGLE_MESSAGES_OFF: Et en瓣瓣 saa viestej瓣 kaupoistasi.
+TOGGLE_MESSAGES_ON: Saat nyt viestej瓣 kaupoistasi.
+TOGGLE_ACCESS_ON: Et voi en瓣瓣 tehd瓣 vaihtokauppaa kauppojen kanssa, joihin sinulla
+  on p瓣瓣sy
+TOGGLE_ACCESS_OFF: Voit nyt tehd瓣 vaihtokauppaa kauppojen kanssa, joihin sinulla on
+  p瓣瓣sy

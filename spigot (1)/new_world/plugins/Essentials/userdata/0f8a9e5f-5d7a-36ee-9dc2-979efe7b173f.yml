@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 192.168.107.1
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1693317105236
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1693835452177
+  login: 1693835174098
+money: '10000160.0'
+last-account-name: platpustian
+lastlocation:
+  world: 587d79fa-dda4-49ff-965f-58440731b6d2
+  world-name: world
+  x: 2259.4965226233253
+  y: 63.0
+  z: -2926.432975016005
+  yaw: 43.482421875
+  pitch: 41.099788665771484
+logoutlocation:
+  world: 587d79fa-dda4-49ff-965f-58440731b6d2
+  world-name: world
+  x: 2260.368119758048
+  y: 63.0
+  z: -2909.4383218174353
+  yaw: 213.37603759765625
+  pitch: 37.500465393066406

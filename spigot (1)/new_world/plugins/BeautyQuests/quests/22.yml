@@ -1,0 +1,54 @@
+startMessage: newbie task start !
+name: newbie task
+starterNPC: 8
+repeatable: true
+timer: 1
+auto: true
+manager:
+  branches:
+    '0':
+      stages:
+        '0':
+          result:
+            v: 2586
+            type: STONE_HOE
+          stageType: CRAFT
+          customText: Prepare stone_hoe for diedie
+          text: Task start
+          rewards:
+          - id: itemReward
+            items:
+            - v: 2586
+              type: WHEAT_SEEDS
+              amount: 36
+          - id: commandReward
+            commands:
+            - console: false
+              label: eco take Guild 6
+            - console: false
+              delay: 1
+              label: eco give Dingo_Kez 6
+        '1':
+          npcID: 8
+          items:
+          - ==: org.bukkit.inventory.ItemStack
+            v: 2586
+            type: WHEAT
+            amount: 6
+          stageType: ITEMS
+          customText: Give stone_hoe and 12 * wheat_seeds to diedie , then bring 6
+            * wheat to Guild
+          rewards:
+          - id: moneyReward
+            money: 6.0
+          - id: commandReward
+            commands:
+            - console: false
+              label: eco take Guild 6
+          - id: commandReward
+            commands:
+            - console: false
+              delay: 2
+              label: balance Dingo_Kez
+      endingStages: {}
+id: 22

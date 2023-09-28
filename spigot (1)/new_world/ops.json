@@ -1,0 +1,44 @@
+[
+  {
+    "uuid": "e4477365-f954-34c0-af69-2a860327f814",
+    "name": "worker",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "0d645441-bb00-3f23-bff1-74ed5850acc2",
+    "name": "diedie",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "0f8a9e5f-5d7a-36ee-9dc2-979efe7b173f",
+    "name": "platpustian",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "f2230bc0-1ac5-3d55-9f5b-abfb37a60d0a",
+    "name": "Dingo_Kez",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "44ecf603-95c5-3ca9-b344-5bcce35cd5ea",
+    "name": "imlililili",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1",
+    "name": "Jeff",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "00a03b6d-9739-3c28-9b6e-4578e94a3bd9",
+    "name": "Guild",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  }
+]

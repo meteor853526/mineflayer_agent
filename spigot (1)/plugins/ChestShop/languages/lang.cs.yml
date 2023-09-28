@@ -1,0 +1,88 @@
+prefix: '&a[Shop] &r'
+shopinfo: |-
+  &aInformace o obchodu:
+  &fMajitel: &7%owner
+  &fSkladem: &7%stock
+  &fItem: &7%item
+shopinfo_buy: '&fKoupit &7%amount &fza &7%price'
+shopinfo_sell: '&fProdat &7%amount &fza &7%price'
+iteminfo: '&aInformace o p�dm�u: &r'
+iteminfo_fullname: '&fCel羸 n獺zev: &7%item'
+iteminfo_shopname: '&fN獺kupn穩 cedule: &7%item'
+iteminfo_repaircost: '&fCena opravy: &7%cost'
+iteminfo_book: |-
+  &fTitul knihy: &7%title
+  &fAutor knihy: &7%author
+  &fPo�t stran: &7%pages
+iteminfo_book_generation: '&fGenerace knihy: &7%generation'
+iteminfo_lore: |-
+  &fLore:
+  &r%lore
+METRICS: |-
+  &a[Shop] &fMetriky:
+  &fPo�t 繳�轡: &7%accounts
+  &fPr轡m�n�� transakc穩: &7%totalTransactions &f(buy: &7%buyTransactions &fsell: &7%sellTransactions&f)
+  &fPr轡m�n�� sm��羸ch p�dm�轡: &7%totalItems &f(bought: &7%boughtItems &fsold: &7%soldItems&f)
+ACCESS_DENIED: Nem獺禳 opr獺vn�穩 k prohl穩鱉en穩 obsahu tohoto kontejneru!
+TRADE_DENIED: Nem獺禳 opr獺vn�穩 nakupovat v tomto obchod��!
+TRADE_DENIED_ACCESS_PERMS: Nem轡鱉ete obchodovat s obchody, ke kter羸m m獺te p�貞tup!
+TRADE_DENIED_CREATIVE_MODE: Nem轡鱉ete obchodovat s obchody, kdy鱉 jste v kreativn穩m
+  m籀du!
+NOT_ENOUGH_MONEY: Nem獺禳 dostatek pen�!
+NOT_ENOUGH_MONEY_SHOP: Majitel obchodu ji鱉 nem獺 dostatek pen�!
+CLIENT_DEPOSIT_FAILED: P�ps獺n穩 pen� na tv轡j 繳�t selhalo!
+SHOP_DEPOSIT_FAILED: P�ps獺n穩 pen� na 繳�t prodejce selhalo!
+NO_ECONOMY_ACCOUNT: Economy 繳�t majitele obchodu neexistuje!
+NO_BUYING_HERE: Zde nen穩 mo鱉n矇 nakupovat!
+NO_SELLING_HERE: Zde nen穩 mo鱉n矇 prod獺vat!
+NOT_ENOUGH_SPACE_IN_INVENTORY: Nem獺禳 dost m穩sta v invent獺�!
+NOT_ENOUGH_SPACE_IN_CHEST: V truhle u鱉 nen穩 dost m穩sta!
+NOT_ENOUGH_ITEMS_TO_SELL: Nem獺禳 dostatek p�dm�轡 k prodeji!
+NOT_ENOUGH_SPACE_IN_YOUR_SHOP: |-
+  [%price %item&7 obchod p�pln�!](&f%seller&7 cht� prodat
+  &7Sv�: &f%world
+  &7Pozice: &f%x/%y/%z)
+NOT_ENOUGH_STOCK: Obchod je vyprodan羸.
+NOT_ENOUGH_STOCK_IN_YOUR_SHOP: |-
+  [%price %item&7 obchod vyprod獺n!](&f%buyer&7 cht� nakoupit
+  &7Sv�: &f%world
+  &7Pozice: &f%x/%y/%z)
+YOU_BOUGHT_FROM_SHOP: Koupil jsi %item od hr獺� %owner za %price.
+SOMEBODY_BOUGHT_FROM_YOUR_SHOP: |-
+  [%buyer koupil %item za %price.](&7Sv�: &f%world
+  &7Pozice: &f%x/%y/%z)
+YOU_SOLD_TO_SHOP: Prodal jsi %item hr獺� %buyer za %price.
+SOMEBODY_SOLD_TO_YOUR_SHOP: |-
+  [%seller prodal %item za %price.](&7Sv�: &f%world
+  &7Pozice: &f%x/%y/%z)
+YOU_CANNOT_CREATE_SHOP: Nem轡鱉e禳 vytvo�t tento typ obchodu!
+NO_CHEST_DETECTED: Truhla nenalezena!
+INVALID_SHOP_DETECTED: Obchod nen穩 mo鱉n矇 pou鱉穩t!
+INVALID_SHOP_PRICE: Obchod m獺 neplatnou cenu!
+INVALID_SHOP_QUANTITY: Obchod m獺 neplatn矇 mno鱉stv穩!
+CANNOT_ACCESS_THE_CHEST: Nem獺禳 pr獺vo otev穩rat tuto truhlu!
+SELL_PRICE_HIGHER_THAN_BUY_PRICE: Prodejn穩 cena je vy禳禳穩 ne鱉 kupn穩 cena!
+SELL_PRICE_ABOVE_MAX: Prodejn穩 cena %price vy禳禳穩 ne鱉 maxim獺ln穩 %maxprice!
+SELL_PRICE_BELOW_MIN: Prodejn穩 cena %price je ni鱉禳穩 ne鱉 minim獺ln穩 %minprice!
+BUY_PRICE_ABOVE_MAX: Kupn穩 cena %price vy禳禳穩 ne鱉 maxim獺ln穩 %maxprice!
+BUY_PRICE_BELOW_MIN: Kupn穩 cena %price je ni鱉禳穩 ne鱉 minim獺ln穩 %minprice!
+CLICK_TO_AUTOFILL_ITEM: Klikni na ceduli s p�dm�em, kter羸 chce禳 prod獺vat!
+NO_ITEM_IN_HAND: Nem獺禳 v ruce p�dm�, automatick矇 p�dvypln�穩 nen穩 mo鱉n矇!
+PROTECTED_SHOP: Obchod 繳sp�》�� ochr獺n� pomoc穩 LWC!
+PROTECTED_SHOP_SIGN: Cedule obchodu 繳sp�》�� ochr獺n�穩 pomoc穩 LWC!
+SHOP_CREATED: Obchod vytvo�n!
+SHOP_FEE_PAID: Zaplatil jsi %amount
+SHOP_REFUNDED: Bylo ti vr獺ceno %amount.
+ITEM_GIVEN: P�dm� %item d獺n hr獺� %player.
+RESTRICTED_SIGN_CREATED: Cedule vytvo�na!
+PLAYER_NOT_FOUND: Hr獺�� nenalezen!
+NO_PERMISSION: Na tuto akci nem獺禳 opr獺vn�穩!
+INCORRECT_ITEM_ID: Neplatn羸 ID p�dm�u!
+INVALID_CLIENT_NAME: Va禳e u鱉ivatelsk矇 jm矇no nen穩 platn羸m u鱉ivatelsk羸m jm矇nem Minecraftu!
+NOT_ENOUGH_PROTECTIONS: Ochrana nemohla b羸t vytvo�na!
+NO_SHOP_FOUND: Nebyl nalezen 鱉獺dn羸 obchod.
+CANNOT_CREATE_SHOP_HERE: Zde nen穩 mo鱉n矇 vytvo�t obchod!
+TOGGLE_MESSAGES_OFF: Zpr獺vy z tv羸ch obchod轡 ji鱉 nebudou nad獺le zobrazov獺ny.
+TOGGLE_MESSAGES_ON: Zpr獺vy z tv羸ch obchod轡 budou zase zobrazov獺ny.
+TOGGLE_ACCESS_ON: Nad獺le ji鱉 nem轡鱉e禳 obchodovat s obchody, do kter羸ch m獺禳 p�貞tup.
+TOGGLE_ACCESS_OFF: Op� m轡鱉e禳 obchodovat s obchody, do kter羸ch m獺禳 p�貞tup.

@@ -1,0 +1,205 @@
+20 : 33 (bot2): hear grass step
+20 : 34 (bot2): hear grass step
+20 : 35 (bot2): hear grass step
+20 : 38 (bot2): hear grass step
+20 : 38 (bot2): hear grass step
+20 : 39 (bot2): hear grass step
+20 : 40 (bot2): hear grass step
+20 : 40 (bot2): hear grass step
+20 : 41 (bot2): hear grass step
+20 : 41 (bot2): hear undefined sound
+24 : 35 (bot2): hear undefined sound
+24 : 36 (bot2): hear undefined sound
+24 : 36 (bot2): hear undefined sound
+24 : 38 (bot2): hear undefined sound
+24 : 38 (bot2): hear undefined sound
+24 : 39 (bot2): hear undefined sound
+24 : 40 (bot2): hear undefined sound
+24 : 40 (bot2): hear undefined sound
+24 : 40 (bot2): hear undefined sound
+24 : 41 (bot2): hear undefined sound
+24 : 43 (bot2): hear undefined sound
+24 : 44 (bot2): hear undefined sound
+24 : 44 (bot2): hear undefined sound
+24 : 44 (bot2): hear undefined sound
+24 : 45 (bot2): hear undefined sound
+24 : 45 (bot2): hear undefined sound
+24 : 46 (bot2): hear undefined sound
+24 : 48 (bot2): hear undefined sound
+24 : 48 (bot2): hear undefined sound
+24 : 49 (bot2): hear undefined sound
+24 : 49 (bot2): hear undefined sound
+24 : 49 (bot2): hear undefined sound
+11 : 31(bot2): see raining
+11 : 31 (bot2): hear undefined sound
+11 : 31 (bot2): hear undefined sound
+11 : 32 (bot2): hear undefined sound
+11 : 32 (bot2): hear undefined sound
+11 : 36 (bot2): hear grass step
+11 : 37 (bot2): hear undefined sound
+11 : 37 (bot2): hear undefined sound
+11 : 37 (bot2): hear undefined sound
+11 : 38 (bot2): hear undefined sound
+11 : 39(bot2): see raining
+11 : 39 (bot2): hear undefined sound
+11 : 39 (bot2): hear undefined sound
+11 : 39 (bot2): hear undefined sound
+11 : 39 (bot2): hear undefined sound
+11 : 39 (bot2): hear undefined sound
+11 : 41 (bot2): hear undefined sound
+11 : 41 (bot2): hear undefined sound
+11 : 41 (bot2): hear undefined sound
+11 : 42 (bot2): hear undefined sound
+25 : 37 (bot2): hear undefined sound
+25 : 42 (bot2): hear undefined sound
+25 : 44 (bot2): hear undefined sound
+25 : 48 (bot2): hear undefined sound
+25 : 51 (bot2): hear grass step
+25 : 52 (bot2): hear undefined sound
+25 : 53 (bot2): hear undefined sound
+25 : 56 (bot2): hear undefined sound
+26 : 1 (bot2): hear undefined sound
+26 : 1 (bot2): hear undefined sound
+26 : 3 (bot2): hear undefined sound
+26 : 4 (bot2): hear undefined sound
+26 : 7 (bot2): hear grass step
+26 : 9 (bot2): hear undefined sound
+26 : 12 (bot2): hear undefined sound
+26 : 16 (bot2): hear undefined sound
+26 : 17 (bot2): hear undefined sound
+26 : 18 (bot2): hear grass step
+26 : 18 (bot2): hear grass step
+26 : 18 (bot2): hear grass step
+26 : 19 (bot2): hear undefined sound
+26 : 23 (bot2): hear undefined sound
+26 : 23 (bot2): hear undefined sound
+26 : 24 (bot2): hear undefined sound
+26 : 28 (bot2): hear undefined sound
+26 : 28 (bot2): hear grass step
+26 : 28 (bot2): hear grass step
+26 : 32 (bot2): hear undefined sound
+26 : 34 (bot2): hear undefined sound
+26 : 37 (bot2): hear grass step
+26 : 37 (bot2): hear grass step
+26 : 38 (bot2): hear grass step
+28 : 37 (bot2): hear undefined sound
+28 : 39 (bot2): hear undefined sound
+28 : 39 (bot2): hear undefined sound
+28 : 41 (bot2): hear undefined sound
+28 : 41 (bot2): hear undefined sound
+28 : 41 (bot2): hear undefined sound
+28 : 42 (bot2): hear undefined sound
+28 : 42 (bot2): hear undefined sound
+28 : 42 (bot2): hear undefined sound
+28 : 42 (bot2): hear grass step
+28 : 43 (bot2): hear grass step
+28 : 43 (bot2): hear undefined sound
+28 : 44 (bot2): hear undefined sound
+28 : 44 (bot2): hear undefined sound
+28 : 44 (bot2): hear undefined sound
+28 : 46 (bot2): hear undefined sound
+28 : 47 (bot2): hear undefined sound
+28 : 47 (bot2): hear undefined sound
+29 : 7 (bot2): hear undefined sound
+29 : 8 (bot2): hear undefined sound
+29 : 8 (bot2): hear undefined sound
+29 : 8 (bot2): hear undefined sound
+29 : 8 (bot2): hear undefined sound
+29 : 9 (bot2): hear undefined sound
+29 : 9 (bot2): hear undefined sound
+29 : 9 (bot2): hear undefined sound
+29 : 9 (bot2): hear undefined sound
+29 : 11 (bot2): hear undefined sound
+29 : 12 (bot2): hear undefined sound
+29 : 12 (bot2): hear undefined sound
+29 : 12 (bot2): hear undefined sound
+29 : 26 (bot2): hear undefined sound
+29 : 27 (bot2): hear undefined sound
+29 : 27 (bot2): hear undefined sound
+29 : 29 (bot2): hear undefined sound
+29 : 29 (bot2): hear undefined sound
+29 : 29 (bot2): hear undefined sound
+29 : 31 (bot2): hear undefined sound
+29 : 32 (bot2): hear undefined sound
+29 : 32 (bot2): hear undefined sound
+29 : 32 (bot2): hear undefined sound
+29 : 33 (bot2): hear undefined sound
+29 : 33 (bot2): hear undefined sound
+29 : 33 (bot2): hear undefined sound
+29 : 33 (bot2): hear undefined sound
+29 : 34 (bot2): hear undefined sound
+29 : 34 (bot2): hear grass step
+29 : 34 (bot2): hear grass step
+29 : 36 (bot2): hear undefined sound
+29 : 59 (bot2): hear undefined sound
+30 : 4 (bot2): hear undefined sound
+30 : 6 (bot2): hear undefined sound
+30 : 7 (bot2): hear undefined sound
+30 : 8 (bot2): hear undefined sound
+30 : 8 (bot2): hear undefined sound
+30 : 8 (bot2): hear undefined sound
+30 : 13 (bot2): hear undefined sound
+30 : 17 (bot2): hear undefined sound
+30 : 19 (bot2): hear undefined sound
+30 : 23 (bot2): hear grass step
+30 : 24 (bot2): hear grass step
+30 : 24 (bot2): hear undefined sound
+30 : 24 (bot2): hear grass step
+30 : 24 (bot2): hear undefined sound
+30 : 26 (bot2): hear grass step
+30 : 26 (bot2): hear undefined sound
+30 : 29 (bot2): hear undefined sound
+30 : 29 (bot2): hear undefined sound
+30 : 31 (bot2): hear undefined sound
+30 : 33 (bot2): hear undefined sound
+30 : 33 (bot2): hear undefined sound
+30 : 34 (bot2): hear undefined sound
+30 : 34 (bot2): hear undefined sound
+30 : 34 (bot2): hear grass step
+30 : 36 (bot2): hear undefined sound
+30 : 36 (bot2): hear undefined sound
+30 : 37 (bot2): hear undefined sound
+30 : 37 (bot2): hear undefined sound
+30 : 38 (bot2): hear undefined sound
+30 : 39 (bot2): hear undefined sound
+30 : 42 (bot2): hear undefined sound
+30 : 43 (bot2): hear undefined sound
+30 : 47 (bot2): hear undefined sound
+30 : 48 (bot2): hear undefined sound
+30 : 49 (bot2): hear undefined sound
+30 : 51 (bot2): hear undefined sound
+30 : 52 (bot2): hear undefined sound
+30 : 52 (bot2): hear undefined sound
+30 : 52 (bot2): hear undefined sound
+30 : 53 (bot2): hear undefined sound
+30 : 57 (bot2): hear undefined sound
+6 : 1 (bot2): hear undefined sound
+6 : 2 (bot2): hear undefined sound
+6 : 3 (bot2): hear undefined sound
+6 : 3 (bot2): hear undefined sound
+6 : 4 (bot2): hear undefined sound
+6 : 9 (bot2): hear undefined sound
+6 : 17 (bot2): hear undefined sound
+6 : 24 (bot2): hear undefined sound
+6 : 32 (bot2): hear undefined sound
+6 : 39 (bot2): hear undefined sound
+6 : 42 (bot2): hear undefined sound
+6 : 42 (bot2): hear undefined sound
+25 : 8(bot2): see raining
+30 : 52(bot2): see raining
+6 : 43(bot2): see raining
+7 : 0(bot2): see raining
+7 : 31(bot2): see raining
+9 : 26(bot2): see raining
+11 : 47(bot2): see raining
+15 : 20(bot2): see raining
+15 : 27(bot2): see raining
+27 : 26(bot2): see raining
+29 : 29(bot2): see raining
+6 : 38(bot2): see raining
+8 : 10(bot2): see raining
+10 : 45(bot2): see raining
+12 : 32(bot2): see raining
+14 : 42(bot2): see raining
+30 : 54(bot2): see raining
+25 : 23(bot2): see raining

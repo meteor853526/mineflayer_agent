@@ -1,0 +1,86 @@
+prefix: '&a[Sklep] &r'
+shopinfo: |-
+  &aInformacje o sklepie:
+  &fW��iciel: &7%owner
+  &fIlo��: &7%stock
+  &fPrzedmiot: &7%item
+shopinfo_buy: '&fKup &7%amount &fza &7%price'
+shopinfo_sell: '&fSprzedaj &7%amount &fza &7%price'
+iteminfo: '禮aInfo. o przedmiocie: 禮r'
+iteminfo_fullname: '&fPe�a Nazwa: &7%item'
+iteminfo_shopname: '&fNazwa Sklepu: &7%item'
+iteminfo_repaircost: '&fKoszt Naprawy: &7%cost'
+iteminfo_book: |-
+  &fTytu�� ksi�嶔i: &7%title
+  &fAutor ksi�嶔i: &7%author
+  &fStrony ksi�嶔i: &7%pages
+iteminfo_book_generation: '&fGenerowanie Ksi�嶔i: &7%generation'
+iteminfo_lore: |-
+  &fOpis:
+  &r%lore
+METRICS: |-
+  &a[Sklep] &fStatystyki:
+  &fLiczba Kont: &7%accounts
+  &f�ednie transakcje: &7%totalTransactions &f(Kup: &7%buyTransactions &fSprzedaj: &7%sellTransactions&f)
+  &f�ednie wymienione przedmioty: &7%totalItems &f(Kupione: &7%boughtItems &fSprzedane: &7%soldItems&f)
+ACCESS_DENIED: Nie masz uprawnie�� do przegl�ania zawarto�i tego sklepu!
+TRADE_DENIED: Nie masz pozwolenia, aby handlowa�� w tym sklepie!
+TRADE_DENIED_ACCESS_PERMS: Nie mo髒esz handlowa�� w sklepach, do kt籀rych masz dost�!
+TRADE_DENIED_CREATIVE_MODE: Nie mo髒esz handlowa�� w sklepach w trybie kreatywnym!
+NOT_ENOUGH_MONEY: Nie sta�� ci��!
+NOT_ENOUGH_MONEY_SHOP: W��iciel sklepu nie ma wystarczaj�o pieni�zy!
+CLIENT_DEPOSIT_FAILED: Wp�ta pieni�zy na twoje konto nie powiod� si��!
+SHOP_DEPOSIT_FAILED: Wplata pieni�zy na konto w��iciela sklepu nie powiod� si��!
+NO_ECONOMY_ACCOUNT: Konto ekonomiczne od w��iciela sklepu nie istnieje!
+NO_BUYING_HERE: Nie mo髒esz tutaj kupowa��!
+NO_SELLING_HERE: Nie mo髒esz tutaj sprzedawa��!
+NOT_ENOUGH_SPACE_IN_INVENTORY: Brak wolnego miejsca w ekwipunku!
+NOT_ENOUGH_SPACE_IN_CHEST: Brak wolnego miejsca w skrzyni!
+NOT_ENOUGH_ITEMS_TO_SELL: Masz za ma� przedmiot籀w, aby je sprzeda��!
+NOT_ENOUGH_SPACE_IN_YOUR_SHOP: |-
+  [Sklep z %item&7 w cenie %price jest pe�y!](&f%seller&7 pr籀bowa�� sprzeda�n&7W �iecie: &f%world
+  &7Na pozycji: &f%x/%y/%z)
+NOT_ENOUGH_STOCK: Ten sklep jest pusty.
+NOT_ENOUGH_STOCK_IN_YOUR_SHOP: |-
+  [Sklep z %item&7 w cenie %price jest pusty!](&f%buyer&7 pr籀bowa�� kupi�n&7W �iecie: &f%world
+  &7Na pozycji: &f%x/%y/%z)
+YOU_BOUGHT_FROM_SHOP: Kupi��� %item od %owner za %price.
+SOMEBODY_BOUGHT_FROM_YOUR_SHOP: |-
+  [%buyer kupi�� %item za %price.](&7W �iecie: &f%world
+  &7Na pozycji: &f%x/%y/%z)
+YOU_SOLD_TO_SHOP: Sprzeda��� %item graczowi %buyer za %price.
+SOMEBODY_SOLD_TO_YOUR_SHOP: |-
+  [%seller sprzeda�� %item za %price.](&7W �iecie: &f%world
+  &7Na pozycji: &f%x/%y/%z)
+YOU_CANNOT_CREATE_SHOP: Nie mo髒esz stworzy�� sklepu tego typu!
+NO_CHEST_DETECTED: Nie znaleziono skrzyni!
+INVALID_SHOP_DETECTED: Sklep nie mo髒e by�� u髒ywany (by�� mo髒e brakuje skrzyni)!
+INVALID_SHOP_PRICE: Z� cena!
+INVALID_SHOP_QUANTITY: Sklep ma podana niewlasciwa ilosc produktu!
+CANNOT_ACCESS_THE_CHEST: Nie masz uprawnie�� dost�u do tej skrzyni!
+SELL_PRICE_HIGHER_THAN_BUY_PRICE: Cena sprzeda髒y jest wy髒sza od ceny zakupu!
+SELL_PRICE_ABOVE_MAX: Cena sprzeda髒y %price jest wy髒sza ni髒 maksymalna %maxprice!
+SELL_PRICE_BELOW_MIN: Cena sprzeda髒y %price jest ni髒sza ni髒 minimalna %minprice!
+BUY_PRICE_ABOVE_MAX: Cena zakupu %price jest wy髒sza ni髒 maksymalna %maxprice!
+BUY_PRICE_BELOW_MIN: Cena zakupu %price jest ni髒sza ni髒 minimalna %minprice!
+CLICK_TO_AUTOFILL_ITEM: Kliknij znak z przedmiotem, dla kt籀rego przeznaczony jest
+  ten sklep!
+NO_ITEM_IN_HAND: Nie masz w r�u przedmiotu do automatycznego wype�ienia!
+PROTECTED_SHOP: Sklep zosta�� zabezpieczony przez LWC!
+PROTECTED_SHOP_SIGN: Pomy�nie zabezpieczono znak sklepu z LWC!
+SHOP_CREATED: Sklep zosta�� pomy�nie utworzony!
+SHOP_FEE_PAID: 'Zosta��� obci�廢ny kosztami: " %amount'
+SHOP_REFUNDED: 'Zwr籀cono ci: " %amount.'
+ITEM_GIVEN: Dano %item graczowi %player.
+RESTRICTED_SIGN_CREATED: Znak zosta�� pomy�nie utworzony!
+PLAYER_NOT_FOUND: Nie znaleziono gracza!
+NO_PERMISSION: Nie masz do tego uprawnie��!
+INCORRECT_ITEM_ID: Poda��� niepoprawne ID przedmiotu!
+INVALID_CLIENT_NAME: Twoja nick nie jest poprawn�� nazw�� u髒ytkownika Minecraft!
+NOT_ENOUGH_PROTECTIONS: Nie mo髒na stworzy�� zabezpieczenia!
+NO_SHOP_FOUND: Nie znaleziono sklepu.
+CANNOT_CREATE_SHOP_HERE: Nie mo髒esz stworzy�� tutaj sklepu!
+TOGGLE_MESSAGES_OFF: Nie b�ziesz ju髒 otrzymywa�� wiadomo�i ze swoich sklep籀w.
+TOGGLE_MESSAGES_ON: Od teraz b�ziesz otrzymywa�� wiadomo�i ze swoich sklep籀w.
+TOGGLE_ACCESS_ON: Nie mo髒esz ju髒 handlowa�� w sklepach, do kt籀rych masz dost�
+TOGGLE_ACCESS_OFF: Mo髒esz teraz handlowa�� w sklepach, do kt籀rych masz dost�

@@ -1,0 +1,77 @@
+prefix: '&a[Shop] &r'
+shopinfo: |-
+  &aInforma癟瓊o da loja:
+  &fDono: &7%owner
+  &fEstoque: &7%stock
+  &fItem: &7%item
+shopinfo_buy: '&fComprar &7%amount &fpor &7%price'
+shopinfo_sell: '&fVender &7%amount &fpor &7%price'
+iteminfo: '&aInforma癟瓊o do item: &r'
+iteminfo_fullname: '&fNome completo: &7%item'
+iteminfo_shopname: '&fNome para a loja: &7%item'
+iteminfo_repaircost: '&fCusto de reparo: &7%cost'
+iteminfo_book: |-
+  &fT穩tulo do livro: &7%title
+  &fAutor do Livro: &7%author
+  &fP獺ginas do Livro: &7%pages
+iteminfo_book_generation: '&fGera癟瓊o do livro: &7%generation'
+iteminfo_lore: '&fDescri癟瓊o:'
+METRICS: |-
+  &a[Shop] &fMetricas:
+  &fContas: &7%contas
+  &fTransa癟繭es m矇dias: &7%totalTransactions &f(buy: &7%buyTransactions &fsell: &7%sellTransactions&f)
+  &fM矇dia dos itens comercializados: &7%totalItems &f(bought: &7%boughtItems &fsold: &7%soldItems&f)
+ACCESS_DENIED: Voc礙 n瓊o tem permiss瓊o para aceder ao ba繳 da loja!
+TRADE_DENIED: Voc礙 n瓊o tem permiss瓊o para negociar com essa loja!
+TRADE_DENIED_ACCESS_PERMS: Voc礙 n瓊o pode negociar com lojas � quais voc礙 tem acesso!
+TRADE_DENIED_CREATIVE_MODE: Voc礙 n瓊o pode negociar com lojas enquanto estiver no modo
+  criativo!
+NOT_ENOUGH_MONEY: Saldo insuficiente!
+NOT_ENOUGH_MONEY_SHOP: O dono da loja n瓊o tem dinheiro suficiente!
+CLIENT_DEPOSIT_FAILED: Falha ao depositar dinheiro na sua conta!
+SHOP_DEPOSIT_FAILED: Falha ao depositar dinheiro na conta do dono do shop!
+NO_ECONOMY_ACCOUNT: A conta econ繫mica do dono da loja n瓊o existe!
+NO_BUYING_HERE: Tu n瓊o podes comprar aqui!
+NO_SELLING_HERE: N� podes vender aqui!
+NOT_ENOUGH_SPACE_IN_INVENTORY: N瓊o tens espa癟o suficiente no teu invent獺rio!
+NOT_ENOUGH_SPACE_IN_CHEST: N� tem espa癟o suficiente no ba繳!
+NOT_ENOUGH_ITEMS_TO_SELL: N瓊o tens itens suficientes para vender!
+NOT_ENOUGH_SPACE_IN_YOUR_SHOP: "[%price %item&7 a loja est獺 cheia!](&f%vendedor&7\
+  \ tentou vender\n&7No mundo: &f%world\n&7Nas coordenadas: &f%x/%y/%z) "
+NOT_ENOUGH_STOCK: Este item est獺 esgotado.
+NOT_ENOUGH_STOCK_IN_YOUR_SHOP: Seu %material shop est獺 esgotado!
+YOU_BOUGHT_FROM_SHOP: Voc礙 comprou %item do %owner por %price.
+SOMEBODY_BOUGHT_FROM_YOUR_SHOP: '%buyer comprou %item por %price de voc礙.'
+YOU_SOLD_TO_SHOP: Voc礙 vendeu %item para %buyer por %price.
+SOMEBODY_SOLD_TO_YOUR_SHOP: '%seller vendeu %item por %price para voc礙.'
+YOU_CANNOT_CREATE_SHOP: Voc礙 n瓊o pode criar este tipo de loja!
+NO_CHEST_DETECTED: Imposs穩vel encontrar um ba繳!
+INVALID_SHOP_DETECTED: Esta loja n瓊o pode ser usada!
+INVALID_SHOP_PRICE: A loja tem um pre癟o invalido!
+INVALID_SHOP_QUANTITY: A loja tem uma quantidade invalida!
+CANNOT_ACCESS_THE_CHEST: Tu n瓊o tens permiss瓊o para abrir este ba繳!
+SELL_PRICE_HIGHER_THAN_BUY_PRICE: O pre癟o de venda est獺 acima do pre癟o de compra!
+SELL_PRICE_ABOVE_MAX: O pre癟o de venda %price est獺 acima do pre癟o m獺ximo %maxprice!
+SELL_PRICE_BELOW_MIN: O pre癟o de venda %price est獺 abaixo do pre癟o m穩nimo %minprice!
+BUY_PRICE_ABOVE_MAX: O pre癟o de compra %price est獺 acima do pre癟o m獺ximo %maxprice!
+BUY_PRICE_BELOW_MIN: O pre癟o de compra %price est獺 abaixo do pre癟o m穩nimo %minprice!
+CLICK_TO_AUTOFILL_ITEM: Clique na placa segurando o item a que se destina esta loja!
+NO_ITEM_IN_HAND: Voc礙 n瓊o est獺 segurando um item para preencher automaticamente!
+PROTECTED_SHOP: Shop protegido com LWC com sucesso!
+PROTECTED_SHOP_SIGN: Protegeu com sucesso o letreiro da loja com LWC!
+SHOP_CREATED: Shop criado com sucesso!
+SHOP_FEE_PAID: Vendido por %amount
+SHOP_REFUNDED: Reembolsado por %amount.
+ITEM_GIVEN: Foi dado %item ao %player.
+RESTRICTED_SIGN_CREATED: Placa criada com sucesso!
+PLAYER_NOT_FOUND: Jogador n瓊o encontrado!
+NO_PERMISSION: Tu n瓊o tens permiss瓊o para fazer isso!
+INCORRECT_ITEM_ID: O ID do item inv獺lido!
+INVALID_CLIENT_NAME: Seu nome de usu獺rio n瓊o 矇 um nome de usu獺rio v獺lido do Minecraft!
+NOT_ENOUGH_PROTECTIONS: N瓊o 矇 poss穩vel criar uma prote癟瓊o!
+NO_SHOP_FOUND: Nenhuma loja encontrada.
+CANNOT_CREATE_SHOP_HERE: N瓊o podes criar uma loja aqui!
+TOGGLE_MESSAGES_OFF: Voc礙 n瓊o ir獺 receber mais mensagens de sua(s) loja(s).
+TOGGLE_MESSAGES_ON: Voc礙 agora ir獺 receber mensagens de sua(s) loja(s).
+TOGGLE_ACCESS_ON: Voc礙 n瓊o pode mais trocar em lojas � quais voc礙 tem acesso
+TOGGLE_ACCESS_OFF: Agora voc礙 pode trocar em lojas � quais voc礙 tem acesso

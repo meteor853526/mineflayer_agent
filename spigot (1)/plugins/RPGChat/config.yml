@@ -1,0 +1,45 @@
+# #RPGChat by SirZontax - Version 1.11.1
+Options:
+  Normal:
+    Color: '&f'
+    Symbol: ''
+    Sound:
+      Name: UI_BUTTON_CLICK
+      Volume: 1.0
+      Pitch: 1.0
+  Whispered:
+    Color: '&f&o'
+    Symbol: '#'
+    Range: 5.0
+    Sound:
+      Name: UI_BUTTON_CLICK
+      Volume: 1.0
+      Pitch: 1.0
+  Chat:
+    HideBaseChat: true
+    HideWhisperedBaseChat: true
+    PlaceholderAPI: false
+    Duration: 5
+    Height: -2.0
+    MaxLength: -1
+    CustomPrefixes: false
+    ChannelBeta: false
+    Prefixes:
+    - 'Admin|&cAdmin&7: '
+    - 'Mod|&1Mod&7: '
+    - 'Player|&7Player: '
+    Channels:
+    - admin|10|&c
+    - normal|-1|&f
+    Worlds:
+    - world
+    - world_nether
+    - world_the_end
+    Behavior:
+      Filter:
+        CensorSymbol: '*'
+        BadWords:
+        - bad
+        - words
+      Cooldown: 0
+      AntiRepeat: true

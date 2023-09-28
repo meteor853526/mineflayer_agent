@@ -1,0 +1,97 @@
+# Citizens NPC Storage
+
+
+last-created-npc-id: 9
+npc:
+  '8':
+    metadata:
+      cached-skin-uuid: 457b7d2c-258f-4a1b-9243-78835e4f1e23
+      cached-skin-uuid-name: knight
+    name: Guild
+    uuid: cbaaa83a-2aac-4add-8244-11a49eb0d8be
+    traits:
+      type: PLAYER
+      location:
+        bodyYaw: -100.355965
+        world: world
+        x: '2246.396'
+        y: '63.0'
+        z: '-2925.4795'
+        yaw: '-100.356'
+        pitch: '0.0'
+      lookclose:
+        range: '10.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: false
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      skintrait:
+        fetchDefaultSkin: true
+        signature: kCmxGX6qX8sofvnYEUHzC1RcHClTgFaHpKVT95net9G52xiaE+rlZwi+4so+34KzMKoJeubKYs7OhcwuP6zVnsRgyE4Yd7FWrQqm5w6GgKqV0pCn9ch7MIs/TpSkAbZuv8/BaLLPW7NzG4mwafu2xmDVOJTTXYXaSt6nY17I0qT3yIFStcfMIVRx6bEeYA8D657pwEdmOHdtzeUNkFlBwOyZ7Ykb9yqNb5/Bjmhq5eyLawiyQFjgE6VW3mlHAPFzQxaDc0n3YFzDslECK5Tt5b3tdwNqaMNXqWwj6Q03CnfV6zjB84Iuf9K+1f7NMY3AsTKQA7vGRD6R1aTX/uy5KcislB18dVeB9WK84dOH4A7uNSCSAnvPOBk5E7G0dG9ifc96bXlkm9p8iQaegHTzayxj/R9xfew0NjMf8G6VrhX55cAuxEKq8gbpfo2dUd/Dv+RcCs3LgggA8PkiNhuKzCZdhMj19KRaubDcMv5lm9K1RICrYHhEDvPa6a4J+de9fDgb84fhnIGuuupN+ivPBNvoHP9zJUqY//6b+wYdt6n2q2oLgK76zS9t2J8vZa0XqXrl/MC5dWY+YO/cZk19OMoCrYhj4uSKBDgipRUO3Sr8BHtaoLMAH691ep8cKgwlyKwDoLrbBVzd530dhD9dW00ciyJP9vqZMgI1nkri6YQ=
+        skinName: Knight
+        textureRaw: ewogICJ0aW1lc3RhbXAiIDogMTY5MTA3MjkyMjcyNSwKICAicHJvZmlsZUlkIiA6ICI0NTdiN2QyYzI1OGY0YTFiOTI0Mzc4ODM1ZTRmMWUyMyIsCiAgInByb2ZpbGVOYW1lIiA6ICJLbmlnaHQiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTZmY2VlMGMwNzA4OTRhYjQxN2Q3YTI0OWU5ODI2NWQ4M2Y3MjIyN2Q3NWRiMDEyM2RhYjcxZDc4MTdiMzRkYSIKICAgIH0sCiAgICAiQ0FQRSIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjM0MGMwZTAzZGQyNGExMWIxNWE4YjMzYzJhN2U5ZTMyYWJiMjA1MWIyNDgxZDBiYTdkZWZkNjM1Y2E3YTkzMyIKICAgIH0KICB9Cn0=
+        updateSkins: false
+    traitnames: rotationtrait,scoreboardtrait,type,spawned,lookclose,mounttrait,skintrait,inventory,location
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '9':
+    metadata:
+      cached-skin-uuid: 457b7d2c-258f-4a1b-9243-78835e4f1e23
+      cached-skin-uuid-name: knight
+    name: diedie
+    uuid: 70af8817-c716-447e-89f5-693b406af891
+    traits:
+      type: PLAYER
+      location:
+        bodyYaw: 29.447006
+        world: world
+        x: '2260.0811'
+        y: '63.0'
+        z: '-2937.7026'
+        yaw: '29.447'
+        pitch: '0.0'
+      spawned: true
+      skintrait:
+        fetchDefaultSkin: true
+        signature: AwpYGFUztyZMJAVzPjC3J0HV+wnzw1ZjLY3kFfkQzSwlpFbyaw2q4EleVCKdrucuG6Q9IY/OuP+i66PAdxZC783pPATzgl6sXPxEqzqAaDFhgkwvM5rEKPw62yxkKxkwHgjnPxxgRL6ZHQiyDsBRTqvMzviFPpudoAdFFgNEZ6T9kBYwX+33bS2nFNsGLLdhcVfQ+rUnnj0YSzMaTHtca8nd50+k1m3qM0LBvII3bE/K4fwJt7XgQyEWnrT/iHT3YffJzECPS8ddXX8sopPXoccdT4mRnrzKg2v7RZbKNxIRkG80JG4LJO2p0ThFUUx9wehPVTaOtF7gAX/btnFnZmBcJu9B/gJXMU5CKMjSgR1oc11tfrJ4hNcjpmfMR5dMYvhpi+67nm2C7wqUMBYOLwgHF0HORxEwJLqKP9jYi1tnBrnDlTkKSvKlRqq3SfT6KxK2OP6drroiSEC8UQLisZ9Hh8F68prz9V61tgVbIXHJ6ZijPJZAcbtfEkeJy2YN7Q0EQtZIyk38qOC3ufDcAy2k+qvPEMgmVdI88gkUD3vjlruZySlGExJj/+8TWcNjh6v1QfMo5/UFBaxPVDxbV4uNskpkTLh+Scv0mDRPzgzN1BfaCGEplprJchmwaECix7oC2/8ZbHVv/C8qoLycK8ZqknM7CT1uyZlvpnAJo5c=
+        skinName: Knight
+        textureRaw: ewogICJ0aW1lc3RhbXAiIDogMTY5MTUxMjgxMTkzNiwKICAicHJvZmlsZUlkIiA6ICI0NTdiN2QyYzI1OGY0YTFiOTI0Mzc4ODM1ZTRmMWUyMyIsCiAgInByb2ZpbGVOYW1lIiA6ICJLbmlnaHQiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTZmY2VlMGMwNzA4OTRhYjQxN2Q3YTI0OWU5ODI2NWQ4M2Y3MjIyN2Q3NWRiMDEyM2RhYjcxZDc4MTdiMzRkYSIKICAgIH0sCiAgICAiQ0FQRSIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjM0MGMwZTAzZGQyNGExMWIxNWE4YjMzYzJhN2U5ZTMyYWJiMjA1MWIyNDgxZDBiYTdkZWZkNjM1Y2E3YTkzMyIKICAgIH0KICB9Cn0=
+        updateSkins: false
+      lookclose:
+        range: '10.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: false
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+    traitnames: rotationtrait,scoreboardtrait,type,lookclose,spawned,mounttrait,skintrait,inventory,location
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false

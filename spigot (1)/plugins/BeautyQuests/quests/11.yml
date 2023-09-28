@@ -1,0 +1,16 @@
+starterNPC: 4
+name: 9+595
+repeatable: true
+manager:
+  branches:
+    '0':
+      stages:
+        '0':
+          npcID: 4
+          items:
+          - ==: org.bukkit.inventory.ItemStack
+            v: 2586
+            type: BIRCH_LOG
+          stageType: ITEMS
+      endingStages: {}
+id: 11

@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 127.0.0.1
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1694901161891
+  login: 1694899831093
+money: '471.0'
+last-account-name: imlililili
+logoutlocation:
+  world: 587d79fa-dda4-49ff-965f-58440731b6d2
+  world-name: world
+  x: 2234.7873638415017
+  y: 66.75178390334713
+  z: -2914.7768722344226
+  yaw: -116.85681915283203
+  pitch: 30.060972213745117
+lastlocation:
+  world: 587d79fa-dda4-49ff-965f-58440731b6d2
+  world-name: world
+  x: 2224.5071340116015
+  y: 63.0
+  z: -2876.627345969321
+  yaw: 174.5967559814453
+  pitch: 32.400638580322266

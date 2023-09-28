@@ -1,0 +1,90 @@
+prefix: '&a[Aff瓣r] &r'
+shopinfo: |-
+  &aAff瓣r-information:
+  &f�are: &7%owner
+  &fLager: &7%stock
+  &fArtikel: &7%item
+shopinfo_buy: '&fK繹p &7%amount &ff繹r &7%price'
+shopinfo_sell: '&fS瓣lj &7%amount &ff繹r &7%price'
+iteminfo: '&aArtikel-information: &r'
+iteminfo_fullname: '&fFullt Namn: &7%item'
+iteminfo_shopname: '&fAff瓣r-skylt: &7%item'
+iteminfo_repaircost: '&fLagnings-kostnad: &7%cost'
+iteminfo_book: |-
+  &fBokens Titel: &7%title
+  &fBokens F繹rfattare: &7%author
+  &fBokens Sidor: &7%pages
+iteminfo_book_generation: '&fBok-generation: &7%generation'
+iteminfo_lore: |-
+  &fBeskrivning:
+  &r%lore
+METRICS: |-
+  &a[Aff瓣r] &fMetrics:
+  &fKonton: &7%accounts
+  &fGenomsnittlig transaktion: &7%totalTransactions &f(k繹p: &7%buyTransactions &fs瓣lj: &7%sellTransactions&f)
+  &fGenomsnittliga artiklar byteshandlade: &7%totalItems &f(k繹pt: &7%boughtItems &fs疇lt: &7%soldItems&f)
+ACCESS_DENIED: Du har inte beh繹righet att komma 疇t butikens kista!
+TRADE_DENIED: Du har inte tillst疇nd att byteshandla med denna aff瓣r!
+TRADE_DENIED_ACCESS_PERMS: Du kan inte byteshandla med butiker som du har tillg疇ng
+  till!
+TRADE_DENIED_CREATIVE_MODE: Du kan inte byteshandla med butiker medan du 瓣r i kreativt
+  l瓣ge!
+NOT_ENOUGH_MONEY: Du har inte r疇d!
+NOT_ENOUGH_MONEY_SHOP: Aff瓣rs瓣garen har inte tillr瓣ckligt med pengar!
+CLIENT_DEPOSIT_FAILED: Pengarna kunde inte s瓣ttas in p疇 ditt konto!
+SHOP_DEPOSIT_FAILED: Pengarna kunde inte s瓣ttas in hos 瓣garen!
+NO_ECONOMY_ACCOUNT: Aff瓣rs瓣garen har inget bankkonto!
+NO_BUYING_HERE: Du kan inte k繹pa h瓣r!
+NO_SELLING_HERE: Du kan inte s瓣lja h瓣r!
+NOT_ENOUGH_SPACE_IN_INVENTORY: Du har inte tillr瓣ckligt med plats i ditt personliga
+  f繹rr疇d!
+NOT_ENOUGH_SPACE_IN_CHEST: Det finns inte tillr瓣ckligt med utrymme i kistan!
+NOT_ENOUGH_ITEMS_TO_SELL: Du har inte tillr瓣ckligt med f繹rem疇l f繹r att s瓣lja!
+NOT_ENOUGH_SPACE_IN_YOUR_SHOP: |-
+  [%price %item&7 aff瓣ren 瓣r full!](&f%seller&7 f繹rs繹kte att s瓣lja
+  &7V瓣rld: &f%world
+  &7Exakta koordinater: &f%x/%y/%z)
+NOT_ENOUGH_STOCK: Denna aff瓣r har slut p疇 lager.
+NOT_ENOUGH_STOCK_IN_YOUR_SHOP: |-
+  [%price %item&7 aff瓣rens lager 瓣r slut!](&f%buyer&7 f繹rs繹kte k繹pa
+  &7V瓣rld: &f%world
+  &7Exakta koordinater: &f%x/%y/%z)
+YOU_BOUGHT_FROM_SHOP: Du k繹pte %item fr疇n %owner f繹r %price.
+SOMEBODY_BOUGHT_FROM_YOUR_SHOP: |-
+  [%buyer k繹pte %item f繹r %price.](&7V瓣rld: &f%world
+  &7Exakta koordinater: &f%x/%y/%z)
+YOU_SOLD_TO_SHOP: Du s疇lde %item till %buyer f繹r %price.
+SOMEBODY_SOLD_TO_YOUR_SHOP: |-
+  [%seller s疇lde %item f繹r %price.](&7V瓣rld: &f%world
+  &7Exakta koordinater: &f%x/%y/%z)
+YOU_CANNOT_CREATE_SHOP: Du kan inte skapa denna typ av aff瓣r!
+NO_CHEST_DETECTED: Kunde inte hitta en kista!
+INVALID_SHOP_DETECTED: Aff瓣ren kan inte anv瓣ndas!
+INVALID_SHOP_PRICE: Aff瓣ren har ett ogiltigt pris!
+INVALID_SHOP_QUANTITY: Aff瓣ren har ett ogiltigt antal!
+CANNOT_ACCESS_THE_CHEST: Du har inte beh繹righet att komma 疇t denna kista!
+SELL_PRICE_HIGHER_THAN_BUY_PRICE: Sell price is above the buy price!
+SELL_PRICE_ABOVE_MAX: Sell price %price is above maximum %maxprice!
+SELL_PRICE_BELOW_MIN: Sell price %price is below minimum %minprice!
+BUY_PRICE_ABOVE_MAX: Buy price %price is above maximum %maxprice!
+BUY_PRICE_BELOW_MIN: Buy price %price is below minimum %minprice!
+CLICK_TO_AUTOFILL_ITEM: Klicka p疇 skylten med det f繹rem疇l som denna aff瓣r kommer s瓣lja/k繹pa!
+NO_ITEM_IN_HAND: Du har inte ett f繹rem疇l i handen f繹r att autofylla!
+PROTECTED_SHOP: Aff瓣ren lyckades bli skyddad med LWC!
+PROTECTED_SHOP_SIGN: Aff瓣rsskylten lyckades bli skyddad med LWC!
+SHOP_CREATED: Aff瓣ren har skapats!
+SHOP_FEE_PAID: Du har blivit avdragen %amount
+SHOP_REFUNDED: Du har 疇terbetalats %amount.
+ITEM_GIVEN: Gav %item till %player.
+RESTRICTED_SIGN_CREATED: Skylt skapad!
+PLAYER_NOT_FOUND: Spelaren hittades inte!
+NO_PERMISSION: Du saknar r瓣ttigheter att g繹ra det d瓣r!
+INCORRECT_ITEM_ID: Du har angett ett ogiltigt f繹rem疇ls-id!
+INVALID_CLIENT_NAME: Ditt anv瓣ndarnamn 瓣r inte ett giltigt Minecraft-anv瓣ndarnamn!
+NOT_ENOUGH_PROTECTIONS: Kunde inte skapa ett skydd!
+NO_SHOP_FOUND: Ingen butik hittades.
+CANNOT_CREATE_SHOP_HERE: Du kan inte skapa en butik h瓣r!
+TOGGLE_MESSAGES_OFF: Du kommer inte l瓣ngre att f疇 meddelanden fr疇n dina butik(er).
+TOGGLE_MESSAGES_ON: Du kommer nu att f疇 meddelanden fr疇n dina butik(er).
+TOGGLE_ACCESS_ON: Du kan inte l瓣ngre byteshandla med butiker som du har tillg疇ng till
+TOGGLE_ACCESS_OFF: Du kan nu byteshandla med butiker som du har tillg疇ng till
