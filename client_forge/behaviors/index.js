@@ -15,6 +15,17 @@ const feedPig = require('./FeedPig');
 const craftStick = require('./CraftStick');
 const woodTransform = require('./WoodTransform');
 const idleforsometime = require('./idleforsometime')
+const sow = require('./Sow')
+const follow = require('./followPlayer')
+const craftBread = require('./craftBread')
+const sleep = require('./sleep')
+const wakeup = require('./wake_up')
+const go_guild = require('./go_guild')
+const go_farm = require('./go_farmland')
+const eat = require('./eat')
+const findfood = require('./findFood')
+const putToolBackToChest = require('./putToolBacktoChest')
+
 
 module.exports = {
     ...goHome,
@@ -34,4 +45,18 @@ module.exports = {
     ...craftStick,
     ...woodTransform,
     ...idleforsometime,
+    ...sow,
+    ...follow,
+    ...craftBread,
+    ...sleep,
+    ...wakeup,
+    ...go_guild,
+    ...go_farm,
+    ...eat,
+    ...findfood,
+    ...putToolBackToChest
+
+
+
+
 };

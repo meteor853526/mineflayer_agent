@@ -30,6 +30,7 @@ const {
   createMiningState,
   createFishingState,
   createHarvestState,
+  createSowState,
   createCutDownTreeState,
   createCraftTorchState,
   createCraftHoeState,
@@ -43,6 +44,15 @@ const {
   BehaviorGoHome,
   dropItem,
   idleforsometime,
+  craftBread,
+  BehaviorGotoGuild,
+  BehaviorGoFarmland,
+  sleepOnBed,
+  wakeUpFromBed,
+  BehaviorFollowPlayer,
+  eat,
+  findFood,
+  putToolBackToChest,
 } = require('./behaviors');
 // bot functions
 const {
@@ -187,6 +197,9 @@ class MCBot {
     const goHome = new BehaviorGoHome(this.bot, target);
     const DropItem = new dropItem(this.bot, target)
     const enemy_list = ["Hostile mobs"];
+    const getPlayer = new BehaviorGetClosestEntity(this.bot, target, function(entity) {
+      return this.bot.players[this.bot.current_talker] ? this.bot.players[this.bot.current_talker].entity : null;
+  });
     const kill = createKillingState(this.bot, target, enemy_list);
     const mining = createMiningState(this.bot, target);
     const moveOutMine = new BehaviorMoveTo(this.bot, target);
@@ -194,6 +207,17 @@ class MCBot {
     moveOutMine.movements.canDig = false;
     const fishing = createFishingState(this.bot, target);
     const harvest = createHarvestState(this.bot, target);
+    const sow = createSowState(this.bot,target);
+    const craftbread = new craftBread(this.bot,target);
+    const sleep = new sleepOnBed(this.bot,target);
+    const wakeup = new wakeUpFromBed(this.bot,target)
+    const go_guild = new BehaviorGotoGuild(this.bot,target);
+    const go_farmland = new BehaviorGoFarmland(this.bot,target);
+    const followPlayer = new BehaviorFollowPlayer(this.bot,target);//'Dingo_Kez'
+    const eat_bread = new eat(this.bot,target);
+    const findfoodfromchest = new findFood(this.bot,target);
+    const putTool = new putToolBackToChest(this.bot,target);
+    const lookAtPlayer = new BehaviorLookAtEntity(this.bot, this.bot.players['Dingo_Kez'] ? this.bot.players['Dingo_Kez'].entity : null);
     const cutDownTree = createCutDownTreeState(this.bot, target);
     const craftTorch = createCraftTorchState(this.bot, target);
     const craftHoe = createCraftHoeState(this.bot, target);
@@ -289,7 +313,7 @@ class MCBot {
       new BotStateTransition({   
         parent: idleState,
         child: harvest,
-        jobID: BOT_JOB_TYPE.HARVEST, // The job ID : 12
+        jobID: BOT_JOB_TYPE.HARVEST, // The job ID : 2
       }, this),
       new StateTransition({   
         parent: harvest,
@@ -306,6 +330,116 @@ class MCBot {
         parent: idlefortimes,
         child: idleState,
         shouldTransition: () => idlefortimes.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: sow,
+        jobID: BOT_JOB_TYPE.SOW, // The job ID : 19
+      }, this),
+      new StateTransition({   
+        parent: sow,
+        child: idleState,
+        shouldTransition: () => sow.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: craftbread,
+        jobID: BOT_JOB_TYPE.CRAFT_BREAD, // The job ID : 12
+      }, this),
+      new StateTransition({   
+        parent: craftbread,
+        child: idleState,
+        shouldTransition: () => craftbread.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: sleep,
+        jobID: BOT_JOB_TYPE.SLEEP, // The job ID : 5
+      }, this),
+      new StateTransition({   
+        parent: sleep,
+        child: idleState,
+        shouldTransition: () => sleep.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: wakeup,
+        jobID: BOT_JOB_TYPE.WAKEUP, // The job ID : 36
+      }, this),
+      new StateTransition({   
+        parent: wakeup,
+        child: idleState,
+        shouldTransition: () => wakeup.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: go_guild,
+        jobID: BOT_JOB_TYPE.GOGUILD, // The job ID : 10
+      }, this),
+      new StateTransition({   
+        parent: go_guild,
+        child: idleState,
+        shouldTransition: () => go_guild.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: go_farmland,
+        jobID: BOT_JOB_TYPE.GOFARM, // The job ID : 9
+      }, this),
+      new StateTransition({   
+        parent: go_farmland,
+        child: idleState,
+        shouldTransition: () => go_farmland.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: followPlayer,
+        jobID: BOT_JOB_TYPE.FOLLOWPLAYER, // The job ID : 0
+      }, this),
+      new StateTransition({   
+        parent: followPlayer,
+        child: idleState,
+        shouldTransition: () => followPlayer.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: eat_bread,
+        jobID: BOT_JOB_TYPE.EAT, // The job ID : 6
+      }, this),
+      new StateTransition({   
+        parent: eat_bread,
+        child: idleState,
+        shouldTransition: () => eat_bread.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: findfoodfromchest,
+        jobID: BOT_JOB_TYPE.FIND_FOOD, // The job ID : 8
+      }, this),
+      new StateTransition({   
+        parent: findfoodfromchest,
+        child: idleState,
+        shouldTransition: () => findfoodfromchest.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: putTool,
+        jobID: BOT_JOB_TYPE.PUT_TOOLS_BACK_TO_CHEST, // The job ID : 3
+      }, this),
+      new StateTransition({   
+        parent: putTool,
+        child: idleState,
+        shouldTransition: () => putTool.isFinished(),
         onTransition: () => this.JobCheck(true)
       }),
       new BotStateTransition({   
@@ -344,7 +478,7 @@ class MCBot {
       new BotStateTransition({   
         parent: idleState,
         child: craftPickaxe,
-        jobID: BOT_JOB_TYPE.CRAFT_PICKAXE, // The job ID : 27
+        jobID: BOT_JOB_TYPE.CRAFT_PICKEXE, // The job ID : 27
       }, this),
       new StateTransition({   
         parent: craftPickaxe,
@@ -352,17 +486,17 @@ class MCBot {
         shouldTransition: () => craftPickaxe.isFinished(),
         onTransition: () => this.JobCheck(true)
       }),
-      new BotStateTransition({   
-        parent: idleState,
-        child: burnCharcoal,
-        jobID: BOT_JOB_TYPE.BURN_CHARCOAL, // The job ID : 20
-      }, this),
-      new StateTransition({   
-        parent: burnCharcoal,
-        child: idleState,
-        shouldTransition: () => burnCharcoal.isFinished(),
-        onTransition: () => this.JobCheck(true)
-      }),
+      // new BotStateTransition({   
+      //   parent: idleState,
+      //   child: burnCharcoal,
+      //   jobID: BOT_JOB_TYPE.BURN_CHARCOAL, // The job ID : 20
+      // }, this),
+      // new StateTransition({   
+      //   parent: burnCharcoal,
+      //   child: idleState,
+      //   shouldTransition: () => burnCharcoal.isFinished(),
+      //   onTransition: () => this.JobCheck(true)
+      // }),
       new BotStateTransition({   
         parent: idleState,
         child: feedChicken,
@@ -388,7 +522,7 @@ class MCBot {
       new BotStateTransition({   
         parent: idleState,
         child: craftAxe,
-        jobID: BOT_JOB_TYPE.CRAFT_AXE, // The job ID : 33
+        jobID: BOT_JOB_TYPE.CRAFT_WOODAXE, // The job ID : 33
       }, this),
       new StateTransition({   
         parent: craftAxe,
@@ -426,6 +560,7 @@ class MCBot {
           this.job = "";
         }
       }),
+
 
     ];
   }
