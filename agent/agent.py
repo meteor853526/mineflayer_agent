@@ -1,6 +1,6 @@
 import openai
 import yaml
-from langchain.text_splitter import NLTKTextSplitter
+
 import json
 import threading
 import signal
@@ -22,7 +22,6 @@ from agent_state import state
 from agent_state import memoryType
 from CountdownTimer import CountdownTimer
 
-# �@�i����schedule�Npop
 openai.api_key = "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"
 sio = socketio.Client()
 sio.connect('http://localhost:3000')
@@ -105,7 +104,7 @@ class agent:
                     self.agent_state = state.schedule
                 elif self.JobQueue.empty():
                     self.agent_state = state.idle
-                print("send:"  + self.agent_state)
+                # print("send:"  + self.agent_state)
             if self.JobStateFinish == True and self.JobQueue.qsize() != 0:
                 id  = self.JobQueue.get()
                 if id == -1:
@@ -330,7 +329,7 @@ class agent:
         jsonFile = "uuid\\" + self.agent_name +'.json'
         with open(jsonFile, 'r') as file:
             jsonData = json.load(file)
-            find_money = "C:\\Users\\liyin\\Documents\\spigot (1)\\plugins\\Essentials\\userdata\\" + jsonData["uuid"]
+            find_money = "..\spigot (1)\\plugins\\Essentials\\userdata\\" + jsonData["uuid"]
             file.close
         with open(find_money, 'r') as file:
             dataYml = yaml.safe_load(file)

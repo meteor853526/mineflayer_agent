@@ -6,12 +6,11 @@ const {
 } = require("mineflayer-statemachine");
 const mineflayer_pathfinder = require("mineflayer-pathfinder");
 const minecraft_data = require("minecraft-data");
-const socketIOClient = require('socket.io-client');
-const serverURL = 'http://localhost:3000'; 
 const Socket_schedule = require("./socket_schedule")
 const Socket_chat = require("./socket_chat")
 const BaseBehavior = require("./base_behavior");
-
+const mcData = require('minecraft-data')('1.16.5')
+const { goals: { GoalLookAtBlock}} = require('mineflayer-pathfinder')
 class BehaviorGotoGuild extends BaseBehavior {
   constructor(bot, targets) {
     super(bot, 'BehaviorGotoGuild', targets);
@@ -135,19 +134,28 @@ function have_wheat_seeds(bot){
     return true
   return false
 }
+function JobCheck(check){
+  if (check === true){
+      return true
+  }else{
+      return false
+  }
+}
 function createGotoGuildState(bot, targets) {
   const enter = new BehaviorIdle();
   const exit = new BehaviorIdle();  
 
   const goGuild = new BehaviorGotoGuild(bot, targets);
   const findwheatseedsfromChest = new  FindwheatseedsfromChest(bot, targets);
-  const socket_schedule = new Socket_schedule(bot,targets,"go to Guild",bot.miss_items[bot.miss_items.length-1],"I don't find the wheat_seeds")
+  // const socket_schedule = new Socket_schedule(bot,targets,"go to Guild",bot.miss_items[bot.miss_items.length-1],"I don't find the wheat_seeds")
+  const socket_schedule = new Socket_schedule(bot,targets,"go to Guild","wheat_seeds","I don't find the wheat_seeds")
   // const socket_chat = new Socket_chat(bot,targets,"wheat_seeds","I don't have the wheat_seeds,so I cant feed chickens.")
 
   const transitions = [
     new StateTransition({
       parent: enter,
-      child: goGuild
+      child: goGuild,
+      shouldTransition: () => true,
     }),
     new StateTransition({
       parent: goGuild,

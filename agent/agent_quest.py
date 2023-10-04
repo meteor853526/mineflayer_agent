@@ -2,7 +2,7 @@
 
 import openai
 import yaml
-from langchain.text_splitter import NLTKTextSplitter
+
 import json
 import threading
 import signal
