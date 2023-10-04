@@ -29,7 +29,7 @@ class Socket_schedule extends BaseBehavior {
         wheather : getWheather(this.bot.isRaining),
         position:this.bot.pos,
         agentState:'schedule',
-        item_name:"????",
+        item_name:this.requestItem,
         prev_jobs: this.bot.prev_jobs,
         current_job: this.current_job,
       })
