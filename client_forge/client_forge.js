@@ -41,7 +41,9 @@ const {
   createFeedChickenState,
   createFeedPigState,
   createWoodTransformState,
-  BehaviorGoHome,
+  // BehaviorGoHome,
+  createGoHomeState,
+  createGotoGuildState,
   dropItem,
   idleforsometime,
   craftBread,
@@ -53,6 +55,7 @@ const {
   eat,
   findFood,
   putToolBackToChest,
+  BehaviorAskForHelp
 } = require('./behaviors');
 // bot functions
 const {
@@ -147,6 +150,8 @@ class MCBot {
       this.bot.craftingTable_position = new Vec3(-10501, 72, 12785);
       this.bot.Hoe_chest_position = new Vec3(-10566,71,12746);
       this.bot.diedie_home_door = new Vec3(-10505,71,12717);
+      this.bot.prev_jobs = [];
+      this.bot.miss_items = [];
       this.bot.pos = "outdoors";
       this.bot.agentState = "idle"
       this.bot.isRaining = true
@@ -194,7 +199,8 @@ class MCBot {
 
   createStateTransition(idleState) {
     var target = {};
-    const goHome = new BehaviorGoHome(this.bot, target);
+    // const goHome = new BehaviorGoHome(this.bot, target);
+    const goHome = new createGoHomeState(this.bot, target);
     const DropItem = new dropItem(this.bot, target)
     const enemy_list = ["Hostile mobs"];
     const getPlayer = new BehaviorGetClosestEntity(this.bot, target, function(entity) {
@@ -211,7 +217,8 @@ class MCBot {
     const craftbread = new craftBread(this.bot,target);
     const sleep = new sleepOnBed(this.bot,target);
     const wakeup = new wakeUpFromBed(this.bot,target)
-    const go_guild = new BehaviorGotoGuild(this.bot,target);
+    // const go_guild = new BehaviorGotoGuild(this.bot,target);
+    const go_guild = new createGotoGuildState(this.bot, target);
     const go_farmland = new BehaviorGoFarmland(this.bot,target);
     const followPlayer = new BehaviorFollowPlayer(this.bot,target);//'Dingo_Kez'
     const eat_bread = new eat(this.bot,target);
@@ -228,6 +235,7 @@ class MCBot {
     const feedPig = createFeedPigState(this.bot, target);
     const craftStick = createCraftStickState(this.bot, target);
     const woodTransform = createWoodTransformState(this.bot, target);
+    const askForHelp = new BehaviorAskForHelp(this.bot, target);
 
     return [
       new StateTransition({
@@ -550,6 +558,17 @@ class MCBot {
         parent: woodTransform,
         child: idleState,
         shouldTransition: () => woodTransform.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: askForHelp,
+        jobID: BOT_JOB_TYPE.ASKFORHELP, // The job ID : 40
+      }, this),
+      new StateTransition({   
+        parent: askForHelp,
+        child: idleState,
+        shouldTransition: () => askForHelp.isFinished(),
         onTransition: () => this.JobCheck(true)
       }),
       new StateTransition({

@@ -44,7 +44,7 @@ npc:
         skinName: Knight
         textureRaw: ewogICJ0aW1lc3RhbXAiIDogMTY5MTA3MjkyMjcyNSwKICAicHJvZmlsZUlkIiA6ICI0NTdiN2QyYzI1OGY0YTFiOTI0Mzc4ODM1ZTRmMWUyMyIsCiAgInByb2ZpbGVOYW1lIiA6ICJLbmlnaHQiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTZmY2VlMGMwNzA4OTRhYjQxN2Q3YTI0OWU5ODI2NWQ4M2Y3MjIyN2Q3NWRiMDEyM2RhYjcxZDc4MTdiMzRkYSIKICAgIH0sCiAgICAiQ0FQRSIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjM0MGMwZTAzZGQyNGExMWIxNWE4YjMzYzJhN2U5ZTMyYWJiMjA1MWIyNDgxZDBiYTdkZWZkNjM1Y2E3YTkzMyIKICAgIH0KICB9Cn0=
         updateSkins: false
-    traitnames: mounttrait,type,inventory,skintrait,spawned,rotationtrait,lookclose,scoreboardtrait,location
+    traitnames: scoreboardtrait,skintrait,spawned,rotationtrait,lookclose,inventory,type,mounttrait,location
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -90,7 +90,7 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
-    traitnames: mounttrait,type,inventory,skintrait,spawned,rotationtrait,lookclose,scoreboardtrait,location
+    traitnames: scoreboardtrait,skintrait,spawned,rotationtrait,lookclose,inventory,type,mounttrait,location
     navigator:
       speedmodifier: '1.0'
       avoidwater: false

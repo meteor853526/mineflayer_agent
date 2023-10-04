@@ -3,7 +3,7 @@
         "state": {
             "stone_hoe": false,
             "food": false,
-            "wheat_seeds": true
+            "wheat_seeds": false
         },
         "id": {
             "stone_hoe": 24,

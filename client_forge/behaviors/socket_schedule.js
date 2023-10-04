@@ -11,11 +11,12 @@ const getDistance = require('../getRealtime.js').getDistance;
 
 
 class Socket_schedule extends BaseBehavior {
-    constructor(bot, targets,requestItem,observation) {
+    constructor(bot, targets, current_job,requestItem,observation) {
         super(bot, 'update_requestList', targets);
         this.working = false
         this.requestItem = requestItem
         this.observation = observation
+        this.current_job = current_job
     }
   
     async onStateEntered() {
@@ -27,8 +28,10 @@ class Socket_schedule extends BaseBehavior {
         time : getRealtime(this.bot.time.timeOfDay),
         wheather : getWheather(this.bot.isRaining),
         position:this.bot.pos,
-        agentState:this.bot.agentState,
-        item_name:this.requestItem
+        agentState:'schedule',
+        item_name:this.requestItem,
+        prev_jobs: this.bot.prev_jobs,
+        current_job: this.current_job,
       })
       this.working = false
     }

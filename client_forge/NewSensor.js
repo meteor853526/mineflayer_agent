@@ -48,30 +48,30 @@ class Sensor {
         //         position:this.bot.pos,
         //     });
         // })
-        this.bot.on('playerCollect',async (collector,collected) => {
-            if(collector.username != this.bot.username)return 
-            var lastIndex = collected.metadata.length - 1
-            var item_info = collected.metadata[lastIndex]
-            var item_id = item_info['itemId']
+        // this.bot.on('playerCollect',async (collector,collected) => {
+        //     if(collector.username != this.bot.username)return 
+        //     var lastIndex = collected.metadata.length - 1
+        //     var item_info = collected.metadata[lastIndex]
+        //     var item_id = item_info['itemId']
 
-            if ( item_id in this.item_dict)  {
-                console.log("item get")
+        //     if ( item_id in this.item_dict)  {
+        //         console.log("item get")
 
-                socket.emit('message', {
-                    targetSocketId: 'TARGET_SOCKET_ID',
-                    message:"item_match",
-                    sender:'Dingo',
-                    match_item:true,
-                    receiverName: this.bot.username,
-                    time:getRealtime(this.bot.time.timeOfDay),
-                    wheather:getWheather(this.bot.isRaining),
-                    position:this.bot.pos,
-                    type:"observe",
-                    item_id : item_id,
-                    item_name : this.item_dict[item_id]
-                });
-            } 
-        })
+        //         socket.emit('message', {
+        //             targetSocketId: 'TARGET_SOCKET_ID',
+        //             message:"item_match",
+        //             sender:'Dingo',
+        //             match_item:true,
+        //             receiverName: this.bot.username,
+        //             time:getRealtime(this.bot.time.timeOfDay),
+        //             wheather:getWheather(this.bot.isRaining),
+        //             position:this.bot.pos,
+        //             type:"observe",
+        //             item_id : item_id,
+        //             item_name : this.item_dict[item_id]
+        //         });
+        //     } 
+        // })
         // this.bot.on('entitySwingArm',async (entity) => {
         //     console.log(entity)
         

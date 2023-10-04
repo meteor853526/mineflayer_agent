@@ -84,10 +84,6 @@ def message_diedie(data):
                     Diedie_instance.update_Job_queue(int(job))
                     Diedie_instance.agent_state = state.schedule
                     return
-            if data['message'].startswith('task:'):
-                data['message'] = Diedie_instance.backup(data)
-                sio.emit('agi', data)
-                return
             if data['receiverName'] == "diedie":
                 print('Received message from server:', data)
                 
@@ -123,7 +119,9 @@ def message_diedie(data):
                         data['receiverName'] = 'diedie'
                         sio.emit('agi',data)
                     case state.schedule:
-                        guild_instance.enable_requestState(data['receiverName'],data['item_name'])
+                        # guild_instance.enable_requestState(data['receiverName'],data['item_name'])
+                        data['message'] = Diedie_instance.backup(data)
+                        sio.emit('agi', data)
 
                         
                   

@@ -25,6 +25,7 @@ const go_farm = require('./go_farmland')
 const eat = require('./eat')
 const findfood = require('./findFood')
 const putToolBackToChest = require('./putToolBacktoChest')
+const askForHelp = require('./AskForHelp')
 
 
 module.exports = {
@@ -54,7 +55,8 @@ module.exports = {
     ...go_farm,
     ...eat,
     ...findfood,
-    ...putToolBackToChest
+    ...putToolBackToChest,
+    ...askForHelp,
 
 
 

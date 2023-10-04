@@ -24,7 +24,7 @@ from agent_state import state
 from agent_state import memoryType
 from CountdownTimer import CountdownTimer
 
-openai.api_key = "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"
+openai.api_key = "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"
 sio = socketio.Client()
 sio.connect('http://localhost:3000')
 

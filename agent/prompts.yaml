@@ -107,7 +107,8 @@ observation_action: |-
     (32 : craft torch),
     (33 : craft axe),
     (34 : craft stick),
-    (35 : wood transform).
+    (35 : wood transform),
+    (40 : ask someone for help).
 
   Based on your observation and your condition. You need choose one of above action to interact or you can choose multiple action to make a action flow.
 
@@ -185,7 +186,8 @@ schedule_action: |-
     (32 : craft torch),
     (33 : craft axe),
     (34 : craft stick),
-    (35 : wood transform).
+    (35 : wood transform),
+    (40 : ask someone for help).
 
   
   Based on your schedule "{current_schedule}" and your condition. You hacve to choose multiple action to make a action flow with array fromat.
@@ -256,7 +258,8 @@ external_thought: |-
     (32 : craft torch),
     (33 : craft axe),
     (34 : craft stick),
-    (35 : wood transform).
+    (35 : wood transform),
+    (40 : ask someone for help).
     
   
   Based on your internal_thought and your condition. You need choose one of above action to interact or you can choose multiple action to make a action flow with array fromat,
@@ -279,71 +282,6 @@ external_thought: |-
     (E.g., [-1] : sorry {sender} , I want to go home and sleep for now.).
   "
 
-backup_planning: |-
-  you are doing this task : {taskName}. However, you have no {taskItem} to finish your job. So, list three tasks which you want to do next, no need to stick to the task you cant finish.(e.g 1.<continuing the task>\n2.<new task>\n3.<doing nothing>)
-  You can choose actions randomly to interact:
-    (-1 : end this conversation),
-    (0 : following people),
-    (1 : go home),
-    (2 : harvest the crops),
-    (3 : put your tools back to chest),
-    (4 : collecting seeds and tools from chest),
-    (5 : go to sleep),
-    (6 : eat food),
-    (7 : take crops back to chest),
-    (8 : find food from chest),
-    (9 : go to farm),
-    (10 : go to Guild),
-    (11 : sell wheat),
-    (12 : making bread),
-    (13 : put sign on ground),
-    (14 : drop item from your body),
-    (15 : fishing),
-    (16 : mining),
-    (17 : feed chicken),
-    (18 : just talking and stand on ground),
-    (19 : pet the cat),
-    (20 : burn charcoal),
-    (21 : cut down tree),
-    (22 : wake up from bed),
-    (23 : kill),
-    (24 : have a rest),
-    (25 : look at {sender})
-    (27 : craft pickaxe),
-    (28 : feed pig),
-    (29 : craft hoe),
-    (31 : put back axe and wood),
-    (32 : craft torch),
-    (33 : craft axe),
-    (34 : craft stick),
-    (35 : wood transform).
-
-choosing_backup: |-
-  You live in a minecraft world,you directly observe or respond to real-time events.
-  Here is your condition:
-  {condition}
-
-  Here is your condition when you observe:
-
-    time : '{time}',
-    wheather : '{wheather}',
-    location : '{location}',
-    property : '{property}'.
-
-  Base on your condition and observation, you have to choose ONE option.
-  (ex. 2. Go back home and take a rest until I get enough energy to continue my work.)
-  Base on what you've chosen, give some response as like murmuring.
-  When replying, you must use a first-person tone.
-  (E.g., "Have a good day at work. I will continue farming and preparing wheat for sale tomorrow. Let's talk again soon! ".), <fill in>.
-
-  Combine the action flow and the word you reply to {sender}.
-
-  Follow the format (important !!!):
-    (E.g., [action flow] : "reply's words")
-    (E.g., [20,22,16] : Take a break and interact with fellow villagers, exchanging farming tips and techniques.),
-    (E.g., [3,1,8,6,20,21] : Head back home for lunch and enjoy a satisfying meal to replenish energy.),
-    (E.g., [9,4,2,7] : Continue harvesting crops, making sure to collect seeds and store them for future planting.).
-
 request_memory: |-
   The user said to you before:
   '{query}'
@@ -364,4 +302,85 @@ external_thought_memory: |-
 information_thought_memory: |-
   "{observation}"
 
+backup_planning: |-
+  You live in a minecraft world,you directly observe or respond to real-time events.
+  you are doing this task : {taskName}. However, you have no {taskItem} and haven't found the item at home or Guild or other players to finish your job.
+  Here is your condition:
+    1. go home and find '{miss_item}'
+    2. go Guild and find '{miss_item}'
+    3. ask someone for help to get '{miss_item}'
+    4. give up this task and do other task or nothing
+  You must choose ONE option only.
 
+  Here is your condition when you observe:
+    current_job: '{current_job}',
+    miss_item: '{miss_item}',
+    prev_jobs: '{prev_jobs}',
+    time : '{time}',
+    wheather : '{wheather}',
+    location : '{location}',
+    property : '{property}'.
+
+  Base on what you've chosen, give some response as like murmuring.
+  When replying, you must use a first-person tone.
+
+
+choosing_backup: |-
+  You live in a minecraft world,you directly observe or respond to real-time events.
+  
+  Here is your option you choose: 
+  '{condition}'
+
+  Here is your condition when you observe:
+    current_job: '{current_job}',
+    miss_item: '{miss_item}',
+    prev_jobs: '{prev_jobs}',
+    time : '{time}',
+    wheather : '{wheather}',
+    location : '{location}',
+    property : '{property}'.
+
+  Based on your observation and your condition.  You can take a action below to interact:
+    (-1 : end this conversation),
+    (0 : following people),
+    (1 : go home),
+    (2 : harvest the crops),
+    (3 : put your tools back to chest),
+    (4 : collecting seeds and hoe from chest),
+    (5 : go to sleep),
+    (6 : eat food),
+    (7 : take crops back to chest),
+    (8 : find food from chest),
+    (9 : go to farm),
+    (10 : go to Guild),
+    (11 : sell wheat),
+    (12 : making bread),
+    (13 : put sign on ground),
+    (14 : drop item from your body),
+    (15 : fishing),
+    (16 : mining),
+    (17 : feed chicken),
+    (18 : just talking and stand on ground),
+    (19 : pet the cat),
+    (20 : burn charcoal),
+    (21 : cut down tree),
+    (22 : wake up from bed),
+    (23 : kill),
+    (24 : have a rest),
+    (27 : craft pickaxe),
+    (28 : feed pig),
+    (29 : craft hoe),
+    (31 : put back axe and wood),
+    (32 : craft torch),
+    (33 : craft axe),
+    (34 : craft stick),
+    (35 : wood transform),
+    (40 : ask someone for help).
+
+  Based on your observation and your condition. You need choose one of above action to interact or you can choose multiple action to make a action flow.
+
+  You also can say something to respond the observation, When replying, you must use a first-person tone.
+  
+  Combine the action you want to take and the word you want ot say.
+  When replying, you must use a first-person tone and follow the format
+  (ex, [7] : I got so many wheat.),(ex, [19] : I felt tried),(ex,[19] : I saw a cute cat),(ex, [3,1] :I finish my work),(ex, [1,8,6] : I'm so hungry,I'll go home an eat launch).
