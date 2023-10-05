@@ -35,7 +35,7 @@ class Socket_schedule extends BaseBehavior {
       })
       this.working = false
     }
-    async isFinished() {
+    isFinished() {
       return !this.working;
     }
 }

@@ -142,6 +142,9 @@ function JobCheck(check){
   }
 }
 function have_wheat_seeds(bot){
+  if (bot.miss_items.length == 0){
+    return true
+  }
   if(bot.inventory.items().filter(item => item.name.includes("wheat_seeds"))[0])
     return true
   return false

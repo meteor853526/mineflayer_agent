@@ -11,36 +11,39 @@ const Socket_schedule = require("./socket_schedule")
 const Socket_chat = require("./socket_chat")
 const BaseBehavior = require("./base_behavior");
 const mcData = require('minecraft-data')('1.16.5')
-const { Movements, goals: { GoalLookAtBlock, GoalNear}} = require('mineflayer-pathfinder')
+const { Movements, goals: { GoalLookAtBlock, GoalNear, GoalFollow}} = require('mineflayer-pathfinder')
 class BehaviorGotoGuild extends BaseBehavior {
   constructor(bot, targets) {
     super(bot, 'BehaviorGotoGuild', targets);
     const mcData = minecraft_data(bot.version);
-    this.movements = new mineflayer_pathfinder.Movements(bot, mcData);
-    this.movements.canDig = false;
+    // this.movements = new mineflayer_pathfinder.Movements(bot, mcData);
+    // this.movements.canDig = false;
     this.working = true
   }
   async onStateEntered() {
     if(!this.canStart())
       return;
-    // this.working = true
+    this.working = true
     await this.sleep(2000)
-    var position = this.bot.guild_position
+    const position = this.bot.guild_position
     // const goal = new mineflayer_pathfinder.goals.GoalNear(position.x, position.y, position.z, 1);
     const defaultMove = new Movements(this.bot)
     defaultMove.canDig = false
-    // pathfinder.setGoal(goal);
     await this.bot.pathfinder.setMovements(defaultMove)
-    await this.bot.pathfinder.setGoal(new GoalNear(position.x, position.y, position.z, 1))
-    
-    // this.working = false
+    await this.bot.pathfinder.setGoal(new GoalLookAtBlock(position, this.bot.world))
+    // console.log(this.bot.players['Guild'].entity.position)
+    await this.sleep(7000)
+    this.working = false
   }
   async sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
+  // isFinished() {
+  //   const pathfinder = this.bot.pathfinder;
+  //   return !pathfinder.isMoving() && this.working;
+  // }
   isFinished() {
-    const pathfinder = this.bot.pathfinder;
-    return !pathfinder.isMoving()
+    return !this.working;
   }
 
   canStart() {
@@ -135,6 +138,9 @@ class FindwheatseedsfromChest extends BaseBehavior {
 }
 
 function have_wheat_seeds(bot){
+  if (bot.miss_items.length == 0){
+    return true
+  }
   if(bot.inventory.items().filter(item => item.name.includes("wheat_seeds"))[0])
     return true
   return false
@@ -168,7 +174,7 @@ function createGotoGuildState(bot, targets) {
     new StateTransition({
       parent: goGuild,
       child:  findwheatseedsfromChest,
-      shouldTransition: () => goGuild.isFinished() && JobCheck(goGuild.isFinished()) == true,
+      shouldTransition: () => goGuild.isFinished() && !have_wheat_seeds(bot) && JobCheck(goGuild.isFinished()) == true,
       onTransition: () => {
         bot.chat("find item in Guild")
       }
@@ -188,9 +194,22 @@ function createGotoGuildState(bot, targets) {
       }
     }),
     new StateTransition({
+      parent: goGuild,
+      child: exit,
+      shouldTransition: () => goGuild.isFinished() && have_wheat_seeds(bot) && JobCheck(goGuild.isFinished()) == true,
+      onTransition: () =>{
+        console.log(goGuild.isFinished())
+        console.log(JobCheck(goGuild.isFinished()))
+      }
+    }),
+    new StateTransition({
       parent: socket_schedule,
       child: exit,
       shouldTransition: () => socket_schedule.isFinished() && JobCheck(socket_schedule.isFinished()) == true,
+      onTransition: () => {
+        console.log(socket_schedule.isFinished());
+        console.log(JobCheck(socket_schedule.isFinished()))
+      }
     })
   ]
   return new NestedStateMachine(transitions, enter, exit);
