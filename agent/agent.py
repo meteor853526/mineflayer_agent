@@ -549,3 +549,25 @@ class agent:
         id, response = response.split(':')
         self.putIntoJobQueue(array,state.schedule)
         return str(response)
+    
+    def askforhelp(self, data):
+        jsonFile = "uuid\\" + self.agent_name +'.json'
+        with open(jsonFile, 'r') as file:
+            jsonData = json.load(file)
+            find_money = "..\\spigot (1)\\plugins\\Essentials\\userdata\\" + jsonData["uuid"]
+            file.close
+        with open(find_money, 'r') as file:
+            dataYml = yaml.safe_load(file)
+            self.property = dataYml['money']
+            jsonData['property'] = dataYml['money']
+            file.close
+        
+        askforhelp = self.prompt_paragraph["askforhelp"]
+        askforhelp = askforhelp.replace("{internal_thought}", data['message']).replace("{time}", data['time']).replace("{wheather}", data['wheather']).replace("{location}",  data['position']).replace("{property}", self.property).replace("{sender}", data['sender'])
+        response = self.generate(askforhelp)
+        print(askforhelp)
+        self.updateMemory(askforhelp,memoryType.THOUGHT)
+        self.updateDailyMemory('('+data['time']+') : \n'+response,'chat')
+        print(response)
+        self.lastMessage = response
+        return response

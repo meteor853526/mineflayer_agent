@@ -324,7 +324,6 @@ backup_planning: |-
   Base on what you've chosen, give some response as like murmuring.
   When replying, you must use a first-person tone.
 
-
 choosing_backup: |-
   You live in a minecraft world,you directly observe or respond to real-time events.
   
@@ -384,3 +383,18 @@ choosing_backup: |-
   Combine the action you want to take and the word you want ot say.
   When replying, you must use a first-person tone and follow the format
   (ex, [7] : I got so many wheat.),(ex, [19] : I felt tried),(ex,[19] : I saw a cute cat),(ex, [3,1] :I finish my work),(ex, [1,8,6] : I'm so hungry,I'll go home an eat launch).
+
+askforhelp: |-
+  This is your internal thought and it should be considered first priority:
+  {internal_thought}. 
+
+  Here is your condition when you thought:
+
+  time : '{time}',
+  wheather : '{wheather}',
+  location : '{location}',
+  property : '{property}'.
+
+  Based on your internal thought your condition,you need to reply to {sender}.
+  When replying, you must use a first-person tone.
+  (E.g., "Have a good day at work. I will continue farming and preparing wheat for sale tomorrow. Let's talk again soon! ".), <fill in>.  

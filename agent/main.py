@@ -59,6 +59,8 @@ def message_diedie(data):
             data['sender'] = 'Dingo'
         elif data['sender'] == "imlililili":
             data['sender'] = 'Lili'
+        elif data['sender'] == "platpustian":
+            data['sender'] = 'platpustian'
 
     if 'message' in data:
         if data['message'] == 'skipjob':
@@ -122,6 +124,10 @@ def message_diedie(data):
                         # guild_instance.enable_requestState(data['receiverName'],data['item_name'])
                         data['message'] = Diedie_instance.backup(data)
                         sio.emit('agi', data)
+                    case state.ask_for_help:
+                        data['message'] = Diedie_instance.askforhelp(data)
+                        sio.emit('agi', data)
+                        
 
                         
                   

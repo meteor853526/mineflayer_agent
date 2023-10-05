@@ -3,6 +3,7 @@ class state():
     chat = 'chat'
     schedule = 'schedule'
     interrupt_action = 'interrupt'
+    ask_for_help = 'askforhelp'
     idle = 'idle'
 class memoryType():
     INFORMATION = "information"
