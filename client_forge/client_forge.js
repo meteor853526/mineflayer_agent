@@ -150,6 +150,7 @@ class MCBot {
       this.bot.craftingTable_position = new Vec3(-10501, 72, 12785);
       this.bot.Hoe_chest_position = new Vec3(-10566,71,12746);
       this.bot.diedie_home_door = new Vec3(-10505,71,12717);
+      this.bot.guild_position = new Vec3(-10494, 71, 12750);
       this.bot.prev_jobs = [];
       this.bot.miss_items = [];
       this.bot.pos = "outdoors";

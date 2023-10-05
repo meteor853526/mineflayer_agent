@@ -2,7 +2,8 @@ const {
   StateTransition,
   NestedStateMachine,
   BehaviorIdle,
-  BehaviorMoveTo
+  BehaviorMoveTo,
+  sleep
 } = require("mineflayer-statemachine");
 const mineflayer_pathfinder = require("mineflayer-pathfinder");
 const minecraft_data = require("minecraft-data");
@@ -10,7 +11,7 @@ const Socket_schedule = require("./socket_schedule")
 const Socket_chat = require("./socket_chat")
 const BaseBehavior = require("./base_behavior");
 const mcData = require('minecraft-data')('1.16.5')
-const { goals: { GoalLookAtBlock}} = require('mineflayer-pathfinder')
+const { Movements, goals: { GoalLookAtBlock, GoalNear}} = require('mineflayer-pathfinder')
 class BehaviorGotoGuild extends BaseBehavior {
   constructor(bot, targets) {
     super(bot, 'BehaviorGotoGuild', targets);
@@ -22,20 +23,24 @@ class BehaviorGotoGuild extends BaseBehavior {
   async onStateEntered() {
     if(!this.canStart())
       return;
-    const pathfinder = this.bot.pathfinder;
-
+    // this.working = true
+    await this.sleep(2000)
     var position = this.bot.guild_position
-    const goal = new mineflayer_pathfinder.goals.GoalNear(position.x, position.y, position.z, 1);
+    // const goal = new mineflayer_pathfinder.goals.GoalNear(position.x, position.y, position.z, 1);
+    const defaultMove = new Movements(this.bot)
+    defaultMove.canDig = false
+    // pathfinder.setGoal(goal);
+    await this.bot.pathfinder.setMovements(defaultMove)
+    await this.bot.pathfinder.setGoal(new GoalNear(position.x, position.y, position.z, 1))
     
-    pathfinder.setMovements(this.movements);
-    pathfinder.setGoal(goal);
-
-    this.working = false
+    // this.working = false
   }
-
+  async sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
   isFinished() {
     const pathfinder = this.bot.pathfinder;
-    return !pathfinder.isMoving() && this.working;
+    return !pathfinder.isMoving()
   }
 
   canStart() {
@@ -156,11 +161,17 @@ function createGotoGuildState(bot, targets) {
       parent: enter,
       child: goGuild,
       shouldTransition: () => true,
+      onTransition: () => {
+        bot.chat("go Guild")
+      }
     }),
     new StateTransition({
       parent: goGuild,
       child:  findwheatseedsfromChest,
       shouldTransition: () => goGuild.isFinished() && JobCheck(goGuild.isFinished()) == true,
+      onTransition: () => {
+        bot.chat("find item in Guild")
+      }
     }),
     new StateTransition({
       parent: findwheatseedsfromChest,

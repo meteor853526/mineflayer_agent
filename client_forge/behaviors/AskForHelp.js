@@ -41,6 +41,7 @@ const {
           await this.bot.pathfinder.setGoal(new GoalNear(value.position.x, value.position.y, value.position.z, 1))
         }
       } 
+      await this.sleep(2000)
       // 從附近的所有生物篩選是玩家或NPC
       // 原先做法  1. 可以邊走邊找
       //          2. 只找固定範圍內的生物
