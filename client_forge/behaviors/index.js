@@ -1,4 +1,10 @@
 const goHome = require('./go_home');
+const goFarm = require('./go_farm');
+const goLoggingCamp = require('./go_loggingCamp');
+const goSmeltingPlant = require('./go_smeltingPlant');
+const goPoultryFarm= require('./go_poultryFarm');
+const goPigpen = require('./go_pigpen');
+const goPond = require('./go_pond');
 const killing = require('./killing');
 const mining = require('./mining');
 const fishing = require('./fishing');
@@ -30,6 +36,12 @@ const askForHelp = require('./AskForHelp')
 
 module.exports = {
     ...goHome,
+    ...goFarm,
+    ...goLoggingCamp,
+    ...goSmeltingPlant,
+    ...goPoultryFarm,
+    ...goPigpen,
+    ...goPond,
     ...killing,
     ...mining,
     ...fishing,

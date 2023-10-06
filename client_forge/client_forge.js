@@ -55,7 +55,13 @@ const {
   eat,
   findFood,
   putToolBackToChest,
-  BehaviorAskForHelp
+  BehaviorAskForHelp,
+  BehaviorGoFarm,
+  BehaviorGoLoggingCamp,
+  BehaviorGoSmeltingPlant,
+  BehaviorGoPoultryFarm,
+  BehaviorGoPigpen,
+  BehaviorGoPond,
 } = require('./behaviors');
 // bot functions
 const {
@@ -151,6 +157,7 @@ class MCBot {
       this.bot.Hoe_chest_position = new Vec3(-10566,71,12746);
       this.bot.diedie_home_door = new Vec3(-10505,71,12717);
       this.bot.guild_position = new Vec3(-10494, 71, 12750);
+      this.bot.Pond_position = new Vec3(-10545,71.5,12678);
       this.bot.prev_jobs = [];
       this.bot.miss_items = [];
       this.bot.pos = "outdoors";
@@ -202,6 +209,12 @@ class MCBot {
     var target = {};
     // const goHome = new BehaviorGoHome(this.bot, target);
     const goHome = new createGoHomeState(this.bot, target);
+    const goFarm = new BehaviorGoFarm(this.bot, target);
+    const goSmeltingPlant = new BehaviorGoSmeltingPlant(this.bot, target);
+    const goLoggingCamp = new BehaviorGoLoggingCamp(this.bot, target);
+    const goPoultryFarm = new BehaviorGoPoultryFarm(this.bot, target);
+    const goPigpen = new BehaviorGoPigpen(this.bot, target);
+    const goPond = new BehaviorGoPond(this.bot, target);
     const DropItem = new dropItem(this.bot, target)
     const enemy_list = ["Hostile mobs"];
     const getPlayer = new BehaviorGetClosestEntity(this.bot, target, function(entity) {
@@ -579,6 +592,72 @@ class MCBot {
         onTransition: () => {
           this.job = "";
         }
+      }),
+      new BotStateTransition({
+        parent: idleState, // The state to move from
+        child: goFarm, // The state to move to
+        jobID: BOT_JOB_TYPE.GOFARM, // The job ID : 9
+      }, this),
+      new StateTransition({
+        parent: goFarm, // The state to move from
+        child: idleState, // The state to move to
+        shouldTransition: () => goFarm.isFinished(), // When this should happen
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({
+        parent: idleState, // The state to move from
+        child: goLoggingCamp, // The state to move to
+        jobID: BOT_JOB_TYPE.GOLOGGINGCAMP, // The job ID : 26
+      }, this),
+      new StateTransition({
+        parent: goLoggingCamp, // The state to move from
+        child: idleState, // The state to move to
+        shouldTransition: () => goLoggingCamp.isFinished(), // When this should happen
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({
+        parent: idleState, // The state to move from
+        child: goSmeltingPlant, // The state to move to
+        jobID: BOT_JOB_TYPE.GOSMELTINGPLANT, // The job ID : 36
+      }, this),
+      new StateTransition({
+        parent: goSmeltingPlant, // The state to move from
+        child: idleState, // The state to move to
+        shouldTransition: () => goSmeltingPlant.isFinished(), // When this should happen
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({
+        parent: idleState, // The state to move from
+        child: goPoultryFarm, // The state to move to
+        jobID: BOT_JOB_TYPE.GOPOULTRYFARM, // The job ID : 37
+      }, this),
+      new StateTransition({
+        parent: goPoultryFarm, // The state to move from
+        child: idleState, // The state to move to
+        shouldTransition: () => goPoultryFarm.isFinished(), // When this should happen
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({
+        parent: idleState, // The state to move from
+        child: goPigpen, // The state to move to
+        jobID: BOT_JOB_TYPE.GOPIGPEN, // The job ID : 38
+      }, this),
+      new StateTransition({
+        parent: goPigpen, // The state to move from
+        child: idleState, // The state to move to
+        shouldTransition: () => goPigpen.isFinished(), // When this should happen
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({
+        parent: idleState, // The state to move from
+        child: goPond, // The state to move to
+        jobID: BOT_JOB_TYPE.GOPOND // The job ID : 39
+      }, this),
+      new StateTransition({
+        parent: goPond, // The state to move from
+        child: idleState, // The state to move to
+        shouldTransition: () => goPond.isFinished(), // When this should happen
+        onTransition: () => this.JobCheck(true)
       }),
 
 
