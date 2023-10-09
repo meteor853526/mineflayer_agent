@@ -16,17 +16,17 @@ timestamps:
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1696447242182
-  login: 1696447227316
-money: '100000'
+  logout: 1696879360920
+  login: 1696879350795
+money: '99990.0'
 last-account-name: Jeff
 logoutlocation:
-  world: 9dac70ed-8467-49ef-8617-08d872900ab9
+  world: ad51f2e8-f8f1-4fcc-bc7e-fb82610a1e46
   world-name: world
-  x: -10509.5
+  x: -10514.5
   y: 71.0
-  z: 12764.5
-  yaw: 0.0
+  z: 12744.5
+  yaw: 5.682321548461914
   pitch: 0.0
 lastlocation:
   world: 9dac70ed-8467-49ef-8617-08d872900ab9

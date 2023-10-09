@@ -23,6 +23,12 @@
     },
     "done": true
   },
+  "minecraft:husbandry/bred_all_animals": {
+    "criteria": {
+      "minecraft:chicken": "2023-10-10 03:17:02 +0800"
+    },
+    "done": false
+  },
   "minecraft:recipes/redstone/spruce_button": {
     "criteria": {
       "has_planks": "2023-09-27 01:39:31 +0800"
@@ -38,6 +44,12 @@
   "minecraft:recipes/redstone/spruce_door": {
     "criteria": {
       "has_planks": "2023-09-27 01:39:31 +0800"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/breed_an_animal": {
+    "criteria": {
+      "bred": "2023-10-10 03:17:02 +0800"
     },
     "done": true
   },

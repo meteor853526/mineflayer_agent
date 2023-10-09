@@ -198,7 +198,7 @@ class putWheatBackToChest extends BaseBehavior {
       if(await this.bot.inventory.findInventoryItem(wheat_seeds)){
         console.log("????")
         var wheat_seeds_number = await this.bot.inventory.findInventoryItem(wheat_seeds).count
-        await this.bot.pathfinder.goto(new GoalLookAtBlock(wheatSeed_chest_position, this.bot.world));
+        await this.bot.pathfinder.setGoal(new GoalLookAtBlock(wheatSeed_chest_position, this.bot.world));
         await sleepwait(2000)
         var chest_window = await this.bot.openChest(this.bot.blockAt(wheatSeed_chest_position));
         await sleepwait(2000)
@@ -342,6 +342,7 @@ function createFeedChickenState(bot, targets) {
           onTransition: () => {
             bot.chat("feedChicken over");
             console.log("feedChicken over")
+            bot.prev_jobs.push("feedChicken Over")
           }
       }),
       new StateTransition({
@@ -360,39 +361,15 @@ function createFeedChickenState(bot, targets) {
         shouldTransition: () => find_wheat_seeds.isFinished() && have_wheat_seeds(bot) && JobCheck(find_wheat_seeds.isFinished()) == true,
         onTransition: () => {
           bot.chat("I found wheat_seeds in chest");
+          bot.prev_jobs.push("find_wheat_seeds for feed chicken completed")
         }
       }),
-      // new StateTransition({
-      //     parent: find_wheat_seeds,
-      //     child: goHome,
-      //     shouldTransition: () => find_wheat_seeds.isFinished() && JobCheck(find_wheat_seeds.isFinished()) == true,
-      //     onTransition: () =>{
-      //       bot.chat("I've to go home find items.");
-      //     }
-      // }),
-      // new StateTransition({
-      //   parent: goHome,
-      //   child: goGuild,
-      //   shouldTransition: () =>goHome.isFinished() && !have_wheat_seeds(bot) && bot.agentState == 'schedule' && JobCheck(goHome.isFinished()) == true,
-      //   onTransition: () => {
-      //     bot.chat("I didn't found wheat_seeds at HOME");
-      //     console.log("home!!!")
-      //   }
-      // }),
-      // new StateTransition({
-      //   parent: goHome,
-      //   child: feedChicken,
-      //   shouldTransition: () =>goHome.isFinished() && have_wheat_seeds(bot) && bot.agentState == 'schedule' && JobCheck(goHome.isFinished()) == true,
-      //   onTransition: () => {
-      //     bot.chat("I found wheat_seeds at HOME");
-      //   }
-      // }),
       new StateTransition({
         parent: find_wheat_seeds,
         child: socket_schedule,
         shouldTransition: () =>find_wheat_seeds.isFinished() && !have_wheat_seeds(bot) && bot.agentState == 'schedule' && JobCheck(find_wheat_seeds.isFinished()) == true,
         onTransition: () => {
-          bot.prev_jobs.push("find_wheat_seeds")
+          bot.prev_jobs.push("find_wheat_seeds for feed chicken uncompleted")
           bot.miss_items.push("wheat_seeds")
           bot.chat("I didn't found wheat_seeds, and i also helpless now.");
         }

@@ -162,7 +162,7 @@ class MCBot {
       this.bot.diedie_home_radius = 5
       this.bot.diedie_farm_centerPos = new Vec3(-10572,71,12749);
       this.bot.diedie_farm_radius = 5.5
-      this.bot.PoultryFarm_position = new Vec3(-10546,71,12738);
+      this.bot.PoultryFarm_position = new Vec3(-10543,71,12738);
       this.bot.Pigpen_position = new Vec3(-10541,71,12759);
       this.bot.tool_chest_position = new Vec3(-10550,72,12786);
       this.bot.woodAxe_chest_position = new Vec3(-10558,72,12786);

@@ -4,6 +4,7 @@ class state():
     schedule = 'schedule'
     interrupt_action = 'interrupt'
     ask_for_help = 'askforhelp'
+    re_schedule = 'schedule_re'
     idle = 'idle'
 class memoryType():
     INFORMATION = "information"

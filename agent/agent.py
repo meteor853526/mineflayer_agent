@@ -577,3 +577,39 @@ class agent:
         print(response)
         self.lastMessage = response
         return response
+    
+    def re_schedule(self, data):
+        jsonFile = "uuid\\" + self.agent_name +'.json'
+        with open(jsonFile, 'r') as file:
+            jsonData = json.load(file)
+            find_money = "..\\spigot (1)\\plugins\\Essentials\\userdata\\" + jsonData["uuid"]
+            file.close
+        with open(find_money, 'r') as file:
+            dataYml = yaml.safe_load(file)
+            self.property = dataYml['money']
+            jsonData['property'] = dataYml['money']
+            file.close
+
+        re_schedule = self.prompt_paragraph["re_schedule"]
+        re_schedule = re_schedule.replace("{taskName}", data['current_job']).replace("{item_name}", data['item_name']).replace("{prev_jobs}", str(data['prev_jobs'])).replace("{time}", data['time']).replace("{wheather}", data['wheather']).replace("{location}",  data['position']).replace("{property}", self.property).replace("{condition}", data['observation'])
+        response = self.generate(re_schedule)
+        print(response)
+        array_match = re.search(r'\[.*\]', response)
+        if array_match:
+            array_str = array_match.group()
+            try:
+                array = ast.literal_eval(array_str)
+                print(array)
+            except ValueError:
+                print("error")
+        else:
+            print("no found")
+        if response.rfind(':') != -1:
+            id, response = response.split(':')
+        else:
+            if response[response.rfind(']') + 1] == ' ':
+                response = response[response.rfind(']')+2:]
+            elif response[response.rfind(']') + 1] == '"':
+                response = response[response.rfind(']')+1:]
+        self.putIntoJobQueue(array,state.schedule)
+        return str(response)

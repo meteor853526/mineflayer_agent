@@ -16,23 +16,23 @@ timestamps:
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1696447242186
-  login: 1696447232374
-money: '100000'
+  logout: 1696879360926
+  login: 1696879355835
+money: '99995.0'
 last-account-name: Guild
 logoutlocation:
-  world: 9dac70ed-8467-49ef-8617-08d872900ab9
+  world: ad51f2e8-f8f1-4fcc-bc7e-fb82610a1e46
   world-name: world
   x: -10492.5
   y: 71.0
-  z: 12750.5
-  yaw: 113.91552734375
-  pitch: 17.18873405456543
+  z: 12749.5
+  yaw: 92.77734375
+  pitch: 4.94999361038208
 lastlocation:
-  world: 95161052-3f8d-4c86-88e9-5bfcff7ecb50
+  world: ad51f2e8-f8f1-4fcc-bc7e-fb82610a1e46
   world-name: world
-  x: -10501.526131149714
+  x: -10512.5
   y: 71.0
-  z: 12746.7
-  yaw: 5.533136367797852
+  z: 12757.5
+  yaw: 5.775106430053711
   pitch: 0.0

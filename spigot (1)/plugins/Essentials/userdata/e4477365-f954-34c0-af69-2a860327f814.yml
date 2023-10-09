@@ -16,9 +16,9 @@ timestamps:
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1696447242191
-  login: 1696447237467
-money: '100000'
+  logout: 1696879360933
+  login: 1696878953299
+money: '99995.0'
 last-account-name: worker
 lastlocation:
   world: 9dac70ed-8467-49ef-8617-08d872900ab9
@@ -29,10 +29,10 @@ lastlocation:
   yaw: 0.0
   pitch: 0.0
 logoutlocation:
-  world: 9dac70ed-8467-49ef-8617-08d872900ab9
+  world: ad51f2e8-f8f1-4fcc-bc7e-fb82610a1e46
   world-name: world
-  x: -10521.512248978273
+  x: -10514.5
   y: 71.0
-  z: 12751.343686735045
-  yaw: 0.0
+  z: 12751.5
+  yaw: 3.3264424800872803
   pitch: 0.0

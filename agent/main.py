@@ -127,7 +127,9 @@ def message_diedie(data):
                     case state.ask_for_help:
                         data['message'] = Diedie_instance.askforhelp(data)
                         sio.emit('agi', data)
-                        
+                    case state.re_schedule:
+                        data['message'] = Diedie_instance.re_schedule(data)
+                        sio.emit('agi', data)
 
                         
                   
