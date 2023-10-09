@@ -30,6 +30,25 @@ const go_guild = require('./go_guild')
 const go_farm = require('./go_farmland')
 const eat = require('./eat')
 const findfood = require('./findFood')
+const findWheat_seeds = require('./findWheat_seeds')
+const findCarrot = require('./findCarrot')
+const findcharcoal = require('./findCharcoal')
+const findcoal = require('./findCoal')
+const findCobblestone = require('./findCobblestone')
+const findFishing_rod = require('./findFishing_rod')
+const findLadder = require('./findLadder')
+const findOak_sapling = require('./findOak_sapling')
+const findOak_log = require('./findOak_log')
+const findOak_planks = require('./findOak_planks')
+const findStick = require('./findStick')
+const findStone_axe = require('./findStone_axe')
+const findStone_hoe = require('./findStone_hoe')
+const findStone_pickaxe = require('./findStone_pickaxe')
+const findStone_sword = require('./findStone_sword')
+const findWheat = require('./findWheat')
+const findWooden_axe = require('./findWooden_axe')
+const findWooden_hoe = require('./findWooden_hoe')
+const findWooden_pickaxe = require('./findWooden_pickaxe')
 const putToolBackToChest = require('./putToolBacktoChest')
 const askForHelp = require('./AskForHelp')
 
@@ -67,6 +86,25 @@ module.exports = {
     ...go_farm,
     ...eat,
     ...findfood,
+    ...findWheat_seeds,
+    ... findCarrot,
+    ... findCharcoal,
+    ... findCoal,
+    ... findCobblestone,
+    ... findFishing_rod,
+    ... findLadder,
+    ... findOak_sapling,
+    ... findOak_log,
+    ... findOak_planks,
+    ... findStick,
+    ... findStone_axe,
+    ... findStone_hoe,
+    ... findStone_pickaxe,
+    ... findStone_sword,
+    ... findWheat,
+    ... findWooden_axe,
+    ...findWooden_hoe,
+    ...findWooden_pickaxe,
     ...putToolBackToChest,
     ...askForHelp,
 

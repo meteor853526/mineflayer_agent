@@ -54,6 +54,25 @@ const {
   BehaviorFollowPlayer,
   eat,
   findFood,
+  findWheat_seeds,
+  findCarrot,
+  findCharcoal,
+  findCoal,
+  findCobblestone,
+  findFishing_rod,
+  findLadder,
+  findOak_sapling,
+  findOak_log,
+  findOak_planks,
+  findStick,
+  findStone_axe,
+  findStone_hoe,
+  findStone_pickaxe,
+  findStone_sword,
+  findWheat,
+  findWooden_axe,
+  findWooden_hoe,
+  findWooden_pickaxe,
   putToolBackToChest,
   BehaviorAskForHelp,
   BehaviorGoFarm,
@@ -72,6 +91,7 @@ const {
   gameTimeToRealTime,
   BotSchedule
 } = require('./ExtendBot');
+const { findCarrot } = require('./behaviors/findCarrot');
 
 const getWheather = require('./getRealtime.js').getWheather;
 const getDistance = require('./getRealtime.js').getDistance;
@@ -237,6 +257,25 @@ class MCBot {
     const followPlayer = new BehaviorFollowPlayer(this.bot,target);//'Dingo_Kez'
     const eat_bread = new eat(this.bot,target);
     const findfoodfromchest = new findFood(this.bot,target);
+    const findseedfromchest = new findWheat_seeds(this.bot,target);
+    const findcarrotfromchest = new findCarrot(this.bot.target);
+    const findcharcoalfromchest = new findCharcoal(this.bot.target);
+    const findcoalfromchest = new findCoal(this.bot.target);
+    const findcobblestonefromchest = new findCobblestone(this.bot.target);
+    const findfishing_rodfromchest = new findFishing_rod(this.bot.target);
+    const findladderfromchest = new findLadder(this.bot.target);
+    const findoak_logfromchest = new findOak_log(this.bot.target);
+    const findoak_planksfromchest = new findOak_planks(this.bot.target);
+    const findoak_saplingfromchest = new findOak_sapling(this.bot.target);
+    const findstickfromchest = new findStick(this.bot.target);
+    const findstone_axefromchest = new findStone_axe(this.bot.target);
+    const findstone_hoefromchest = new findStone_hoe(this.bot.target);
+    const findstone_pickaxefromchest = new findStone_pickaxe(this.bot.target);
+    const findstone_swordfromchest = new findStone_sword(this.bot.target);
+    const findwheatfromchest = new findWheat(this.bot.target);
+    const findwooden_axefromchest = new findWooden_axe(this.bot.target);
+    const findwooden_hoefromchest = new findWooden_hoe(this.bot.target);
+    const findwoodden_pickaxefromchest = new findWooden_pickaxe(this.bot.target);
     const putTool = new putToolBackToChest(this.bot,target);
     const lookAtPlayer = new BehaviorLookAtEntity(this.bot, this.bot.players['Dingo_Kez'] ? this.bot.players['Dingo_Kez'].entity : null);
     const cutDownTree = createCutDownTreeState(this.bot, target);
@@ -451,6 +490,216 @@ class MCBot {
         parent: findfoodfromchest,
         child: idleState,
         shouldTransition: () => findfoodfromchest.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: findseedfromchest,
+        jobID: BOT_JOB_TYPE.FIND_WHEAT_SEEDS, // The job ID : 41
+      }, this),
+      new StateTransition({   
+        parent: findseedfromchest,
+        child: idleState,
+        shouldTransition: () => findseedfromchest.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: findcarrotfromchest,
+        jobID: BOT_JOB_TYPE.FIND_CARROT, // The job ID : 42
+      }, this),
+      new StateTransition({   
+        parent: findcarrotfromchest,
+        child: idleState,
+        shouldTransition: () => findcarrotfromchest.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: findcharcoalfromchest,
+        jobID: BOT_JOB_TYPE.FIND_CHARCOAL, // The job ID : 43
+      }, this),
+      new StateTransition({   
+        parent: findcharcoalfromchest,
+        child: idleState,
+        shouldTransition: () => findcharcoalfromchest.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: findcoalfromchest,
+        jobID: BOT_JOB_TYPE.FIND_COAL, // The job ID : 44
+      }, this),
+      new StateTransition({   
+        parent: findcoalfromchest,
+        child: idleState,
+        shouldTransition: () => findcoalfromchest.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: findcobblestonefromchest,
+        jobID: BOT_JOB_TYPE.FIND_COBBLESTONE, // The job ID : 45
+      }, this),
+      new StateTransition({   
+        parent: findcobblestonefromchest,
+        child: idleState,
+        shouldTransition: () => findcobblestonefromchest.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: findfishing_rodfromchest,
+        jobID: BOT_JOB_TYPE.FIND_FISHING_ROD, // The job ID : 46
+      }, this),
+      new StateTransition({   
+        parent: findfishing_rodfromchest,
+        child: idleState,
+        shouldTransition: () => findfishing_rodfromchest.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: findladderfromchest,
+        jobID: BOT_JOB_TYPE.FIND_LADDER, // The job ID : 47
+      }, this),
+      new StateTransition({   
+        parent: findladderfromchest,
+        child: idleState,
+        shouldTransition: () => findladderfromchest.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: findoak_saplingfromchest,
+        jobID: BOT_JOB_TYPE.FIND_OAK_SAPLING, // The job ID : 48
+      }, this),
+      new StateTransition({   
+        parent: findoak_saplingfromchest,
+        child: idleState,
+        shouldTransition: () => findoak_saplingfromchest.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: findoak_logfromchest,
+        jobID: BOT_JOB_TYPE.FIND_OAK_LOG, // The job ID : 49
+      }, this),
+      new StateTransition({   
+        parent: findoak_logfromchest,
+        child: idleState,
+        shouldTransition: () => findoak_logfromchest.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: findoak_planksfromchest,
+        jobID: BOT_JOB_TYPE.FIND_OAK_PLANKS, // The job ID : 50
+      }, this),
+      new StateTransition({   
+        parent: findoak_planksfromchest,
+        child: idleState,
+        shouldTransition: () => findoak_planksfromchest.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: findstickfromchest,
+        jobID: BOT_JOB_TYPE.FIND_STICK, // The job ID : 51
+      }, this),
+      new StateTransition({   
+        parent: findstickfromchest,
+        child: idleState,
+        shouldTransition: () => findstickfromchest.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+
+new BotStateTransition({   
+        parent: idleState,
+        child: findstone_axefromchest,
+        jobID: BOT_JOB_TYPE.FIND_STONE_AXE, // The job ID : 52
+      }, this),
+      new StateTransition({   
+        parent: findstone_axefromchest,
+        child: idleState,
+        shouldTransition: () => findstone_axefromchest.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: findstone_hoefromchest,
+        jobID: BOT_JOB_TYPE.FIND_STONE_HOE, // The job ID : 53
+      }, this),
+      new StateTransition({   
+        parent: findstone_hoefromchest,
+        child: idleState,
+        shouldTransition: () => findstone_hoefromchest.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: findstone_pickaxefromchest,
+        jobID: BOT_JOB_TYPE.FIND_STONE_PICKAXE, // The job ID : 54
+      }, this),
+      new StateTransition({   
+        parent: findstone_pickaxefromchest,
+        child: idleState,
+        shouldTransition: () => findstone_pickaxefromchest.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: findstone_swordfromchest,
+        jobID: BOT_JOB_TYPE.FIND_STONE_SWORD, // The job ID : 55
+      }, this),
+      new StateTransition({   
+        parent: findstone_swordfromchest,
+        child: idleState,
+        shouldTransition: () => findseedfromchest.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: findwheatfromchest,
+        jobID: BOT_JOB_TYPE.FIND_WHEAT, // The job ID : 56
+      }, this),
+      new StateTransition({   
+        parent: findwheatfromchest,
+        child: idleState,
+        shouldTransition: () => findwheatfromchest.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: findwooden_axefromchest,
+        jobID: BOT_JOB_TYPE.FIND_WOODEN_AXE, // The job ID : 57
+      }, this),
+      new StateTransition({   
+        parent: findWooden_axe,
+        child: idleState,
+        shouldTransition: () => findWooden_axe.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: findwooden_hoefromchest,
+        jobID: BOT_JOB_TYPE.FIND_WOODEN_HOE, // The job ID : 58
+      }, this),
+      new StateTransition({   
+        parent: findwooden_hoefromchest,
+        child: idleState,
+        shouldTransition: () => findwooden_hoefromchest.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: findwoodden_pickaxefromchest,
+        jobID: BOT_JOB_TYPE.FIND_WOODEN_PICKAXE, // The job ID : 59
+      }, this),
+      new StateTransition({   
+        parent: findwoodden_pickaxefromchest,
+        child: idleState,
+        shouldTransition: () => findwoodden_pickaxefromchest.isFinished(),
         onTransition: () => this.JobCheck(true)
       }),
       new BotStateTransition({   
