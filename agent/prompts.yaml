@@ -95,20 +95,43 @@ observation_action: |-
     (17 : feed chicken),
     (18 : just talking and stand on ground),
     (19 : pet the cat),
-    (20 : burn charcoal),
     (21 : cut down tree),
     (22 : wake up from bed),
     (23 : kill),
     (24 : have a rest),
+    (26 : go logging camp),
     (27 : craft pickaxe),
     (28 : feed pig),
     (29 : craft hoe),
-    (31 : put back axe and wood),
+    (31 : burn charcoal),
     (32 : craft torch),
     (33 : craft axe),
     (34 : craft stick),
     (35 : wood transform),
-    (40 : ask someone for help).
+    (36 : go smelting plant),
+    (37 : go poultry farm),
+    (38 : go pigeon),
+    (39 : go to pond),
+    (40 : ask someone for help),
+    (41 : find wheat_seeds),
+    (42 : find carrots),
+    (43 : find charcoal),
+    (44 : find coal),
+    (45 : find cobblestone),
+    (46 : find fishing rod),
+    (47 : find laddar),
+    (48 : find oak_sapling),
+    (49 : find oak_log),
+    (50 : find oak_planks),
+    (51 : find stick),
+    (52 : find stone_axe),
+    (53 : find stone_hoe),
+    (54 : find stone_pickaxe),
+    (55 : find stone_sword),
+    (56 : find wheat),
+    (57 : find wooden_axe),
+    (58 : find wooden_hoe),
+    (59 : find wooden_pickaxe).
 
   Based on your observation and your condition. You need choose one of above action to interact or you can choose multiple action to make a action flow.
 
@@ -174,20 +197,43 @@ schedule_action: |-
     (17 : feed chicken),
     (18 : just talking and stand on ground),
     (19 : pet the cat),
-    (20 : burn charcoal),
     (21 : cut down tree),
     (22 : wake up from bed),
     (23 : kill),
     (24 : have a rest),
+    (26 : go logging camp),
     (27 : craft pickaxe),
     (28 : feed pig),
     (29 : craft hoe),
-    (31 : put back axe and wood),
+    (31 : burn charcoal),
     (32 : craft torch),
     (33 : craft axe),
     (34 : craft stick),
     (35 : wood transform),
-    (40 : ask someone for help).
+    (36 : go smelting plant),
+    (37 : go poultry farm),
+    (38 : go pigeon),
+    (39 : go to pond),
+    (40 : ask someone for help),
+    (41 : find wheat_seeds),
+    (42 : find carrots),
+    (43 : find charcoal),
+    (44 : find coal),
+    (45 : find cobblestone),
+    (46 : find fishing rod),
+    (47 : find laddar),
+    (48 : find oak_sapling),
+    (49 : find oak_log),
+    (50 : find oak_planks),
+    (51 : find stick),
+    (52 : find stone_axe),
+    (53 : find stone_hoe),
+    (54 : find stone_pickaxe),
+    (55 : find stone_sword),
+    (56 : find wheat),
+    (57 : find wooden_axe),
+    (58 : find wooden_hoe),
+    (59 : find wooden_pickaxe).
 
   
   Based on your schedule "{current_schedule}" and your condition. You hacve to choose multiple action to make a action flow with array fromat.
@@ -245,21 +291,44 @@ external_thought: |-
     (17 : feed chicken),
     (18 : just talking and stand on ground),
     (19 : pet the cat),
-    (20 : burn charcoal),
     (21 : cut down tree),
     (22 : wake up from bed),
     (23 : kill),
     (24 : have a rest),
-    (25 : look at {sender})
+    (25 : look at {sender}),
+    (26 : go logging camp),
     (27 : craft pickaxe),
     (28 : feed pig),
     (29 : craft hoe),
-    (31 : put back axe and wood),
+    (31 : burn charcoal),
     (32 : craft torch),
     (33 : craft axe),
     (34 : craft stick),
     (35 : wood transform),
-    (40 : ask someone for help).
+    (36 : go smelting plant),
+    (37 : go poultry farm),
+    (38 : go pigeon),
+    (39 : go to pond),
+    (40 : ask someone for help),
+    (41 : find wheat_seeds),
+    (42 : find carrots),
+    (43 : find charcoal),
+    (44 : find coal),
+    (45 : find cobblestone),
+    (46 : find fishing rod),
+    (47 : find laddar),
+    (48 : find oak_sapling),
+    (49 : find oak_log),
+    (50 : find oak_planks),
+    (51 : find stick),
+    (52 : find stone_axe),
+    (53 : find stone_hoe),
+    (54 : find stone_pickaxe),
+    (55 : find stone_sword),
+    (56 : find wheat),
+    (57 : find wooden_axe),
+    (58 : find wooden_hoe),
+    (59 : find wooden_pickaxe).
     
   
   Based on your internal_thought and your condition. You need choose one of above action to interact or you can choose multiple action to make a action flow with array fromat,
@@ -304,13 +373,7 @@ information_thought_memory: |-
 
 backup_planning: |-
   You live in a minecraft world,you directly observe or respond to real-time events.
-  you are doing this task : {taskName}. However, you have no {taskItem} and haven't found the item at home or Guild or other players to finish your job.
-  Here is your condition:
-    1. go home and find '{miss_item}'
-    2. go Guild and find '{miss_item}'
-    3. ask someone for help to get '{miss_item}'
-    4. give up this task and do other task or nothing
-  You must choose ONE option only.
+  you are doing this task : {taskName}. However, you have no {taskItem} and haven't found the item to finish your job.
 
   Here is your condition when you observe:
     current_job: '{current_job}',
@@ -320,6 +383,13 @@ backup_planning: |-
     wheather : '{wheather}',
     location : '{location}',
     property : '{property}'.
+
+  Here is your condition:
+    1. go home and find '{miss_item}'
+    2. go Guild and find '{miss_item}'
+    3. ask someone for help to get '{miss_item}'
+    4. give up this task and do other task or nothing
+  You must choose ONE option only and DONT choose the option that has chosen before.
 
   Base on what you've chosen, give some response as like murmuring.
   When replying, you must use a first-person tone.
@@ -339,7 +409,9 @@ choosing_backup: |-
     location : '{location}',
     property : '{property}'.
 
-  Based on your observation and your condition.  You can take a action below to interact:
+  If your option is go somewhere to find something, what your action MUST connect the find item action behind the going part.
+
+  Based on your observation and your condition.  You can take ONE or TWO action below to interact:
     (-1 : end this conversation),
     (0 : following people),
     (1 : go home),
@@ -361,20 +433,44 @@ choosing_backup: |-
     (17 : feed chicken),
     (18 : just talking and stand on ground),
     (19 : pet the cat),
-    (20 : burn charcoal),
     (21 : cut down tree),
     (22 : wake up from bed),
     (23 : kill),
     (24 : have a rest),
+    (26 : go logging camp),
     (27 : craft pickaxe),
     (28 : feed pig),
     (29 : craft hoe),
-    (31 : put back axe and wood),
+    (31 : burn charcoal),
     (32 : craft torch),
     (33 : craft axe),
     (34 : craft stick),
     (35 : wood transform),
-    (40 : ask someone for help).
+    (36 : go smelting plant),
+    (37 : go poultry farm),
+    (38 : go pigeon),
+    (39 : go to pond),
+    (40 : ask someone for help),
+    (41 : find wheat_seeds),
+    (42 : find carrots),
+    (43 : find charcoal),
+    (44 : find coal),
+    (45 : find cobblestone),
+    (46 : find fishing rod),
+    (47 : find laddar),
+    (48 : find oak_sapling),
+    (49 : find oak_log),
+    (50 : find oak_planks),
+    (51 : find stick),
+    (52 : find stone_axe),
+    (53 : find stone_hoe),
+    (54 : find stone_pickaxe),
+    (55 : find stone_sword),
+    (56 : find wheat),
+    (57 : find wooden_axe),
+    (58 : find wooden_hoe),
+    (59 : find wooden_pickaxe).
+
 
   Based on your observation and your condition. You need choose one of above action to interact or you can choose multiple action to make a action flow.
 

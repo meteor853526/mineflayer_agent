@@ -41,20 +41,18 @@ const {
   createFeedChickenState,
   createFeedPigState,
   createWoodTransformState,
-  // BehaviorGoHome,
-  createGoHomeState,
-  createGotoGuildState,
+  BehaviorGoHome,
+  BehaviorGotoGuild,
   dropItem,
   idleforsometime,
   craftBread,
-  BehaviorGotoGuild,
   BehaviorGoFarmland,
   sleepOnBed,
   wakeUpFromBed,
   BehaviorFollowPlayer,
   eat,
   findFood,
-  findWheat_seeds,
+  createFindWheat_seeds,
   findCarrot,
   findCharcoal,
   findCoal,
@@ -91,7 +89,7 @@ const {
   gameTimeToRealTime,
   BotSchedule
 } = require('./ExtendBot');
-const { findCarrot } = require('./behaviors/findCarrot');
+// const { findCarrot } = require('./behaviors/findCarrot');
 
 const getWheather = require('./getRealtime.js').getWheather;
 const getDistance = require('./getRealtime.js').getDistance;
@@ -228,7 +226,7 @@ class MCBot {
   createStateTransition(idleState) {
     var target = {};
     // const goHome = new BehaviorGoHome(this.bot, target);
-    const goHome = new createGoHomeState(this.bot, target);
+    const goHome = new BehaviorGoHome(this.bot, target);
     const goFarm = new BehaviorGoFarm(this.bot, target);
     const goSmeltingPlant = new BehaviorGoSmeltingPlant(this.bot, target);
     const goLoggingCamp = new BehaviorGoLoggingCamp(this.bot, target);
@@ -251,13 +249,12 @@ class MCBot {
     const craftbread = new craftBread(this.bot,target);
     const sleep = new sleepOnBed(this.bot,target);
     const wakeup = new wakeUpFromBed(this.bot,target)
-    // const go_guild = new BehaviorGotoGuild(this.bot,target);
-    const go_guild = new createGotoGuildState(this.bot, target);
+    const go_guild = new BehaviorGotoGuild(this.bot,target);
     const go_farmland = new BehaviorGoFarmland(this.bot,target);
     const followPlayer = new BehaviorFollowPlayer(this.bot,target);//'Dingo_Kez'
     const eat_bread = new eat(this.bot,target);
     const findfoodfromchest = new findFood(this.bot,target);
-    const findseedfromchest = new findWheat_seeds(this.bot,target);
+    const findseedfromchest = new createFindWheat_seeds(this.bot,target);
     const findcarrotfromchest = new findCarrot(this.bot.target);
     const findcharcoalfromchest = new findCharcoal(this.bot.target);
     const findcoalfromchest = new findCoal(this.bot.target);
@@ -749,7 +746,7 @@ new BotStateTransition({
       new BotStateTransition({   
         parent: idleState,
         child: craftPickaxe,
-        jobID: BOT_JOB_TYPE.CRAFT_PICKEXE, // The job ID : 27
+        jobID: BOT_JOB_TYPE.CRAFT_PICKAXE, // The job ID : 27
       }, this),
       new StateTransition({   
         parent: craftPickaxe,
@@ -757,17 +754,17 @@ new BotStateTransition({
         shouldTransition: () => craftPickaxe.isFinished(),
         onTransition: () => this.JobCheck(true)
       }),
-      // new BotStateTransition({   
-      //   parent: idleState,
-      //   child: burnCharcoal,
-      //   jobID: BOT_JOB_TYPE.BURN_CHARCOAL, // The job ID : 20
-      // }, this),
-      // new StateTransition({   
-      //   parent: burnCharcoal,
-      //   child: idleState,
-      //   shouldTransition: () => burnCharcoal.isFinished(),
-      //   onTransition: () => this.JobCheck(true)
-      // }),
+      new BotStateTransition({   
+        parent: idleState,
+        child: burnCharcoal,
+        jobID: BOT_JOB_TYPE.BURN_CHARCOAL, // The job ID : 31
+      }, this),
+      new StateTransition({   
+        parent: burnCharcoal,
+        child: idleState,
+        shouldTransition: () => burnCharcoal.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
       new BotStateTransition({   
         parent: idleState,
         child: feedChicken,
@@ -889,7 +886,7 @@ new BotStateTransition({
       new BotStateTransition({
         parent: idleState, // The state to move from
         child: goPigpen, // The state to move to
-        jobID: BOT_JOB_TYPE.GOPIGPEN, // The job ID : 38
+        jobID: BOT_JOB_TYPE.GOPIGEON, // The job ID : 38
       }, this),
       new StateTransition({
         parent: goPigpen, // The state to move from

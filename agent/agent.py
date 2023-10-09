@@ -546,7 +546,13 @@ class agent:
                 print("error")
         else:
             print("no found")
-        id, response = response.split(':')
+        if response.rfind(':') != -1:
+            id, response = response.split(':')
+        else:
+            if response[response.rfind(']') + 1] == ' ':
+                response = response[response.rfind(']')+2:]
+            elif response[response.rfind(']') + 1] == '"':
+                response = response[response.rfind(']')+1:]
         self.putIntoJobQueue(array,state.schedule)
         return str(response)
     

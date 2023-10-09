@@ -5,6 +5,7 @@ const {
     BehaviorMoveTo
 } = require("mineflayer-statemachine");
 const BaseBehavior = require("./base_behavior");
+const Socket_schedule = require("./socket_schedule")
 const minecraft_data = require("minecraft-data");
 const mcData = require('minecraft-data')('1.16.5')
 const {Movements, goals: { GoalNear ,GoalLookAtBlock}} = require('mineflayer-pathfinder')
@@ -88,4 +89,58 @@ class findWheat_seeds extends BaseBehavior {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
   }
-  exports.findWheat_seeds = findWheat_seeds;
+
+  function JobCheck(check){
+    if (check === true){
+        return true
+    }else{
+        return false
+    }
+  }
+  function have_wheat_seeds(bot){
+    if(bot.inventory.items().filter(item => item.name.includes("wheat_seeds"))[0])
+      return true
+    return false
+  }
+  function createFindWheat_seeds (bot, targets) {
+    const enter = new BehaviorIdle();
+    const exit = new BehaviorIdle();
+
+    const findSeeds = new findWheat_seeds(bot, targets);
+    const socket_schedule = new Socket_schedule(bot,targets,"find wheat_seeds"," wheat_seeds","I don't find the wheat_seeds");
+
+    const transitions = [
+      new StateTransition({
+        parent: enter,
+        child: findSeeds,
+        shouldTransition: () => true,
+      }),
+      new StateTransition({
+        parent: findSeeds,
+        child: socket_schedule,
+        shouldTransition: () => findSeeds.isFinished() && !have_wheat_seeds(bot) && JobCheck(findSeeds.isFinished()) == true,
+        onTransition: () => {
+          bot.prev_jobs.push("find wheat_seeds")
+        }
+      }),
+      new StateTransition({
+        parent: socket_schedule,
+        child: exit,
+        shouldTransition: () => socket_schedule.isFinished() && JobCheck(socket_schedule.isFinished()) == true,
+        onTransition: () => {
+          bot.chat('let me think what i do next')
+        }
+      }),
+      new StateTransition({
+        parent: findSeeds,
+        child: exit,
+        shouldTransition: () => findSeeds.isFinished() && have_wheat_seeds(bot) && JobCheck(findSeeds.isFinished()) == true,
+        onTransition: () => {
+          bot.chat("i found seeds!!!")
+        }
+      }),
+    ]
+    return new NestedStateMachine(transitions, enter, exit);
+  }
+  // exports.findWheat_seeds = findWheat_seeds;
+  exports.createFindWheat_seeds = createFindWheat_seeds

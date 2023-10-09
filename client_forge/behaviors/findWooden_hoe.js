@@ -8,9 +8,9 @@ const BaseBehavior = require("./base_behavior");
 const minecraft_data = require("minecraft-data");
 const mcData = require('minecraft-data')('1.16.5')
 const {Movements, goals: { GoalNear ,GoalLookAtBlock}} = require('mineflayer-pathfinder')
-class findWheat_seeds extends BaseBehavior {
+class findWooden_hoe extends BaseBehavior {
     constructor(bot, targets) {
-        super(bot, 'findWheat_seeds', targets);
+        super(bot, 'findWooden_hoe', targets);
         this.working = true
     }
     async onStateEntered() {
@@ -33,10 +33,10 @@ class findWheat_seeds extends BaseBehavior {
           await sleepwait(2000)
           var chest_window = await this.bot.openChest(this.bot.blockAt(chest));
           await sleepwait(2000)
-          var target = chest_window.containerItems().filter(item => item.name.includes("wheat_seeds"))[0];
+          var target = chest_window.containerItems().filter(item => item.name.includes("wooden_hoe"))[0];
           await sleepwait(2000)
           if(target){
-            await this.withdrawItem(chest_window,'wheat_seeds',1);
+            await this.withdrawItem(chest_window,'wooden_hoe',1);
             await sleepwait(2000)
             await this.bot.closeWindow(chest_window)
             break;
@@ -88,4 +88,4 @@ class findWheat_seeds extends BaseBehavior {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
   }
-  exports.findWheat_seeds = findWheat_seeds;
+  exports.findWooden_hoe = findWooden_hoe;
