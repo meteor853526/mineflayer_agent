@@ -156,7 +156,7 @@ class MCBot {
       this.bot.home_position = new Vec3(-10506,71,12755);
       this.bot.farm_position = new Vec3(-10564,71,12749);
       this.bot.S_diedie_wheat_chest_position = new Vec3(-10566,71,12744);
-      this.bot.S_diedie_wheatSeed_chest_position = new Vec3(-10566,71,12745);
+      this.bot.S_diedie_wheatSeed_chest_position = new Vec3(-10567,71,12745);
       // this.bot.diedie_home_centerPos = new Vec3(2264,63,-2913);
       this.bot.diedie_home_centerPos = new Vec3(-10499,71,12719);
       this.bot.diedie_home_radius = 5

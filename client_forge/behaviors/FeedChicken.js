@@ -191,14 +191,17 @@ class putWheatBackToChest extends BaseBehavior {
   }
   async onStateEntered() {
       this.working = true
+      const defaultMove = new Movements(this.bot)
+      defaultMove.canDig = false
       var wheatSeed_chest_position = this.bot.S_diedie_wheatSeed_chest_position
       var wheat_seeds = mcData.itemsByName['wheat_seeds'].id;
       await sleepwait(2000)
       console.log("?????????????????")
       if(await this.bot.inventory.findInventoryItem(wheat_seeds)){
         console.log("????")
+        await this.bot.pathfinder.setMovements(defaultMove)
         var wheat_seeds_number = await this.bot.inventory.findInventoryItem(wheat_seeds).count
-        await this.bot.pathfinder.setGoal(new GoalLookAtBlock(wheatSeed_chest_position, this.bot.world));
+        await this.bot.pathfinder.goto(new GoalLookAtBlock(wheatSeed_chest_position, this.bot.world));
         await sleepwait(2000)
         var chest_window = await this.bot.openChest(this.bot.blockAt(wheatSeed_chest_position));
         await sleepwait(2000)
