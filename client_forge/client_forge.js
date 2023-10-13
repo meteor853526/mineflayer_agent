@@ -41,8 +41,12 @@ const {
   createFeedChickenState,
   createFeedPigState,
   createWoodTransformState,
-  BehaviorGoHome,
-  BehaviorGotoGuild,
+  createFindWheat_seeds,
+  createFindHoeState,
+  createAskForHelpState,
+  // BehaviorGoHome,
+  createGoHomeState,
+  createGotoGuildState,
   dropItem,
   idleforsometime,
   craftBread,
@@ -52,7 +56,7 @@ const {
   BehaviorFollowPlayer,
   eat,
   findFood,
-  createFindWheat_seeds,
+  findWheat_seeds,
   findCarrot,
   findCharcoal,
   findCoal,
@@ -79,6 +83,8 @@ const {
   BehaviorGoPoultryFarm,
   BehaviorGoPigpen,
   BehaviorGoPond,
+  BehaviorGoHome,
+  BehaviorGotoGuild
 } = require('./behaviors');
 // bot functions
 const {
@@ -159,7 +165,6 @@ class MCBot {
       this.bot.S_diedie_wheatSeed_chest_position = new Vec3(-10566,71,12745);
       // this.bot.diedie_home_centerPos = new Vec3(2264,63,-2913);
       this.bot.diedie_home_centerPos = new Vec3(-10499,71,12719);
-      this.bot.diedie_home_radius = 5
       this.bot.diedie_farm_centerPos = new Vec3(-10572,71,12749);
       this.bot.diedie_farm_radius = 5.5
       this.bot.PoultryFarm_position = new Vec3(-10546,71,12738);
@@ -188,16 +193,17 @@ class MCBot {
   }
 
 
-  JobCheck(check){
+  JobCheck(check,id){
   
     if (check === true){
-        this.JobQueueLock = false
         this.socket.emit('message', {
           targetSocketId: 'TARGET_SOCKET_ID',
           message:"system:JobFinish",
           sender:"system",
           receiverName: this.bot.username,
-          type:"system"
+          type:"system",
+          time: getRealtime(this.bot.time.timeOfDay),
+          JobID : id
         });
         console.log("--------")
         return true
@@ -255,24 +261,24 @@ class MCBot {
     const eat_bread = new eat(this.bot,target);
     const findfoodfromchest = new findFood(this.bot,target);
     const findseedfromchest = new createFindWheat_seeds(this.bot,target);
-    const findcarrotfromchest = new findCarrot(this.bot.target);
-    const findcharcoalfromchest = new findCharcoal(this.bot.target);
-    const findcoalfromchest = new findCoal(this.bot.target);
-    const findcobblestonefromchest = new findCobblestone(this.bot.target);
-    const findfishing_rodfromchest = new findFishing_rod(this.bot.target);
-    const findladderfromchest = new findLadder(this.bot.target);
-    const findoak_logfromchest = new findOak_log(this.bot.target);
-    const findoak_planksfromchest = new findOak_planks(this.bot.target);
-    const findoak_saplingfromchest = new findOak_sapling(this.bot.target);
-    const findstickfromchest = new findStick(this.bot.target);
-    const findstone_axefromchest = new findStone_axe(this.bot.target);
-    const findstone_hoefromchest = new findStone_hoe(this.bot.target);
-    const findstone_pickaxefromchest = new findStone_pickaxe(this.bot.target);
-    const findstone_swordfromchest = new findStone_sword(this.bot.target);
-    const findwheatfromchest = new findWheat(this.bot.target);
-    const findwooden_axefromchest = new findWooden_axe(this.bot.target);
-    const findwooden_hoefromchest = new findWooden_hoe(this.bot.target);
-    const findwoodden_pickaxefromchest = new findWooden_pickaxe(this.bot.target);
+    const findcarrotfromchest = new findCarrot(this.bot,target);
+    const findcharcoalfromchest = new findCharcoal(this.bot,target);
+    const findcoalfromchest = new findCoal(this.bot,target);
+    const findcobblestonefromchest = new findCobblestone(this.bot,target);
+    const findfishing_rodfromchest = new findFishing_rod(this.bot,target);
+    const findladderfromchest = new findLadder(this.bot,target);
+    const findoak_logfromchest = new findOak_log(this.bot,target);
+    const findoak_planksfromchest = new findOak_planks(this.bot,target);
+    const findoak_saplingfromchest = new findOak_sapling(this.bot,target);
+    const findstickfromchest = new findStick(this.bot,target);
+    const findstone_axefromchest = new findStone_axe(this.bot,target);
+    const findstone_hoefromchest = new createFindHoeState(this.bot,target);
+    const findstone_pickaxefromchest = new findStone_pickaxe(this.bot,target);
+    const findstone_swordfromchest = new findStone_sword(this.bot,target);
+    const findwheatfromchest = new findWheat(this.bot,target);
+    const findwooden_axefromchest = new findWooden_axe(this.bot,target);
+    const findwooden_hoefromchest = new findWooden_hoe(this.bot,target);
+    const findwoodden_pickaxefromchest = new findWooden_pickaxe(this.bot,target);
     const putTool = new putToolBackToChest(this.bot,target);
     const lookAtPlayer = new BehaviorLookAtEntity(this.bot, this.bot.players['Dingo_Kez'] ? this.bot.players['Dingo_Kez'].entity : null);
     const cutDownTree = createCutDownTreeState(this.bot, target);
@@ -285,7 +291,7 @@ class MCBot {
     const feedPig = createFeedPigState(this.bot, target);
     const craftStick = createCraftStickState(this.bot, target);
     const woodTransform = createWoodTransformState(this.bot, target);
-    const askForHelp = new BehaviorAskForHelp(this.bot, target);
+    const askForHelp = new createAskForHelpState(this.bot, target);
 
     return [
       new StateTransition({
@@ -311,7 +317,7 @@ class MCBot {
         parent: moveOutMine, // The state to move from
         child: idleState, // The state to move to
         shouldTransition: () => moveOutMine.isFinished(), // When this should happen
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,null)
       }),
       new BotStateTransition({
         parent: idleState, // The state to move from
@@ -322,7 +328,7 @@ class MCBot {
         parent: mining, // The state to move from
         child: idleState, // The state to move to
         shouldTransition: () => mining.isFinished(), // When this should happen
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,16)
       }),
       new BotStateTransition({
         parent: idleState, // The state to move from
@@ -333,7 +339,7 @@ class MCBot {
         parent: kill, // The state to move from
         child: idleState, // The state to move to
         shouldTransition: () => kill.isFinished(), // When this should happen
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,23)
       }),
       new BotStateTransition({
         parent: idleState, // The state to move from
@@ -344,7 +350,7 @@ class MCBot {
         parent: goHome, // The state to move from
         child: idleState, // The state to move to
         shouldTransition: () => goHome.isFinished(), // When this should happen
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,1)
       }),
       new BotStateTransition({
         parent: idleState, // The state to move from
@@ -355,7 +361,7 @@ class MCBot {
         parent: fishing, // The state to move from
         child: idleState, // The state to move to
         shouldTransition: () => fishing.isFinished(), // When this should happen
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,15)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -366,7 +372,7 @@ class MCBot {
         parent: DropItem,
         child: idleState,
         shouldTransition: () => DropItem.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,13)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -377,7 +383,7 @@ class MCBot {
         parent: harvest,
         child: idleState,
         shouldTransition: () => harvest.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,2)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -388,7 +394,7 @@ class MCBot {
         parent: idlefortimes,
         child: idleState,
         shouldTransition: () => idlefortimes.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,18)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -399,7 +405,7 @@ class MCBot {
         parent: sow,
         child: idleState,
         shouldTransition: () => sow.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,19)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -410,7 +416,7 @@ class MCBot {
         parent: craftbread,
         child: idleState,
         shouldTransition: () => craftbread.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,12)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -421,7 +427,7 @@ class MCBot {
         parent: sleep,
         child: idleState,
         shouldTransition: () => sleep.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,5)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -432,7 +438,7 @@ class MCBot {
         parent: wakeup,
         child: idleState,
         shouldTransition: () => wakeup.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,36)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -443,7 +449,7 @@ class MCBot {
         parent: go_guild,
         child: idleState,
         shouldTransition: () => go_guild.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,10)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -454,7 +460,7 @@ class MCBot {
         parent: go_farmland,
         child: idleState,
         shouldTransition: () => go_farmland.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,9)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -465,7 +471,7 @@ class MCBot {
         parent: followPlayer,
         child: idleState,
         shouldTransition: () => followPlayer.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,0)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -476,7 +482,7 @@ class MCBot {
         parent: eat_bread,
         child: idleState,
         shouldTransition: () => eat_bread.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,6)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -487,7 +493,7 @@ class MCBot {
         parent: findfoodfromchest,
         child: idleState,
         shouldTransition: () => findfoodfromchest.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,8)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -498,7 +504,7 @@ class MCBot {
         parent: findseedfromchest,
         child: idleState,
         shouldTransition: () => findseedfromchest.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,41)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -509,7 +515,7 @@ class MCBot {
         parent: findcarrotfromchest,
         child: idleState,
         shouldTransition: () => findcarrotfromchest.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,42)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -520,7 +526,7 @@ class MCBot {
         parent: findcharcoalfromchest,
         child: idleState,
         shouldTransition: () => findcharcoalfromchest.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,43)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -531,7 +537,7 @@ class MCBot {
         parent: findcoalfromchest,
         child: idleState,
         shouldTransition: () => findcoalfromchest.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,44)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -542,7 +548,7 @@ class MCBot {
         parent: findcobblestonefromchest,
         child: idleState,
         shouldTransition: () => findcobblestonefromchest.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,45)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -553,7 +559,7 @@ class MCBot {
         parent: findfishing_rodfromchest,
         child: idleState,
         shouldTransition: () => findfishing_rodfromchest.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,46)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -564,7 +570,7 @@ class MCBot {
         parent: findladderfromchest,
         child: idleState,
         shouldTransition: () => findladderfromchest.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,47)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -575,7 +581,7 @@ class MCBot {
         parent: findoak_saplingfromchest,
         child: idleState,
         shouldTransition: () => findoak_saplingfromchest.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,48)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -586,7 +592,7 @@ class MCBot {
         parent: findoak_logfromchest,
         child: idleState,
         shouldTransition: () => findoak_logfromchest.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,49)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -597,7 +603,7 @@ class MCBot {
         parent: findoak_planksfromchest,
         child: idleState,
         shouldTransition: () => findoak_planksfromchest.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,50)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -608,10 +614,9 @@ class MCBot {
         parent: findstickfromchest,
         child: idleState,
         shouldTransition: () => findstickfromchest.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,51)
       }),
-
-new BotStateTransition({   
+      new BotStateTransition({   
         parent: idleState,
         child: findstone_axefromchest,
         jobID: BOT_JOB_TYPE.FIND_STONE_AXE, // The job ID : 52
@@ -620,7 +625,7 @@ new BotStateTransition({
         parent: findstone_axefromchest,
         child: idleState,
         shouldTransition: () => findstone_axefromchest.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,52)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -631,7 +636,7 @@ new BotStateTransition({
         parent: findstone_hoefromchest,
         child: idleState,
         shouldTransition: () => findstone_hoefromchest.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,53)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -642,7 +647,7 @@ new BotStateTransition({
         parent: findstone_pickaxefromchest,
         child: idleState,
         shouldTransition: () => findstone_pickaxefromchest.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,54)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -652,8 +657,8 @@ new BotStateTransition({
       new StateTransition({   
         parent: findstone_swordfromchest,
         child: idleState,
-        shouldTransition: () => findseedfromchest.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        shouldTransition: () => findstone_swordfromchest.isFinished(),
+        onTransition: () => this.JobCheck(true,55)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -664,7 +669,7 @@ new BotStateTransition({
         parent: findwheatfromchest,
         child: idleState,
         shouldTransition: () => findwheatfromchest.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,56)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -675,7 +680,7 @@ new BotStateTransition({
         parent: findWooden_axe,
         child: idleState,
         shouldTransition: () => findWooden_axe.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,57)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -686,7 +691,7 @@ new BotStateTransition({
         parent: findwooden_hoefromchest,
         child: idleState,
         shouldTransition: () => findwooden_hoefromchest.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,58)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -697,7 +702,7 @@ new BotStateTransition({
         parent: findwoodden_pickaxefromchest,
         child: idleState,
         shouldTransition: () => findwoodden_pickaxefromchest.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,59)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -708,7 +713,7 @@ new BotStateTransition({
         parent: putTool,
         child: idleState,
         shouldTransition: () => putTool.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,3)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -719,7 +724,7 @@ new BotStateTransition({
         parent: cutDownTree,
         child: idleState,
         shouldTransition: () => cutDownTree.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,21)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -730,7 +735,7 @@ new BotStateTransition({
         parent: craftTorch,
         child: idleState,
         shouldTransition: () => craftTorch.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,32)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -741,7 +746,7 @@ new BotStateTransition({
         parent: craftHoe,
         child: idleState,
         shouldTransition: () => craftHoe.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,29)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -752,7 +757,7 @@ new BotStateTransition({
         parent: craftPickaxe,
         child: idleState,
         shouldTransition: () => craftPickaxe.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,27)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -763,7 +768,7 @@ new BotStateTransition({
         parent: burnCharcoal,
         child: idleState,
         shouldTransition: () => burnCharcoal.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,31)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -774,7 +779,7 @@ new BotStateTransition({
         parent: feedChicken,
         child: idleState,
         shouldTransition: () => feedChicken.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,17)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -785,7 +790,7 @@ new BotStateTransition({
         parent: feedPig,
         child: idleState,
         shouldTransition: () => feedPig.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,28)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -796,7 +801,7 @@ new BotStateTransition({
         parent: craftAxe,
         child: idleState,
         shouldTransition: () => craftAxe.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,33)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -807,7 +812,7 @@ new BotStateTransition({
         parent: craftStick,
         child: idleState,
         shouldTransition: () => craftStick.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,34)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -818,7 +823,7 @@ new BotStateTransition({
         parent: woodTransform,
         child: idleState,
         shouldTransition: () => woodTransform.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,35)
       }),
       new BotStateTransition({   
         parent: idleState,
@@ -829,7 +834,7 @@ new BotStateTransition({
         parent: askForHelp,
         child: idleState,
         shouldTransition: () => askForHelp.isFinished(),
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,40)
       }),
       new StateTransition({
         parent: idleState, // The state to move from
@@ -848,7 +853,7 @@ new BotStateTransition({
         parent: goFarm, // The state to move from
         child: idleState, // The state to move to
         shouldTransition: () => goFarm.isFinished(), // When this should happen
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,9)
       }),
       new BotStateTransition({
         parent: idleState, // The state to move from
@@ -859,7 +864,7 @@ new BotStateTransition({
         parent: goLoggingCamp, // The state to move from
         child: idleState, // The state to move to
         shouldTransition: () => goLoggingCamp.isFinished(), // When this should happen
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,26)
       }),
       new BotStateTransition({
         parent: idleState, // The state to move from
@@ -870,7 +875,7 @@ new BotStateTransition({
         parent: goSmeltingPlant, // The state to move from
         child: idleState, // The state to move to
         shouldTransition: () => goSmeltingPlant.isFinished(), // When this should happen
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,36)
       }),
       new BotStateTransition({
         parent: idleState, // The state to move from
@@ -881,7 +886,7 @@ new BotStateTransition({
         parent: goPoultryFarm, // The state to move from
         child: idleState, // The state to move to
         shouldTransition: () => goPoultryFarm.isFinished(), // When this should happen
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,37)
       }),
       new BotStateTransition({
         parent: idleState, // The state to move from
@@ -892,7 +897,7 @@ new BotStateTransition({
         parent: goPigpen, // The state to move from
         child: idleState, // The state to move to
         shouldTransition: () => goPigpen.isFinished(), // When this should happen
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,38)
       }),
       new BotStateTransition({
         parent: idleState, // The state to move from
@@ -903,7 +908,7 @@ new BotStateTransition({
         parent: goPond, // The state to move from
         child: idleState, // The state to move to
         shouldTransition: () => goPond.isFinished(), // When this should happen
-        onTransition: () => this.JobCheck(true)
+        onTransition: () => this.JobCheck(true,39)
       }),
 
 
@@ -921,6 +926,14 @@ new BotStateTransition({
       
         this.socket.on('mine', (data) => {   // receiver
             if(data.receiverName != this.bot.username)return
+            if(data.hasOwnProperty("whisperMsg")){
+              this.bot.chat('/minecraft:msg '+data.targetAgent+' ' + data.message)
+              
+            }
+            if(data.hasOwnProperty("sender")){
+              this.bot.chat('/minecraft:msg '+data.sender+' ' + data.message)
+              
+            }
             this.lastPlayer = data['sender']
         
             if(data.hasOwnProperty("job")){
@@ -937,7 +950,10 @@ new BotStateTransition({
               }
               
             }
-            this.bot.chat(data.message)
+            if(data.message != "system:Job"){
+              this.bot.chat(data.message)
+            }
+            
             
 
           });

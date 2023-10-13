@@ -8,15 +8,16 @@ const socketIOClient = require('socket.io-client');
 const serverURL = 'http://localhost:3000'; 
 const Socket_schedule = require("./socket_schedule")
 const Socket_chat = require("./socket_chat")
+const Socket_system = require("./socket_system")
 const getWheather = require('../getRealtime.js').getWheather;
 const getDistance = require('../getRealtime.js').getDistance;
 const getRealtime = require("../getRealtime.js").getRealtime;
 const BaseBehavior = require("./base_behavior");
 // const mineflayer_pathfinder = require("mineflayer-pathfinder");
-const {Movements, goals: { GoalNear ,GoalLookAtBlock}} = require('mineflayer-pathfinder')
+const {Movements, goals: { GoalNear ,GoalFollow}} = require('mineflayer-pathfinder')
 const minecraft_data = require("minecraft-data");
 const mcData = require('minecraft-data')('1.16.5')
-
+const mineflayer_pathfinder = require("mineflayer-pathfinder");
 class BehaviorAskForHelp extends BaseBehavior {
   constructor(bot, targets) {
     super(bot, 'BehaviorAskForHelp', targets);
@@ -51,7 +52,6 @@ class BehaviorAskForHelp extends BaseBehavior {
         await this.bot.pathfinder.setGoal(new GoalNear(value.position.x, value.position.y, value.position.z, 1))
       } else if(value.type == 'player' && username == "Guild") {
         this.bot.chat("go to find Guild and need help.")
-        // console.log(value.position.x +','+ value.position.y +','+ value.position.z)
         // value.position = this.bot.guild_position
         await this.bot.pathfinder.setMovements(defaultMove)
         await this.bot.pathfinder.setGoal(new GoalNear(this.bot.guild_position.x, this.bot.guild_position.y, this.bot.guild_position.z, 1))
@@ -88,3 +88,118 @@ class BehaviorAskForHelp extends BaseBehavior {
 }
 
 exports.BehaviorAskForHelp = BehaviorAskForHelp;
+
+var target = null;
+
+class BehaviorFindPlayer extends BaseBehavior {
+  constructor(bot, targets) {
+    super(bot, 'BehaviorFindPlayer', targets);
+    const mcData = minecraft_data(bot.version);
+    this.movements = new mineflayer_pathfinder.Movements(bot, mcData);
+    this.movements.canDig = false;
+  }
+  async onStateEntered() {
+
+    const player = this.bot.players['Jeff'] ? this.bot.players['Jeff'].entity : null;
+    console.log(player)
+    if (!player) {
+        return;
+    }
+    const pathfinder = this.bot.pathfinder;
+    pathfinder.setMovements(this.movements);
+    
+    await pathfinder.setGoal(new GoalFollow(player, 1), true);
+
+    //pathfinder.goto(new GoalLookAtBlock(player.position, this.bot.world));
+    
+  }
+
+  isFinished() {
+    const pathfinder = this.bot.pathfinder;
+    return !pathfinder.isMoving();
+  }
+
+}
+
+class findTarget extends BaseBehavior {
+  constructor(bot, targets) {
+    super(bot, 'findTarget', targets);
+    const mcData = minecraft_data(bot.version);
+    this.movements = new mineflayer_pathfinder.Movements(bot, mcData);
+    this.movements.canDig = false;
+    this.working = true
+  }
+  async onStateEntered() {
+
+    target = this.bot.players['Jeff'] ? this.bot.players['Jeff'].entity : null; // 先預設為Jeff    
+     // bug 
+    this.working = false
+  }
+
+  isFinished() {
+    if(this.working){
+      return false
+    }else{
+      return true
+    }
+  }
+
+}
+function JobCheck(check){
+  if (check === true){
+      return true
+  }else{
+      return false
+  }
+}
+function have_target(){
+  return target
+}
+
+function createAskForHelpState(bot, targets) {
+  const enter = new BehaviorIdle();
+  const exit = new BehaviorIdle();  
+
+  const findPlayer = new BehaviorFindPlayer(bot,target);
+  const Target = new findTarget(bot,target);
+  const socket_system = new Socket_system(bot,targets,null,'Jeff')
+  
+  const transitions = [
+    new StateTransition({
+      parent: enter,
+      child: Target,
+      shouldTransition: () => true,
+    }),
+    new StateTransition({
+      parent: Target,
+      child: findPlayer,
+      shouldTransition: () => Target.isFinished() && have_target() && JobCheck(Target.isFinished()) == true,
+      onTransition: () =>{
+        bot.chat("I found target")
+      }
+    }),
+    new StateTransition({
+      parent: Target,
+      child: exit,
+      shouldTransition: () => Target.isFinished() && !have_target() && JobCheck(Target.isFinished()) == true,
+      onTransition: () =>{
+        bot.chat("uh oh. there is no item i want here.")
+      }
+    }),
+    new StateTransition({
+      parent: findPlayer,
+      child: socket_system,
+      shouldTransition: () => findPlayer.isFinished() && JobCheck(findPlayer.isFinished()) == true,
+    }),
+    new StateTransition({
+      parent: socket_system,
+      child: exit,
+      shouldTransition: () => socket_system.isFinished(),
+      onTransition: () =>{
+        console.log("----------------------------------------------------------------")
+      }
+    })
+  ]
+  return new NestedStateMachine(transitions, enter, exit);
+}
+exports.createAskForHelpState = createAskForHelpState;

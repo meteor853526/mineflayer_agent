@@ -13,6 +13,8 @@ internal_thought: |-
   location : '{location}',
   property : '{property}'.
 
+  The distance between you and '{sender}' is {distance} m. 
+
   You must think about it and plan what action to take.
   For some context, here are your memories related to the query.
    
@@ -57,29 +59,82 @@ information_thought: |-
   This is not shown to the outside world but only to yourself. It is just your observation."
 
 
+observation: |-
+  You live in a minecraft world,you directly observe or respond to real-time events.
+
+  Here is your daily summary:
+  "{summary}"
+
+  Here is your observation flow: 
+  
+  "{observation}". 
+
+  Here is your condition for now:
+
+  time : '{time}',
+  wheather : fine,
+  location : '{location}'.
+
+
+  There is a empty array '[]'.
+
+  Based on your observation and your condition, think about what you are going to do with those real-time events,your reply need to use first tone.
+  Put your reply into array '[<fill in>,SUMMARY]'.
+  
+  You need to combine your 'reply' with above daily summary and your observation flow, then you need summarize a new daily summary,your summary should be as detail as possible.
+  Put your summary into array '[REPLY,<fill in>]'.
+
+  
+  ONLY OUTPUT THE ARRAY.
+
+
+
+conversationForHelp: |-
+  You live in a minecraft world,you directly observe or respond to real-time events.
+
+  Here is your daily summary:
+  "{summary}"
+
+  Here is your observation flow: 
+  
+  "{observation}". 
+
+  Here is your condition for now:
+
+  time : '{time}',
+  wheather : fine,
+  location : '{location}'.
+
+  The distance between you and '{agent}' is {distance} m. 
+
+  Now you need some help because you lack something , then you decide to ask '{agent}' for help.
+
+  There is a empty array '[]'.
+
+  Based on your observation and your condition, think about what you need to say to '{agent}' when you ask '{agent}' for help.
+  Put your reply into array '[<fill in>,SUMMARY]'.
+  
+  You need to combine your 'reply' with above daily summary and your observation flow, then you need summarize a new daily summary.
+  Put your summary into array '[REPLY,<fill in>]'.
+
+  
+  ONLY OUTPUT THE ARRAY.
+
 
 
 observation_action: |-
   You live in a minecraft world,you directly observe or respond to real-time events.
-  Here is your observation : 
+
+  Here is the you internal thought:
+  '{internal_thought}'
   
-  "{observation}". 
-
-  Here is your condition when you observe:
-
-  time : '{time}',
-  wheather : '{wheather}',
-  location : '{location}',
-  property : '{property}'.
-
-  Based on your observation and your condition.  You can take a action below to interact:
+  Based on your internal thought ,you can takes appropriate actions to real-time event thought:
 
     (-1 : end this conversation),
     (0 : following people),
     (1 : go home),
     (2 : harvest the crops),
     (3 : put your tools back to chest),
-    (4 : collecting seeds and tools from chest),
     (5 : go to sleep),
     (6 : eat food),
     (7 : take crops back to chest),
@@ -94,7 +149,6 @@ observation_action: |-
     (16 : mining),
     (17 : feed chicken),
     (18 : just talking and stand on ground),
-    (19 : pet the cat),
     (21 : cut down tree),
     (22 : wake up from bed),
     (23 : kill),
@@ -102,7 +156,6 @@ observation_action: |-
     (26 : go logging camp),
     (27 : craft pickaxe),
     (28 : feed pig),
-    (29 : craft hoe),
     (31 : burn charcoal),
     (32 : craft torch),
     (33 : craft axe),
@@ -133,13 +186,12 @@ observation_action: |-
     (58 : find wooden_hoe),
     (59 : find wooden_pickaxe).
 
-  Based on your observation and your condition. You need choose one of above action to interact or you can choose multiple action to make a action flow.
+  There is a empty array '[]'.
 
-  You also can say something to respond the observation,
-  
-  Combine the action you want to take and the word you want ot say.
-  When replying, you must use a first-person tone and follow the format
-  (ex, [7] : I got so many wheat.),(ex, [19] : I felt tried),(ex,[19] : I saw a cute cat),(ex, [3,1] :I finish my work),(ex, [1,8,6] : I'm so hungry,I'll go home an eat launch).
+  Based on your internal_thought and your condition. You need choose one of above action to interact or you can choose multiple action to make a action flow with array fromat,
+  Put your actions into array(E.g., [20,22,16]), [<fill in>].
+
+  ONLY OUTPUT THE ARRAY.
 
 schedule: |-
   You live in a minecraft world,you directly observe or respond to real-time events.
@@ -264,6 +316,8 @@ external_thought: |-
   location : '{location}',
   property : '{property}'.
 
+  The distance between you and '{sender}' is '{distance}' m. 
+
   Here is your current state of routine:
   "{current_schedule}"
 
@@ -271,7 +325,7 @@ external_thought: |-
   Based on your internal thought and the {sender}'s input and your condition.  You can take a action below to interact:
   
     (-1 : end this conversation),
-    (0 : following people),
+    (0 : short the distance between you and '{sender}'),
     (1 : go home),
     (2 : harvest the crops),
     (3 : put your tools back to chest),

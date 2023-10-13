@@ -12,7 +12,7 @@ const BaseBehavior = require("./base_behavior");
 const getRealtime = require("../getRealtime.js").getRealtime;
 const getWheather = require('../getRealtime.js').getWheather;
 const getDistance = require('../getRealtime.js').getDistance;
-
+const mcData = require('minecraft-data')('1.16.5')
 class eat extends BaseBehavior {
 
     constructor(bot, targets) {
@@ -23,6 +23,8 @@ class eat extends BaseBehavior {
     }
     async onStateEntered() {
         const foodItem = this.bot.inventory.items().find(item => item.name.includes('bread'))
+        const chest_id = mcData.blocksByName['chest'].id;
+
         if(foodItem){
             await this.bot.equip(foodItem,'hand')
             await this.sleepwait(3000)

@@ -30,23 +30,43 @@ function getDistance(center_A,center_B,entity) {
 async function relocate(bot){
     // console.log(this.bot.entity)
 
-    console.log(getDistance(bot.diedie_home_centerPos.x,bot.diedie_home_centerPos.z,bot.entity))
-    console.log(getDistance(bot.diedie_farm_centerPos.x,bot.diedie_farm_centerPos.z,bot.entity))
-    if(getDistance(bot.diedie_home_centerPos.x,bot.diedie_home_centerPos.z,bot.entity) < bot.diedie_home_radius ){
+ 
+    if(getDistance(bot.diedie_home_centerPos.x,bot.diedie_home_centerPos.z,bot.entity) < 5 ){
       bot.pos = "diedie's home"
       return "diedie's home"
     }
-    if(getDistance(bot.diedie_farm_centerPos.x,bot.diedie_farm_centerPos.z,bot.entity) < bot.diedie_farm_radius ){
+    if(getDistance(bot.diedie_farm_centerPos.x,bot.diedie_farm_centerPos.z,bot.entity) < 10 ){
       bot.pos = "diedie's farm"
-      return 
+      return "diedie's farm"
     }
-  }
 
-// export {getDistance};
-// export {getRealtime};
-// export {getWheather};
+    if(getDistance(bot.guild_position.x,bot.guild_position.z,bot.entity) < 8 ){
+        bot.pos = "guild"
+        return "guild"
+    }
+    return 'outside'
+}
+
+function playerdistance(bot,targetName){
+
+    var botPosition;
+    var targetPosition;
+
+    Object.entries(bot.entities).forEach(mob => {
+        const [key, value] = mob;
+        if(value.type == "player" && value.username == bot.username){
+            botPosition = value.position
+        }
+        if(value.type == "player" && value.username == targetName){
+            targetPosition = value
+        }
+
+    });
+    return Math.round(getDistance(botPosition.x,botPosition.z,targetPosition))
+}
 
 exports.getDistance = getDistance
 exports.getRealtime = getRealtime
 exports.getWheather = getWheather
 exports.relocate = relocate
+exports.playerdistance = playerdistance

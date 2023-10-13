@@ -7,6 +7,7 @@ const {
 const BaseBehavior = require("./base_behavior");
 const minecraft_data = require("minecraft-data");
 const mcData = require('minecraft-data')('1.16.5')
+const Socket_schedule = require("./socket_schedule")
 const {Movements, goals: { GoalNear ,GoalLookAtBlock}} = require('mineflayer-pathfinder')
 class findStone_hoe extends BaseBehavior {
     constructor(bot, targets) {
@@ -17,6 +18,7 @@ class findStone_hoe extends BaseBehavior {
         this.working = true
 
         const chest_id = mcData.blocksByName['chest'].id;
+        await sleepwait(2000)
         var chests = this.bot.findBlocks({
           matching: function(block) {
             // Get a single side of double-chests, and all single chests.
@@ -26,6 +28,7 @@ class findStone_hoe extends BaseBehavior {
           maxDistance: 15,
           count: 50
         });
+        console.log(chests)
         while(chests.length !== 0) {
           var chest = chests.shift()
   
@@ -88,4 +91,62 @@ class findStone_hoe extends BaseBehavior {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
   }
+
+  function JobCheck(check){
+    if (check === true){
+        return true
+    }else{
+        return false
+    }
+  }
+  function have_stone_hoe(bot){
+    if(bot.inventory.items().filter(item => item.name.includes("stone_hoe"))[0])
+      return true
+    return false
+  }
   exports.findStone_hoe = findStone_hoe;
+
+  function createFindHoeState(bot, targets) {
+    const enter = new BehaviorIdle();
+    const exit = new BehaviorIdle();  
+  
+    
+    const findStone_hoefromChest = new  findStone_hoe(bot, targets);
+    //const socket_schedule = new Socket_schedule(bot,targets,"go home",bot.miss_items[bot.miss_items.length-1],"I don't find the wheat_seeds")
+    const socket_schedule = new Socket_schedule(bot,targets,"stone_hoe","You didn't find any stone_hoe in these chest.",null)
+    // const socket_chat = new Socket_chat(bot,targets,"wheat_seeds","I don't have the wheat_seeds,so I cant feed chickens.")
+  
+    const transitions = [
+      new StateTransition({
+        parent: enter,
+        child: findStone_hoefromChest,
+        shouldTransition: () => true,
+      }),
+      new StateTransition({
+        parent: findStone_hoefromChest,
+        child: exit,
+        shouldTransition: () => findStone_hoefromChest.isFinished() && have_stone_hoe(bot) && JobCheck(findStone_hoefromChest.isFinished()) == true,
+        onTransition: () =>{
+          bot.chat("I found stone_hoe in the chest.")
+        }
+      }),
+      new StateTransition({
+        parent: findStone_hoefromChest,
+        child: socket_schedule,
+        shouldTransition: () => findStone_hoefromChest.isFinished() && !have_stone_hoe(bot) && JobCheck(findStone_hoefromChest.isFinished()) == true,
+        onTransition: () =>{
+          bot.chat("uh oh. there is no item i want here.")
+        }
+      }),
+      new StateTransition({
+        parent: socket_schedule,
+        child: exit,
+        shouldTransition: () => socket_schedule.isFinished(),
+        onTransition: () =>{
+          console.log("----------------------------------------------------------------")
+        }
+      })
+    ]
+    return new NestedStateMachine(transitions, enter, exit);
+  }
+  exports.createFindHoeState = createFindHoeState;

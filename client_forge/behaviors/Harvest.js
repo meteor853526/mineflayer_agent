@@ -92,6 +92,7 @@ class FindHoefromChest extends BaseBehavior {
   async onStateEntered() {
       this.working = true
       const chest_id = mcData.blocksByName['chest'].id;
+      
       var chests = this.bot.findBlocks({
         matching: function(block) {
           // Get a single side of double-chests, and all single chests.
@@ -174,9 +175,9 @@ class putWheatBackToChest extends BaseBehavior {
       var wheat_chest_position = this.bot.S_diedie_wheat_chest_position
       var wheat = mcData.itemsByName['wheat'].id;
       await sleepwait(2000)
-      console.log("?????????????????")
+   
       if(await this.bot.inventory.findInventoryItem(wheat)){
-        console.log("????")
+
         var wheat_number = await this.bot.inventory.findInventoryItem(wheat).count
         await this.bot.pathfinder.goto(new GoalLookAtBlock(wheat_chest_position, this.bot.world));
         await sleepwait(2000)
@@ -248,7 +249,7 @@ function createHarvestState(bot, targets) {
   const Harvest = new BehaviorHarvest(bot, targets);
   const wheatBack = new putWheatBackToChest(bot, targets);
   const find_hoe = new FindHoefromChest(bot, targets);  // item , observe' give you the wheat to make some bread'
-  const socket_schedule = new Socket_schedule(bot,targets,"stone_hoe","I don't have the stone_hoe")
+  const socket_schedule = new Socket_schedule(bot,targets,"stone_hoe","I don't have the stone_hoe,so I can't harvest the wheat")
   const socket_chat = new Socket_chat(bot,targets,"stone_hoe","I don't have the stone_hoe,so I can't harvest the wheat")
   const transitions = [
       new StateTransition({

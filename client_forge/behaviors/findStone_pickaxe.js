@@ -28,7 +28,7 @@ class findStone_pickaxe extends BaseBehavior {
         });
         while(chests.length !== 0) {
           var chest = chests.shift()
-  
+
           await this.bot.pathfinder.goto(new GoalLookAtBlock(chest, this.bot.world));
           await sleepwait(2000)
           var chest_window = await this.bot.openChest(this.bot.blockAt(chest));

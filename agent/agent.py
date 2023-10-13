@@ -28,22 +28,24 @@ sio.connect('http://localhost:3000')
 class agent:
 
     def __init__(self,name):
-            self.agent_name = name
-            self.agent_state = state.idle
-            self.lastPlayer = ''
-            self.current_schedule = ""
-            self.timer = CountdownTimer(60)
-            self.init_prompt_paragraph()
-            self.init_observe_prompt_paragraph()
-            self.init_agent_info()
-            self.init_agent_memory()
-            self.init_agent_dailyRecord()
-            self.init_day_count()
-            self.JobQueue = queue.Queue()
-            self.waitingQueue = queue.Queue()
-            self.JobStateFinish = True
-            self.init_SendingJobToMine()
-            self.property = 0
+        self.agent_name = name
+        self.agent_state = state.idle
+        self.lastPlayer = ''
+        self.current_schedule = ""
+        self.timer = CountdownTimer(60)
+        self.init_prompt_paragraph()
+        self.init_observe_prompt_paragraph()
+        self.init_agent_info()
+        self.init_agent_memory()
+        self.init_agent_dailyRecord()
+        self.init_day_count()
+        self.JobQueue = queue.Queue()
+        self.waitingQueue = queue.Queue()
+        self.JobStateFinish = True
+        self.init_SendingJobToMine()
+        self.property = 0
+        self.buffer = queue.Queue()
+        self.summary = "nothing"
             
     def generate(self,prompt):
         try:
@@ -216,19 +218,19 @@ class agent:
 
     def putIntoJobQueue(self,array,actionType):
  
-        if self.agent_state == state.idle:
-            for id in array : self.JobQueue.put(id)
-            self.agent_state = actionType
-        elif self.agent_state == state.chat and actionType == state.schedule:
-            for id in array : self.waitingQueue.put(id)
-        elif self.agent_state == state.chat and actionType == state.chat or self.agent_state == state.schedule and actionType == state.schedule:
-            for id in array : self.JobQueue.put(id)
-        elif self.agent_state == state.schedule and actionType == state.chat:
-            while not self.JobQueue.empty():
-                item = self.JobQueue.get()
-                self.waitingQueue.put(item) # pop current schedule action from jobqueue
+        # if self.agent_state == state.idle:
+        #     for id in array : self.JobQueue.put(id)
+        #     self.agent_state = actionType
+        # elif self.agent_state == state.chat and actionType == state.schedule:
+        #     for id in array : self.waitingQueue.put(id)
+        # elif self.agent_state == state.chat and actionType == state.chat or self.agent_state == state.schedule and actionType == state.schedule:
+        #     for id in array : self.JobQueue.put(id)
+        # elif self.agent_state == state.schedule and actionType == state.chat:
+        #     while not self.JobQueue.empty():
+        #         item = self.JobQueue.get()
+        #         self.waitingQueue.put(item) # pop current schedule action from jobqueue
 
-            for id in array : self.JobQueue.put(id)  # put chat action into jobqueue
+        for id in array : self.JobQueue.put(id)  # put chat action into jobqueue
         
         print("JobQueue contents:", list(self.JobQueue.queue))
         print("waitingQueue contents:", list(self.waitingQueue.queue))
@@ -242,6 +244,10 @@ class agent:
                 self.JobQueue.put(item) # pop current schedule action from jobqueue
         else:
             self.agent_state = state.idle
+            
+    def clearJobQueue(self):
+        while not self.JobQueue.empty():
+            self.JobQueue.get()
         
 
     def getClosestVector(self,new_vector, data_type,number):
@@ -250,24 +256,54 @@ class agent:
         df = df.sort_values("similarities", ascending=False)
         return df.head(number)
     
-    def observation_action(self,observation,data):
-        ObservationActionPrompt = self.prompt_paragraph["observation_action"]
-        ObservationActionPrompt = ObservationActionPrompt.replace("{observation}", observation).replace("{time}", data['time']).replace("{wheather}", data['wheather']).replace("{location}",  data['position']).replace("{property}", self.property)
-        Action = self.generate(ObservationActionPrompt)
+    def observation(self,data):
+        ObservationPrompt = self.prompt_paragraph["observation"]
+        ObservationPrompt = ObservationPrompt.replace("{time}", data['time']).replace("{wheather}", data['wheather']).replace("{location}",  data['position'])
+        obs = ''
+        while not self.buffer.empty():
+            observe = self.buffer.get()
+            obs += observe + '\n'
         
-        # informationthoughtMemory = self.prompt_paragraph["information_thought_memory"]
-        # informationthoughtMemory = informationthoughtMemory.replace("{observation}", observation).replace("{information_thought}", informationthought)
-        # print(informationthoughtMemory)
-        # self.updateMemory(informationthoughtMemory, self.agent_name, memoryType.INFORMATION)
-        print(Action)
-        try:
-            id,content = Action.split(':')
-        except:
-            content = Action
-            id = 999
-        self.updateDailyMemory(str(content),'chat')
-        return str(content),id
+        ObservationPrompt = ObservationPrompt.replace("{observation}", obs)
 
+        ObservationPrompt = ObservationPrompt.replace("{summary}", self.summary)
+        
+        print(ObservationPrompt)
+        Observation = self.generate(ObservationPrompt)
+        output_list = eval(Observation)
+        print(output_list[0])
+        ObservationActionPrompt = self.prompt_paragraph["observation_action"]
+        ObservationActionPrompt = ObservationActionPrompt.replace("{internal_thought}",  output_list[0])
+        action = self.generate(ObservationActionPrompt)
+        print(action)
+        action = eval(action)
+        print(action)
+        self.putIntoJobQueue(action,'null')
+
+        print(output_list[1])
+        self.summary = output_list[1]
+
+        return output_list[0]
+    def conversationForHelp(self,data):
+        ObservationPrompt = self.prompt_paragraph["conversationForHelp"]
+        ObservationPrompt = ObservationPrompt.replace("{time}", data['time']).replace("{wheather}", data['wheather']).replace("{location}",  'outside')
+        obs = ''
+        while not self.buffer.empty():
+            observe = self.buffer.get()
+            obs += observe + '\n'
+        
+        ObservationPrompt = ObservationPrompt.replace("{observation}", obs).replace("{agent}", data['targetAgent']).replace("{distance}", str(data['playerdistance']))
+
+        ObservationPrompt = ObservationPrompt.replace("{summary}", self.summary)
+        
+        print(ObservationPrompt)
+        Observation = self.generate(ObservationPrompt)
+        output_list = eval(Observation)
+        print(output_list[0])
+        print(output_list[1])
+        self.summary = output_list[1]
+
+        return output_list[0]
     def observation_chat(self,data):
         ObservationChatPrompt = self.observe_prompt_paragraph["observation_chat"]
         ObservationChatPrompt = ObservationChatPrompt.replace("{player}", self.lastPlayer).replace("{chat_record}", self.lastMessage).replace("{observation}", data['observation']).replace("{property}", self.property)
@@ -312,7 +348,7 @@ class agent:
 
         internalThoughtPrompt = self.prompt_paragraph["internal_thought"]
         internalThoughtPrompt = internalThoughtPrompt.replace("{query}", query).replace("{top_matches}", top_matches).replace("{time}", data['time']).replace("{wheather}", data['wheather']).replace("{location}",  data['position']).replace("{property}", self.property)
-        internalThoughtPrompt = internalThoughtPrompt.replace("{currentMemory}", currentMemoryText).replace("{sender}", data['sender'])
+        internalThoughtPrompt = internalThoughtPrompt.replace("{currentMemory}", currentMemoryText).replace("{sender}", data['sender']).replace("{distance}",str(data['playerdistance']))
         print("------------INTERNAL THOUGHT PROMPT------------")
         print(internalThoughtPrompt)
         internal_thought = self.generate(internalThoughtPrompt)
@@ -358,7 +394,7 @@ class agent:
 
         externalThoughtPrompt = self.prompt_paragraph['external_thought']
         externalThoughtPrompt = externalThoughtPrompt.replace("{query}", query).replace("{internal_thought}", internal_thought).replace("{action}", result).replace("{time}", data['time']).replace("{wheather}", data['wheather']).replace("{location}",  data['position']).replace("{property}", self.property)
-        externalThoughtPrompt = externalThoughtPrompt.replace("{sender}", data['sender']).replace("{current_schedule}",self.current_schedule)
+        externalThoughtPrompt = externalThoughtPrompt.replace("{sender}", data['sender']).replace("{current_schedule}",self.current_schedule).replace("{distance}",str(data['playerdistance']))
         print("------------EXTERNAL THOUGHT PROMPT------------")
         print(externalThoughtPrompt)
         external_thought = self.generate(externalThoughtPrompt) 
@@ -412,28 +448,68 @@ class agent:
 
     def actionNameById(self,id):
         action = {
-            0: "following user",
+            -1: "end this conversation",
+            0: "following people",
             1: "go home",
             2: "harvest the crops",
-            3: "put things back",
-            4: "collecting seeds and tools",
+            3: "put your tools back to chest",
+            4: "collecting seeds and tools from chest",
             5: "go to sleep",
-            6: "eat something",
-            7: "take crops back",
-            8: "find food",
+            6: "eat food",
+            7: "take crops back to chest",
+            8: "find food from chest",
             9: "go to farm",
-            10: "go to guild",
+            10: "go to Guild",
             11: "sell wheat",
             12: "making bread",
-            13: "put sign",
-            14: "drop item",
-            15: "talk and stand",
-            16: "discuss",
-            17: "talk with people",
-            18: "greeting with people",
-            999: "null"
+            13: "put sign on ground",
+            14: "drop item from your body",
+            15: "fishing",
+            16: "mining",
+            17: "feed chicken",
+            18: "just talking and stand on ground",
+            21: "cut down tree",
+            22: "wake up from bed",
+            23: "kill",
+            24: "have a rest",
+            26: "go logging camp",
+            27: "craft pickaxe",
+            28: "feed pig",
+            29: "craft hoe",
+            31: "burn charcoal",
+            32: "craft torch",
+            33: "craft axe",
+            34: "craft stick",
+            35: "wood transform",
+            36: "go smelting plant",
+            37: "go poultry farm",
+            38: "go pigeon",
+            39: "go to pond",
+            40: "ask someone for help",
+            41: "find wheat_seeds",
+            42: "find carrots",
+            43: "find charcoal",
+            44: "find coal",
+            45: "find cobblestone",
+            46: "find fishing rod",
+            47: "find ladder",
+            48: "find oak_sapling",
+            49: "find oak_log",
+            50: "find oak_planks",
+            51: "find stick",
+            52: "find stone_axe",
+            53: "find stone_hoe",
+            54: "find stone_pickaxe",
+            55: "find stone_sword",
+            56: "find wheat",
+            57: "find wooden_axe",
+            58: "find wooden_hoe",
+            59: "find wooden_pickaxe"
         }
-        return action[int(id)]
+        try:
+            return action[int(id)]
+        except:
+            return None
     def get_agentState(self):
         return self.agent_state
     def init_prompt_paragraph(self):

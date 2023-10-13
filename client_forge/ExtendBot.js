@@ -53,6 +53,7 @@ class BotStateTransition extends StateTransition {
 // job schedule 
 const BOT_JOB_TYPE = {
     IDLE: 18,
+    FOLLOWPLAYER:0,
     GOHOME: 1,
     HARVEST: 2,
     PUT_ALLTHING_BACK_TO_CHEST:3 ,

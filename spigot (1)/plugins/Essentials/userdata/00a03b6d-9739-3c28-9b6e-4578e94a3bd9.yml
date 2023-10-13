@@ -16,9 +16,9 @@ timestamps:
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1696447242186
-  login: 1696447232374
-money: '100000'
+  logout: 1696965062579
+  login: 1696964928259
+money: '99915.0'
 last-account-name: Guild
 logoutlocation:
   world: 9dac70ed-8467-49ef-8617-08d872900ab9

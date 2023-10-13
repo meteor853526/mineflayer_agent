@@ -4,6 +4,7 @@ const getWheather = require('./getRealtime.js').getWheather;
 const getDistance = require('./getRealtime.js').getDistance;
 const getRealtime = require("./getRealtime.js").getRealtime;
 const relocate = require("./getRealtime.js").relocate;
+const playerdistance = require("./getRealtime.js").playerdistance;
 class Sensor {
 
 
@@ -77,6 +78,7 @@ class Sensor {
         
         // })
         this.bot.on('whisper', async (username,message) => {
+
             await relocate(this.bot);
             socket.emit('message', {
                 targetSocketId: 'TARGET_SOCKET_ID',
@@ -86,6 +88,8 @@ class Sensor {
                 time:getRealtime(this.bot.time.timeOfDay),
                 wheather:getWheather(this.bot.isRaining),
                 position:this.bot.pos,
+                //playerdistance:playerdistance(this.bot,username),
+                playerdistance:10,
                 type:"chat"
             });
             this.bot.current_talker = username
