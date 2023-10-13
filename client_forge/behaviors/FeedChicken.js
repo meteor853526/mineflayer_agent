@@ -250,55 +250,6 @@ class putWheatBackToChest extends BaseBehavior {
   }
 }
 
-// class GoGuild extends BaseBehavior{
-//   constructor(bot, targets) {
-//     super(bot, 'goGuild', targets);
-//     this.working = false;
-// }
-//   async onStateEntered(){
-//     this.working = true
-//     const defaultMove = new Movements(this.bot)
-//     defaultMove.canDig = false
-//       //const { x: playerX, y: playerY, z: playerZ } = target.position
-
-//       // this.bot.entities.forEach(element => {
-//       //   console.log(element)
-//       // });
-//       for (const [key, value] of Object.entries(this.bot.entities)) {
-//         //console.log(key, value);
-//         if(value.username == 'Guild'){
-//           console.log("find guild")
-//           await this.bot.pathfinder.setMovements(defaultMove)
-//           await this.bot.pathfinder.setGoal(new GoalNear(value.position.x,value.position.y,value.position.z, 1))
-//           await this.bot.lookAt(value.position)
-//           await this.bot.activateEntity(value);
-//           await this.bot.activateEntity(value);
-//         }
-//       }
-//       const socket = socketIOClient(serverURL);
-//       socket.emit('message', {
-//         targetSocketId: 'TARGET_SOCKET_ID',
-//         current_job:"go to Guild find missing item",
-//         sender:"Lili",
-//         receiverName: this.bot.username,
-//         time:getRealtime(this.bot.time.timeOfDay),
-//         wheather:getWheather(this.bot.isRaining),
-//         position:this.bot.pos,
-//         type:"schedule",
-//         item_name:"wheat_seeds",
-//         prev_jobs: this.bot.prev_jobs,
-//       });
-//       this.working = false
-//   }
-//   isFinished() {
-//     if(this.working){
-//       return false
-//     }else{
-//       return true
-//     }
-//   }
-// }
-
 function have_wheat_seeds(bot){
   if(bot.inventory.items().filter(item => item.name.includes("wheat_seeds"))[0])
     return true

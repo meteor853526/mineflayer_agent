@@ -5,6 +5,7 @@ const {
   BehaviorMoveTo
 } = require("mineflayer-statemachine");
 const BaseBehavior = require("./base_behavior");
+const { BehaviorGoFarm } = require("./go_farm")
 const Socket_schedule = require("./socket_schedule")
 const Socket_chat = require("./socket_chat")
 const {Movements, goals: { GoalNear ,GoalLookAtBlock}} = require('mineflayer-pathfinder')
@@ -238,6 +239,7 @@ function createSowState(bot, targets) {
   const enter = new BehaviorIdle();
   const exit = new BehaviorIdle();    
   // state
+  const goFarm = new BehaviorGoFarm(bot, targets);
   const sow = new BehaviorFindFarmLand(bot, targets);
   const wheatSeedsBack = new putWheatSeedsBackToChest(bot, targets);
   const find_WheatSeeds = new FindWheatSeedsfromChest(bot, targets);  // item , observe' give you the wheat to make some bread'
@@ -246,8 +248,13 @@ function createSowState(bot, targets) {
   const transitions = [
       new StateTransition({
           parent: enter,
-          child: sow,
+          child: goFarm,
           shouldTransition: () => have_wheat_seeds(bot),
+      }),
+      new StateTransition({
+          parent: goFarm,
+          child: sow,
+          shouldTransition: () => goFarm.isFinished() && have_wheat_seeds(bot) && JobCheck(goFarm.isFinished()) == true,
       }),
       new StateTransition({
           parent: enter,
@@ -263,6 +270,7 @@ function createSowState(bot, targets) {
           shouldTransition: () => sow.isFinished() && JobCheck(sow.isFinished()) == true,
           onTransition: () => {
             bot.chat("Sow over");
+            bot.prev_jobs.push("Sow over")
             console.log("Sow over")
           }
       }),
@@ -278,7 +286,7 @@ function createSowState(bot, targets) {
 
       new StateTransition({
         parent: find_WheatSeeds,
-        child: sow,
+        child: goFarm,
         shouldTransition: () => find_WheatSeeds.isFinished() && have_wheat_seeds(bot) && JobCheck(find_WheatSeeds.isFinished()) == true,
         onTransition: () => {
           bot.chat("I found wheat_seeds in chest");
@@ -290,6 +298,8 @@ function createSowState(bot, targets) {
           shouldTransition: () =>find_WheatSeeds.isFinished() && !have_wheat_seeds(bot) && bot.agentState == 'schedule' && JobCheck(find_WheatSeeds.isFinished()) == true,
           onTransition: () => {
             bot.chat("I didn't found wheat_seeds in chest");
+            bot.prev_jobs.push("find seeds for sowwing uncomplete")
+            console.log("uncomplete sow find seeds")
           }
       }),
 
@@ -298,7 +308,7 @@ function createSowState(bot, targets) {
           child: socket_chat,
           shouldTransition: () => find_WheatSeeds.isFinished() && !have_wheat_seeds(bot) && bot.agentState == 'chat' && JobCheck(find_WheatSeeds.isFinished()) == true,
           onTransition: () => {
-            bot.chat("I didn't found wheat_seeds in chest");
+            // bot.chat("I didn't found wheat_seeds in chest");
           }
       }),
       new StateTransition({

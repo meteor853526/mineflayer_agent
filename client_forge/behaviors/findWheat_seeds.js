@@ -43,7 +43,8 @@ class findWheat_seeds extends BaseBehavior {
           var target = chest_window.containerItems().filter(item => item.name.includes("wheat_seeds"))[0];
           await sleepwait(2000)
           if(target){
-            await this.withdrawItem(chest_window,'wheat_seeds',1);
+            var chest_seed = target.count
+            await this.withdrawItem(chest_window,'wheat_seeds',chest_seed);
             await sleepwait(2000)
             await this.bot.closeWindow(chest_window)
             break;

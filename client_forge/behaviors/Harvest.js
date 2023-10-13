@@ -7,7 +7,8 @@ const {
 const BaseBehavior = require("./base_behavior");
 const Socket_schedule = require("./socket_schedule")
 const Socket_chat = require("./socket_chat")
-const {Movements, goals: { GoalNear ,GoalLookAtBlock}} = require('mineflayer-pathfinder')
+const {Movements, goals: { GoalNear ,GoalLookAtBlock}} = require('mineflayer-pathfinder');
+const { BehaviorGoFarm } = require("./go_farm");
 
 const mcData = require('minecraft-data')('1.16.5')
 
@@ -171,12 +172,15 @@ class putWheatBackToChest extends BaseBehavior {
   }
   async onStateEntered() {
       this.working = true
+      const defaultMove = new Movements(this.bot)
+      defaultMove.canDig = false
       var wheat_chest_position = this.bot.S_diedie_wheat_chest_position
       var wheat = mcData.itemsByName['wheat'].id;
       await sleepwait(2000)
       console.log("?????????????????")
       if(await this.bot.inventory.findInventoryItem(wheat)){
         console.log("????")
+        await this.bot.pathfinder.setMovements(defaultMove)
         var wheat_number = await this.bot.inventory.findInventoryItem(wheat).count
         await this.bot.pathfinder.goto(new GoalLookAtBlock(wheat_chest_position, this.bot.world));
         await sleepwait(2000)
@@ -245,6 +249,7 @@ function createHarvestState(bot, targets) {
   const enter = new BehaviorIdle();
   const exit = new BehaviorIdle();    
   // state
+  const goFarm = new BehaviorGoFarm(bot, targets);
   const Harvest = new BehaviorHarvest(bot, targets);
   const wheatBack = new putWheatBackToChest(bot, targets);
   const find_hoe = new FindHoefromChest(bot, targets);  // item , observe' give you the wheat to make some bread'
@@ -253,8 +258,13 @@ function createHarvestState(bot, targets) {
   const transitions = [
       new StateTransition({
           parent: enter,
-          child: Harvest,
+          child: goFarm,
           shouldTransition: () => have_stone_hoe(bot),
+      }),
+      new StateTransition({
+        parent: goFarm,
+        child: Harvest,
+        shouldTransition: () => goFarm.isFinished() && have_stone_hoe(bot) && JobCheck(goFarm.isFinished()) == true
       }),
       new StateTransition({
           parent: enter,
@@ -285,7 +295,7 @@ function createHarvestState(bot, targets) {
 
       new StateTransition({
         parent: find_hoe,
-        child: Harvest,
+        child: goFarm,
         shouldTransition: () => find_hoe.isFinished() && have_stone_hoe(bot) && JobCheck(find_hoe.isFinished()) == true,
         onTransition: () => {
           bot.chat("I found stone_hoe in chest");

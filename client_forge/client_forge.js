@@ -64,7 +64,7 @@ const {
   findOak_planks,
   findStick,
   findStone_axe,
-  findStone_hoe,
+  createFindStone_hoe,
   findStone_pickaxe,
   findStone_sword,
   findWheat,
@@ -155,7 +155,7 @@ class MCBot {
       this.bot.S_wheat_sign_position = new Vec3(-10494,71,12753)
       this.bot.home_position = new Vec3(-10506,71,12755);
       this.bot.farm_position = new Vec3(-10564,71,12749);
-      this.bot.S_diedie_wheat_chest_position = new Vec3(-10566,71,12744);
+      this.bot.S_diedie_wheat_chest_position = new Vec3(-10567,71,12744);
       this.bot.S_diedie_wheatSeed_chest_position = new Vec3(-10567,71,12745);
       // this.bot.diedie_home_centerPos = new Vec3(2264,63,-2913);
       this.bot.diedie_home_centerPos = new Vec3(-10499,71,12719);
@@ -168,11 +168,11 @@ class MCBot {
       this.bot.woodAxe_chest_position = new Vec3(-10558,72,12786);
       this.bot.stick_chest_position = new Vec3(-10501,72,12787);
       this.bot.plank_chest_position = new Vec3(-10548,72,12785);
-      this.bot.carrot_chest_position = new Vec3(-10566,71,12743);
+      this.bot.carrot_chest_position = new Vec3(-10567,71,12743);
       this.bot.forest = new Vec3(-10555, 72, 12787);
       this.bot.furnace_position = new Vec3(-10501, 72, 12782);
       this.bot.craftingTable_position = new Vec3(-10501, 72, 12785);
-      this.bot.Hoe_chest_position = new Vec3(-10566,71,12746);
+      this.bot.Hoe_chest_position = new Vec3(-10567,71,12746);
       this.bot.diedie_home_door = new Vec3(-10505,71,12717);
       this.bot.guild_position = new Vec3(-10494, 71, 12750);
       this.bot.Pond_position = new Vec3(-10545,71.5,12678);
@@ -255,24 +255,24 @@ class MCBot {
     const eat_bread = new eat(this.bot,target);
     const findfoodfromchest = new findFood(this.bot,target);
     const findseedfromchest = new createFindWheat_seeds(this.bot,target);
-    const findcarrotfromchest = new findCarrot(this.bot.target);
-    const findcharcoalfromchest = new findCharcoal(this.bot.target);
-    const findcoalfromchest = new findCoal(this.bot.target);
-    const findcobblestonefromchest = new findCobblestone(this.bot.target);
-    const findfishing_rodfromchest = new findFishing_rod(this.bot.target);
-    const findladderfromchest = new findLadder(this.bot.target);
-    const findoak_logfromchest = new findOak_log(this.bot.target);
-    const findoak_planksfromchest = new findOak_planks(this.bot.target);
-    const findoak_saplingfromchest = new findOak_sapling(this.bot.target);
-    const findstickfromchest = new findStick(this.bot.target);
-    const findstone_axefromchest = new findStone_axe(this.bot.target);
-    const findstone_hoefromchest = new findStone_hoe(this.bot.target);
-    const findstone_pickaxefromchest = new findStone_pickaxe(this.bot.target);
-    const findstone_swordfromchest = new findStone_sword(this.bot.target);
-    const findwheatfromchest = new findWheat(this.bot.target);
-    const findwooden_axefromchest = new findWooden_axe(this.bot.target);
-    const findwooden_hoefromchest = new findWooden_hoe(this.bot.target);
-    const findwoodden_pickaxefromchest = new findWooden_pickaxe(this.bot.target);
+    const findcarrotfromchest = new findCarrot(this.bot, target);
+    const findcharcoalfromchest = new findCharcoal(this.bot, target);
+    const findcoalfromchest = new findCoal(this.bot, target);
+    const findcobblestonefromchest = new findCobblestone(this.bot, target);
+    const findfishing_rodfromchest = new findFishing_rod(this.bot, target);
+    const findladderfromchest = new findLadder(this.bot, target);
+    const findoak_logfromchest = new findOak_log(this.bot, target);
+    const findoak_planksfromchest = new findOak_planks(this.bot, target);
+    const findoak_saplingfromchest = new findOak_sapling(this.bot, target);
+    const findstickfromchest = new findStick(this.bot, target);
+    const findstone_axefromchest = new findStone_axe(this.bot, target);
+    const findstone_hoefromchest = new createFindStone_hoe(this.bot, target);
+    const findstone_pickaxefromchest = new findStone_pickaxe(this.bot, target);
+    const findstone_swordfromchest = new findStone_sword(this.bot, target);
+    const findwheatfromchest = new findWheat(this.bot, target);
+    const findwooden_axefromchest = new findWooden_axe(this.bot, target);
+    const findwooden_hoefromchest = new findWooden_hoe(this.bot, target);
+    const findwoodden_pickaxefromchest = new findWooden_pickaxe(this.bot, target);
     const putTool = new putToolBackToChest(this.bot,target);
     const lookAtPlayer = new BehaviorLookAtEntity(this.bot, this.bot.players['Dingo_Kez'] ? this.bot.players['Dingo_Kez'].entity : null);
     const cutDownTree = createCutDownTreeState(this.bot, target);
