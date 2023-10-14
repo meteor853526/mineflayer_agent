@@ -7,6 +7,7 @@ const {
   const BaseBehavior = require("./base_behavior");
   const Socket_schedule = require("./socket_schedule")
   const Socket_chat = require("./socket_chat")
+  const {BehaviorGoSmeltingPlant} = require("./go_smeltingPlant")
   const {Movements, goals: { GoalNear ,GoalLookAtBlock, GoalBlock}} = require('mineflayer-pathfinder');
   
   const mcData = require('minecraft-data')('1.16.5')
@@ -325,7 +326,7 @@ const {
     }
     async onStateEntered() {
         this.working = true
-        var tool_chest_position = this.bot.tool_chest_position
+        var stick_chest_position = this.bot.stick_chest_position
         // var spruce_log = mcData.itemsByName['spruce_log'].id;
         await sleep(2000)
         var allitems = []
@@ -336,9 +337,9 @@ const {
         // if(await this.bot.inventory.findInventoryItem(spruce_log)){
             console.log("????")
             // var log_number = await this.bot.inventory.findInventoryItem(spruce_log).count
-            await this.bot.pathfinder.goto(new GoalLookAtBlock(tool_chest_position, this.bot.world));
+            await this.bot.pathfinder.goto(new GoalLookAtBlock(stick_chest_position, this.bot.world));
             await sleep(2000)
-            var chest_window = await this.bot.openChest(this.bot.blockAt(tool_chest_position));
+            var chest_window = await this.bot.openChest(this.bot.blockAt(stick_chest_position));
             await sleep(2000)
         //   await this.depositItem(chest_window,'spruce_log',log_number);
             await Inchest(this.bot,allitems,chest_window)
@@ -438,38 +439,34 @@ const {
     const enter = new BehaviorIdle();
     const exit = new BehaviorIdle();    
     // state
+    const go_smeltingPlant = new BehaviorGoSmeltingPlant(bot, targets);
     const CraftTorch = new BehaviorCraftTorch(bot, targets);
     const allBack = new putAllBackToChest(bot, targets);
     const findStick = new FindStickfromChest(bot, targets);  // item , observe' give you the wheat to make some bread'
     const findCoal = new FindCoalfromChest(bot, targets);
     const findCharcoal = new FindCharcoalfromChest(bot, targets);
-    const socket_schedule_coal = new Socket_schedule(bot,targets,"coal","I don't have the coal")
-    const socket_chat_coal = new Socket_chat(bot,targets,"charcoal","I don't have the coal,so I can't make a torch")
-    const socket_schedule_charcoal = new Socket_schedule(bot,targets,"coal","I don't have the charcoal")
-    const socket_chat_charcoal = new Socket_chat(bot,targets,"charcoal","I don't have the charcoal,so I can't make a torch")
+    const socket_schedule_coal = new Socket_schedule(bot,targets,"find coal", "coal", "5. go to smeltingPlant and find coal\n")
+    const socket_chat_coal = new Socket_chat(bot,targets,"find coal", "coal","I don't have the coal,so I can't make a torch")
     const socket_schedule_stick = new Socket_schedule(bot,targets,"stick","I don't have stick")
     const socket_chat_stick = new Socket_chat(bot,targets,"stick","I don't have the stick,so I can't make a torch")
     const transitions = [
         new StateTransition({
-            parent: enter,
+          parent: enter,
+          child: go_smeltingPlant,
+          shouldTransition: () => true,
+        }), 
+        new StateTransition({
+            parent: go_smeltingPlant,
             child: findCoal,
-            shouldTransition: () => !have_coal(bot),
+            shouldTransition: () => !have_coal(bot) && go_smeltingPlant.isFinished() && JobCheck(go_smeltingPlant.isFinished()) == true,
             onTransition: () => {
                 bot.chat("No coal on my body");
             }
         }),
         new StateTransition({
-            parent: findCoal,
-            child: findCharcoal,
-            shouldTransition: () => !have_coal(bot),
-            onTransition: () => {
-              bot.chat("No coal on my body");
-          }
-        }),
-        new StateTransition({
-            parent: enter,
+            parent: go_smeltingPlant,
             child: findStick,
-            shouldTransition: () => !have_stick(bot),
+            shouldTransition: () => !have_stick(bot) && go_smeltingPlant.isFinished() && JobCheck(go_smeltingPlant.isFinished()) == true,
             onTransition: () => {
               bot.chat("No stick on my body");
           }
@@ -477,7 +474,7 @@ const {
         new StateTransition({
             parent: findStick,
             child: findCoal,
-            shouldTransition: () => !(have_coal(bot)||have_charcoal(bot)) && have_stick(bot),
+            shouldTransition: () => !have_coal(bot) && have_stick(bot),
             onTransition: () => {
               bot.chat("No coal on my body");
           }
@@ -485,7 +482,7 @@ const {
         new StateTransition({
             parent: findCoal,
             child: findStick,
-            shouldTransition: () => !have_stick(bot) && (have_coal(bot)||have_charcoal(bot)),
+            shouldTransition: () => !have_stick(bot) && have_coal(bot),
             onTransition: () => {
               bot.chat("No stick on my body");
           }
@@ -493,7 +490,7 @@ const {
         new StateTransition({
             parent: findStick,
             child: CraftTorch,
-            shouldTransition: () => have_stick(bot) && (have_coal(bot)||have_charcoal(bot)),
+            shouldTransition: () => have_stick(bot) && have_coal(bot),
         }),
         new StateTransition({
             parent: findCoal,
@@ -506,6 +503,7 @@ const {
             shouldTransition: () => CraftTorch.isFinished() && JobCheck(CraftTorch.isFinished()) == true,
             onTransition: () => {
               bot.chat("CraftTorch over");
+              bot.prev_jobs("CraftTorch Finished")
               console.log("CraftTorch over")
             }
         }),
@@ -528,28 +526,13 @@ const {
           }
         }),
         new StateTransition({
-            parent: findCharcoal,
-            child: socket_schedule_charcoal,
-            shouldTransition: () =>findCharcoal.isFinished() && !have_charcoal(bot) && bot.agentState == 'schedule' && JobCheck(findCharcoal.isFinished()) == true,
-            onTransition: () => {
-              bot.chat("I didn't found charcoal in chest");
-            }
-        }),
-  
-        new StateTransition({
-            parent: findCharcoal,
-            child: socket_chat_charcoal,
-            shouldTransition: () =>findCharcoal.isFinished() && !have_charcoal(bot) && bot.agentState == 'chat' && JobCheck(findCharcoal.isFinished()) == true,
-            onTransition: () => {
-              bot.chat("I didn't found charcoal in chest");
-            }
-        }),
-        new StateTransition({
             parent: findStick,
             child: socket_schedule_stick,
             shouldTransition: () =>findStick.isFinished() && !have_stick(bot) && bot.agentState == 'schedule' && JobCheck(findStick.isFinished()) == true,
             onTransition: () => {
               bot.chat("I didn't found stick in chest");
+              bot.prev_jobs.push("find stick for crafting torch uncompleted")
+              bot.miss_items.push("stick")
             }
         }),
   
@@ -565,21 +548,15 @@ const {
             parent: socket_schedule_coal,
             child: exit,
             shouldTransition: () => socket_schedule_coal.isFinished(),
+            onTransition: () => {
+              bot.prev_jobs.push("find coal for crafting torch uncompleted")
+              bot.miss_items.push("coal")
+            }
         }),
         new StateTransition({
           parent: socket_chat_coal,
           child: exit,
           shouldTransition: () => socket_chat_coal.isFinished(),
-        }),
-        new StateTransition({
-            parent: socket_schedule_charcoal,
-            child: exit,
-            shouldTransition: () => socket_schedule_charcoal.isFinished(),
-        }),
-        new StateTransition({
-          parent: socket_chat_charcoal,
-          child: exit,
-          shouldTransition: () => socket_chat_charcoal.isFinished(),
         }),
         new StateTransition({
             parent: socket_schedule_stick,
