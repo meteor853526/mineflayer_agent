@@ -2,7 +2,8 @@ const {
   StateTransition,
   NestedStateMachine,
   BehaviorIdle,
-  BehaviorMoveTo
+  BehaviorMoveTo,
+  goFarm
 } = require("mineflayer-statemachine");
 const BaseBehavior = require("./base_behavior");
 const socketIOClient = require('socket.io-client');
@@ -11,6 +12,7 @@ const Socket_schedule = require("./socket_schedule")
 const Socket_chat = require("./socket_chat")
 const {BehaviorGotoGuild} = require("./go_guild")
 const {BehaviorGoHome} = require("./go_home")
+const {BehaviorGoFarm} = require("./go_farm")
 const {Movements, goals: { GoalNear ,GoalLookAtBlock}} = require('mineflayer-pathfinder')
 const getWheather = require('../getRealtime.js').getWheather;
 const getDistance = require('../getRealtime.js').getDistance;
@@ -270,21 +272,27 @@ function createFeedChickenState(bot, targets) {
   const feedChicken = new BehaviorFeedChicken(bot, targets);
   const wheatBack = new putWheatBackToChest(bot, targets);
   const find_wheat_seeds = new FindwheatseedsfromChest(bot, targets);  // item , observe' give you the wheat to make some bread'
+  const goFarm = new BehaviorGoFarm(bot, targets);
   // const goGuild = new BehaviorGotoGuild(bot, targets);
   // const goGuild = new GoGuild(bot, targets);
   // const goHome = new BehaviorGoHome(bot, targets);
   const socket_schedule = new Socket_schedule(bot,targets,"feed chicken","wheat_seeds","I don't have the wheat_seeds")
   const socket_chat = new Socket_chat(bot,targets,"wheat_seeds","I don't have the wheat_seeds,so I cant feed chickens.")
   const transitions = [
+    new StateTransition({
+      parent: enter,
+      child: goFarm,
+      shouldTransition: () => true,
+    }),
       new StateTransition({
-          parent: enter,
+          parent: goFarm,
           child: feedChicken,
-          shouldTransition: () => have_wheat_seeds(bot),
+          shouldTransition: () => have_wheat_seeds(bot) && goFarm.isFinished() && JobCheck(goFarm.isFinished()) == true,
       }),
       new StateTransition({
-          parent: enter,
+          parent: goFarm,
           child: find_wheat_seeds,
-          shouldTransition: () => !have_wheat_seeds(bot),
+          shouldTransition: () => !have_wheat_seeds(bot) && goFarm.isFinished() && JobCheck(goFarm.isFinished()) == true,
           onTransition: () => {
             bot.chat("No wheat_seeds on my body");
         }

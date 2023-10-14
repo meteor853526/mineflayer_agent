@@ -53,7 +53,7 @@ const {
   eat,
   findFood,
   createFindWheat_seeds,
-  findCarrot,
+  createFindCarrot,
   findCharcoal,
   findCoal,
   findCobblestone,
@@ -255,7 +255,7 @@ class MCBot {
     const eat_bread = new eat(this.bot,target);
     const findfoodfromchest = new findFood(this.bot,target);
     const findseedfromchest = new createFindWheat_seeds(this.bot,target);
-    const findcarrotfromchest = new findCarrot(this.bot, target);
+    const findcarrotfromchest = new createFindCarrot(this.bot, target);
     const findcharcoalfromchest = new findCharcoal(this.bot, target);
     const findcoalfromchest = new findCoal(this.bot, target);
     const findcobblestonefromchest = new findCobblestone(this.bot, target);

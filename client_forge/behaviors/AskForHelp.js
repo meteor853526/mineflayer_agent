@@ -40,7 +40,7 @@ class BehaviorAskForHelp extends BaseBehavior {
           sender: username,
           type:'observe',
           observation: this.observation,
-          message:"i was doing" + this.bot.prev_jobs + "and i miss 'wheat_seeds' and now i am walking to" + username + "asking for help.",
+          message:"i was doing " + this.bot.prev_jobs + " and i miss " + this.bot.miss_items[this.bot.miss_items.length - 1]+" and now i am walking to " + username + " asking for help.",
           time : getRealtime(this.bot.time.timeOfDay),
           wheather : getWheather(this.bot.isRaining),
           position:this.bot.pos,

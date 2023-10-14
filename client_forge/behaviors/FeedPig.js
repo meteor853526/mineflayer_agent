@@ -260,7 +260,7 @@ const {
     const feedPig = new BehaviorFeedPig(bot, targets);
     const carrotBack = new putCarrotBackToChest(bot, targets);
     const find_carrot = new FindcarrotfromChest(bot, targets);  // item , observe' give you the wheat to make some bread'
-    const socket_schedule = new Socket_schedule(bot,targets,"carrot","I don't have the carrot")
+    const socket_schedule = new Socket_schedule(bot,targets,"find carrot"," carrot","5. go to farm and find carrot\n\t6. go pigeon and find carrot");
     const socket_chat = new Socket_chat(bot,targets,"carrot","I don't have the carrot,so I cant feed pigs.")
     const transitions = [
         new StateTransition({
@@ -308,6 +308,8 @@ const {
             child: socket_schedule,
             shouldTransition: () =>find_carrot.isFinished() && !have_carrot(bot) && bot.agentState == 'schedule' && JobCheck(find_carrot.isFinished()) == true,
             onTransition: () => {
+              bot.prev_jobs.push("find carrot for feed pig uncompleted")
+              bot.miss_items.push("carrot")
               bot.chat("I didn't found carrot in chest");
             }
         }),

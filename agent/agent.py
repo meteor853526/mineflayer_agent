@@ -510,23 +510,10 @@ class agent:
             self.property = dataYml['money']
             jsonData['property'] = dataYml['money']
             file.close
-        # backup_planningPrompt = self.prompt_paragraph["backup_planning"]
-        # choosing_backupPrompt = self.prompt_paragraph["choosing_backup"]
-        # temp, task = data["message"].split(':')
-        # backup_planningPrompt = backup_planningPrompt.replace("{taskName}", task).replace("{taskItem}", data['item_name'])
-        # print("-----FIRST---STEP-----")
-        # print(backup_planningPrompt)
-        # condition = self.generate(backup_planningPrompt)
-        # print(condition)
-        # choosing_backupPrompt = choosing_backupPrompt.replace("{condition}", condition).replace("{time}", data['time']).replace("{wheather}", data['wheather']).replace("{location}", 'home').replace("{property}", str(self.property))
-        # print("-----SECOND---STEP-----")
-        # print(choosing_backupPrompt)
-        # response = self.generate(choosing_backupPrompt)
-        # print(response)
-        # return str(response)
+        
         backup_planningPrompt = self.prompt_paragraph["backup_planning"]
         choosing_backupPrompt = self.prompt_paragraph["choosing_backup"]
-        backup_planningPrompt = backup_planningPrompt.replace("{miss_item}", data['item_name']).replace("{current_job}", data['current_job']).replace("{prev_jobs}", str(data['prev_jobs'])).replace("{time}", data['time']).replace("{wheather}", data['wheather']).replace("{location}",  data['position']).replace("{property}", self.property)
+        backup_planningPrompt = backup_planningPrompt.replace("{miss_item}", data['item_name']).replace("{current_job}", data['current_job']).replace("{prev_jobs}", str(data['prev_jobs'])).replace("{time}", data['time']).replace("{wheather}", data['wheather']).replace("{location}",  data['position']).replace("{property}", self.property).replace("{condition}", data['observation'])
         print("-----FIRST---STEP-----")
         print(backup_planningPrompt)
         condition = self.generate(backup_planningPrompt)

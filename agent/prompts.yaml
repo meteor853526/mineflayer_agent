@@ -389,6 +389,7 @@ backup_planning: |-
     2. go Guild and find '{miss_item}'
     3. ask someone for help to get '{miss_item}'
     4. give up this task and do other task or nothing
+    {condition}
   You must choose ONE option only and DONT choose the option that has chosen before.
 
   Base on what you've chosen, give some response as like murmuring.
