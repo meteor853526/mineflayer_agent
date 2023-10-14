@@ -18,55 +18,62 @@ const {
         this.working = false;
     }
     async onStateEntered() {
-        this.working = true
-        var dropitem = []
-        var bot_coordinate = this.bot.entity.position;
-        // console.log("XXXXXYYYYZZZZ: "+bot_coordinate)
-        this.bot.on('itemDrop', (entity) => {
-            console.log(entity);
-            let center_A = bot_coordinate.x
-            let center_B = bot_coordinate.z
-            let A = entity.position.x
-            let B = entity.position.z
-            let abs_A = Math.abs(A-center_A)
-            let abs_B = Math.abs(B-center_B)
-            let distance = Math.sqrt(abs_A*abs_A + abs_B*abs_B)
-            if(distance < 8 ){
-                dropitem.push(entity)
-                console.log("item distance:" + distance)
-            }
-            
-        })
-        const defaultMove = new Movements(this.bot)
-        defaultMove.canDig = false
-
-        var stone_axe = 591
-        var spruce_log = this.bot.registry.itemsByName.spruce_log.id;
-        const target = this.bot.inventory.items().filter(item => item.name.includes("stone_axe"))[0]
-        this.bot.equip(target, "hand");
-        for(var y = 0; y<7; y++){
-            for(var x = -2; x <= 2; x++) {
-                for(var z = -2; z <= 2; z++) {
-                    var block = this.bot.blockAt(this.bot.entity.position.offset(x, y, z));
-                    if(block.type == 36 || block.type == 60){
-                        try {
-                            await this.bot.dig(block, true);
-                        } catch (err) {
-                        }
+      this.working = true
+      var dropitem = []
+      var bot_coordinate = this.bot.entity.position;
+      // console.log("XXXXXYYYYZZZZ: "+bot_coordinate)
+      this.bot.on('itemDrop', (entity) => {
+          console.log(entity);
+          let center_A = bot_coordinate.x
+          let center_B = bot_coordinate.z
+          let A = entity.position.x
+          let B = entity.position.z
+          let abs_A = Math.abs(A-center_A)
+          let abs_B = Math.abs(B-center_B)
+          let distance = Math.sqrt(abs_A*abs_A + abs_B*abs_B)
+          if(distance < 8 ){
+              dropitem.push(entity)
+              console.log("item distance:" + distance)
+          }
+          
+      })
+      const defaultMove = new Movements(this.bot)
+      defaultMove.canDig = false
+      var stone_axe = 591
+      var oak_log = this.bot.registry.itemsByName.oak_log.id;
+      const target = this.bot.inventory.items().filter(item => item.name.includes("stone_axe"))[0]
+      this.bot.equip(target, "hand");
+      await this.sleep(2000)
+      for(var y = 0; y<6; y++){
+        for(var x = -2; x <= 2; x++) {
+            for(var z = -2; z <= 2; z++) {
+                var block = this.bot.blockAt(this.bot.entity.position.offset(x, y, z));
+                console.log("????")
+                console.log(block.type)
+                console.log(block.name)
+                if(block.type == 35 || block.type == 60){
+                    try {
+                        await this.bot.dig(block, true);
+                    } catch (err) {
                     }
                 }
             }
-        var count1 = 0 // dont delete!!
-        while(dropitem.length > 0){
-            let item = dropitem.pop()
-            console.log(count1+=1)
-            console.log(item.position.x)
-            await this.bot.pathfinder.setMovements(defaultMove)
-        
-            await this.bot.pathfinder.setGoal(new GoalNear(parseInt(item.position.x), parseInt(item.position.y), parseInt(item.position.z), 1))
-            await this.sleep(2000);
-            //await move(this.bot,item.position)
         }
+      }
+      // console.log("????")
+      // console.log(block.type)
+      // console.log(block.name)
+      await this.sleep(2000)
+      var count1 = 0 // dont delete!!
+      while(dropitem.length > 0){
+        let item = dropitem.pop()
+        console.log(count1+=1)
+        console.log(item.position.x)
+        await this.bot.pathfinder.setMovements(defaultMove)
+    
+        await this.bot.pathfinder.setGoal(new GoalNear(parseInt(item.position.x), parseInt(item.position.y), parseInt(item.position.z), 1))
+        await this.sleep(2000);
+        //await move(this.bot,item.position)
       }
       this.working = false;
     }
@@ -179,25 +186,30 @@ const {
     async onStateEntered() {
         this.working = true
         var tool_chest_position = this.bot.tool_chest_position
-        // var spruce_log = mcData.itemsByName['spruce_log'].id;
+        var log_chest_position = this.bot.oak_log_chest_position
         await sleep(2000)
         var allitems = []
+        var oak_log = mcData.itemsByName.oak_log.id
+        var log_number = await this.bot.inventory.findInventoryItem(oak_log).count
+        await this.bot.pathfinder.goto(new GoalLookAtBlock(log_chest_position, this.bot.world));
+        await sleep(2000)
+        var chest_window = await this.bot.openChest(this.bot.blockAt(log_chest_position));
+        await sleep(2000)
+        await depositItem("oak_log",log_number,this.bot,chest_window)
+        await sleep(2000)
+        await this.bot.closeWindow(chest_window)
+        await sleep(1000)
         await this.bot.inventory.items().forEach(items =>{
-            allitems.push({name:items.name,count:items.count})
+          allitems.push({name:items.name,count:items.count})
         })
-        // console.log("?????????????????")
-        // if(await this.bot.inventory.findInventoryItem(spruce_log)){
-            console.log("????")
-            // var log_number = await this.bot.inventory.findInventoryItem(spruce_log).count
-            await this.bot.pathfinder.goto(new GoalLookAtBlock(tool_chest_position, this.bot.world));
-            await sleep(2000)
-            var chest_window = await this.bot.openChest(this.bot.blockAt(tool_chest_position));
-            await sleep(2000)
-        //   await this.depositItem(chest_window,'spruce_log',log_number);
-            await Inchest(this.bot,allitems,chest_window)
-            await sleep(2000)
-            await this.bot.closeWindow(chest_window)
-        // }
+        await this.bot.pathfinder.goto(new GoalLookAtBlock(tool_chest_position, this.bot.world));
+        await sleep(2000)
+        var chest_window = await this.bot.openChest(this.bot.blockAt(tool_chest_position));
+        await sleep(2000)
+        await Inchest(this.bot,allitems,chest_window)
+        await sleep(2000)
+        await this.bot.closeWindow(chest_window)
+
         async function Inchest(bot,allitems,chest_window){
 
             while(allitems.length != 0){
@@ -299,30 +311,29 @@ const {
             this.working = true
         }
         async onStateEntered() {
-            this.working = true
-            const mcData = require('minecraft-data')(this.bot.version)
-            const defaultMove = new Movements(this.bot)
-            defaultMove.canDig = false
-            this.bot.pathfinder.setMovements(defaultMove)
-            const wood = this.bot.findBlock({
+          this.working = true
+          const mcData = require('minecraft-data')(this.bot.version)
+          const defaultMove = new Movements(this.bot)
+          defaultMove.canDig = false
+          var oak_log_id = mcData.blocksByName['oak_log'].id
+          this.bot.pathfinder.setMovements(defaultMove)
+          const wood = this.bot.findBlock({
             matching: (block) => {
-                return block.type === mcData.blocksByName.spruce_log.id
+                return block.type === oak_log_id
             },
             maxDistance: 64
-            })
-            if(!wood){
-                this.bot.chat("there is no woods.")
-            }
-            const wx = wood.position.x;
-            const wy = wood.position.y;
-            const wz = wood.position.z;
-            const goal = new GoalBlock(wx, wy, wz);
-            this.bot.pathfinder.setGoal(goal)
-            sleep(5000)
-            this.working = false
-            async function sleep(ms) {
-              return new Promise(resolve => setTimeout(resolve, ms));
-            }
+          })
+          if(!wood){
+              console.log("there's no wood.")
+          }
+          var wood_position = wood.position
+          this.bot.pathfinder.setGoal(new GoalNear(wood_position.x, wood_position.y, wood_position.z, 1))
+          sleep(5000)
+          this.working = false
+
+          async function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+          }
         }
         isFinished() {
             if(this.working){
@@ -342,11 +353,11 @@ const {
   }
 
   function is_Enough(bot){
-    if(bot.inventory.items().filter(item => item.name.includes("spruce_log"))[0]){
-      if(bot.inventory.items().filter(item => item.name.includes("spruce_log"))[0].count>12){
+    if(bot.inventory.items().filter(item => item.name.includes("oak_log"))[0]){
+      if(bot.inventory.items().filter(item => item.name.includes("oak_log"))[0].count>12){
         return true
       }
-      // console.log("!!!!!!!!!!!!" + bot.inventory.items().filter(item => item.name.includes("spruce_log"))[0].count)
+      console.log("!!!!!!!!!!!!" + bot.inventory.items().filter(item => item.name.includes("spruce_log"))[0].count)
       return false
     }
     return false
@@ -368,119 +379,69 @@ const {
     const CutDownTree = new BehaviorCutDownTree(bot, targets);
     const allBack = new putAllBackToChest(bot, targets);
     const find_axe = new FindAxefromChest(bot, targets);  // item , observe' give you the wheat to make some bread'
-    const socket_schedule = new Socket_schedule(bot,targets,"stone_axe","I don't have the stone_axe")
+    const socket_schedule = new Socket_schedule(bot,targets,"cut down tree","stone_axe","I don't have the stone_axe")
     const socket_chat = new Socket_chat(bot,targets,"stone_axe","I don't have the stone_axe,so I can't cut down the tree")
     const transitions = [
-        new StateTransition({
-            parent: enter,
-            // child: CutDownTree,
-            chlid: findForest,
-            shouldTransition: () => have_stone_axe(bot),
-        }),
-        new StateTransition({
-            parent: enter,
-            child: find_axe,
-            shouldTransition: () => !have_stone_axe(bot),
-            onTransition: () => {
-              bot.chat("No stone_axe on my body");
-          }
-        }),
-        new StateTransition({
-            parent: find_axe,
-            child: findForest,
-            // child: CutDownTree,
-            shouldTransition: () => have_stone_axe(bot),
-        }),
-        new StateTransition({
-          parent: findForest,
-          child: findTree,
-          shouldTransition: () => findForest.isFinished() && JobCheck(findForest.isFinished()) == true,
-        //     shouldTransition: () => !have_stone_axe(bot),
-            onTransition: () => {
-              bot.chat("arriveed Forest!");
-          }
-        }),        
-        new StateTransition({
-            parent: findTree,
-            child: CutDownTree,
-            shouldTransition: () => findTree.isFinished() && JobCheck(findTree.isFinished()) == true && !is_Enough(bot),
-            onTransition: () => {
-              bot.chat("FindTree over cut tree again");
-              console.log("FindTree over")
-            }
-        }),
-        new StateTransition({
-          parent: CutDownTree,
-          child: findTree,
-          shouldTransition: () => CutDownTree.isFinished() && JobCheck(CutDownTree.isFinished()) == true && !is_Enough(bot),
-          onTransition: () => {
-            bot.chat("find tree again");
-            console.log("find tree again")
-          }
+      new StateTransition({
+        parent: enter,
+        child: findForest,
+        shouldTransition: () => true,
       }),
-        new StateTransition({
-          parent: findTree,
-          child: allBack,
-          shouldTransition: () => findTree.isFinished() && JobCheck(findTree.isFinished()) == true && is_Enough(bot),
-          onTransition: () => {
-            bot.chat("Enough logs");
-            console.log("Enough logs")
-          }
+      new StateTransition({
+        parent: findForest,
+        child: find_axe,
+        shouldTransition: () => findForest.isFinished() && !have_stone_axe(bot) && JobCheck(findForest.isFinished()) == true,
       }),
-        new StateTransition({
-            parent: CutDownTree,
-            child: allBack,
-            shouldTransition: () => CutDownTree.isFinished() && JobCheck(CutDownTree.isFinished()) == true && is_Enough(bot),
-            onTransition: () => {
-              bot.chat("CutDownTree over");
-              console.log("CutDownTree over")
-            }
-        }),
-        new StateTransition({
-          parent: allBack,
-          child: exit,
-          shouldTransition: () =>allBack.isFinished() && JobCheck(allBack.isFinished()) == true,
-          onTransition: () => {
-            bot.chat("all over");
-            console.log("all over")
-          }
+      new StateTransition({
+        parent: find_axe,
+        child: findTree,
+        shouldTransition: () => find_axe.isFinished() && have_stone_axe(bot) && JobCheck(find_axe.isFinished()) == true,
       }),
-  
-        new StateTransition({
-          parent: find_axe,
-          child: CutDownTree,
-          shouldTransition: () => find_axe.isFinished() && have_stone_axe(bot) && JobCheck(find_axe.isFinished()) == true,
-          onTransition: () => {
-            bot.chat("I found stone_axe in chest");
-          }
-        }),
-        new StateTransition({
-            parent: find_axe,
-            child: socket_schedule,
-            shouldTransition: () =>find_axe.isFinished() && !have_stone_axe(bot) && bot.agentState == 'schedule' && JobCheck(find_axe.isFinished()) == true,
-            onTransition: () => {
-              bot.chat("I didn't found stone_axe in chest");
-            }
-        }),
-  
-        new StateTransition({
-            parent: find_axe,
-            child: socket_chat,
-            shouldTransition: () => find_axe.isFinished() && !have_stone_axe(bot) && bot.agentState == 'chat' && JobCheck(find_axe.isFinished()) == true,
-            onTransition: () => {
-              bot.chat("I didn't found stone_axe in chest");
-            }
-        }),
-        new StateTransition({
-            parent: socket_schedule,
-            child: exit,
-            shouldTransition: () => socket_schedule.isFinished(),
-        }),
-        new StateTransition({
-          parent: socket_chat,
-          child: exit,
-          shouldTransition: () => socket_chat.isFinished(),
+      new StateTransition({
+        parent: findForest,
+        child: findTree,
+        shouldTransition: () => findForest.isFinished() && have_stone_axe(bot) && JobCheck(findForest.isFinished()) == true,
       }),
+      new StateTransition({
+        parent: find_axe,
+        child: socket_schedule,
+        shouldTransition: () => find_axe.isFinished() && !have_stone_axe(bot) && JobCheck(find_axe.isFinished()) == true,
+        onTransition: () => {
+          console.log("no axe gogo nothing")
+        }
+      }),
+      new StateTransition({
+        parent: findTree,
+        child: CutDownTree,
+        shouldTransition: () => findTree.isFinished() && JobCheck(findTree.isFinished()) == true,
+        onTransition: () => {
+          console.log("find Tree!")
+        }
+      }),
+      new StateTransition({
+        parent: CutDownTree,
+        child: findTree, 
+        shouldTransition: () => CutDownTree.isFinished() && JobCheck(CutDownTree.isFinished()) && !is_Enough(bot)== true,
+        onTransition: () => {
+          console.log("find tree again.")
+        }
+      }),
+      new StateTransition({
+        parent: CutDownTree,
+        child: allBack,
+        shouldTransition: () => CutDownTree.isFinished() && JobCheck(CutDownTree.isFinished()) && is_Enough(bot) == true,
+        onTransition: () => {
+          console.log("cut down tree over.")
+        }
+      }),
+      new StateTransition({
+        parent: allBack,
+        child: exit,
+        shouldTransition: () => allBack.isFinished() && JobCheck(allBack.isFinished()) == true,
+        onTransition: () => {
+          console.log("All over.")
+        }
+      })
     ];
   
     return new NestedStateMachine(transitions, enter, exit);

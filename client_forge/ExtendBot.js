@@ -106,6 +106,7 @@ const BOT_JOB_TYPE = {
     FIND_WOODEN_AXE: 57,
     FIND_WOODEN_HOE: 58,
     FIND_WOODEN_PICKAXE: 59,
+    PLANT_TREE: 60,
 }
 
 const BOT_JOB_NAME = Object.keys(BOT_JOB_TYPE).reduce((acc, key) => {

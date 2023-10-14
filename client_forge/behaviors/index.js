@@ -51,7 +51,7 @@ const findWooden_hoe = require('./findWooden_hoe')
 const findWooden_pickaxe = require('./findWooden_pickaxe')
 const putToolBackToChest = require('./putToolBacktoChest')
 const askForHelp = require('./AskForHelp')
-
+const plantTree = require('./PlantTree')
 
 module.exports = {
     ...goHome,
@@ -107,7 +107,7 @@ module.exports = {
     ...findWooden_pickaxe,
     ...putToolBackToChest,
     ...askForHelp,
-
+    ...plantTree,
 
 
 

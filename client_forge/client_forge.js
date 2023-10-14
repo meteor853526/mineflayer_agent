@@ -79,6 +79,7 @@ const {
   BehaviorGoPoultryFarm,
   BehaviorGoPigpen,
   BehaviorGoPond,
+  createPlantTreeState,
 } = require('./behaviors');
 // bot functions
 const {
@@ -286,6 +287,7 @@ class MCBot {
     const craftStick = createCraftStickState(this.bot, target);
     const woodTransform = createWoodTransformState(this.bot, target);
     const askForHelp = new BehaviorAskForHelp(this.bot, target);
+    const plantTree = new createPlantTreeState(this.bot, target);
 
     return [
       new StateTransition({
@@ -905,7 +907,17 @@ new BotStateTransition({
         shouldTransition: () => goPond.isFinished(), // When this should happen
         onTransition: () => this.JobCheck(true)
       }),
-
+      new BotStateTransition({   
+        parent: idleState,
+        child: plantTree,
+        jobID: BOT_JOB_TYPE.PLANT_TREE, // The job ID : 60
+      }, this),
+      new StateTransition({   
+        parent: plantTree,
+        child: idleState,
+        shouldTransition: () => plantTree.isFinished(),
+        onTransition: () => this.JobCheck(true)
+      }),
 
     ];
   }
