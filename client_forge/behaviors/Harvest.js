@@ -253,7 +253,7 @@ function createHarvestState(bot, targets) {
   const Harvest = new BehaviorHarvest(bot, targets);
   const wheatBack = new putWheatBackToChest(bot, targets);
   const find_hoe = new FindHoefromChest(bot, targets);  // item , observe' give you the wheat to make some bread'
-  const socket_schedule = new Socket_schedule(bot,targets,"stone_hoe","I don't have the stone_hoe")
+  const socket_schedule = new Socket_schedule(bot,targets,"stone_hoe","5. go farm and find stone_hoe")
   const socket_chat = new Socket_chat(bot,targets,"stone_hoe","I don't have the stone_hoe,so I can't harvest the wheat")
   const transitions = [
       new StateTransition({

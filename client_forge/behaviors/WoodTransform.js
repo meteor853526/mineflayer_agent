@@ -241,8 +241,8 @@ function createWoodTransformState(bot, targets) {
     const transform = new BehaviorWoodTransform(bot, targets);
     const plankBack = new putplankBackToChest(bot, targets);
     const find_log = new FindlogfromChest(bot, targets); 
-    const socket_schedule = new Socket_schedule(bot,targets,"oak_planks","I don't have the stick")
-    const socket_chat = new Socket_chat(bot,targets,"oak_planks","I don't have the stick,so I cant craft stone_hoe.")
+    const socket_schedule = new Socket_schedule(bot,targets,"oak_log","5. go loggingCamp and find oak_log")
+    const socket_chat = new Socket_chat(bot,targets,"oak_log","I don't have the oak_log, so I cant craft the planks.")
 
     const transitions = [
         new StateTransition({
@@ -264,6 +264,7 @@ function createWoodTransformState(bot, targets) {
             shouldTransition: () => transform.isFinished() && JobCheck(transform.isFinished()) == true,
             onTransition: () => {
               bot.chat("transform over");
+              bot.prev_jobs.push("wood tranform finished")
               console.log("transform over")
             }
         }),
@@ -290,7 +291,9 @@ function createWoodTransformState(bot, targets) {
             child: socket_schedule,
             shouldTransition: () =>find_log.isFinished() && !have_oak_log(bot) && bot.agentState == 'schedule' && JobCheck(find_log.isFinished()) == true,
             onTransition: () => {
-              bot.chat("I didn't found oak_log in chest");
+                bot.miss_items.push("oak_log");
+
+                bot.chat("I didn't found oak_log in chest");
             }
         }),
   

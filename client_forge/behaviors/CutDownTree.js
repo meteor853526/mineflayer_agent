@@ -379,7 +379,7 @@ const {
     const CutDownTree = new BehaviorCutDownTree(bot, targets);
     const allBack = new putAllBackToChest(bot, targets);
     const find_axe = new FindAxefromChest(bot, targets);  // item , observe' give you the wheat to make some bread'
-    const socket_schedule = new Socket_schedule(bot,targets,"cut down tree","stone_axe","I don't have the stone_axe")
+    const socket_schedule = new Socket_schedule(bot,targets,"cut down tree","stone_axe","5. go loggingCamp and find stone_axe")
     const socket_chat = new Socket_chat(bot,targets,"stone_axe","I don't have the stone_axe,so I can't cut down the tree")
     const transitions = [
       new StateTransition({
@@ -407,6 +407,7 @@ const {
         child: socket_schedule,
         shouldTransition: () => find_axe.isFinished() && !have_stone_axe(bot) && JobCheck(find_axe.isFinished()) == true,
         onTransition: () => {
+          
           console.log("no axe gogo nothing")
         }
       }),

@@ -8,6 +8,13 @@ const BaseBehavior = require("./base_behavior");
 const minecraft_data = require("minecraft-data");
 const mcData = require('minecraft-data')('1.16.5')
 const {Movements, goals: { GoalNear ,GoalLookAtBlock}} = require('mineflayer-pathfinder')
+const Socket_schedule = require("./socket_schedule")
+const socketIOClient = require('socket.io-client');
+const serverURL = 'http://localhost:3000'; 
+const socket = socketIOClient(serverURL);
+const getRealtime = require("../getRealtime.js").getRealtime;
+const getWheather = require('../getRealtime.js').getWheather;
+const getDistance = require('../getRealtime.js').getDistance;
 class findOak_sapling extends BaseBehavior {
     constructor(bot, targets) {
         super(bot, 'findOak_sapling', targets);
@@ -88,4 +95,96 @@ class findOak_sapling extends BaseBehavior {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
   }
-  exports.findOak_sapling = findOak_sapling;
+  function JobCheck(check){
+    if (check === true){
+        return true
+    }else{
+        return false
+    }
+  }
+  function have_oak_sapling(bot){
+    if(bot.inventory.items().filter(item => item.name.includes("oak_sapling"))[0])
+      return true
+    return false
+  }
+
+class Return_schedule extends BaseBehavior {
+  constructor(bot, targets, current_job,requestItem,observation) {
+      super(bot, 'update_requestList', targets);
+      this.working = false
+      this.requestItem = requestItem
+      this.observation = observation
+      this.current_job = current_job
+  }
+
+  async onStateEntered() {
+    this.working = true
+    socket.emit('message', {
+      receiverName: this.bot.username,
+      type:'observe',
+      observation: this.observation,
+      time : getRealtime(this.bot.time.timeOfDay),
+      wheather : getWheather(this.bot.isRaining),
+      position:this.bot.pos,
+      agentState:'schedule_re',
+      item_name:this.requestItem,
+      prev_jobs: this.bot.prev_jobs,
+      current_job: this.current_job,
+    })
+    this.working = false
+  }
+  isFinished() {
+    return !this.working;
+  }
+}
+
+
+  function createFindOak_sapling (bot, targets) {
+    const enter = new BehaviorIdle();
+    const exit = new BehaviorIdle();
+
+    const FindSapling = new findOak_sapling(bot, targets);
+    const socket_schedule = new Socket_schedule(bot,targets,"find oak_sapling"," oak_sapling","5. go to loggingCamp and find oak_sapling");
+    const return_schedule = new Return_schedule(bot, targets, "find oak_sapling", "oak_sapling", "1. plant tree");
+    const transitions = [
+      new StateTransition({
+        parent: enter,
+        child: FindPlanks,
+        shouldTransition: () => true,
+      }),
+      new StateTransition({
+        parent: FindSapling,
+        child: socket_schedule,
+        shouldTransition: () => FindSapling.isFinished() && !have_oak_sapling(bot) && JobCheck(FindSapling.isFinished()) == true,
+        onTransition: () => {
+          bot.prev_jobs.push("find oak_sapling")
+        }
+      }),
+      new StateTransition({
+        parent: socket_schedule,
+        child: exit,
+        shouldTransition: () => socket_schedule.isFinished() && JobCheck(socket_schedule.isFinished()) == true,
+        onTransition: () => {
+          bot.chat('let me think what i do next')
+        }
+      }),
+      new StateTransition({
+        parent: FindSapling,
+        child: return_schedule,
+        shouldTransition: () => FindSapling.isFinished() && have_oak_sapling(bot) && JobCheck(FindSapling.isFinished()) == true,
+        onTransition: () => {
+          bot.chat("i found oak_sapling!!!")
+        }
+      }),
+      new StateTransition({
+        parent: return_schedule,
+        child: exit,
+        shouldTransition: () => return_schedule.isFinished() && JobCheck(return_schedule.isFinished()) == true,
+        onTransition: () =>{
+          console.log("return to origin schedule.")
+        }
+      })
+    ]
+    return new NestedStateMachine(transitions, enter, exit);
+  }
+  exports.createFindOak_sapling = createFindOak_sapling

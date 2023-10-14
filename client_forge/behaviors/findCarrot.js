@@ -8,7 +8,6 @@ const BaseBehavior = require("./base_behavior");
 const minecraft_data = require("minecraft-data");
 const mcData = require('minecraft-data')('1.16.5')
 const {Movements, goals: { GoalNear ,GoalLookAtBlock}} = require('mineflayer-pathfinder')
-
 const Socket_schedule = require("./socket_schedule")
 const socketIOClient = require('socket.io-client');
 const serverURL = 'http://localhost:3000'; 
