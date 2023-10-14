@@ -36,7 +36,7 @@ class findCarrot extends BaseBehavior {
           var target = chest_window.containerItems().filter(item => item.name.includes("carrot"))[0];
           await sleepwait(2000)
           if(target){
-            await this.withdrawItem(chest_window,'carrot',1);
+            await this.withdrawItem(chest_window,'carrot',12);
             await sleepwait(2000)
             await this.bot.closeWindow(chest_window)
             break;
