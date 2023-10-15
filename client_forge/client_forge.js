@@ -166,7 +166,8 @@ class MCBot {
       this.bot.PoultryFarm_position = new Vec3(-10543,71,12738);
       this.bot.Pigpen_position = new Vec3(-10541,71,12759);
       this.bot.tool_chest_position = new Vec3(-10550,72,12786);
-      this.bot.woodAxe_chest_position = new Vec3(-10558,72,12786);
+      this.bot.woodAxe_chest_position = new Vec3(-10559,72,12786);
+      this.bot.pickaxe_chest_position = new Vec3(-10509,72,12786);
       this.bot.stick_chest_position = new Vec3(-10501,72,12787);
       this.bot.plank_chest_position = new Vec3(-10548,72,12785);
       this.bot.carrot_chest_position = new Vec3(-10567,71,12743);

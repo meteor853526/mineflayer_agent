@@ -145,7 +145,7 @@ function createFindCobble_stone (bot, targets) {
   const exit = new BehaviorIdle();
 
   const findStone = new findCobblestone(bot, targets);
-  const socket_schedule = new Socket_schedule(bot,targets,"find cobblestone"," cobblestone","5. go to farm and find cobblestone");
+  const socket_schedule = new Socket_schedule(bot,targets,"find cobblestone"," cobblestone","5. go to the smelter and find cobblestone");
   const return_schedule = new Return_schedule(bot, targets, "find cobblestone", "cobblestone", "1. craft pickaxe\n2. craft axe\n3. craft hoe");
   const transitions = [
     new StateTransition({
