@@ -78,7 +78,6 @@ class FindplankfromChest extends BaseBehavior {
         const defaultMove = new Movements(this.bot)
         defaultMove.canDig = false
         await this.bot.pathfinder.setMovements(defaultMove)
-        await this.bot.pathfinder.goto(new GoalNear(2263, 63, -2929, 1))
         await sleepwait(1000)
         const chest_id = mcData.blocksByName['chest'].id;
         var chests = this.bot.findBlocks({
@@ -97,10 +96,10 @@ class FindplankfromChest extends BaseBehavior {
             await sleepwait(2000)
             var chest_window = await this.bot.openChest(this.bot.blockAt(chest));
             await sleepwait(2000)
-            var target = chest_window.containerItems().filter(item => item.name.includes("spruce_planks"))[0];
+            var target = chest_window.containerItems().filter(item => item.name.includes("oak_planks"))[0];
             await sleepwait(2000)
             if(target){
-                await this.withdrawItem(chest_window,'spruce_planks',2);
+                await this.withdrawItem(chest_window,'oak_planks',2);
                 await sleepwait(2000)
                 await this.bot.closeWindow(chest_window)
                 break;
@@ -169,7 +168,7 @@ class putStickBackToChest extends BaseBehavior {
           await sleepwait(2000)
           var chest_window = await this.bot.openChest(this.bot.blockAt(stick_chest_position));
           await sleepwait(2000)
-          await this.depositItem(chest_window,'stick',stick_chest_position);
+          await this.depositItem(chest_window,'stick',stick_number);
           await sleepwait(2000)
           await this.bot.closeWindow(chest_window)
         }
@@ -215,9 +214,9 @@ class putStickBackToChest extends BaseBehavior {
 }
   
   
-function have_spruce_planks(bot){
-    if(bot.inventory.items().filter(item => item.name.includes("spruce_planks"))[0]){
-        if(bot.inventory.items().filter(item => item.name.includes("spruce_planks"))[0].count>=2){
+function have_oak_planks(bot){
+    if(bot.inventory.items().filter(item => item.name.includes("oak_planks"))[0]){
+        if(bot.inventory.items().filter(item => item.name.includes("oak_planks"))[0].count>=2){
             return true
         }
         return false
@@ -239,21 +238,21 @@ function createCraftStickState(bot, targets) {
     const craftStick = new BehaviorCraftStick(bot, targets);
     const stickBack = new putStickBackToChest(bot, targets);
     const find_plank = new FindplankfromChest(bot, targets); 
-    const socket_schedule = new Socket_schedule(bot,targets,"spruce_planks","I don't have the stick")
-    const socket_chat = new Socket_chat(bot,targets,"spruce_planks","I don't have the stick,so I cant craft stone_hoe.")
+    const socket_schedule = new Socket_schedule(bot,targets,"find oak_planks","oak_planks","5. go to loggingCamp and find 'oak_planks'")
+    const socket_chat = new Socket_chat(bot,targets,"oak_planks","I don't have the stick,so I cant craft stone_hoe.")
 
     const transitions = [
         new StateTransition({
             parent: enter,
             child: craftStick,
-            shouldTransition: () => have_spruce_planks(bot),
+            shouldTransition: () => have_oak_planks(bot),
         }),
         new StateTransition({
             parent: enter,
             child: find_plank,
-            shouldTransition: () => !have_spruce_planks(bot),
+            shouldTransition: () => !have_oak_planks(bot),
             onTransition: () => {
-              bot.chat("No spruce_planks on my body");
+              bot.chat("No oak_planks on my body");
           }
         }),
         new StateTransition({
@@ -278,26 +277,28 @@ function createCraftStickState(bot, targets) {
         new StateTransition({
           parent: find_plank,
           child: craftStick,
-          shouldTransition: () => find_plank.isFinished() && have_spruce_planks(bot) && JobCheck(find_plank.isFinished()) == true,
+          shouldTransition: () => find_plank.isFinished() && have_oak_planks(bot) && JobCheck(find_plank.isFinished()) == true,
           onTransition: () => {
-            bot.chat("I found spruce_planks in chest");
+            bot.chat("I found oak_planks in chest");
           }
         }),
         new StateTransition({
             parent: find_plank,
             child: socket_schedule,
-            shouldTransition: () =>find_plank.isFinished() && !have_spruce_planks(bot) && bot.agentState == 'schedule' && JobCheck(find_plank.isFinished()) == true,
+            shouldTransition: () =>find_plank.isFinished() && !have_oak_planks(bot) && bot.agentState == 'schedule' && JobCheck(find_plank.isFinished()) == true,
             onTransition: () => {
-              bot.chat("I didn't found spruce_planks in chest");
+              bot.prev_jobs.push("find oak_planks for crafting stick uncompleted")
+              bot.miss_items.push("oak_planks")
+              bot.chat("I didn't found oak_planks in chest");
             }
         }),
   
         new StateTransition({
             parent: find_plank,
             child: socket_chat,
-            shouldTransition: () => find_plank.isFinished() && !have_spruce_planks(bot) && bot.agentState == 'chat' && JobCheck(find_plank.isFinished()) == true,
+            shouldTransition: () => find_plank.isFinished() && !have_oak_planks(bot) && bot.agentState == 'chat' && JobCheck(find_plank.isFinished()) == true,
             onTransition: () => {
-              bot.chat("I didn't found spruce_planks in chest");
+              bot.chat("I didn't found oak_planks in chest");
             }
         }),
         new StateTransition({

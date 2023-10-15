@@ -235,18 +235,20 @@ class putHoeBackToChest extends BaseBehavior {
     }
     async onStateEntered() {
         this.working = true
-        var Hoe_chest_position = this.bot.Hoe_chest_position
+        const defaultMove = new Movements(this.bot)
+        defaultMove.canDig = false
+        var hoe_chest_position = this.bot.Hoe_chest_position
         var stone_hoe = mcData.itemsByName['stone_hoe'].id;
         await sleepwait(2000)
         console.log("?????????????????")
         if(await this.bot.inventory.findInventoryItem(stone_hoe)){
           console.log("????")
           var stone_hoe_number = await this.bot.inventory.findInventoryItem(stone_hoe).count
-          await this.bot.pathfinder.setGoal(new GoalLookAtBlock(Hoe_chest_position, this.bot.world));
+          await this.bot.pathfinder.goto(new GoalLookAtBlock(hoe_chest_position, this.bot.world));
           await sleepwait(2000)
-          var chest_window = await this.bot.openChest(this.bot.blockAt(Hoe_chest_position));
+          var chest_window = await this.bot.openChest(this.bot.blockAt(hoe_chest_position));
           await sleepwait(2000)
-          await this.depositItem(chest_window,'stone_hoe',Hoe_chest_position);
+          await this.depositItem(chest_window,'stone_hoe',stone_hoe_number);
           await sleepwait(2000)
           await this.bot.closeWindow(chest_window)
         }
@@ -302,7 +304,11 @@ function have_cobblestone(bot){
         return true
     return false
 }
-  
+function have_stone_hoe(bot){
+    if(bot.inventory.items().filter(item => item.name.includes("stone_hoe"))[0])
+        return true
+    return false
+}
 function JobCheck(check){
     if (check === true){
         return true
@@ -318,11 +324,21 @@ function createCraftHoeState(bot, targets) {
     const hoeBack = new putHoeBackToChest(bot, targets);
     const find_stick = new FindstickfromChest(bot, targets); 
     const find_cobblestone = new FindcobblestonefromChest(bot, targets);  
-    const socket_schedule_stick = new Socket_schedule(bot,targets,"stick","I don't have the stick")
-    const socket_schedule_cobblestone = new Socket_schedule(bot,targets,"cobblestone","I don't have the cobblestone")
+    const socket_schedule_stick = new Socket_schedule(bot,targets,"find stick"," stick","5. go refinery and find 'stick'")
+    const socket_schedule_cobblestone = new Socket_schedule(bot,targets,"find cobblestone"," cobblestone","5. go to the smelter and find 'cobblestone'")
     const socket_chat_stick = new Socket_chat(bot,targets,"stick","I don't have the stick,so I cant craft stone_hoe.")
     const socket_chat_cobblestone = new Socket_chat(bot,targets,"cobblestone","I don't have the cobblestone,so I cant craft stone_hoe.")
     const transitions = [
+        new StateTransition({
+            parent: enter,
+            child: hoeBack,
+            shouldTransition: () => have_stone_hoe(bot),
+        }),
+        new StateTransition({
+            parent: enter,
+            child: craftHoe,
+            shouldTransition: () => have_stick(bot) && have_cobblestone(bot),
+        }),
         new StateTransition({
             parent: enter,
             child: find_stick,
@@ -371,6 +387,7 @@ function createCraftHoeState(bot, targets) {
             shouldTransition: () => craftHoe.isFinished() && JobCheck(craftHoe.isFinished()) == true,
             onTransition: () => {
               bot.chat("craftHoe over");
+              bot.prev_jobs.push("craftHoe Finished")
               console.log("craftHoe over")
             }
         }),
@@ -397,6 +414,8 @@ function createCraftHoeState(bot, targets) {
             child: socket_schedule_stick,
             shouldTransition: () =>find_stick.isFinished() && !have_stick(bot) && bot.agentState == 'schedule' && JobCheck(find_stick.isFinished()) == true,
             onTransition: () => {
+                bot.miss_items.push("stick")
+                bot.prev_jobs.push("find stick for crafting hoe uncompleted.")
               bot.chat("I didn't found stick in chest");
             }
         }),
@@ -422,6 +441,8 @@ function createCraftHoeState(bot, targets) {
               child: socket_schedule_cobblestone,
               shouldTransition: () =>find_cobblestone.isFinished() && !have_cobblestone(bot) && bot.agentState == 'schedule' && JobCheck(find_cobblestone.isFinished()) == true,
               onTransition: () => {
+                bot.miss_items.push("cobblestone")
+                bot.prev_jobs.push("find cobblestone for crafting hoe uncompleted.")
                 bot.chat("I didn't found cobblestone in chest");
               }
           }),

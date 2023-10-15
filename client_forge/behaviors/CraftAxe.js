@@ -5,11 +5,19 @@ const {
     BehaviorMoveTo
 } = require("mineflayer-statemachine");
 const BaseBehavior = require("./base_behavior");
+const socketIOClient = require('socket.io-client');
+const serverURL = 'http://localhost:3000'; 
 const Socket_schedule = require("./socket_schedule")
 const Socket_chat = require("./socket_chat")
+const {BehaviorGotoGuild} = require("./go_guild")
+const {BehaviorGoSmeltingPlant} = require("./go_smeltingPlant")
 const {Movements, goals: { GoalNear ,GoalLookAtBlock}} = require('mineflayer-pathfinder')
-
+const getWheather = require('../getRealtime.js').getWheather;
+const getDistance = require('../getRealtime.js').getDistance;
+const getRealtime = require("../getRealtime.js").getRealtime;
+const relocate = require("../getRealtime.js").relocate;
 const mcData = require('minecraft-data')('1.16.5')
+  
   
 class BehaviorCraftAxe extends BaseBehavior {
     constructor(bot, targets) {
@@ -21,10 +29,10 @@ class BehaviorCraftAxe extends BaseBehavior {
         const mcData = require('minecraft-data')(this.bot.version)
         const defaultMove = new Movements(this.bot)
         defaultMove.canDig = false
-        var chest_window 
+        var chest_window
         var chest
 
-        // to crafting stone_pickaxe
+        // to crafting stone_axe
         var name = 'stone_axe'
         var amount = 1
         const item = this.bot.registry.itemsByName[name]
@@ -76,8 +84,6 @@ class FindstickfromChest extends BaseBehavior {
         this.working = true
         const defaultMove = new Movements(this.bot)
         defaultMove.canDig = false
-        await this.bot.pathfinder.setMovements(defaultMove)
-        await this.bot.pathfinder.goto(new GoalNear(2259, 63, -2919, 1))
         await sleepwait(1000)
         const chest_id = mcData.blocksByName['chest'].id;
         var chests = this.bot.findBlocks({
@@ -161,8 +167,6 @@ class FindcobblestonefromChest extends BaseBehavior {
         const chest_id = mcData.blocksByName['chest'].id;
         const defaultMove = new Movements(this.bot)
         defaultMove.canDig = false
-        await this.bot.pathfinder.setMovements(defaultMove)
-        await this.bot.pathfinder.goto(new GoalNear(2263, 63, -2929, 1))
         await sleepwait(1000)
         await this.bot.pathfinder.setMovements(defaultMove)
         var chests = this.bot.findBlocks({
@@ -242,6 +246,8 @@ class putAxeBackToChest extends BaseBehavior {
     }
     async onStateEntered() {
         this.working = true
+        const defaultMove = new Movements(this.bot)
+        defaultMove.canDig = false
         var woodAxe_chest_position = this.bot.woodAxe_chest_position
         var stone_axe = mcData.itemsByName['stone_axe'].id;
         await sleepwait(2000)
@@ -297,7 +303,136 @@ class putAxeBackToChest extends BaseBehavior {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 }
-  
+
+class putStickBackToChest extends BaseBehavior {
+    constructor(bot, targets) {
+        super(bot, 'putStickBackToChest', targets);
+        this.working = true
+    }
+    async onStateEntered() {
+        this.working = true
+        const defaultMove = new Movements(this.bot)
+        defaultMove.canDig = false
+        var stick_chest_position = this.bot.stick_chest_position
+        var stick = mcData.itemsByName['stick'].id;
+        await sleepwait(2000)
+        console.log("?????????????????")
+        if(await this.bot.inventory.findInventoryItem(stick)){
+          console.log("????")
+          var stick_number = await this.bot.inventory.findInventoryItem(stick).count
+          await this.bot.pathfinder.goto(new GoalLookAtBlock(stick_chest_position, this.bot.world));
+          await sleepwait(2000)
+          var chest_window = await this.bot.openChest(this.bot.blockAt(stick_chest_position));
+          await sleepwait(2000)
+          await this.depositItem(chest_window,'stick',stick_chest_position);
+          await sleepwait(2000)
+          await this.bot.closeWindow(chest_window)
+        }
+        
+        async function sleepwait(ms) {
+          return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        this.working = false
+    }
+    async depositItem (chest,name, amount) {
+        const item = this.itemByName(chest.items(), name)
+        if (item) {
+            try {
+            await chest.deposit(item.type, null, amount)
+            bot.chat(`deposited ${amount} ${item.name}`)
+            } catch (err) {
+            //bot.chat(`unable to deposit ${amount} ${item.name}`)
+            }
+        } else {
+            //bot.chat(`unknown item ${name}`)
+        }
+    }
+    isFinished() {
+        if(this.working){
+            return false
+        }else{
+            return true
+        }
+    }
+    itemByName (items, name) {
+        let item
+        let i
+        for (i = 0; i < items.length; ++i) {
+            item = items[i]
+            if (item && item.name === name) return item
+        }
+        return null
+    }
+    
+    async sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+}
+
+class putCobblestoneBackToChest extends BaseBehavior {
+    constructor(bot, targets) {
+        super(bot, 'putCobblestoneBackToChest', targets);
+        this.working = true
+    }
+    async onStateEntered() {
+        this.working = true
+        const defaultMove = new Movements(this.bot)
+        defaultMove.canDig = false
+        var cobblestone_chest_position = this.bot.cobblestone_chest_position
+        var cobblestone = mcData.itemsByName['cobblestone'].id;
+        await sleepwait(2000)
+        console.log("?????????????????")
+        if(await this.bot.inventory.findInventoryItem(cobblestone)){
+          console.log("????")
+          var cobblestone_number = await this.bot.inventory.findInventoryItem(cobblestone).count
+          await this.bot.pathfinder.goto(new GoalLookAtBlock(cobblestone_chest_position, this.bot.world));
+          await sleepwait(2000)
+          var chest_window = await this.bot.openChest(this.bot.blockAt(cobblestone_chest_position));
+          await sleepwait(2000)
+          await this.depositItem(chest_window,'cobblestone',cobblestone_chest_position);
+          await sleepwait(2000)
+          await this.bot.closeWindow(chest_window)
+        }
+        
+        async function sleepwait(ms) {
+          return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        this.working = false
+    }
+    async depositItem (chest,name, amount) {
+        const item = this.itemByName(chest.items(), name)
+        if (item) {
+            try {
+            await chest.deposit(item.type, null, amount)
+            bot.chat(`deposited ${amount} ${item.name}`)
+            } catch (err) {
+            //bot.chat(`unable to deposit ${amount} ${item.name}`)
+            }
+        } else {
+            //bot.chat(`unknown item ${name}`)
+        }
+    }
+    isFinished() {
+        if(this.working){
+            return false
+        }else{
+            return true
+        }
+    }
+    itemByName (items, name) {
+        let item
+        let i
+        for (i = 0; i < items.length; ++i) {
+            item = items[i]
+            if (item && item.name === name) return item
+        }
+        return null
+    }
+    
+    async sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+}
   
 function have_stick(bot){
     if(bot.inventory.items().filter(item => item.name.includes("stick"))[0])
@@ -322,14 +457,21 @@ function createCraftAxeState(bot, targets) {
     const exit = new BehaviorIdle();    
     // state
     const craftAxe = new BehaviorCraftAxe(bot, targets);
-    const AxeBack = new putAxeBackToChest(bot, targets);
+    const axeBack = new putAxeBackToChest(bot, targets);
+    const stickBack = new putStickBackToChest(bot, targets);
+    const cobblestoneBack = new putCobblestoneBackToChest(bot, targets);
     const find_stick = new FindstickfromChest(bot, targets); 
     const find_cobblestone = new FindcobblestonefromChest(bot, targets);  
-    const socket_schedule_stick = new Socket_schedule(bot,targets,"stick","I don't have the stick")
-    const socket_schedule_cobblestone = new Socket_schedule(bot,targets,"cobblestone","I don't have the cobblestone")
+    const socket_schedule_stick = new Socket_schedule(bot,targets,"find stick"," stick","5. go refinery and find 'stick'")
+    const socket_schedule_cobblestone = new Socket_schedule(bot,targets,"find cobblestone"," cobblestone","5. go to the smelter and find 'cobblestone'")
     const socket_chat_stick = new Socket_chat(bot,targets,"stick","I don't have the stick,so I cant craft stone_hoe.")
     const socket_chat_cobblestone = new Socket_chat(bot,targets,"cobblestone","I don't have the cobblestone,so I cant craft stone_hoe.")
     const transitions = [
+        new StateTransition({
+            parent: enter,
+            child: craftAxe,
+            shouldTransition: () => have_stick(bot) && have_cobblestone(bot),
+        }),
         new StateTransition({
             parent: enter,
             child: find_stick,
@@ -374,7 +516,7 @@ function createCraftAxeState(bot, targets) {
         }),
         new StateTransition({
             parent: craftAxe,
-            child: AxeBack,
+            child: axeBack,
             shouldTransition: () => craftAxe.isFinished() && JobCheck(craftAxe.isFinished()) == true,
             onTransition: () => {
               bot.chat("craftAxe over");
@@ -382,14 +524,32 @@ function createCraftAxeState(bot, targets) {
             }
         }),
         new StateTransition({
-          parent: AxeBack,
-          child: exit,
-          shouldTransition: () =>AxeBack.isFinished() && JobCheck(AxeBack.isFinished()) == true,
+          parent: stickBack,
+          child: cobblestoneBack,
+          shouldTransition: () =>stickBack.isFinished() && JobCheck(stickBack.isFinished()) == true,
           onTransition: () => {
-            bot.chat("all over");
-            console.log("all over")
+            bot.chat("stickBack over");
+            console.log("stickBack over")
           }
-      }),
+        }),
+        new StateTransition({
+            parent: cobblestoneBack,
+            child: axeBack,
+            shouldTransition: () =>cobblestoneBack.isFinished() && JobCheck(cobblestoneBack.isFinished()) == true,
+            onTransition: () => {
+              bot.chat("cobblestoneBack over");
+              console.log("cobblestoneBack over")
+            }
+          }),
+          new StateTransition({
+            parent: axeBack,
+            child: exit,
+            shouldTransition: () =>axeBack.isFinished() && JobCheck(axeBack.isFinished()) == true,
+            onTransition: () => {
+              bot.chat("all over");
+              console.log("all over")
+            }
+          }),
   
         new StateTransition({
           parent: find_stick,
@@ -404,7 +564,9 @@ function createCraftAxeState(bot, targets) {
             child: socket_schedule_stick,
             shouldTransition: () =>find_stick.isFinished() && !have_stick(bot) && bot.agentState == 'schedule' && JobCheck(find_stick.isFinished()) == true,
             onTransition: () => {
-              bot.chat("I didn't found stick in chest");
+                bot.prev_jobs.push("find stick for craft Axe uncompleted")
+                bot.miss_items.push("stick")  
+                bot.chat("I didn't found stick in chest");
             }
         }),
         new StateTransition({
@@ -418,8 +580,8 @@ function createCraftAxeState(bot, targets) {
 
         new StateTransition({
             parent: find_cobblestone,
-            child: AxeBack,
-            shouldTransition: () => find_cobblestone.isFinished() && have_stick(bot) && JobCheck(find_stick.isFinished()) == true,
+            child: craftAxe,
+            shouldTransition: () => find_cobblestone.isFinished() && have_cobblestone(bot) && JobCheck(find_cobblestone.isFinished()) == true,
             onTransition: () => {
               bot.chat("I found cobblestone in chest");
             }
@@ -429,6 +591,8 @@ function createCraftAxeState(bot, targets) {
               child: socket_schedule_cobblestone,
               shouldTransition: () =>find_cobblestone.isFinished() && !have_cobblestone(bot) && bot.agentState == 'schedule' && JobCheck(find_cobblestone.isFinished()) == true,
               onTransition: () => {
+                bot.prev_jobs.push("find cobblestone for craft Axe uncompleted")
+                bot.miss_items.push("cobblestone")
                 bot.chat("I didn't found cobblestone in chest");
               }
           }),

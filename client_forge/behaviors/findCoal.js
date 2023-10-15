@@ -138,53 +138,52 @@ class Return_schedule extends BaseBehavior {
   }
 }
 
+function createFindCoal (bot, targets) {
+  const enter = new BehaviorIdle();
+  const exit = new BehaviorIdle();
 
-  function createFindCoal (bot, targets) {
-    const enter = new BehaviorIdle();
-    const exit = new BehaviorIdle();
-
-    const FindCoal = new findCoal(bot, targets);
-    const socket_schedule = new Socket_schedule(bot,targets,"find coal"," coal","5. go to smeltingPlant and find coal\n6. go to smeltingPlant and find charcoal\n6. go Guild and find charcoal\n6. go home and find charcoal");
-    const return_schedule = new Return_schedule(bot, targets, "find coal", "coal", "1. craft torch");
-    const transitions = [
-      new StateTransition({
-        parent: enter,
-        child: FindCoal,
-        shouldTransition: () => true,
-      }),
-      new StateTransition({
-        parent: FindCoal,
-        child: socket_schedule,
-        shouldTransition: () => FindCoal.isFinished() && !have_coal(bot) && JobCheck(FindCoal.isFinished()) == true,
-        onTransition: () => {
-          bot.prev_jobs.push("find coal")
-        }
-      }),
-      new StateTransition({
-        parent: socket_schedule,
-        child: exit,
-        shouldTransition: () => socket_schedule.isFinished() && JobCheck(socket_schedule.isFinished()) == true,
-        onTransition: () => {
-          bot.chat('let me think what i do next')
-        }
-      }),
-      new StateTransition({
-        parent: FindCoal,
-        child: return_schedule,
-        shouldTransition: () => FindCoal.isFinished() && have_coal(bot) && JobCheck(FindCoal.isFinished()) == true,
-        onTransition: () => {
-          bot.chat("i found coal!!!")
-        }
-      }),
-      new StateTransition({
-        parent: return_schedule,
-        child: exit,
-        shouldTransition: () => return_schedule.isFinished() && JobCheck(return_schedule.isFinished()) == true,
-        onTransition: () =>{
-          console.log("return to origin schedule.")
-        }
-      })
-    ]
-    return new NestedStateMachine(transitions, enter, exit);
-  }
-  exports.createFindCoal = createFindCoal;
+  const FindCoal = new findCoal(bot, targets);
+  const socket_schedule = new Socket_schedule(bot,targets,"find coal"," coal","5. go to smeltingPlant and find coal\n6. go to smeltingPlant and find charcoal\n6. go Guild and find charcoal\n6. go home and find charcoal");
+  const return_schedule = new Return_schedule(bot, targets, "find coal", "coal", "1. craft torch");
+  const transitions = [
+    new StateTransition({
+      parent: enter,
+      child: FindCoal,
+      shouldTransition: () => true,
+    }),
+    new StateTransition({
+      parent: FindCoal,
+      child: socket_schedule,
+      shouldTransition: () => FindCoal.isFinished() && !have_coal(bot) && JobCheck(FindCoal.isFinished()) == true,
+      onTransition: () => {
+        bot.prev_jobs.push("find coal")
+      }
+    }),
+    new StateTransition({
+      parent: socket_schedule,
+      child: exit,
+      shouldTransition: () => socket_schedule.isFinished() && JobCheck(socket_schedule.isFinished()) == true,
+      onTransition: () => {
+        bot.chat('let me think what i do next')
+      }
+    }),
+    new StateTransition({
+      parent: FindCoal,
+      child: return_schedule,
+      shouldTransition: () => FindCoal.isFinished() && have_coal(bot) && JobCheck(FindCoal.isFinished()) == true,
+      onTransition: () => {
+        bot.chat("i found coal!!!")
+      }
+    }),
+    new StateTransition({
+      parent: return_schedule,
+      child: exit,
+      shouldTransition: () => return_schedule.isFinished() && JobCheck(return_schedule.isFinished()) == true,
+      onTransition: () =>{
+        console.log("return to origin schedule.")
+      }
+    })
+  ]
+  return new NestedStateMachine(transitions, enter, exit);
+}
+exports.createFindCoal = createFindCoal;
