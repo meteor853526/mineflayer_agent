@@ -56,13 +56,13 @@ const {
   createFindCarrot,
   createFindCharcoal,
   createFindCoal,
-  findCobblestone,
+  createFindCobble_stone,
   createFindFishing_rod,
   createFindLadder,
-  createFfindOak_sapling,
+  createFindOak_sapling,
   createFindOak_log,
   createFindOak_planks,
-  findStick,
+  createFindStick,
   createFindStone_axe,
   createFindStone_hoe,
   createFindStone_pickaxe,
@@ -170,6 +170,7 @@ class MCBot {
       this.bot.stick_chest_position = new Vec3(-10501,72,12787);
       this.bot.plank_chest_position = new Vec3(-10548,72,12785);
       this.bot.carrot_chest_position = new Vec3(-10567,71,12743);
+      this.bot.cobblestone_chest_position = new Vec3(-10509,72,12790);
       this.bot.forest = new Vec3(-10555, 72, 12787);
       this.bot.furnace_position = new Vec3(-10501, 72, 12782);
       this.bot.craftingTable_position = new Vec3(-10501, 72, 12785);
@@ -261,13 +262,13 @@ class MCBot {
     const findcarrotfromchest = new createFindCarrot(this.bot, target);
     const findcharcoalfromchest = new createFindCharcoal(this.bot, target);
     const findcoalfromchest = new createFindCoal(this.bot, target);
-    const findcobblestonefromchest = new findCobblestone(this.bot, target);
+    const findcobblestonefromchest = new createFindCobble_stone(this.bot, target);
     const findfishing_rodfromchest = new createFindFishing_rod(this.bot, target);
     const findladderfromchest = new createFindLadder(this.bot, target);
     const findoak_logfromchest = new createFindOak_log(this.bot, target);
     const findoak_planksfromchest = new createFindOak_planks(this.bot, target);
-    const findoak_saplingfromchest = new findOak_sapling(this.bot, target);
-    const findstickfromchest = new findStick(this.bot, target);
+    const findoak_saplingfromchest = new createFindOak_sapling(this.bot, target);
+    const findstickfromchest = new createFindStick(this.bot, target);
     const findstone_axefromchest = new createFindStone_axe(this.bot, target);
     const findstone_hoefromchest = new createFindStone_hoe(this.bot, target);
     const findstone_pickaxefromchest = new createFindStone_pickaxe(this.bot, target);
