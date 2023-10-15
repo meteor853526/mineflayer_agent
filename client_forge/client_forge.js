@@ -168,19 +168,18 @@ class MCBot {
       this.bot.tool_chest_position = new Vec3(-10550,72,12786);
       this.bot.woodAxe_chest_position = new Vec3(-10559,72,12786);
       this.bot.pickaxe_chest_position = new Vec3(-10509,72,12786);
-      this.bot.stick_chest_position = new Vec3(-10501,72,12787);
+      this.bot.stick_chest_position = new Vec3(-10502,72,12787);
       this.bot.plank_chest_position = new Vec3(-10548,72,12785);
       this.bot.carrot_chest_position = new Vec3(-10567,71,12743);
       this.bot.cobblestone_chest_position = new Vec3(-10509,72,12790);
       this.bot.forest = new Vec3(-10555, 72, 12787);
-      this.bot.furnace_position = new Vec3(-10501, 72, 12782);
-      this.bot.craftingTable_position = new Vec3(-10501, 72, 12785);
+      this.bot.furnace_position = new Vec3(-10502, 72, 12782);
+      this.bot.craftingTable_position = new Vec3(-10502, 72, 12785);
       this.bot.Hoe_chest_position = new Vec3(-10567,71,12746);
       this.bot.diedie_home_door = new Vec3(-10505,71,12717);
       this.bot.guild_position = new Vec3(-10494, 71, 12750);
       this.bot.Pond_position = new Vec3(-10545,71.5,12678);
       this.bot.coal_chest_position = new Vec3(-10502, 72, 12786);
-      this.bot.cobble_chest_position = new Vec3(-10509, 72, 12790);
       this.bot.prev_jobs = [];
       this.bot.miss_items = [];
       this.bot.pos = "outdoors";
@@ -796,7 +795,7 @@ new BotStateTransition({
       new BotStateTransition({   
         parent: idleState,
         child: craftAxe,
-        jobID: BOT_JOB_TYPE.CRAFT_WOODAXE, // The job ID : 33
+        jobID: BOT_JOB_TYPE.CRAFT_AXE, // The job ID : 33
       }, this),
       new StateTransition({   
         parent: craftAxe,

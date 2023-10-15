@@ -168,7 +168,7 @@ class putStickBackToChest extends BaseBehavior {
           await sleepwait(2000)
           var chest_window = await this.bot.openChest(this.bot.blockAt(stick_chest_position));
           await sleepwait(2000)
-          await this.depositItem(chest_window,'stick',stick_chest_position);
+          await this.depositItem(chest_window,'stick',stick_number);
           await sleepwait(2000)
           await this.bot.closeWindow(chest_window)
         }
@@ -238,7 +238,7 @@ function createCraftStickState(bot, targets) {
     const craftStick = new BehaviorCraftStick(bot, targets);
     const stickBack = new putStickBackToChest(bot, targets);
     const find_plank = new FindplankfromChest(bot, targets); 
-    const socket_schedule = new Socket_schedule(bot,targets,"oak_planks","I don't have the stick")
+    const socket_schedule = new Socket_schedule(bot,targets,"find oak_planks","oak_planks","5. go to loggingCamp and find 'oak_planks'")
     const socket_chat = new Socket_chat(bot,targets,"oak_planks","I don't have the stick,so I cant craft stone_hoe.")
 
     const transitions = [
@@ -287,6 +287,8 @@ function createCraftStickState(bot, targets) {
             child: socket_schedule,
             shouldTransition: () =>find_plank.isFinished() && !have_oak_planks(bot) && bot.agentState == 'schedule' && JobCheck(find_plank.isFinished()) == true,
             onTransition: () => {
+              bot.prev_jobs.push("find oak_planks for crafting stick uncompleted")
+              bot.miss_items.push("oak_planks")
               bot.chat("I didn't found oak_planks in chest");
             }
         }),

@@ -503,7 +503,7 @@ const {
             shouldTransition: () => CraftTorch.isFinished() && JobCheck(CraftTorch.isFinished()) == true,
             onTransition: () => {
               bot.chat("CraftTorch over");
-              bot.prev_jobs("CraftTorch Finished")
+              bot.prev_jobs.push("CraftTorch Finished")
               console.log("CraftTorch over")
             }
         }),

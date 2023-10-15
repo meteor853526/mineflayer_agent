@@ -31,7 +31,7 @@ const { BehaviorGoLoggingCamp } = require("./go_loggingCamp");
             maxDistance: 32,
         })
         // console.log(furnaceBlock)
-        await this.bot.pathfinder.goto(new GoalLookAtBlock(furnaceBlock.position, this.bot.world))
+        await this.bot.pathfinder.setGoal(new GoalLookAtBlock(furnaceBlock.position, this.bot.world))
         this.bot.chat("arrived!")
         await sleep(1000)
         // var furnace = this.bot.openFurnace(furnaceBlock);
@@ -470,7 +470,7 @@ const { BehaviorGoLoggingCamp } = require("./go_loggingCamp");
             shouldTransition: () => BurnCharcoal.isFinished() && JobCheck(BurnCharcoal.isFinished()) == true,
             onTransition: () => {
               bot.chat("BurnCharcoal over");
-              bot.prev_jobs("BurnCharcoal Finished")
+              bot.prev_jobs.push("BurnCharcoal Finished")
               console.log("BurnCharcoal over")
             }
         }),
