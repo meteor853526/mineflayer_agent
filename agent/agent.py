@@ -107,6 +107,7 @@ class agent:
                 # print("send:"  + self.agent_state)
             if self.JobStateFinish == True and self.JobQueue.qsize() != 0:
                 id  = self.JobQueue.get()
+                id = int(id)
                 if id == -1:
                     self.reOrderJobQueue()
                     continue
@@ -190,7 +191,7 @@ class agent:
     def schedule_action(self,data):
         ScheduleActionPrompt = self.prompt_paragraph["schedule_action"]
         ScheduleActionPrompt = ScheduleActionPrompt.replace("{current_schedule}", self.current_schedule)
-        ScheduleActionPrompt = ScheduleActionPrompt.replace("{time}",data['time']).replace("{wheather}", data['wheather']).replace("{location}", 'home').replace("{property}", self.property)
+        ScheduleActionPrompt = ScheduleActionPrompt.replace("{time}",data['time']).replace("{wheather}", data['wheather']).replace("{location}", 'home').replace("{property}", str(self.property))
         ScheduleActionThought = self.generate(ScheduleActionPrompt)
 
         array_match = re.search(r'\[.*\]', ScheduleActionThought)
@@ -217,18 +218,34 @@ class agent:
     def putIntoJobQueue(self,array,actionType):
  
         if self.agent_state == state.idle:
-            for id in array : self.JobQueue.put(id)
+            for id in array : 
+                id = str(id)
+                if id.isdigit():
+                    self.JobQueue.put(id)
             self.agent_state = actionType
         elif self.agent_state == state.chat and actionType == state.schedule:
-            for id in array : self.waitingQueue.put(id)
+            for id in array :
+                id = str(id)
+                if id.isdigit():
+                    self.waitingQueue.put(id)
         elif self.agent_state == state.chat and actionType == state.chat or self.agent_state == state.schedule and actionType == state.schedule:
-            for id in array : self.JobQueue.put(id)
+            for id in array :
+                id = str(id)
+                if id.isdigit():
+                    self.JobQueue.put(id)
         elif self.agent_state == state.schedule and actionType == state.chat:
             while not self.JobQueue.empty():
                 item = self.JobQueue.get()
-                self.waitingQueue.put(item) # pop current schedule action from jobqueue
+                item = str(item)
+                if item.isdigit():
+                    
+                    self.waitingQueue.put(item) # pop current schedule action from jobqueue
 
-            for id in array : self.JobQueue.put(id)  # put chat action into jobqueue
+            for id in array :
+                id = str(id)
+                if id.isdigit():
+                    
+                    self.JobQueue.put(id)  # put chat action into jobqueue
         
         print("JobQueue contents:", list(self.JobQueue.queue))
         print("waitingQueue contents:", list(self.waitingQueue.queue))

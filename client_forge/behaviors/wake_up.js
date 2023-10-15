@@ -23,7 +23,7 @@ class wakeUpFromBed extends BaseBehavior {
         this.working = false
     }
     isFinished(){
-        if(this.lock == true){
+        if(this.working == true){
           return false
         }else{
           return true

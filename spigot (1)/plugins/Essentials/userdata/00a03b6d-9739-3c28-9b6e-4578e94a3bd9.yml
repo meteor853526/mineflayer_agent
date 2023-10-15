@@ -4,7 +4,7 @@ godmode: false
 muted: false
 jailed: false
 ip-address: 0:0:0:0:0:0:0:1
-afk: false
+afk: true
 socialspy: false
 npc: false
 powertoolsenabled: true
@@ -16,17 +16,17 @@ timestamps:
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1697235061922
-  login: 1697235046881
-money: '99960.0'
+  logout: 1697362014767
+  login: 1697362033991
+money: '99920.0'
 last-account-name: Guild
 logoutlocation:
-  world: ad51f2e8-f8f1-4fcc-bc7e-fb82610a1e46
+  world: 9dac70ed-8467-49ef-8617-08d872900ab9
   world-name: world
   x: -10492.5
   y: 71.0
-  z: 12748.5
-  yaw: 90.29943084716797
+  z: 12750.5
+  yaw: 113.91552734375
   pitch: 17.18873405456543
 lastlocation:
   world: ad51f2e8-f8f1-4fcc-bc7e-fb82610a1e46

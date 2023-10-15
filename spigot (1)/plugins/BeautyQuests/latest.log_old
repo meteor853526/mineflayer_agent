@@ -1,813 +1,217 @@
-[04:45:45] ---- BEAUTYQUESTS LOGGER - OPENED Sat Oct 14 04:45:45 CST 2023 ----
-[04:45:50] [INFO] [BeautyQuests] Enabling BeautyQuests v0.20.1
-[04:45:50] [INFO] [BeautyQuests] ------------ BeautyQuests ------------
-[04:45:50] [WARNING] [BeautyQuests] You are not running the Paper software.
+[16:06:37] ---- BEAUTYQUESTS LOGGER - OPENED Sun Oct 15 16:06:37 CST 2023 ----
+[16:06:44] [INFO] [BeautyQuests] Enabling BeautyQuests v0.20.1
+[16:06:44] [INFO] [BeautyQuests] ------------ BeautyQuests ------------
+[16:06:44] [WARNING] [BeautyQuests] You are not running the Paper software.
 It is highly recommended to use it for extended features and more stability.
-[04:45:50] [DEBUG] Hooked into [Citizens] v2.0.32-SNAPSHOT (build 3173)
-[04:45:50] [DEBUG] Hooked into [Vault] v1.7.3-b131
-[04:45:50] [INFO] [BeautyQuests] Loaded valid Minecraft version 1_16_R3.
-[04:45:50] [DEBUG] Loading data file, last time edited : Fri Oct 13 18:01:40 CST 2023
-[04:45:50] [DEBUG] Unavailable string in config for key inv.mobSelect.advancedSpawners
-[04:45:50] [INFO] [BeautyQuests] Loaded language en_US (0.029s)!
-[04:45:50] [INFO] [BeautyQuests] Loaded start particles: REDSTONE in shape POINT with color R255 G255 B0
-[04:45:50] [INFO] [BeautyQuests] Loaded talk particles: VILLAGER_HAPPY in shape BAR
-[04:45:50] [INFO] [BeautyQuests] Loaded next particles: SMOKE_NORMAL in shape SPOT
-[04:45:50] [DEBUG] Initlializing default stage types.
-[04:45:50] [DEBUG] Stage registered (Talk, 0)
-[04:45:50] [DEBUG] Stage registered (Items, 1)
-[04:45:50] [DEBUG] Stage registered (Mobs, 2)
-[04:45:50] [DEBUG] Stage registered (Mine, 3)
-[04:45:50] [DEBUG] Stage registered (Place, 4)
-[04:45:50] [DEBUG] Stage registered (Chat, 5)
-[04:45:50] [DEBUG] Stage registered (Interact, 6)
-[04:45:50] [DEBUG] Stage registered (Fish, 7)
-[04:45:50] [DEBUG] Stage registered (Melt, 8)
-[04:45:50] [DEBUG] Stage registered (Enchant, 9)
-[04:45:50] [DEBUG] Stage registered (Craft, 10)
-[04:45:50] [DEBUG] Stage registered (Bucket, 11)
-[04:45:50] [DEBUG] Stage registered (Location, 12)
-[04:45:50] [DEBUG] Stage registered (PlayTime, 13)
-[04:45:50] [DEBUG] Stage registered (Breed, 14)
-[04:45:50] [DEBUG] Stage registered (Tame, 15)
-[04:45:50] [DEBUG] Stage registered (Death, 16)
-[04:45:50] [DEBUG] Stage registered (DealDamage, 17)
-[04:45:50] [DEBUG] Stage registered (EatDrink, 18)
-[04:45:50] [DEBUG] Initlializing default rewards.
-[04:45:50] [DEBUG] Quest object registered in registry rewards (id: commandReward, class: fr.skytasul.quests.rewards.CommandReward)
-[04:45:50] [DEBUG] Quest object registered in registry rewards (id: itemReward, class: fr.skytasul.quests.rewards.ItemReward)
-[04:45:50] [DEBUG] Quest object registered in registry rewards (id: removeItemsReward, class: fr.skytasul.quests.rewards.RemoveItemsReward)
-[04:45:50] [DEBUG] Quest object registered in registry rewards (id: textReward, class: fr.skytasul.quests.rewards.MessageReward)
-[04:45:50] [DEBUG] Quest object registered in registry rewards (id: tpReward, class: fr.skytasul.quests.rewards.TeleportationReward)
-[04:45:50] [DEBUG] Quest object registered in registry rewards (id: expReward, class: fr.skytasul.quests.rewards.XPReward)
-[04:45:50] [DEBUG] Quest object registered in registry rewards (id: checkpointReward, class: fr.skytasul.quests.rewards.CheckpointReward)
-[04:45:50] [DEBUG] Quest object registered in registry rewards (id: questStopReward, class: fr.skytasul.quests.rewards.QuestStopReward)
-[04:45:50] [DEBUG] Quest object registered in registry rewards (id: requirementDependentReward, class: fr.skytasul.quests.rewards.RequirementDependentReward)
-[04:45:50] [DEBUG] Quest object registered in registry rewards (id: randomReward, class: fr.skytasul.quests.rewards.RandomReward)
-[04:45:50] [DEBUG] Quest object registered in registry rewards (id: wait, class: fr.skytasul.quests.rewards.WaitReward)
-[04:45:50] [DEBUG] Quest object registered in registry rewards (id: titleReward, class: fr.skytasul.quests.rewards.TitleReward)
-[04:45:50] [DEBUG] Initlializing default requirements.
-[04:45:50] [DEBUG] Quest object registered in registry requirements (id: logicalOr, class: fr.skytasul.quests.requirements.logical.LogicalOrRequirement)
-[04:45:50] [DEBUG] Quest object registered in registry requirements (id: questRequired, class: fr.skytasul.quests.requirements.QuestRequirement)
-[04:45:50] [DEBUG] Quest object registered in registry requirements (id: levelRequired, class: fr.skytasul.quests.requirements.LevelRequirement)
-[04:45:50] [DEBUG] Quest object registered in registry requirements (id: permissionRequired, class: fr.skytasul.quests.requirements.PermissionsRequirement)
-[04:45:50] [DEBUG] Quest object registered in registry requirements (id: scoreboardRequired, class: fr.skytasul.quests.requirements.ScoreboardRequirement)
-[04:45:50] [DEBUG] Quest object registered in registry requirements (id: equipmentRequired, class: fr.skytasul.quests.requirements.EquipmentRequirement)
-[04:45:50] [DEBUG] Initlializing default quest options.
-[04:45:50] [DEBUG] Quest option registered (id: pool)
-[04:45:50] [DEBUG] Quest option registered (id: name)
-[04:45:50] [DEBUG] Quest option registered (id: description)
-[04:45:50] [DEBUG] Quest option registered (id: customItem)
-[04:45:50] [DEBUG] Quest option registered (id: confirmMessage)
-[04:45:50] [DEBUG] Quest option registered (id: hologramText)
-[04:45:50] [DEBUG] Quest option registered (id: bypassLimit)
-[04:45:50] [DEBUG] Quest option registered (id: startableFromGUI)
-[04:45:50] [DEBUG] Quest option registered (id: failOnDeath)
-[04:45:50] [DEBUG] Quest option registered (id: cancellable)
-[04:45:50] [DEBUG] Quest option registered (id: cancelActions)
-[04:45:50] [DEBUG] Quest option registered (id: hologramLaunch)
-[04:45:50] [DEBUG] Quest option registered (id: hologramLaunchNo)
-[04:45:50] [DEBUG] Quest option registered (id: scoreboard)
-[04:45:50] [DEBUG] Quest option registered (id: hideNoRequirements)
-[04:45:50] [DEBUG] Quest option registered (id: auto)
-[04:45:50] [DEBUG] Quest option registered (id: repeatable)
-[04:45:50] [DEBUG] Quest option registered (id: timer)
-[04:45:50] [DEBUG] Quest option registered (id: visibility)
-[04:45:50] [DEBUG] Quest option registered (id: endSound)
-[04:45:50] [DEBUG] Quest option registered (id: firework)
-[04:45:50] [DEBUG] Quest option registered (id: requirements)
-[04:45:50] [DEBUG] Quest option registered (id: startRewards)
-[04:45:50] [DEBUG] Quest option registered (id: startMessage)
-[04:45:50] [DEBUG] Quest option registered (id: starterNPC)
-[04:45:50] [DEBUG] Quest option registered (id: startDialog)
-[04:45:50] [DEBUG] Quest option registered (id: endRewards)
-[04:45:50] [DEBUG] Quest option registered (id: endMsg)
-[04:45:50] [DEBUG] Item comparison registered (id: bukkit)
-[04:45:50] [DEBUG] Item comparison registered (id: customBukkit)
-[04:45:50] [DEBUG] Item comparison registered (id: material)
-[04:45:50] [DEBUG] Item comparison registered (id: name)
-[04:45:50] [DEBUG] Item comparison registered (id: lore)
-[04:45:50] [DEBUG] Item comparison registered (id: enchants)
-[04:45:50] [DEBUG] Item comparison registered (id: repair)
-[04:45:50] [DEBUG] Mob factory registered (id: bukkitEntity)
-[04:45:50] [DEBUG] Bossbars manager has been registered: fr.skytasul.quests.api.bossbar.BQBossBarImplementation
-[04:45:50] [DEBUG] Brigadier registered!
-[04:45:50] [DEBUG] Mob factory registered (id: citizensNPC)
-[04:45:50] [DEBUG] Quest object registered in registry rewards (id: moneyReward, class: fr.skytasul.quests.rewards.MoneyReward)
-[04:45:50] [DEBUG] Quest object registered in registry rewards (id: permReward, class: fr.skytasul.quests.rewards.PermissionReward)
-[04:45:50] [DEBUG] Quest object registered in registry requirements (id: moneyRequired, class: fr.skytasul.quests.requirements.MoneyRequirement)
-[04:45:50] [DEBUG] Started bStats metrics
-[04:45:50] [DEBUG] Starting Spigot updater
-[04:45:51] [DEBUG] 0 accounts loaded and 7 identifiers.
-[04:45:51] [DEBUG] Registered 5 lines in scoreboard
-[04:45:51] [WARNING] [BeautyQuests] Stage with no content: stage -1(MOBS) of quest 0, branch 0
-[04:45:51] [WARNING] [BeautyQuests] The NPC 2 does not exist for stage -1(ITEMS) of quest 10, branch 0
-[04:45:51] [WARNING] [BeautyQuests] The NPC 4 does not exist for stage -1(ITEMS) of quest 11, branch 0
-[04:45:51] [WARNING] [BeautyQuests] The NPC 0 does not exist for stage -1(ITEMS) of quest 12, branch 0
-[04:45:51] [WARNING] [BeautyQuests] The NPC 1 does not exist for stage -1(ITEMS) of quest 13, branch 0
-[04:45:51] [WARNING] [BeautyQuests] The NPC 2 does not exist for stage -1(ITEMS) of quest 14, branch 0
-[04:45:51] [WARNING] [BeautyQuests] The NPC 0 does not exist for stage -1(ITEMS) of quest 6, branch 0
-[04:45:51] [WARNING] [BeautyQuests] The NPC 1 does not exist for stage -1(ITEMS) of quest 7, branch 0
-[04:45:51] [WARNING] [BeautyQuests] The NPC 0 does not exist for stage -1(ITEMS) of quest 8, branch 0
-[04:45:51] [WARNING] [BeautyQuests] The NPC 1 does not exist for stage -1(ITEMS) of quest 9, branch 0
-[04:45:51] [INFO] [BeautyQuests] 16 quests loaded (0.047s)!
-[04:45:52] [INFO] [BeautyQuests] Periodic saves task started (18000 ticks). Task ID: 32
-[04:45:52] [INFO] [BeautyQuests] You are using the latest version of BeautyQuests.
-[04:48:03] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[04:48:03] [DEBUG] Loading player diedie...
-[04:48:03] [DEBUG] Loading account #2. Last file edition: Fri Oct 13 17:58:57 CST 2023
-[04:48:03] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 129 ms (0 quests, 0 pools) | Loaded from file from index
-[04:48:07] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[04:48:07] [DEBUG] Loading player Jeff...
-[04:48:07] [DEBUG] Loading account #4. Last file edition: Fri Oct 13 17:58:57 CST 2023
-[04:48:08] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 75 ms (0 quests, 0 pools) | Loaded from file from index
-[04:48:13] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[04:48:13] [DEBUG] Loading player Guild...
-[04:48:13] [DEBUG] Loading account #3. Last file edition: Fri Oct 13 17:58:57 CST 2023
-[04:48:13] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 42 ms (0 quests, 0 pools) | Loaded from file from index
-[04:48:18] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[04:48:18] [DEBUG] Loading player worker...
-[04:48:18] [DEBUG] Loading account #5. Last file edition: Fri Oct 13 17:58:57 CST 2023
-[04:48:18] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 40 ms (0 quests, 0 pools) | Loaded from file from index
-[04:48:21] [DEBUG] imlililili (44ecf603-95c5-3ca9-b344-5bcce35cd5ea) joined the server
-[04:48:21] [DEBUG] Loading player imlililili...
-[04:48:21] [DEBUG] Loading account #7. Last file edition: Fri Oct 13 18:01:40 CST 2023
-[04:48:21] [DEBUG] Completed load of imlililili (44ecf603-95c5-3ca9-b344-5bcce35cd5ea (#7)) datas within 35 ms (1 quests, 0 pools) | Loaded from file from index
-[04:48:45] [DEBUG] diedie left the server
-[04:48:45] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[04:48:45] [DEBUG] Jeff left the server
-[04:48:45] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[04:48:45] [DEBUG] Guild left the server
-[04:48:45] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[04:48:45] [DEBUG] worker left the server
-[04:48:45] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[04:51:24] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[04:51:24] [DEBUG] Loading player diedie...
-[04:51:24] [DEBUG] Loading account #2. Last file edition: Sat Oct 14 04:48:45 CST 2023
-[04:51:24] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 24 ms (0 quests, 0 pools) | Loaded from file from index
-[04:51:29] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[04:51:29] [DEBUG] Loading player Jeff...
-[04:51:29] [DEBUG] Loading account #4. Last file edition: Sat Oct 14 04:48:45 CST 2023
-[04:51:29] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 24 ms (0 quests, 0 pools) | Loaded from file from index
-[04:51:34] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[04:51:34] [DEBUG] Loading player Guild...
-[04:51:34] [DEBUG] Loading account #3. Last file edition: Sat Oct 14 04:48:45 CST 2023
-[04:51:34] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 20 ms (0 quests, 0 pools) | Loaded from file from index
-[04:51:36] [DEBUG] diedie left the server
-[04:51:36] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[04:51:36] [DEBUG] Jeff left the server
-[04:51:36] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[04:51:36] [DEBUG] Guild left the server
-[04:51:36] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[04:51:57] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[04:51:57] [DEBUG] Loading player diedie...
-[04:51:57] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 20 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[04:52:02] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[04:52:02] [DEBUG] Loading player Jeff...
-[04:52:02] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 19 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[04:52:07] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[04:52:07] [DEBUG] Loading player Guild...
-[04:52:07] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 17 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[04:52:13] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[04:52:13] [DEBUG] Loading player worker...
-[04:52:13] [DEBUG] Loading account #5. Last file edition: Sat Oct 14 04:48:45 CST 2023
-[04:52:13] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 21 ms (0 quests, 0 pools) | Loaded from file from index
-[04:52:29] [DEBUG] diedie left the server
-[04:52:29] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[04:52:29] [DEBUG] Jeff left the server
-[04:52:29] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[04:52:29] [DEBUG] Guild left the server
-[04:52:29] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[04:52:29] [DEBUG] worker left the server
-[04:52:29] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[04:54:43] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[04:54:43] [DEBUG] Loading player diedie...
-[04:54:43] [DEBUG] Loading account #2. Last file edition: Sat Oct 14 04:52:29 CST 2023
-[04:54:43] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 26 ms (0 quests, 0 pools) | Loaded from file from index
-[04:54:48] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[04:54:48] [DEBUG] Loading player Jeff...
-[04:54:48] [DEBUG] Loading account #4. Last file edition: Sat Oct 14 04:52:29 CST 2023
-[04:54:48] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 28 ms (0 quests, 0 pools) | Loaded from file from index
-[04:54:53] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[04:54:53] [DEBUG] Loading player Guild...
-[04:54:53] [DEBUG] Loading account #3. Last file edition: Sat Oct 14 04:52:29 CST 2023
-[04:54:53] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 34 ms (0 quests, 0 pools) | Loaded from file from index
-[04:54:58] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[04:54:58] [DEBUG] Loading player worker...
-[04:54:58] [DEBUG] Loading account #5. Last file edition: Sat Oct 14 04:52:29 CST 2023
-[04:54:58] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 53 ms (0 quests, 0 pools) | Loaded from file from index
-[04:55:07] [DEBUG] diedie left the server
-[04:55:07] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[04:55:07] [DEBUG] Jeff left the server
-[04:55:07] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[04:55:07] [DEBUG] Guild left the server
-[04:55:07] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[04:55:07] [DEBUG] worker left the server
-[04:55:07] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[04:55:54] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[04:55:54] [DEBUG] Loading player diedie...
-[04:55:54] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 19 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[04:55:59] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[04:55:59] [DEBUG] Loading player Jeff...
-[04:55:59] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 42 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[04:56:04] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[04:56:04] [DEBUG] Loading player Guild...
-[04:56:04] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 32 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[04:56:09] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[04:56:09] [DEBUG] Loading player worker...
-[04:56:09] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 20 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[04:56:35] [DEBUG] diedie left the server
-[04:56:35] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[04:56:35] [DEBUG] Jeff left the server
-[04:56:35] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[04:56:35] [DEBUG] Guild left the server
-[04:56:35] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[04:56:35] [DEBUG] worker left the server
-[04:56:35] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[04:58:35] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[04:58:35] [DEBUG] Loading player diedie...
-[04:58:35] [DEBUG] Loading account #2. Last file edition: Sat Oct 14 04:56:35 CST 2023
-[04:58:35] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 22 ms (0 quests, 0 pools) | Loaded from file from index
-[04:58:40] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[04:58:40] [DEBUG] Loading player Jeff...
-[04:58:40] [DEBUG] Loading account #4. Last file edition: Sat Oct 14 04:56:35 CST 2023
-[04:58:40] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 41 ms (0 quests, 0 pools) | Loaded from file from index
-[04:58:45] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[04:58:45] [DEBUG] Loading player Guild...
-[04:58:45] [DEBUG] Loading account #3. Last file edition: Sat Oct 14 04:56:35 CST 2023
-[04:58:45] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 17 ms (0 quests, 0 pools) | Loaded from file from index
-[04:58:50] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[04:58:50] [DEBUG] Loading player worker...
-[04:58:50] [DEBUG] Loading account #5. Last file edition: Sat Oct 14 04:56:35 CST 2023
-[04:58:50] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 25 ms (0 quests, 0 pools) | Loaded from file from index
-[04:59:21] [DEBUG] diedie left the server
-[04:59:21] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[04:59:21] [DEBUG] Jeff left the server
-[04:59:21] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[04:59:21] [DEBUG] Guild left the server
-[04:59:21] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[04:59:21] [DEBUG] worker left the server
-[04:59:21] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[04:59:27] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[04:59:27] [DEBUG] Loading player diedie...
-[04:59:27] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 23 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[04:59:32] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[04:59:32] [DEBUG] Loading player Jeff...
-[04:59:32] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 23 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[04:59:37] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[04:59:37] [DEBUG] Loading player Guild...
-[04:59:37] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 21 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[04:59:42] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[04:59:42] [DEBUG] Loading player worker...
-[04:59:42] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 17 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:00:34] [DEBUG] diedie left the server
-[05:00:34] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[05:00:34] [DEBUG] Jeff left the server
-[05:00:34] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[05:00:34] [DEBUG] Guild left the server
-[05:00:34] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[05:00:34] [DEBUG] worker left the server
-[05:00:34] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[05:00:51] [DEBUG] Saving 1 loaded accounts and 7 identifiers.
-[05:00:51] [DEBUG] Saved datas (0.003s)!
-[05:00:51] [INFO] [BeautyQuests] Datas saved ~ periodic save
-[05:01:00] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[05:01:00] [DEBUG] Loading player diedie...
-[05:01:00] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 16 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:01:05] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[05:01:05] [DEBUG] Loading player Jeff...
-[05:01:05] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 20 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:01:10] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[05:01:10] [DEBUG] Loading player Guild...
-[05:01:10] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 26 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:01:15] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[05:01:15] [DEBUG] Loading player worker...
-[05:01:15] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 27 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:02:15] [DEBUG] diedie left the server
-[05:02:15] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[05:02:15] [DEBUG] Jeff left the server
-[05:02:15] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[05:02:15] [DEBUG] Guild left the server
-[05:02:15] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[05:02:15] [DEBUG] worker left the server
-[05:02:15] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[05:02:26] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[05:02:26] [DEBUG] Loading player diedie...
-[05:02:26] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 20 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:02:30] [DEBUG] diedie left the server
-[05:02:30] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[05:04:07] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[05:04:07] [DEBUG] Loading player diedie...
-[05:04:07] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 18 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:04:12] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[05:04:12] [DEBUG] Loading player Jeff...
-[05:04:12] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 28 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:04:17] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[05:04:17] [DEBUG] Loading player Guild...
-[05:04:17] [DEBUG] Loading account #3. Last file edition: Sat Oct 14 05:02:15 CST 2023
-[05:04:17] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 28 ms (0 quests, 0 pools) | Loaded from file from index
-[05:04:22] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[05:04:22] [DEBUG] Loading player worker...
-[05:04:22] [DEBUG] Loading account #5. Last file edition: Sat Oct 14 05:02:15 CST 2023
-[05:04:22] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 24 ms (0 quests, 0 pools) | Loaded from file from index
-[05:04:34] [DEBUG] diedie left the server
-[05:04:34] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[05:04:34] [DEBUG] Jeff left the server
-[05:04:34] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[05:04:34] [DEBUG] Guild left the server
-[05:04:34] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[05:04:34] [DEBUG] worker left the server
-[05:04:34] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[05:04:37] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[05:04:37] [DEBUG] Loading player diedie...
-[05:04:37] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 15 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:04:42] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[05:04:42] [DEBUG] Loading player Jeff...
-[05:04:42] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 22 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:04:47] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[05:04:47] [DEBUG] Loading player Guild...
-[05:04:47] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 22 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:04:52] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[05:04:52] [DEBUG] Loading player worker...
-[05:04:52] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 17 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:07:37] [DEBUG] diedie left the server
-[05:07:37] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[05:07:37] [DEBUG] Jeff left the server
-[05:07:37] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[05:07:37] [DEBUG] Guild left the server
-[05:07:37] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[05:07:37] [DEBUG] worker left the server
-[05:07:37] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[05:08:32] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[05:08:32] [DEBUG] Loading player diedie...
-[05:08:32] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 19 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:08:37] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[05:08:37] [DEBUG] Loading player Jeff...
-[05:08:37] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 30 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:08:42] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[05:08:42] [DEBUG] Loading player Guild...
-[05:08:42] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 23 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:08:47] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[05:08:47] [DEBUG] Loading player worker...
-[05:08:47] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 17 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:08:51] [DEBUG] diedie left the server
-[05:08:51] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[05:08:51] [DEBUG] Jeff left the server
-[05:08:51] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[05:08:51] [DEBUG] Guild left the server
-[05:08:51] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[05:08:51] [DEBUG] worker left the server
-[05:08:51] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[05:10:27] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[05:10:27] [DEBUG] Loading player diedie...
-[05:10:27] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 14 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:10:32] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[05:10:32] [DEBUG] Loading player Jeff...
-[05:10:32] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 22 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:10:37] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[05:10:37] [DEBUG] Loading player Guild...
-[05:10:37] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 19 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:10:42] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[05:10:42] [DEBUG] Loading player worker...
-[05:10:42] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 18 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:12:26] [DEBUG] diedie left the server
-[05:12:26] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[05:12:26] [DEBUG] Jeff left the server
-[05:12:26] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[05:12:26] [DEBUG] Guild left the server
-[05:12:26] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[05:12:26] [DEBUG] worker left the server
-[05:12:26] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[05:12:29] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[05:12:29] [DEBUG] Loading player diedie...
-[05:12:29] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 22 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:12:34] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[05:12:34] [DEBUG] Loading player Jeff...
-[05:12:34] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 21 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:12:39] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[05:12:39] [DEBUG] Loading player Guild...
-[05:12:39] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 28 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:12:41] [DEBUG] diedie left the server
-[05:12:41] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[05:12:41] [DEBUG] Jeff left the server
-[05:12:41] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[05:12:41] [DEBUG] Guild left the server
-[05:12:41] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[05:13:00] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[05:13:00] [DEBUG] Loading player diedie...
-[05:13:00] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 23 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:13:05] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[05:13:05] [DEBUG] Loading player Jeff...
-[05:13:05] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 22 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:13:10] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[05:13:10] [DEBUG] Loading player Guild...
-[05:13:10] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 24 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:13:16] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[05:13:16] [DEBUG] Loading player worker...
-[05:13:16] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 24 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:13:39] [DEBUG] diedie left the server
-[05:13:39] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[05:13:39] [DEBUG] Jeff left the server
-[05:13:39] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[05:13:39] [DEBUG] Guild left the server
-[05:13:39] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[05:13:39] [DEBUG] worker left the server
-[05:13:39] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[05:13:42] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[05:13:42] [DEBUG] Loading player diedie...
-[05:13:42] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 15 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:13:47] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[05:13:47] [DEBUG] Loading player Jeff...
-[05:13:47] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 17 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:13:52] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[05:13:52] [DEBUG] Loading player Guild...
-[05:13:52] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 22 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:13:57] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[05:13:57] [DEBUG] Loading player worker...
-[05:13:57] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 24 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:14:26] [DEBUG] diedie left the server
-[05:14:26] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[05:14:26] [DEBUG] Jeff left the server
-[05:14:26] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[05:14:26] [DEBUG] Guild left the server
-[05:14:26] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[05:14:26] [DEBUG] worker left the server
-[05:14:26] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[05:14:29] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[05:14:29] [DEBUG] Loading player diedie...
-[05:14:29] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 15 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:14:34] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[05:14:34] [DEBUG] Loading player Jeff...
-[05:14:34] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 19 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:14:39] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[05:14:39] [DEBUG] Loading player Guild...
-[05:14:39] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 24 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:14:44] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[05:14:44] [DEBUG] Loading player worker...
-[05:14:44] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 18 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:15:51] [DEBUG] Saving 5 loaded accounts and 7 identifiers.
-[05:15:51] [DEBUG] Saved datas (0.007s)!
-[05:15:51] [INFO] [BeautyQuests] Datas saved ~ periodic save
-[05:16:46] [DEBUG] diedie left the server
-[05:16:46] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[05:16:46] [DEBUG] Jeff left the server
-[05:16:46] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[05:16:46] [DEBUG] Guild left the server
-[05:16:46] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[05:16:46] [DEBUG] worker left the server
-[05:16:46] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[05:16:48] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[05:16:48] [DEBUG] Loading player diedie...
-[05:16:49] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 14 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:16:53] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[05:16:53] [DEBUG] Loading player Jeff...
-[05:16:53] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 23 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:16:59] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[05:16:59] [DEBUG] Loading player Guild...
-[05:16:59] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 29 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:17:04] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[05:17:04] [DEBUG] Loading player worker...
-[05:17:04] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 31 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:19:17] [DEBUG] diedie left the server
-[05:19:17] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[05:19:17] [DEBUG] Jeff left the server
-[05:19:17] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[05:19:17] [DEBUG] Guild left the server
-[05:19:17] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[05:19:17] [DEBUG] worker left the server
-[05:19:17] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[05:23:46] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[05:23:46] [DEBUG] Loading player diedie...
-[05:23:46] [DEBUG] Loading account #2. Last file edition: Sat Oct 14 05:19:17 CST 2023
-[05:23:47] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 17 ms (0 quests, 0 pools) | Loaded from file from index
-[05:23:51] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[05:23:51] [DEBUG] Loading player Jeff...
-[05:23:51] [DEBUG] Loading account #4. Last file edition: Sat Oct 14 05:19:17 CST 2023
-[05:23:51] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 31 ms (0 quests, 0 pools) | Loaded from file from index
-[05:23:56] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[05:23:56] [DEBUG] Loading player Guild...
-[05:23:57] [DEBUG] Loading account #3. Last file edition: Sat Oct 14 05:19:17 CST 2023
-[05:23:57] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 35 ms (0 quests, 0 pools) | Loaded from file from index
-[05:24:02] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[05:24:02] [DEBUG] Loading player worker...
-[05:24:02] [DEBUG] Loading account #5. Last file edition: Sat Oct 14 05:19:17 CST 2023
-[05:24:02] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 20 ms (0 quests, 0 pools) | Loaded from file from index
-[05:24:42] [DEBUG] diedie left the server
-[05:24:42] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[05:24:42] [DEBUG] Jeff left the server
-[05:24:42] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[05:24:42] [DEBUG] Guild left the server
-[05:24:42] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[05:24:42] [DEBUG] worker left the server
-[05:24:42] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[05:27:11] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[05:27:11] [DEBUG] Loading player diedie...
-[05:27:11] [DEBUG] Loading account #2. Last file edition: Sat Oct 14 05:24:42 CST 2023
-[05:27:11] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 20 ms (0 quests, 0 pools) | Loaded from file from index
-[05:27:16] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[05:27:16] [DEBUG] Loading player Jeff...
-[05:27:16] [DEBUG] Loading account #4. Last file edition: Sat Oct 14 05:24:42 CST 2023
-[05:27:16] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 18 ms (0 quests, 0 pools) | Loaded from file from index
-[05:27:21] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[05:27:21] [DEBUG] Loading player Guild...
-[05:27:21] [DEBUG] Loading account #3. Last file edition: Sat Oct 14 05:24:42 CST 2023
-[05:27:21] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 25 ms (0 quests, 0 pools) | Loaded from file from index
-[05:27:26] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[05:27:26] [DEBUG] Loading player worker...
-[05:27:26] [DEBUG] Loading account #5. Last file edition: Sat Oct 14 05:24:42 CST 2023
-[05:27:26] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 23 ms (0 quests, 0 pools) | Loaded from file from index
-[05:27:46] [DEBUG] diedie left the server
-[05:27:46] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[05:27:46] [DEBUG] Jeff left the server
-[05:27:46] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[05:27:46] [DEBUG] Guild left the server
-[05:27:46] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[05:27:46] [DEBUG] worker left the server
-[05:27:46] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[05:28:05] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[05:28:05] [DEBUG] Loading player diedie...
-[05:28:05] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 17 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:28:10] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[05:28:10] [DEBUG] Loading player Jeff...
-[05:28:10] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 17 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:28:15] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[05:28:15] [DEBUG] Loading player Guild...
-[05:28:15] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 45 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:28:20] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[05:28:20] [DEBUG] Loading player worker...
-[05:28:20] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 17 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:29:18] [DEBUG] diedie left the server
-[05:29:18] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[05:29:18] [DEBUG] Jeff left the server
-[05:29:18] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[05:29:18] [DEBUG] Guild left the server
-[05:29:18] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[05:29:18] [DEBUG] worker left the server
-[05:29:18] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[05:30:51] [DEBUG] Saving 1 loaded accounts and 7 identifiers.
-[05:30:51] [DEBUG] Saved datas (0.002s)!
-[05:30:51] [INFO] [BeautyQuests] Datas saved ~ periodic save
-[05:45:51] [DEBUG] Saving 1 loaded accounts and 7 identifiers.
-[05:45:51] [DEBUG] Saved datas (0.002s)!
-[05:45:51] [INFO] [BeautyQuests] Datas saved ~ periodic save
-[05:47:35] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[05:47:35] [DEBUG] Loading player diedie...
-[05:47:35] [DEBUG] Loading account #2. Last file edition: Sat Oct 14 05:29:18 CST 2023
-[05:47:35] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 21 ms (0 quests, 0 pools) | Loaded from file from index
-[05:47:40] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[05:47:40] [DEBUG] Loading player Jeff...
-[05:47:40] [DEBUG] Loading account #4. Last file edition: Sat Oct 14 05:29:18 CST 2023
-[05:47:40] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 22 ms (0 quests, 0 pools) | Loaded from file from index
-[05:47:45] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[05:47:45] [DEBUG] Loading player Guild...
-[05:47:45] [DEBUG] Loading account #3. Last file edition: Sat Oct 14 05:29:18 CST 2023
-[05:47:45] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 32 ms (0 quests, 0 pools) | Loaded from file from index
-[05:47:50] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[05:47:50] [DEBUG] Loading player worker...
-[05:47:50] [DEBUG] Loading account #5. Last file edition: Sat Oct 14 05:29:18 CST 2023
-[05:47:50] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 23 ms (0 quests, 0 pools) | Loaded from file from index
-[05:48:48] [DEBUG] diedie left the server
-[05:48:48] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[05:48:48] [DEBUG] Jeff left the server
-[05:48:48] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[05:48:48] [DEBUG] Guild left the server
-[05:48:48] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[05:48:48] [DEBUG] worker left the server
-[05:48:48] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[05:50:15] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[05:50:15] [DEBUG] Loading player diedie...
-[05:50:15] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 15 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:50:20] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[05:50:20] [DEBUG] Loading player Jeff...
-[05:50:20] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 16 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:50:25] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[05:50:25] [DEBUG] Loading player Guild...
-[05:50:25] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 16 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:50:30] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[05:50:30] [DEBUG] Loading player worker...
-[05:50:30] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 40 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:50:38] [DEBUG] diedie left the server
-[05:50:38] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[05:50:38] [DEBUG] Jeff left the server
-[05:50:38] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[05:50:38] [DEBUG] Guild left the server
-[05:50:38] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[05:50:38] [DEBUG] worker left the server
-[05:50:38] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[05:50:59] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[05:50:59] [DEBUG] Loading player diedie...
-[05:50:59] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 19 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:51:04] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[05:51:04] [DEBUG] Loading player Jeff...
-[05:51:04] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 23 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:51:09] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[05:51:09] [DEBUG] Loading player Guild...
-[05:51:09] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 18 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:51:14] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[05:51:14] [DEBUG] Loading player worker...
-[05:51:14] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 17 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[05:53:21] [DEBUG] diedie left the server
-[05:53:21] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[05:53:21] [DEBUG] Jeff left the server
-[05:53:21] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[05:53:21] [DEBUG] Guild left the server
-[05:53:21] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[05:53:21] [DEBUG] worker left the server
-[05:53:21] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[05:56:04] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[05:56:04] [DEBUG] Loading player diedie...
-[05:56:04] [DEBUG] Loading account #2. Last file edition: Sat Oct 14 05:53:21 CST 2023
-[05:56:04] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 17 ms (0 quests, 0 pools) | Loaded from file from index
-[05:56:09] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[05:56:09] [DEBUG] Loading player Jeff...
-[05:56:09] [DEBUG] Loading account #4. Last file edition: Sat Oct 14 05:53:21 CST 2023
-[05:56:09] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 33 ms (0 quests, 0 pools) | Loaded from file from index
-[05:56:14] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[05:56:14] [DEBUG] Loading player Guild...
-[05:56:14] [DEBUG] Loading account #3. Last file edition: Sat Oct 14 05:53:21 CST 2023
-[05:56:14] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 22 ms (0 quests, 0 pools) | Loaded from file from index
-[05:56:19] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[05:56:19] [DEBUG] Loading player worker...
-[05:56:19] [DEBUG] Loading account #5. Last file edition: Sat Oct 14 05:53:21 CST 2023
-[05:56:19] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 27 ms (0 quests, 0 pools) | Loaded from file from index
-[05:59:58] [DEBUG] diedie left the server
-[05:59:58] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[05:59:58] [DEBUG] Jeff left the server
-[05:59:58] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[05:59:58] [DEBUG] Guild left the server
-[05:59:58] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[05:59:58] [DEBUG] worker left the server
-[05:59:58] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[06:00:01] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[06:00:01] [DEBUG] Loading player diedie...
-[06:00:01] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 17 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:00:06] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[06:00:06] [DEBUG] Loading player Jeff...
-[06:00:06] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 21 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:00:11] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[06:00:11] [DEBUG] Loading player Guild...
-[06:00:11] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 21 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:00:11] [DEBUG] Jeff left the server
-[06:00:11] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[06:00:11] [DEBUG] Guild left the server
-[06:00:11] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[06:00:11] [DEBUG] diedie left the server
-[06:00:11] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[06:00:52] [DEBUG] Saving 1 loaded accounts and 7 identifiers.
-[06:00:52] [DEBUG] Saved datas (0.003s)!
-[06:00:52] [INFO] [BeautyQuests] Datas saved ~ periodic save
-[06:00:52] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[06:00:52] [DEBUG] Loading player diedie...
-[06:00:52] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 14 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:00:57] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[06:00:57] [DEBUG] Loading player Jeff...
-[06:00:57] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 23 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:01:02] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[06:01:02] [DEBUG] Loading player Guild...
-[06:01:02] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 19 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:01:07] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[06:01:07] [DEBUG] Loading player worker...
-[06:01:07] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 23 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:01:30] [DEBUG] diedie left the server
-[06:01:30] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[06:01:30] [DEBUG] Jeff left the server
-[06:01:30] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[06:01:30] [DEBUG] Guild left the server
-[06:01:30] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[06:01:30] [DEBUG] worker left the server
-[06:01:30] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[06:02:02] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[06:02:02] [DEBUG] Loading player diedie...
-[06:02:02] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 15 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:02:07] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[06:02:07] [DEBUG] Loading player Jeff...
-[06:02:07] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 16 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:02:12] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[06:02:12] [DEBUG] Loading player Guild...
-[06:02:12] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 18 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:02:17] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[06:02:17] [DEBUG] Loading player worker...
-[06:02:17] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 17 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:02:33] [DEBUG] diedie left the server
-[06:02:33] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[06:02:33] [DEBUG] Jeff left the server
-[06:02:33] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[06:02:33] [DEBUG] Guild left the server
-[06:02:33] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[06:02:33] [DEBUG] worker left the server
-[06:02:33] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[06:02:36] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[06:02:36] [DEBUG] Loading player diedie...
-[06:02:36] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 19 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:02:40] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[06:02:40] [DEBUG] Loading player Jeff...
-[06:02:41] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 22 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:02:46] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[06:02:46] [DEBUG] Loading player Guild...
-[06:02:46] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 20 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:02:48] [DEBUG] diedie left the server
-[06:02:48] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[06:02:48] [DEBUG] Jeff left the server
-[06:02:48] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[06:02:48] [DEBUG] Guild left the server
-[06:02:48] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[06:03:55] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[06:03:55] [DEBUG] Loading player diedie...
-[06:03:55] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 14 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:04:00] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[06:04:00] [DEBUG] Loading player Jeff...
-[06:04:00] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 16 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:04:05] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[06:04:05] [DEBUG] Loading player Guild...
-[06:04:05] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 33 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:04:10] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[06:04:10] [DEBUG] Loading player worker...
-[06:04:10] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 33 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:04:50] [DEBUG] diedie left the server
-[06:04:50] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[06:04:50] [DEBUG] Jeff left the server
-[06:04:50] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[06:04:50] [DEBUG] Guild left the server
-[06:04:50] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[06:04:50] [DEBUG] worker left the server
-[06:04:50] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[06:04:53] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[06:04:53] [DEBUG] Loading player diedie...
-[06:04:53] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 15 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:04:58] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[06:04:58] [DEBUG] Loading player Jeff...
-[06:04:58] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 19 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:05:03] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[06:05:03] [DEBUG] Loading player Guild...
-[06:05:03] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 22 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:05:08] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[06:05:08] [DEBUG] Loading player worker...
-[06:05:08] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 16 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:06:39] [DEBUG] diedie left the server
-[06:06:39] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[06:06:39] [DEBUG] Jeff left the server
-[06:06:39] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[06:06:39] [DEBUG] Guild left the server
-[06:06:39] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[06:06:39] [DEBUG] worker left the server
-[06:06:39] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[06:06:42] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[06:06:42] [DEBUG] Loading player diedie...
-[06:06:42] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 16 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:06:44] [DEBUG] diedie left the server
-[06:06:44] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[06:08:17] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[06:08:17] [DEBUG] Loading player diedie...
-[06:08:17] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 15 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:08:22] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[06:08:22] [DEBUG] Loading player Jeff...
-[06:08:22] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 21 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:08:27] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[06:08:27] [DEBUG] Loading player Guild...
-[06:08:27] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 16 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:08:32] [DEBUG] diedie left the server
-[06:08:32] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[06:08:32] [DEBUG] Jeff left the server
-[06:08:32] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[06:08:32] [DEBUG] Guild left the server
-[06:08:32] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[06:09:35] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[06:09:35] [DEBUG] Loading player diedie...
-[06:09:35] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 16 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:09:39] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[06:09:39] [DEBUG] Loading player Jeff...
-[06:09:40] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 19 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:09:45] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[06:09:45] [DEBUG] Loading player Guild...
-[06:09:45] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 17 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:09:50] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[06:09:50] [DEBUG] Loading player worker...
-[06:09:50] [DEBUG] Loading account #5. Last file edition: Sat Oct 14 06:06:39 CST 2023
-[06:09:50] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 19 ms (0 quests, 0 pools) | Loaded from file from index
-[06:10:32] [DEBUG] diedie left the server
-[06:10:32] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[06:10:32] [DEBUG] Jeff left the server
-[06:10:32] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[06:10:32] [DEBUG] Guild left the server
-[06:10:32] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[06:10:32] [DEBUG] worker left the server
-[06:10:32] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[06:10:36] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[06:10:36] [DEBUG] Loading player diedie...
-[06:10:36] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 15 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:10:41] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[06:10:41] [DEBUG] Loading player Jeff...
-[06:10:41] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 27 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:10:46] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[06:10:46] [DEBUG] Loading player Guild...
-[06:10:46] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 19 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:10:51] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[06:10:51] [DEBUG] Loading player worker...
-[06:10:52] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 126 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[06:11:01] [DEBUG] diedie left the server
-[06:11:01] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[06:11:01] [DEBUG] Jeff left the server
-[06:11:01] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[06:11:01] [DEBUG] Guild left the server
-[06:11:01] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[06:11:01] [DEBUG] worker left the server
-[06:11:01] [DEBUG] Unloading player worker... (0 quests, 0 pools)
+[16:06:44] [DEBUG] Hooked into [Citizens] v2.0.32-SNAPSHOT (build 3173)
+[16:06:44] [DEBUG] Hooked into [Vault] v1.7.3-b131
+[16:06:44] [DEBUG] Hooked into [PlaceholderAPI] v2.11.4
+[16:06:44] [INFO] [BeautyQuests] Loaded valid Minecraft version 1_16_R3.
+[16:06:44] [DEBUG] Loading data file, last time edited : Sun Oct 15 15:57:21 CST 2023
+[16:06:44] [DEBUG] Unavailable string in config for key inv.mobSelect.advancedSpawners
+[16:06:44] [INFO] [BeautyQuests] Loaded language en_US (0.027s)!
+[16:06:44] [INFO] [BeautyQuests] Loaded start particles: REDSTONE in shape POINT with color R255 G255 B0
+[16:06:44] [INFO] [BeautyQuests] Loaded talk particles: VILLAGER_HAPPY in shape BAR
+[16:06:44] [INFO] [BeautyQuests] Loaded next particles: SMOKE_NORMAL in shape SPOT
+[16:06:45] [DEBUG] Initlializing default stage types.
+[16:06:45] [DEBUG] Stage registered (Talk, 0)
+[16:06:45] [DEBUG] Stage registered (Items, 1)
+[16:06:45] [DEBUG] Stage registered (Mobs, 2)
+[16:06:45] [DEBUG] Stage registered (Mine, 3)
+[16:06:45] [DEBUG] Stage registered (Place, 4)
+[16:06:45] [DEBUG] Stage registered (Chat, 5)
+[16:06:45] [DEBUG] Stage registered (Interact, 6)
+[16:06:45] [DEBUG] Stage registered (Fish, 7)
+[16:06:45] [DEBUG] Stage registered (Melt, 8)
+[16:06:45] [DEBUG] Stage registered (Enchant, 9)
+[16:06:45] [DEBUG] Stage registered (Craft, 10)
+[16:06:45] [DEBUG] Stage registered (Bucket, 11)
+[16:06:45] [DEBUG] Stage registered (Location, 12)
+[16:06:45] [DEBUG] Stage registered (PlayTime, 13)
+[16:06:45] [DEBUG] Stage registered (Breed, 14)
+[16:06:45] [DEBUG] Stage registered (Tame, 15)
+[16:06:45] [DEBUG] Stage registered (Death, 16)
+[16:06:45] [DEBUG] Stage registered (DealDamage, 17)
+[16:06:45] [DEBUG] Stage registered (EatDrink, 18)
+[16:06:45] [DEBUG] Initlializing default rewards.
+[16:06:45] [DEBUG] Quest object registered in registry rewards (id: commandReward, class: fr.skytasul.quests.rewards.CommandReward)
+[16:06:45] [DEBUG] Quest object registered in registry rewards (id: itemReward, class: fr.skytasul.quests.rewards.ItemReward)
+[16:06:45] [DEBUG] Quest object registered in registry rewards (id: removeItemsReward, class: fr.skytasul.quests.rewards.RemoveItemsReward)
+[16:06:45] [DEBUG] Quest object registered in registry rewards (id: textReward, class: fr.skytasul.quests.rewards.MessageReward)
+[16:06:45] [DEBUG] Quest object registered in registry rewards (id: tpReward, class: fr.skytasul.quests.rewards.TeleportationReward)
+[16:06:45] [DEBUG] Quest object registered in registry rewards (id: expReward, class: fr.skytasul.quests.rewards.XPReward)
+[16:06:45] [DEBUG] Quest object registered in registry rewards (id: checkpointReward, class: fr.skytasul.quests.rewards.CheckpointReward)
+[16:06:45] [DEBUG] Quest object registered in registry rewards (id: questStopReward, class: fr.skytasul.quests.rewards.QuestStopReward)
+[16:06:45] [DEBUG] Quest object registered in registry rewards (id: requirementDependentReward, class: fr.skytasul.quests.rewards.RequirementDependentReward)
+[16:06:45] [DEBUG] Quest object registered in registry rewards (id: randomReward, class: fr.skytasul.quests.rewards.RandomReward)
+[16:06:45] [DEBUG] Quest object registered in registry rewards (id: wait, class: fr.skytasul.quests.rewards.WaitReward)
+[16:06:45] [DEBUG] Quest object registered in registry rewards (id: titleReward, class: fr.skytasul.quests.rewards.TitleReward)
+[16:06:45] [DEBUG] Initlializing default requirements.
+[16:06:45] [DEBUG] Quest object registered in registry requirements (id: logicalOr, class: fr.skytasul.quests.requirements.logical.LogicalOrRequirement)
+[16:06:45] [DEBUG] Quest object registered in registry requirements (id: questRequired, class: fr.skytasul.quests.requirements.QuestRequirement)
+[16:06:45] [DEBUG] Quest object registered in registry requirements (id: levelRequired, class: fr.skytasul.quests.requirements.LevelRequirement)
+[16:06:45] [DEBUG] Quest object registered in registry requirements (id: permissionRequired, class: fr.skytasul.quests.requirements.PermissionsRequirement)
+[16:06:45] [DEBUG] Quest object registered in registry requirements (id: scoreboardRequired, class: fr.skytasul.quests.requirements.ScoreboardRequirement)
+[16:06:45] [DEBUG] Quest object registered in registry requirements (id: equipmentRequired, class: fr.skytasul.quests.requirements.EquipmentRequirement)
+[16:06:45] [DEBUG] Initlializing default quest options.
+[16:06:45] [DEBUG] Quest option registered (id: pool)
+[16:06:45] [DEBUG] Quest option registered (id: name)
+[16:06:45] [DEBUG] Quest option registered (id: description)
+[16:06:45] [DEBUG] Quest option registered (id: customItem)
+[16:06:45] [DEBUG] Quest option registered (id: confirmMessage)
+[16:06:45] [DEBUG] Quest option registered (id: hologramText)
+[16:06:45] [DEBUG] Quest option registered (id: bypassLimit)
+[16:06:45] [DEBUG] Quest option registered (id: startableFromGUI)
+[16:06:45] [DEBUG] Quest option registered (id: failOnDeath)
+[16:06:45] [DEBUG] Quest option registered (id: cancellable)
+[16:06:45] [DEBUG] Quest option registered (id: cancelActions)
+[16:06:45] [DEBUG] Quest option registered (id: hologramLaunch)
+[16:06:45] [DEBUG] Quest option registered (id: hologramLaunchNo)
+[16:06:45] [DEBUG] Quest option registered (id: scoreboard)
+[16:06:45] [DEBUG] Quest option registered (id: hideNoRequirements)
+[16:06:45] [DEBUG] Quest option registered (id: auto)
+[16:06:45] [DEBUG] Quest option registered (id: repeatable)
+[16:06:45] [DEBUG] Quest option registered (id: timer)
+[16:06:45] [DEBUG] Quest option registered (id: visibility)
+[16:06:45] [DEBUG] Quest option registered (id: endSound)
+[16:06:45] [DEBUG] Quest option registered (id: firework)
+[16:06:45] [DEBUG] Quest option registered (id: requirements)
+[16:06:45] [DEBUG] Quest option registered (id: startRewards)
+[16:06:45] [DEBUG] Quest option registered (id: startMessage)
+[16:06:45] [DEBUG] Quest option registered (id: starterNPC)
+[16:06:45] [DEBUG] Quest option registered (id: startDialog)
+[16:06:45] [DEBUG] Quest option registered (id: endRewards)
+[16:06:45] [DEBUG] Quest option registered (id: endMsg)
+[16:06:45] [DEBUG] Item comparison registered (id: bukkit)
+[16:06:45] [DEBUG] Item comparison registered (id: customBukkit)
+[16:06:45] [DEBUG] Item comparison registered (id: material)
+[16:06:45] [DEBUG] Item comparison registered (id: name)
+[16:06:45] [DEBUG] Item comparison registered (id: lore)
+[16:06:45] [DEBUG] Item comparison registered (id: enchants)
+[16:06:45] [DEBUG] Item comparison registered (id: repair)
+[16:06:45] [DEBUG] Mob factory registered (id: bukkitEntity)
+[16:06:45] [DEBUG] Bossbars manager has been registered: fr.skytasul.quests.api.bossbar.BQBossBarImplementation
+[16:06:46] [DEBUG] Brigadier registered!
+[16:06:46] [DEBUG] Mob factory registered (id: citizensNPC)
+[16:06:46] [DEBUG] Quest object registered in registry rewards (id: moneyReward, class: fr.skytasul.quests.rewards.MoneyReward)
+[16:06:46] [DEBUG] Quest object registered in registry rewards (id: permReward, class: fr.skytasul.quests.rewards.PermissionReward)
+[16:06:46] [DEBUG] Quest object registered in registry requirements (id: moneyRequired, class: fr.skytasul.quests.requirements.MoneyRequirement)
+[16:06:46] [INFO] [BeautyQuests] Placeholders registered !
+[16:06:46] [DEBUG] Quest object registered in registry requirements (id: placeholderRequired, class: fr.skytasul.quests.requirements.PlaceholderRequirement)
+[16:06:46] [DEBUG] Started bStats metrics
+[16:06:46] [DEBUG] Starting Spigot updater
+[16:06:47] [DEBUG] 0 accounts loaded and 7 identifiers.
+[16:06:47] [DEBUG] Registered 5 lines in scoreboard
+[16:06:47] [WARNING] [BeautyQuests] Stage with no content: stage -1(MOBS) of quest 0, branch 0
+[16:06:47] [WARNING] [BeautyQuests] The NPC 2 does not exist for stage -1(ITEMS) of quest 10, branch 0
+[16:06:47] [WARNING] [BeautyQuests] The NPC 4 does not exist for stage -1(ITEMS) of quest 11, branch 0
+[16:06:47] [WARNING] [BeautyQuests] The NPC 0 does not exist for stage -1(ITEMS) of quest 12, branch 0
+[16:06:47] [WARNING] [BeautyQuests] The NPC 1 does not exist for stage -1(ITEMS) of quest 13, branch 0
+[16:06:47] [WARNING] [BeautyQuests] The NPC 2 does not exist for stage -1(ITEMS) of quest 14, branch 0
+[16:06:47] [WARNING] [BeautyQuests] The NPC 0 does not exist for stage -1(ITEMS) of quest 6, branch 0
+[16:06:47] [WARNING] [BeautyQuests] The NPC 1 does not exist for stage -1(ITEMS) of quest 7, branch 0
+[16:06:47] [WARNING] [BeautyQuests] The NPC 0 does not exist for stage -1(ITEMS) of quest 8, branch 0
+[16:06:47] [WARNING] [BeautyQuests] The NPC 1 does not exist for stage -1(ITEMS) of quest 9, branch 0
+[16:06:47] [INFO] [BeautyQuests] 16 quests loaded (0.039s)!
+[16:06:47] [INFO] [BeautyQuests] Periodic saves task started (18000 ticks). Task ID: 36
+[16:06:47] [INFO] [BeautyQuests] You are using the latest version of BeautyQuests.
+[16:06:49] [DEBUG] Dingo_Kez (f2230bc0-1ac5-3d55-9f5b-abfb37a60d0a) joined the server
+[16:06:49] [DEBUG] Loading player Dingo_Kez...
+[16:06:50] [DEBUG] Loading account #1. Last file edition: Sun Oct 15 15:57:21 CST 2023
+[16:06:50] [DEBUG] Completed load of Dingo_Kez (f2230bc0-1ac5-3d55-9f5b-abfb37a60d0a (#1)) datas within 252 ms (1 quests, 0 pools) | Loaded from file from index
+[16:07:07] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
+[16:07:07] [DEBUG] Loading player diedie...
+[16:07:07] [DEBUG] Loading account #2. Last file edition: Sun Oct 15 16:03:16 CST 2023
+[16:07:07] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 38 ms (0 quests, 0 pools) | Loaded from file from index
+[16:07:12] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
+[16:07:12] [DEBUG] Loading player Jeff...
+[16:07:12] [DEBUG] Loading account #4. Last file edition: Sun Oct 15 16:03:16 CST 2023
+[16:07:12] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 31 ms (0 quests, 0 pools) | Loaded from file from index
+[16:07:17] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
+[16:07:17] [DEBUG] Loading player Guild...
+[16:07:17] [DEBUG] Loading account #3. Last file edition: Sun Oct 15 16:03:16 CST 2023
+[16:07:17] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 44 ms (0 quests, 0 pools) | Loaded from file from index
+[16:07:22] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
+[16:07:22] [DEBUG] Loading player worker...
+[16:07:22] [DEBUG] Loading account #5. Last file edition: Sun Oct 15 16:02:41 CST 2023
+[16:07:22] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 22 ms (0 quests, 0 pools) | Loaded from file from index
+[16:12:52] [DEBUG] diedie left the server
+[16:12:52] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
+[16:12:52] [DEBUG] Jeff left the server
+[16:12:52] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
+[16:12:53] [DEBUG] Guild left the server
+[16:12:53] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
+[16:12:53] [DEBUG] worker left the server
+[16:12:53] [DEBUG] Unloading player worker... (0 quests, 0 pools)
+[16:13:18] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
+[16:13:18] [DEBUG] Loading player diedie...
+[16:13:19] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 25 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
+[16:13:23] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
+[16:13:23] [DEBUG] Loading player Jeff...
+[16:13:23] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 14 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
+[16:13:29] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
+[16:13:29] [DEBUG] Loading player Guild...
+[16:13:29] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 18 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
+[16:13:34] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
+[16:13:34] [DEBUG] Loading player worker...
+[16:13:34] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 14 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
+[16:13:54] [DEBUG] diedie left the server
+[16:13:54] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
+[16:13:54] [DEBUG] Jeff left the server
+[16:13:54] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
+[16:13:54] [DEBUG] Guild left the server
+[16:13:54] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
+[16:13:54] [DEBUG] worker left the server
+[16:13:54] [DEBUG] Unloading player worker... (0 quests, 0 pools)
+[16:14:41] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
+[16:14:41] [DEBUG] Loading player diedie...
+[16:14:41] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 18 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
+[16:14:42] [DEBUG] diedie executed command: quests start Dingo_Kez 28
+[16:14:42] [DEBUG] diedie executed command: quests start Dingo_Kez 28
+[16:14:42] [DEBUG] diedie executed command: quests start Dingo_Kez 28
+[16:14:43] [DEBUG] diedie executed command: quests start Dingo_Kez 28
+[16:14:44] [DEBUG] diedie executed command: quests start Dingo_Kez 28
+[16:14:45] [DEBUG] diedie executed command: quests start Dingo_Kez 28
+[16:14:46] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
+[16:14:46] [DEBUG] Loading player Jeff...
+[16:14:46] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 13 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
+[16:14:46] [DEBUG] diedie executed command: quests start Dingo_Kez 28
+[16:14:47] [DEBUG] diedie executed command: quests start Dingo_Kez 28
+[16:14:48] [DEBUG] diedie executed command: quests start Dingo_Kez 28
+[16:14:49] [DEBUG] diedie left the server
+[16:14:49] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
+[16:14:49] [DEBUG] Jeff left the server
+[16:14:49] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
+[16:21:47] [DEBUG] Saving 1 loaded accounts and 7 identifiers.
+[16:21:47] [DEBUG] Saved datas (0.004s)!
+[16:21:47] [INFO] [BeautyQuests] Datas saved ~ periodic save
+[16:22:40] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
+[16:22:40] [DEBUG] Loading player diedie...
+[16:22:40] [DEBUG] Loading account #2. Last file edition: Sun Oct 15 16:14:49 CST 2023
+[16:22:40] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 13 ms (0 quests, 0 pools) | Loaded from file from index
+[16:22:41] [DEBUG] diedie executed command: quests start Dingo_Kez 28
+[16:22:41] [DEBUG] diedie executed command: quests start Dingo_Kez 28
+[16:22:41] [DEBUG] diedie executed command: quests start Dingo_Kez 28
+[16:22:42] [DEBUG] diedie executed command: quests start Dingo_Kez 28
+[16:22:43] [DEBUG] diedie executed command: quests start Dingo_Kez 28
+[16:22:44] [DEBUG] diedie executed command: quests start Dingo_Kez 28
+[16:22:45] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
+[16:22:45] [DEBUG] Loading player Jeff...
+[16:22:45] [DEBUG] Loading account #4. Last file edition: Sun Oct 15 16:14:49 CST 2023
+[16:22:45] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 33 ms (0 quests, 0 pools) | Loaded from file from index
+[16:22:45] [DEBUG] diedie executed command: quests start Dingo_Kez 28
+[16:22:46] [DEBUG] diedie executed command: quests start Dingo_Kez 28
+[16:22:47] [DEBUG] diedie executed command: quests start Dingo_Kez 28
+[16:22:48] [DEBUG] diedie executed command: quests start Dingo_Kez 28
+[16:22:49] [DEBUG] diedie executed command: quests start Dingo_Kez 28
+[16:22:50] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
+[16:22:50] [DEBUG] Loading player Guild...
+[16:22:50] [DEBUG] Loading account #3. Last file edition: Sun Oct 15 16:13:54 CST 2023
+[16:22:50] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 22 ms (0 quests, 0 pools) | Loaded from file from index
+[16:22:51] [DEBUG] diedie executed command: quests start Dingo_Kez 28
+[16:22:51] [DEBUG] diedie left the server
+[16:22:51] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
+[16:22:51] [DEBUG] Jeff left the server
+[16:22:51] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
+[16:22:51] [DEBUG] Guild left the server
+[16:22:51] [DEBUG] Unloading player Guild... (0 quests, 0 pools)

@@ -168,9 +168,9 @@ class Sensor {
       //   console.log(newBlock);
       // })
       this.bot.on('time', () => {
-            
-        //if(this.bot.time.timeOfDay > 22990 && this.bot.time.timeOfDay < 23010){
-        if(this.bot.time.timeOfDay == 23000){ 
+        if(this.bot.time.timeOfDay > 22990 && this.bot.time.timeOfDay < 23010){
+        
+        //if(this.bot.time.timeOfDay == 23000){ 
             socket.emit('message', {
                 targetSocketId: 'TARGET_SOCKET_ID',
                 message:'system:time',
@@ -182,8 +182,8 @@ class Sensor {
                 type:"system"
             });
         }
-        // if(this.bot.time.timeOfDay > 2990 && this.bot.time.timeOfDay < 3010){
-        if(this.bot.time.timeOfDay == 3000){
+        if(this.bot.time.timeOfDay > 2990 && this.bot.time.timeOfDay < 3010){
+        //if(this.bot.time.timeOfDay == 3000){
             socket.emit('message', {
                 targetSocketId: 'TARGET_SOCKET_ID',
                 message:'system:time',
@@ -195,8 +195,8 @@ class Sensor {
                 type:"system"
             });
         }
-        //if(this.bot.time.timeOfDay > 5990 && this.bot.time.timeOfDay < 6010){
-        if(this.bot.time.timeOfDay == 6000){
+        if(this.bot.time.timeOfDay > 5990 && this.bot.time.timeOfDay < 6010){
+       // if(this.bot.time.timeOfDay == 6000){
             socket.emit('message', {
                 targetSocketId: 'TARGET_SOCKET_ID',
                 message:'system:time',
@@ -208,8 +208,8 @@ class Sensor {
                 type:"system"
             });
         }
-        // if(this.bot.time.timeOfDay > 8990 && this.bot.time.timeOfDay < 9010){
-        if(this.bot.time.timeOfDay == 9000){
+        if(this.bot.time.timeOfDay > 8990 && this.bot.time.timeOfDay < 9010){
+        //if(this.bot.time.timeOfDay == 9000){
             socket.emit('message', {
                 targetSocketId: 'TARGET_SOCKET_ID',
                 message:'system:time',
@@ -221,8 +221,8 @@ class Sensor {
                 type:"system"
             });
         }
-       // if(this.bot.time.timeOfDay > 11990 && this.bot.time.timeOfDay < 12010){
-        if(this.bot.time.timeOfDay == 12000){
+       if(this.bot.time.timeOfDay > 11990 && this.bot.time.timeOfDay < 12010){
+        //if(this.bot.time.timeOfDay == 12000){
             socket.emit('message', {
                 targetSocketId: 'TARGET_SOCKET_ID',
                 message:'system:time',
@@ -234,8 +234,8 @@ class Sensor {
                 type:"system"
             });
         }
-        //if(this.bot.time.timeOfDay > 15990 && this.bot.time.timeOfDay < 16010){
-        if(this.bot.time.timeOfDay == 16000){
+        if(this.bot.time.timeOfDay > 15990 && this.bot.time.timeOfDay < 16010){
+        //if(this.bot.time.timeOfDay == 16000){
             socket.emit('message', {
                 targetSocketId: 'TARGET_SOCKET_ID',
                 message:'system:time',

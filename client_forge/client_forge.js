@@ -266,7 +266,7 @@ class MCBot {
     const findladderfromchest = new createFindLadder(this.bot, target);
     const findoak_logfromchest = new createFindOak_log(this.bot, target);
     const findoak_planksfromchest = new createFindOak_planks(this.bot, target);
-    const findoak_saplingfromchest = new findOak_sapling(this.bot, target);
+    const findoak_saplingfromchest = new createFindOak_log(this.bot, target);
     const findstickfromchest = new findStick(this.bot, target);
     const findstone_axefromchest = new createFindStone_axe(this.bot, target);
     const findstone_hoefromchest = new createFindStone_hoe(this.bot, target);
@@ -430,7 +430,7 @@ class MCBot {
       new BotStateTransition({   
         parent: idleState,
         child: wakeup,
-        jobID: BOT_JOB_TYPE.WAKEUP, // The job ID : 36
+        jobID: BOT_JOB_TYPE.WAKEUP, // The job ID : 24
       }, this),
       new StateTransition({   
         parent: wakeup,

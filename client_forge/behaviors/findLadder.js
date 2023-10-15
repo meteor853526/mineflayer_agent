@@ -149,7 +149,7 @@ class Return_schedule extends BaseBehavior {
     const transitions = [
       new StateTransition({
         parent: enter,
-        child: FindPlanks,
+        child: Find_ladder,
         shouldTransition: () => true,
       }),
       new StateTransition({

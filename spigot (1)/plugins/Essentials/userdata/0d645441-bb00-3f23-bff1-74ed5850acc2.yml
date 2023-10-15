@@ -16,23 +16,23 @@ timestamps:
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1697235061912
-  login: 1697235036896
-money: '100425.0'
+  logout: 1697362014754
+  login: 1697362023960
+money: '100380.0'
 last-account-name: diedie
 logoutlocation:
-  world: ad51f2e8-f8f1-4fcc-bc7e-fb82610a1e46
+  world: 9dac70ed-8467-49ef-8617-08d872900ab9
   world-name: world
-  x: -10553.685021442423
-  y: 72.0
-  z: 12788.499984175654
-  yaw: -122.10033416748047
-  pitch: 16.588733673095703
+  x: -10564.500000054286
+  y: 71.0
+  z: 12746.685021442408
+  yaw: 120.5999755859375
+  pitch: 25.650001525878906
 lastlocation:
-  world: ad51f2e8-f8f1-4fcc-bc7e-fb82610a1e46
+  world: 9dac70ed-8467-49ef-8617-08d872900ab9
   world-name: world
-  x: -10439.707675394251
-  y: 72.0
-  z: 12593.540126112677
-  yaw: -158.50164794921875
-  pitch: 1.8196106248069555E-4
+  x: -10563.5
+  y: 70.9375
+  z: 12749.5
+  yaw: 45.599998474121094
+  pitch: 0.0

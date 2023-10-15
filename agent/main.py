@@ -98,7 +98,7 @@ def message_diedie(data):
         case messageType.system:
             if data['message'] == 'system:time':
                 Diedie_instance.update_current_schedule(data)
-                # Diedie_instance.schedule_action()
+                Diedie_instance.schedule_action(data)
             if data['message'] == 'system:JobFinish':
                 Diedie_instance.update_Job_state(data)
  
