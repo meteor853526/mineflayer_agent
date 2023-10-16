@@ -357,8 +357,8 @@ const {
       if(bot.inventory.items().filter(item => item.name.includes("oak_log"))[0].count>12){
         return true
       }
-      console.log("!!!!!!!!!!!!" + bot.inventory.items().filter(item => item.name.includes("spruce_log"))[0].count)
-      return false
+      // console.log("!!!!!!!!!!!!" + bot.inventory.items().filter(item => item.name.includes("spruce_log"))[0].count)
+      // return false
     }
     return false
   }
