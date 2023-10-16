@@ -373,8 +373,8 @@ backup_planning: |-
     property : '{property}'.
 
   Here is your condition:
-    1. go home and find '{miss_item}'
-    2. go Guild and find '{miss_item}'
+    1. go home and search '{miss_item}' from surrounding chest
+    2. go Guild and search '{miss_item}' from surrounding chest
     3. ask someone for help to get '{miss_item}'
     4. give up this task and do other task or nothing
     {condition}

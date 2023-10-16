@@ -1,217 +1,142 @@
-[16:06:37] ---- BEAUTYQUESTS LOGGER - OPENED Sun Oct 15 16:06:37 CST 2023 ----
-[16:06:44] [INFO] [BeautyQuests] Enabling BeautyQuests v0.20.1
-[16:06:44] [INFO] [BeautyQuests] ------------ BeautyQuests ------------
-[16:06:44] [WARNING] [BeautyQuests] You are not running the Paper software.
+[01:19:15] ---- BEAUTYQUESTS LOGGER - OPENED Sun Oct 15 01:19:15 CST 2023 ----
+[01:19:21] [INFO] [BeautyQuests] Enabling BeautyQuests v0.20.1
+[01:19:21] [INFO] [BeautyQuests] ------------ BeautyQuests ------------
+[01:19:21] [WARNING] [BeautyQuests] You are not running the Paper software.
 It is highly recommended to use it for extended features and more stability.
-[16:06:44] [DEBUG] Hooked into [Citizens] v2.0.32-SNAPSHOT (build 3173)
-[16:06:44] [DEBUG] Hooked into [Vault] v1.7.3-b131
-[16:06:44] [DEBUG] Hooked into [PlaceholderAPI] v2.11.4
-[16:06:44] [INFO] [BeautyQuests] Loaded valid Minecraft version 1_16_R3.
-[16:06:44] [DEBUG] Loading data file, last time edited : Sun Oct 15 15:57:21 CST 2023
-[16:06:44] [DEBUG] Unavailable string in config for key inv.mobSelect.advancedSpawners
-[16:06:44] [INFO] [BeautyQuests] Loaded language en_US (0.027s)!
-[16:06:44] [INFO] [BeautyQuests] Loaded start particles: REDSTONE in shape POINT with color R255 G255 B0
-[16:06:44] [INFO] [BeautyQuests] Loaded talk particles: VILLAGER_HAPPY in shape BAR
-[16:06:44] [INFO] [BeautyQuests] Loaded next particles: SMOKE_NORMAL in shape SPOT
-[16:06:45] [DEBUG] Initlializing default stage types.
-[16:06:45] [DEBUG] Stage registered (Talk, 0)
-[16:06:45] [DEBUG] Stage registered (Items, 1)
-[16:06:45] [DEBUG] Stage registered (Mobs, 2)
-[16:06:45] [DEBUG] Stage registered (Mine, 3)
-[16:06:45] [DEBUG] Stage registered (Place, 4)
-[16:06:45] [DEBUG] Stage registered (Chat, 5)
-[16:06:45] [DEBUG] Stage registered (Interact, 6)
-[16:06:45] [DEBUG] Stage registered (Fish, 7)
-[16:06:45] [DEBUG] Stage registered (Melt, 8)
-[16:06:45] [DEBUG] Stage registered (Enchant, 9)
-[16:06:45] [DEBUG] Stage registered (Craft, 10)
-[16:06:45] [DEBUG] Stage registered (Bucket, 11)
-[16:06:45] [DEBUG] Stage registered (Location, 12)
-[16:06:45] [DEBUG] Stage registered (PlayTime, 13)
-[16:06:45] [DEBUG] Stage registered (Breed, 14)
-[16:06:45] [DEBUG] Stage registered (Tame, 15)
-[16:06:45] [DEBUG] Stage registered (Death, 16)
-[16:06:45] [DEBUG] Stage registered (DealDamage, 17)
-[16:06:45] [DEBUG] Stage registered (EatDrink, 18)
-[16:06:45] [DEBUG] Initlializing default rewards.
-[16:06:45] [DEBUG] Quest object registered in registry rewards (id: commandReward, class: fr.skytasul.quests.rewards.CommandReward)
-[16:06:45] [DEBUG] Quest object registered in registry rewards (id: itemReward, class: fr.skytasul.quests.rewards.ItemReward)
-[16:06:45] [DEBUG] Quest object registered in registry rewards (id: removeItemsReward, class: fr.skytasul.quests.rewards.RemoveItemsReward)
-[16:06:45] [DEBUG] Quest object registered in registry rewards (id: textReward, class: fr.skytasul.quests.rewards.MessageReward)
-[16:06:45] [DEBUG] Quest object registered in registry rewards (id: tpReward, class: fr.skytasul.quests.rewards.TeleportationReward)
-[16:06:45] [DEBUG] Quest object registered in registry rewards (id: expReward, class: fr.skytasul.quests.rewards.XPReward)
-[16:06:45] [DEBUG] Quest object registered in registry rewards (id: checkpointReward, class: fr.skytasul.quests.rewards.CheckpointReward)
-[16:06:45] [DEBUG] Quest object registered in registry rewards (id: questStopReward, class: fr.skytasul.quests.rewards.QuestStopReward)
-[16:06:45] [DEBUG] Quest object registered in registry rewards (id: requirementDependentReward, class: fr.skytasul.quests.rewards.RequirementDependentReward)
-[16:06:45] [DEBUG] Quest object registered in registry rewards (id: randomReward, class: fr.skytasul.quests.rewards.RandomReward)
-[16:06:45] [DEBUG] Quest object registered in registry rewards (id: wait, class: fr.skytasul.quests.rewards.WaitReward)
-[16:06:45] [DEBUG] Quest object registered in registry rewards (id: titleReward, class: fr.skytasul.quests.rewards.TitleReward)
-[16:06:45] [DEBUG] Initlializing default requirements.
-[16:06:45] [DEBUG] Quest object registered in registry requirements (id: logicalOr, class: fr.skytasul.quests.requirements.logical.LogicalOrRequirement)
-[16:06:45] [DEBUG] Quest object registered in registry requirements (id: questRequired, class: fr.skytasul.quests.requirements.QuestRequirement)
-[16:06:45] [DEBUG] Quest object registered in registry requirements (id: levelRequired, class: fr.skytasul.quests.requirements.LevelRequirement)
-[16:06:45] [DEBUG] Quest object registered in registry requirements (id: permissionRequired, class: fr.skytasul.quests.requirements.PermissionsRequirement)
-[16:06:45] [DEBUG] Quest object registered in registry requirements (id: scoreboardRequired, class: fr.skytasul.quests.requirements.ScoreboardRequirement)
-[16:06:45] [DEBUG] Quest object registered in registry requirements (id: equipmentRequired, class: fr.skytasul.quests.requirements.EquipmentRequirement)
-[16:06:45] [DEBUG] Initlializing default quest options.
-[16:06:45] [DEBUG] Quest option registered (id: pool)
-[16:06:45] [DEBUG] Quest option registered (id: name)
-[16:06:45] [DEBUG] Quest option registered (id: description)
-[16:06:45] [DEBUG] Quest option registered (id: customItem)
-[16:06:45] [DEBUG] Quest option registered (id: confirmMessage)
-[16:06:45] [DEBUG] Quest option registered (id: hologramText)
-[16:06:45] [DEBUG] Quest option registered (id: bypassLimit)
-[16:06:45] [DEBUG] Quest option registered (id: startableFromGUI)
-[16:06:45] [DEBUG] Quest option registered (id: failOnDeath)
-[16:06:45] [DEBUG] Quest option registered (id: cancellable)
-[16:06:45] [DEBUG] Quest option registered (id: cancelActions)
-[16:06:45] [DEBUG] Quest option registered (id: hologramLaunch)
-[16:06:45] [DEBUG] Quest option registered (id: hologramLaunchNo)
-[16:06:45] [DEBUG] Quest option registered (id: scoreboard)
-[16:06:45] [DEBUG] Quest option registered (id: hideNoRequirements)
-[16:06:45] [DEBUG] Quest option registered (id: auto)
-[16:06:45] [DEBUG] Quest option registered (id: repeatable)
-[16:06:45] [DEBUG] Quest option registered (id: timer)
-[16:06:45] [DEBUG] Quest option registered (id: visibility)
-[16:06:45] [DEBUG] Quest option registered (id: endSound)
-[16:06:45] [DEBUG] Quest option registered (id: firework)
-[16:06:45] [DEBUG] Quest option registered (id: requirements)
-[16:06:45] [DEBUG] Quest option registered (id: startRewards)
-[16:06:45] [DEBUG] Quest option registered (id: startMessage)
-[16:06:45] [DEBUG] Quest option registered (id: starterNPC)
-[16:06:45] [DEBUG] Quest option registered (id: startDialog)
-[16:06:45] [DEBUG] Quest option registered (id: endRewards)
-[16:06:45] [DEBUG] Quest option registered (id: endMsg)
-[16:06:45] [DEBUG] Item comparison registered (id: bukkit)
-[16:06:45] [DEBUG] Item comparison registered (id: customBukkit)
-[16:06:45] [DEBUG] Item comparison registered (id: material)
-[16:06:45] [DEBUG] Item comparison registered (id: name)
-[16:06:45] [DEBUG] Item comparison registered (id: lore)
-[16:06:45] [DEBUG] Item comparison registered (id: enchants)
-[16:06:45] [DEBUG] Item comparison registered (id: repair)
-[16:06:45] [DEBUG] Mob factory registered (id: bukkitEntity)
-[16:06:45] [DEBUG] Bossbars manager has been registered: fr.skytasul.quests.api.bossbar.BQBossBarImplementation
-[16:06:46] [DEBUG] Brigadier registered!
-[16:06:46] [DEBUG] Mob factory registered (id: citizensNPC)
-[16:06:46] [DEBUG] Quest object registered in registry rewards (id: moneyReward, class: fr.skytasul.quests.rewards.MoneyReward)
-[16:06:46] [DEBUG] Quest object registered in registry rewards (id: permReward, class: fr.skytasul.quests.rewards.PermissionReward)
-[16:06:46] [DEBUG] Quest object registered in registry requirements (id: moneyRequired, class: fr.skytasul.quests.requirements.MoneyRequirement)
-[16:06:46] [INFO] [BeautyQuests] Placeholders registered !
-[16:06:46] [DEBUG] Quest object registered in registry requirements (id: placeholderRequired, class: fr.skytasul.quests.requirements.PlaceholderRequirement)
-[16:06:46] [DEBUG] Started bStats metrics
-[16:06:46] [DEBUG] Starting Spigot updater
-[16:06:47] [DEBUG] 0 accounts loaded and 7 identifiers.
-[16:06:47] [DEBUG] Registered 5 lines in scoreboard
-[16:06:47] [WARNING] [BeautyQuests] Stage with no content: stage -1(MOBS) of quest 0, branch 0
-[16:06:47] [WARNING] [BeautyQuests] The NPC 2 does not exist for stage -1(ITEMS) of quest 10, branch 0
-[16:06:47] [WARNING] [BeautyQuests] The NPC 4 does not exist for stage -1(ITEMS) of quest 11, branch 0
-[16:06:47] [WARNING] [BeautyQuests] The NPC 0 does not exist for stage -1(ITEMS) of quest 12, branch 0
-[16:06:47] [WARNING] [BeautyQuests] The NPC 1 does not exist for stage -1(ITEMS) of quest 13, branch 0
-[16:06:47] [WARNING] [BeautyQuests] The NPC 2 does not exist for stage -1(ITEMS) of quest 14, branch 0
-[16:06:47] [WARNING] [BeautyQuests] The NPC 0 does not exist for stage -1(ITEMS) of quest 6, branch 0
-[16:06:47] [WARNING] [BeautyQuests] The NPC 1 does not exist for stage -1(ITEMS) of quest 7, branch 0
-[16:06:47] [WARNING] [BeautyQuests] The NPC 0 does not exist for stage -1(ITEMS) of quest 8, branch 0
-[16:06:47] [WARNING] [BeautyQuests] The NPC 1 does not exist for stage -1(ITEMS) of quest 9, branch 0
-[16:06:47] [INFO] [BeautyQuests] 16 quests loaded (0.039s)!
-[16:06:47] [INFO] [BeautyQuests] Periodic saves task started (18000 ticks). Task ID: 36
-[16:06:47] [INFO] [BeautyQuests] You are using the latest version of BeautyQuests.
-[16:06:49] [DEBUG] Dingo_Kez (f2230bc0-1ac5-3d55-9f5b-abfb37a60d0a) joined the server
-[16:06:49] [DEBUG] Loading player Dingo_Kez...
-[16:06:50] [DEBUG] Loading account #1. Last file edition: Sun Oct 15 15:57:21 CST 2023
-[16:06:50] [DEBUG] Completed load of Dingo_Kez (f2230bc0-1ac5-3d55-9f5b-abfb37a60d0a (#1)) datas within 252 ms (1 quests, 0 pools) | Loaded from file from index
-[16:07:07] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[16:07:07] [DEBUG] Loading player diedie...
-[16:07:07] [DEBUG] Loading account #2. Last file edition: Sun Oct 15 16:03:16 CST 2023
-[16:07:07] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 38 ms (0 quests, 0 pools) | Loaded from file from index
-[16:07:12] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[16:07:12] [DEBUG] Loading player Jeff...
-[16:07:12] [DEBUG] Loading account #4. Last file edition: Sun Oct 15 16:03:16 CST 2023
-[16:07:12] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 31 ms (0 quests, 0 pools) | Loaded from file from index
-[16:07:17] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[16:07:17] [DEBUG] Loading player Guild...
-[16:07:17] [DEBUG] Loading account #3. Last file edition: Sun Oct 15 16:03:16 CST 2023
-[16:07:17] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 44 ms (0 quests, 0 pools) | Loaded from file from index
-[16:07:22] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[16:07:22] [DEBUG] Loading player worker...
-[16:07:22] [DEBUG] Loading account #5. Last file edition: Sun Oct 15 16:02:41 CST 2023
-[16:07:22] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 22 ms (0 quests, 0 pools) | Loaded from file from index
-[16:12:52] [DEBUG] diedie left the server
-[16:12:52] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[16:12:52] [DEBUG] Jeff left the server
-[16:12:52] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[16:12:53] [DEBUG] Guild left the server
-[16:12:53] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[16:12:53] [DEBUG] worker left the server
-[16:12:53] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[16:13:18] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[16:13:18] [DEBUG] Loading player diedie...
-[16:13:19] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 25 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[16:13:23] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[16:13:23] [DEBUG] Loading player Jeff...
-[16:13:23] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 14 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[16:13:29] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[16:13:29] [DEBUG] Loading player Guild...
-[16:13:29] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 18 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[16:13:34] [DEBUG] worker (e4477365-f954-34c0-af69-2a860327f814) joined the server
-[16:13:34] [DEBUG] Loading player worker...
-[16:13:34] [DEBUG] Completed load of worker (e4477365-f954-34c0-af69-2a860327f814 (#5)) datas within 14 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[16:13:54] [DEBUG] diedie left the server
-[16:13:54] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[16:13:54] [DEBUG] Jeff left the server
-[16:13:54] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[16:13:54] [DEBUG] Guild left the server
-[16:13:54] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
-[16:13:54] [DEBUG] worker left the server
-[16:13:54] [DEBUG] Unloading player worker... (0 quests, 0 pools)
-[16:14:41] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[16:14:41] [DEBUG] Loading player diedie...
-[16:14:41] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 18 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[16:14:42] [DEBUG] diedie executed command: quests start Dingo_Kez 28
-[16:14:42] [DEBUG] diedie executed command: quests start Dingo_Kez 28
-[16:14:42] [DEBUG] diedie executed command: quests start Dingo_Kez 28
-[16:14:43] [DEBUG] diedie executed command: quests start Dingo_Kez 28
-[16:14:44] [DEBUG] diedie executed command: quests start Dingo_Kez 28
-[16:14:45] [DEBUG] diedie executed command: quests start Dingo_Kez 28
-[16:14:46] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[16:14:46] [DEBUG] Loading player Jeff...
-[16:14:46] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 13 ms (0 quests, 0 pools) | Loaded from cached accounts pending unload
-[16:14:46] [DEBUG] diedie executed command: quests start Dingo_Kez 28
-[16:14:47] [DEBUG] diedie executed command: quests start Dingo_Kez 28
-[16:14:48] [DEBUG] diedie executed command: quests start Dingo_Kez 28
-[16:14:49] [DEBUG] diedie left the server
-[16:14:49] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[16:14:49] [DEBUG] Jeff left the server
-[16:14:49] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[16:21:47] [DEBUG] Saving 1 loaded accounts and 7 identifiers.
-[16:21:47] [DEBUG] Saved datas (0.004s)!
-[16:21:47] [INFO] [BeautyQuests] Datas saved ~ periodic save
-[16:22:40] [DEBUG] diedie (0d645441-bb00-3f23-bff1-74ed5850acc2) joined the server
-[16:22:40] [DEBUG] Loading player diedie...
-[16:22:40] [DEBUG] Loading account #2. Last file edition: Sun Oct 15 16:14:49 CST 2023
-[16:22:40] [DEBUG] Completed load of diedie (0d645441-bb00-3f23-bff1-74ed5850acc2 (#2)) datas within 13 ms (0 quests, 0 pools) | Loaded from file from index
-[16:22:41] [DEBUG] diedie executed command: quests start Dingo_Kez 28
-[16:22:41] [DEBUG] diedie executed command: quests start Dingo_Kez 28
-[16:22:41] [DEBUG] diedie executed command: quests start Dingo_Kez 28
-[16:22:42] [DEBUG] diedie executed command: quests start Dingo_Kez 28
-[16:22:43] [DEBUG] diedie executed command: quests start Dingo_Kez 28
-[16:22:44] [DEBUG] diedie executed command: quests start Dingo_Kez 28
-[16:22:45] [DEBUG] Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1) joined the server
-[16:22:45] [DEBUG] Loading player Jeff...
-[16:22:45] [DEBUG] Loading account #4. Last file edition: Sun Oct 15 16:14:49 CST 2023
-[16:22:45] [DEBUG] Completed load of Jeff (33e1b1f6-8e21-3c2e-bf04-2dcff0503ec1 (#4)) datas within 33 ms (0 quests, 0 pools) | Loaded from file from index
-[16:22:45] [DEBUG] diedie executed command: quests start Dingo_Kez 28
-[16:22:46] [DEBUG] diedie executed command: quests start Dingo_Kez 28
-[16:22:47] [DEBUG] diedie executed command: quests start Dingo_Kez 28
-[16:22:48] [DEBUG] diedie executed command: quests start Dingo_Kez 28
-[16:22:49] [DEBUG] diedie executed command: quests start Dingo_Kez 28
-[16:22:50] [DEBUG] Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9) joined the server
-[16:22:50] [DEBUG] Loading player Guild...
-[16:22:50] [DEBUG] Loading account #3. Last file edition: Sun Oct 15 16:13:54 CST 2023
-[16:22:50] [DEBUG] Completed load of Guild (00a03b6d-9739-3c28-9b6e-4578e94a3bd9 (#3)) datas within 22 ms (0 quests, 0 pools) | Loaded from file from index
-[16:22:51] [DEBUG] diedie executed command: quests start Dingo_Kez 28
-[16:22:51] [DEBUG] diedie left the server
-[16:22:51] [DEBUG] Unloading player diedie... (0 quests, 0 pools)
-[16:22:51] [DEBUG] Jeff left the server
-[16:22:51] [DEBUG] Unloading player Jeff... (0 quests, 0 pools)
-[16:22:51] [DEBUG] Guild left the server
-[16:22:51] [DEBUG] Unloading player Guild... (0 quests, 0 pools)
+[01:19:21] [DEBUG] Hooked into [Citizens] v2.0.32-SNAPSHOT (build 3173)
+[01:19:21] [DEBUG] Hooked into [Vault] v1.7.3-b131
+[01:19:21] [INFO] [BeautyQuests] Loaded valid Minecraft version 1_16_R3.
+[01:19:21] [DEBUG] Loading data file, last time edited : Sat Oct 14 06:00:52 CST 2023
+[01:19:21] [DEBUG] Unavailable string in config for key inv.mobSelect.advancedSpawners
+[01:19:21] [INFO] [BeautyQuests] Loaded language en_US (0.026s)!
+[01:19:21] [INFO] [BeautyQuests] Loaded start particles: REDSTONE in shape POINT with color R255 G255 B0
+[01:19:21] [INFO] [BeautyQuests] Loaded talk particles: VILLAGER_HAPPY in shape BAR
+[01:19:21] [INFO] [BeautyQuests] Loaded next particles: SMOKE_NORMAL in shape SPOT
+[01:19:21] [DEBUG] Initlializing default stage types.
+[01:19:21] [DEBUG] Stage registered (Talk, 0)
+[01:19:21] [DEBUG] Stage registered (Items, 1)
+[01:19:21] [DEBUG] Stage registered (Mobs, 2)
+[01:19:21] [DEBUG] Stage registered (Mine, 3)
+[01:19:21] [DEBUG] Stage registered (Place, 4)
+[01:19:21] [DEBUG] Stage registered (Chat, 5)
+[01:19:21] [DEBUG] Stage registered (Interact, 6)
+[01:19:21] [DEBUG] Stage registered (Fish, 7)
+[01:19:21] [DEBUG] Stage registered (Melt, 8)
+[01:19:21] [DEBUG] Stage registered (Enchant, 9)
+[01:19:21] [DEBUG] Stage registered (Craft, 10)
+[01:19:21] [DEBUG] Stage registered (Bucket, 11)
+[01:19:21] [DEBUG] Stage registered (Location, 12)
+[01:19:21] [DEBUG] Stage registered (PlayTime, 13)
+[01:19:21] [DEBUG] Stage registered (Breed, 14)
+[01:19:21] [DEBUG] Stage registered (Tame, 15)
+[01:19:21] [DEBUG] Stage registered (Death, 16)
+[01:19:21] [DEBUG] Stage registered (DealDamage, 17)
+[01:19:21] [DEBUG] Stage registered (EatDrink, 18)
+[01:19:21] [DEBUG] Initlializing default rewards.
+[01:19:21] [DEBUG] Quest object registered in registry rewards (id: commandReward, class: fr.skytasul.quests.rewards.CommandReward)
+[01:19:21] [DEBUG] Quest object registered in registry rewards (id: itemReward, class: fr.skytasul.quests.rewards.ItemReward)
+[01:19:21] [DEBUG] Quest object registered in registry rewards (id: removeItemsReward, class: fr.skytasul.quests.rewards.RemoveItemsReward)
+[01:19:21] [DEBUG] Quest object registered in registry rewards (id: textReward, class: fr.skytasul.quests.rewards.MessageReward)
+[01:19:21] [DEBUG] Quest object registered in registry rewards (id: tpReward, class: fr.skytasul.quests.rewards.TeleportationReward)
+[01:19:21] [DEBUG] Quest object registered in registry rewards (id: expReward, class: fr.skytasul.quests.rewards.XPReward)
+[01:19:21] [DEBUG] Quest object registered in registry rewards (id: checkpointReward, class: fr.skytasul.quests.rewards.CheckpointReward)
+[01:19:21] [DEBUG] Quest object registered in registry rewards (id: questStopReward, class: fr.skytasul.quests.rewards.QuestStopReward)
+[01:19:21] [DEBUG] Quest object registered in registry rewards (id: requirementDependentReward, class: fr.skytasul.quests.rewards.RequirementDependentReward)
+[01:19:21] [DEBUG] Quest object registered in registry rewards (id: randomReward, class: fr.skytasul.quests.rewards.RandomReward)
+[01:19:21] [DEBUG] Quest object registered in registry rewards (id: wait, class: fr.skytasul.quests.rewards.WaitReward)
+[01:19:21] [DEBUG] Quest object registered in registry rewards (id: titleReward, class: fr.skytasul.quests.rewards.TitleReward)
+[01:19:21] [DEBUG] Initlializing default requirements.
+[01:19:21] [DEBUG] Quest object registered in registry requirements (id: logicalOr, class: fr.skytasul.quests.requirements.logical.LogicalOrRequirement)
+[01:19:21] [DEBUG] Quest object registered in registry requirements (id: questRequired, class: fr.skytasul.quests.requirements.QuestRequirement)
+[01:19:21] [DEBUG] Quest object registered in registry requirements (id: levelRequired, class: fr.skytasul.quests.requirements.LevelRequirement)
+[01:19:21] [DEBUG] Quest object registered in registry requirements (id: permissionRequired, class: fr.skytasul.quests.requirements.PermissionsRequirement)
+[01:19:21] [DEBUG] Quest object registered in registry requirements (id: scoreboardRequired, class: fr.skytasul.quests.requirements.ScoreboardRequirement)
+[01:19:21] [DEBUG] Quest object registered in registry requirements (id: equipmentRequired, class: fr.skytasul.quests.requirements.EquipmentRequirement)
+[01:19:21] [DEBUG] Initlializing default quest options.
+[01:19:21] [DEBUG] Quest option registered (id: pool)
+[01:19:21] [DEBUG] Quest option registered (id: name)
+[01:19:21] [DEBUG] Quest option registered (id: description)
+[01:19:21] [DEBUG] Quest option registered (id: customItem)
+[01:19:21] [DEBUG] Quest option registered (id: confirmMessage)
+[01:19:21] [DEBUG] Quest option registered (id: hologramText)
+[01:19:21] [DEBUG] Quest option registered (id: bypassLimit)
+[01:19:21] [DEBUG] Quest option registered (id: startableFromGUI)
+[01:19:21] [DEBUG] Quest option registered (id: failOnDeath)
+[01:19:21] [DEBUG] Quest option registered (id: cancellable)
+[01:19:21] [DEBUG] Quest option registered (id: cancelActions)
+[01:19:21] [DEBUG] Quest option registered (id: hologramLaunch)
+[01:19:21] [DEBUG] Quest option registered (id: hologramLaunchNo)
+[01:19:21] [DEBUG] Quest option registered (id: scoreboard)
+[01:19:21] [DEBUG] Quest option registered (id: hideNoRequirements)
+[01:19:21] [DEBUG] Quest option registered (id: auto)
+[01:19:21] [DEBUG] Quest option registered (id: repeatable)
+[01:19:21] [DEBUG] Quest option registered (id: timer)
+[01:19:21] [DEBUG] Quest option registered (id: visibility)
+[01:19:21] [DEBUG] Quest option registered (id: endSound)
+[01:19:21] [DEBUG] Quest option registered (id: firework)
+[01:19:21] [DEBUG] Quest option registered (id: requirements)
+[01:19:21] [DEBUG] Quest option registered (id: startRewards)
+[01:19:21] [DEBUG] Quest option registered (id: startMessage)
+[01:19:21] [DEBUG] Quest option registered (id: starterNPC)
+[01:19:21] [DEBUG] Quest option registered (id: startDialog)
+[01:19:21] [DEBUG] Quest option registered (id: endRewards)
+[01:19:21] [DEBUG] Quest option registered (id: endMsg)
+[01:19:21] [DEBUG] Item comparison registered (id: bukkit)
+[01:19:21] [DEBUG] Item comparison registered (id: customBukkit)
+[01:19:21] [DEBUG] Item comparison registered (id: material)
+[01:19:21] [DEBUG] Item comparison registered (id: name)
+[01:19:21] [DEBUG] Item comparison registered (id: lore)
+[01:19:21] [DEBUG] Item comparison registered (id: enchants)
+[01:19:21] [DEBUG] Item comparison registered (id: repair)
+[01:19:21] [DEBUG] Mob factory registered (id: bukkitEntity)
+[01:19:21] [DEBUG] Bossbars manager has been registered: fr.skytasul.quests.api.bossbar.BQBossBarImplementation
+[01:19:21] [DEBUG] Brigadier registered!
+[01:19:21] [DEBUG] Mob factory registered (id: citizensNPC)
+[01:19:21] [DEBUG] Quest object registered in registry rewards (id: moneyReward, class: fr.skytasul.quests.rewards.MoneyReward)
+[01:19:21] [DEBUG] Quest object registered in registry rewards (id: permReward, class: fr.skytasul.quests.rewards.PermissionReward)
+[01:19:21] [DEBUG] Quest object registered in registry requirements (id: moneyRequired, class: fr.skytasul.quests.requirements.MoneyRequirement)
+[01:19:21] [DEBUG] Started bStats metrics
+[01:19:21] [DEBUG] Starting Spigot updater
+[01:19:22] [DEBUG] 0 accounts loaded and 7 identifiers.
+[01:19:22] [DEBUG] Registered 5 lines in scoreboard
+[01:19:23] [WARNING] [BeautyQuests] Stage with no content: stage -1(MOBS) of quest 0, branch 0
+[01:19:23] [WARNING] [BeautyQuests] The NPC 2 does not exist for stage -1(ITEMS) of quest 10, branch 0
+[01:19:23] [WARNING] [BeautyQuests] The NPC 4 does not exist for stage -1(ITEMS) of quest 11, branch 0
+[01:19:23] [WARNING] [BeautyQuests] The NPC 0 does not exist for stage -1(ITEMS) of quest 12, branch 0
+[01:19:23] [WARNING] [BeautyQuests] The NPC 1 does not exist for stage -1(ITEMS) of quest 13, branch 0
+[01:19:23] [WARNING] [BeautyQuests] The NPC 2 does not exist for stage -1(ITEMS) of quest 14, branch 0
+[01:19:23] [WARNING] [BeautyQuests] The NPC 0 does not exist for stage -1(ITEMS) of quest 6, branch 0
+[01:19:23] [WARNING] [BeautyQuests] The NPC 1 does not exist for stage -1(ITEMS) of quest 7, branch 0
+[01:19:23] [WARNING] [BeautyQuests] The NPC 0 does not exist for stage -1(ITEMS) of quest 8, branch 0
+[01:19:23] [WARNING] [BeautyQuests] The NPC 1 does not exist for stage -1(ITEMS) of quest 9, branch 0
+[01:19:23] [INFO] [BeautyQuests] 16 quests loaded (0.047s)!
+[01:19:23] [INFO] [BeautyQuests] Periodic saves task started (18000 ticks). Task ID: 32
+[01:19:23] [INFO] [BeautyQuests] You are using the latest version of BeautyQuests.
+[01:19:49] [DEBUG] imlililili (44ecf603-95c5-3ca9-b344-5bcce35cd5ea) joined the server
+[01:19:49] [DEBUG] Loading player imlililili...
+[01:19:50] [DEBUG] Loading account #7. Last file edition: Sat Oct 14 06:00:52 CST 2023
+[01:19:50] [DEBUG] Completed load of imlililili (44ecf603-95c5-3ca9-b344-5bcce35cd5ea (#7)) datas within 254 ms (1 quests, 0 pools) | Loaded from file from index
+[01:34:22] [DEBUG] Saving 1 loaded accounts and 7 identifiers.
+[01:34:22] [DEBUG] Saved datas (0.004s)!
+[01:34:22] [INFO] [BeautyQuests] Datas saved ~ periodic save
+[01:49:22] [DEBUG] Saving 1 loaded accounts and 7 identifiers.
+[01:49:22] [DEBUG] Saved datas (0.003s)!
+[01:49:22] [INFO] [BeautyQuests] Datas saved ~ periodic save
+[02:04:22] [DEBUG] Saving 1 loaded accounts and 7 identifiers.
+[02:04:22] [DEBUG] Saved datas (0.003s)!
+[02:04:22] [INFO] [BeautyQuests] Datas saved ~ periodic save
+[02:19:22] [DEBUG] Saving 1 loaded accounts and 7 identifiers.
+[02:19:22] [DEBUG] Saved datas (0.004s)!
+[02:19:22] [INFO] [BeautyQuests] Datas saved ~ periodic save
+[02:34:22] [DEBUG] Saving 1 loaded accounts and 7 identifiers.
+[02:34:22] [DEBUG] Saved datas (0.005s)!
+[02:34:22] [INFO] [BeautyQuests] Datas saved ~ periodic save
+[02:49:22] [DEBUG] Saving 1 loaded accounts and 7 identifiers.
+[02:49:22] [DEBUG] Saved datas (0.003s)!
+[02:49:22] [INFO] [BeautyQuests] Datas saved ~ periodic save
+[03:04:22] [DEBUG] Saving 1 loaded accounts and 7 identifiers.
+[03:04:22] [DEBUG] Saved datas (0.003s)!
+[03:04:22] [INFO] [BeautyQuests] Datas saved ~ periodic save
+[03:19:22] [DEBUG] Saving 1 loaded accounts and 7 identifiers.
+[03:19:22] [DEBUG] Saved datas (0.002s)!
+[03:19:22] [INFO] [BeautyQuests] Datas saved ~ periodic save

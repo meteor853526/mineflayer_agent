@@ -143,7 +143,7 @@ function createFindStick(bot, targets) {
   const exit = new BehaviorIdle();
 
   const FindStick = new findStick(bot, targets);
-  const socket_schedule = new Socket_schedule(bot,targets,"find stick"," stick","5. go to the smelter and find ' stick'");
+  const socket_schedule = new Socket_schedule(bot,targets,"find stick"," stick","5. go to the smelter and search ' stick' from surrounding chest");
   const return_schedule = new Return_schedule(bot, targets, "find stick", "stick", "1. craft pickaxe\n2. craft axe\n3. craft hoe\n4. craft torch");
   const transitions = [
     new StateTransition({

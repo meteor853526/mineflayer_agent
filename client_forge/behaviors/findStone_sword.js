@@ -144,7 +144,7 @@ class Return_schedule extends BaseBehavior {
     const exit = new BehaviorIdle();
 
     const findSword = new findStone_sword(bot, targets);
-    const socket_schedule = new Socket_schedule(bot,targets,"find stone_sword"," stone_sword","5. go smeltingPlant and find stone_sword");
+    const socket_schedule = new Socket_schedule(bot,targets,"find stone_sword"," stone_sword","5. go smeltingPlant and search ' stone_sword' from surrounding chest");
     const return_schedule = new Return_schedule(bot, targets, "find stone_sword", "stone_sword", "1. killing");
     const transitions = [
       new StateTransition({

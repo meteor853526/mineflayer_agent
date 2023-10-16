@@ -146,7 +146,7 @@ class Return_schedule extends BaseBehavior {
     const exit = new BehaviorIdle();
 
     const findSeeds = new findWheat_seeds(bot, targets);
-    const socket_schedule = new Socket_schedule(bot,targets,"find wheat_seeds"," wheat_seeds","5. go to farm and find wheat_seeds\n6. go poultryFarm and find wheat_seeds");
+    const socket_schedule = new Socket_schedule(bot,targets,"find wheat_seeds"," wheat_seeds","5. go to farm and search ' wheat_seeds' from surrounding chest\n6. go poultryFarm and search ' wheat_seeds' from surrounding chest");
     const return_schedule = new Return_schedule(bot, targets, "find wheat_seeds", "wheat_seeds", "1. feed chicken\n2.sow");
     const transitions = [
       new StateTransition({

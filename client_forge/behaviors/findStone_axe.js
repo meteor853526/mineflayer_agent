@@ -146,7 +146,7 @@ class Return_schedule extends BaseBehavior {
     const exit = new BehaviorIdle();
 
     const findAxe = new findStone_axe(bot, targets);
-    const socket_schedule = new Socket_schedule(bot,targets,"find stone_axe"," stone_axe","5. go to loggingFarm and find stone_axe\n6. go smeltingPlant and find stone_axe");
+    const socket_schedule = new Socket_schedule(bot,targets,"find stone_axe"," stone_axe","5. go to loggingFarm and search ' stone_axe' from surrounding chest");
     const return_schedule = new Return_schedule(bot, targets, "find stone_axe", "stone_axe", "1. cut down tree");
     const transitions = [
       new StateTransition({
