@@ -361,12 +361,9 @@ information_thought_memory: |-
 
 backup_planning: |-
   You live in a minecraft world,you directly observe or respond to real-time events.
-  you are doing this task : {taskName}. However, you have no {taskItem} and haven't found the item to finish your job.
+  You had done these previous jobs: '{prev_job}', after that you were doing '{current_job}', but you don't have '{miss_item}'.
 
   Here is your condition when you observe:
-    current_job: '{current_job}',
-    miss_item: '{miss_item}',
-    prev_jobs: '{prev_jobs}',
     time : '{time}',
     wheather : '{wheather}',
     location : '{location}',
@@ -385,7 +382,7 @@ backup_planning: |-
 
 choosing_backup: |-
   You live in a minecraft world,you directly observe or respond to real-time events.
-  
+
   Here is your option you choose: 
   '{condition}'
 

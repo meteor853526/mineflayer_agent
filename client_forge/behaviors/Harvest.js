@@ -280,6 +280,7 @@ function createHarvestState(bot, targets) {
           shouldTransition: () => Harvest.isFinished() && JobCheck(Harvest.isFinished()) == true,
           onTransition: () => {
             bot.chat("Harvest over");
+            bot.prev_jobs.push("Harvest Finished")
             console.log("Harvest over")
           }
       }),
@@ -306,6 +307,8 @@ function createHarvestState(bot, targets) {
           child: socket_schedule,
           shouldTransition: () =>find_hoe.isFinished() && !have_stone_hoe(bot) && bot.agentState == 'schedule' && JobCheck(find_hoe.isFinished()) == true,
           onTransition: () => {
+            bot.prev_jobs.push("find stone_hoe for harvest uncomplete.")
+            bot.miss_items.push("stone_hoe")
             bot.chat("I didn't found stone_hoe in chest");
           }
       }),

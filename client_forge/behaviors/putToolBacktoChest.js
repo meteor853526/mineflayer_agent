@@ -21,7 +21,7 @@ class putToolBackToChest extends BaseBehavior {
     async onStateEntered() {
         this.working = true
         if(this.bot.username == 'diedie'){
-            var position = this.bot.diedie_stone_hoe_pos
+            var position = this.bot.Hoe_chest_position
             var tool = 'stone_hoe';
         }
 
