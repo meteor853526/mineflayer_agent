@@ -361,7 +361,7 @@ information_thought_memory: |-
 
 backup_planning: |-
   You live in a minecraft world,you directly observe or respond to real-time events.
-  You had done these previous jobs: '{prev_job}', after that you were doing '{current_job}', but you don't have '{miss_item}'.
+  You had done these previous jobs: '{prev_jobs}', after that you were doing '{current_job}', but you don't have '{miss_item}'.
 
   Here is your condition when you observe:
     time : '{time}',
@@ -372,10 +372,11 @@ backup_planning: |-
   Here is your condition:
     1. go home and search '{miss_item}' from surrounding chest
     2. go Guild and search '{miss_item}' from surrounding chest
-    3. ask someone for help to get '{miss_item}'
+    3. ask someone for help to get the '{miss_item}'
     4. give up this task and do other task or nothing
     {condition}
   You must choose ONE option only and DONT choose the option that has chosen before.
+  You CANT find item without going the spot.
 
   Base on what you've chosen, give some response as like murmuring.
   When replying, you must use a first-person tone.

@@ -7,7 +7,8 @@ const {
 const BaseBehavior = require("./base_behavior");
 const Socket_schedule = require("./socket_schedule")
 const Socket_chat = require("./socket_chat")
-const {Movements, goals: { GoalNear ,GoalLookAtBlock}} = require('mineflayer-pathfinder')
+const {Movements, goals: { GoalNear ,GoalLookAtBlock}} = require('mineflayer-pathfinder');
+const { BehaviorGoSmeltingPlant } = require("./go_smeltingPlant");
 
 const mcData = require('minecraft-data')('1.16.5')
   
@@ -320,6 +321,7 @@ function createCraftHoeState(bot, targets) {
     const enter = new BehaviorIdle();
     const exit = new BehaviorIdle();    
     // state
+    const goSmelter = new BehaviorGoSmeltingPlant(bot, targets);
     const craftHoe = new BehaviorCraftHoe(bot, targets);
     const hoeBack = new putHoeBackToChest(bot, targets);
     const find_stick = new FindstickfromChest(bot, targets); 
@@ -331,26 +333,31 @@ function createCraftHoeState(bot, targets) {
     const transitions = [
         new StateTransition({
             parent: enter,
+            child: goSmelter,
+            shouldTransition: () => true,
+        }),
+        new StateTransition({
+            parent: goSmelter,
             child: hoeBack,
-            shouldTransition: () => have_stone_hoe(bot),
+            shouldTransition: () => have_stone_hoe(bot) && goSmelter.isFinished() && JobCheck(goSmelter.isFinished()) == true,
         }),
         new StateTransition({
-            parent: enter,
+            parent: goSmelter,
             child: craftHoe,
-            shouldTransition: () => have_stick(bot) && have_cobblestone(bot),
+            shouldTransition: () => have_stick(bot) && have_cobblestone(bot) && goSmelter.isFinished() && JobCheck(goSmelter.isFinished()) == true,
         }),
         new StateTransition({
-            parent: enter,
+            parent: goSmelter,
             child: find_stick,
-            shouldTransition: () => !have_stick(bot),
+            shouldTransition: () => !have_stick(bot) && goSmelter.isFinished() && JobCheck(goSmelter.isFinished()) == true,
             onTransition: () => {
               bot.chat("No stick on my body");
           }
         }),
         new StateTransition({
-            parent: enter,
+            parent: goSmelter,
             child: find_cobblestone,
-            shouldTransition: () => !have_cobblestone(bot),
+            shouldTransition: () => !have_cobblestone(bot) && goSmelter.isFinished() && JobCheck(goSmelter.isFinished()) == true,
             onTransition: () => {
               bot.chat("No cobblestone on my body");
           }

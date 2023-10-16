@@ -243,7 +243,7 @@ function createSowState(bot, targets) {
   const sow = new BehaviorFindFarmLand(bot, targets);
   const wheatSeedsBack = new putWheatSeedsBackToChest(bot, targets);
   const find_WheatSeeds = new FindWheatSeedsfromChest(bot, targets);  // item , observe' give you the wheat to make some bread'
-  const socket_schedule = new Socket_schedule(bot,targets,"wheat_seeds","I don't have wheat_seeds")
+  const socket_schedule = new Socket_schedule(bot,targets,"find wheat_seeds","wheat_seeds","5. go farm and search ' wheat_seeds' in surrounding chest")
   const socket_chat = new Socket_chat(bot,targets,"wheat_seeds","I don't have  wheat_seeds,so I can't sow the wheat")
   const transitions = [
       new StateTransition({
