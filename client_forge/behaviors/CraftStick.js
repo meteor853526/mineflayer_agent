@@ -238,7 +238,7 @@ function createCraftStickState(bot, targets) {
     const craftStick = new BehaviorCraftStick(bot, targets);
     const stickBack = new putStickBackToChest(bot, targets);
     const find_plank = new FindplankfromChest(bot, targets); 
-    const socket_schedule = new Socket_schedule(bot,targets,"find oak_planks","oak_planks","5. go to loggingCamp and find 'oak_planks'")
+    const socket_schedule = new Socket_schedule(bot,targets,"find oak_planks","oak_planks","5. go to loggingCamp and search 'oak_planks' from surrounging chest")
     const socket_chat = new Socket_chat(bot,targets,"oak_planks","I don't have the stick,so I cant craft stone_hoe.")
 
     const transitions = [

@@ -379,7 +379,7 @@ const {
     const CutDownTree = new BehaviorCutDownTree(bot, targets);
     const allBack = new putAllBackToChest(bot, targets);
     const find_axe = new FindAxefromChest(bot, targets);  // item , observe' give you the wheat to make some bread'
-    const socket_schedule = new Socket_schedule(bot,targets,"cut down tree","stone_axe","5. go loggingCamp and find stone_axe")
+    const socket_schedule = new Socket_schedule(bot,targets,"cut down tree","stone_axe","5. go loggingCamp and search stone_axe from surrounding chest")
     const socket_chat = new Socket_chat(bot,targets,"stone_axe","I don't have the stone_axe,so I can't cut down the tree")
     const transitions = [
       new StateTransition({

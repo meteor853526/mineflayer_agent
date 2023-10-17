@@ -276,7 +276,7 @@ function createFeedChickenState(bot, targets) {
   // const goGuild = new BehaviorGotoGuild(bot, targets);
   // const goGuild = new GoGuild(bot, targets);
   // const goHome = new BehaviorGoHome(bot, targets);
-  const socket_schedule = new Socket_schedule(bot,targets,"feed chicken","wheat_seeds","5. go farm and find wheat_seeds\n    6. go poultryFarm and find wheat_seeds")
+  const socket_schedule = new Socket_schedule(bot,targets,"feed chicken","wheat_seeds","5. go farm and search wheat_seeds from surrounding chest\n6. go poultryFarm and search wheat_seeds from surrounding chest")
   const socket_chat = new Socket_chat(bot,targets,"wheat_seeds","I don't have the wheat_seeds,so I cant feed chickens.")
   const transitions = [
     new StateTransition({

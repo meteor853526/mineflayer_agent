@@ -144,7 +144,7 @@ class Return_schedule extends BaseBehavior {
     const exit = new BehaviorIdle();
 
     const FindRod = new findFishing_rod(bot, targets);
-    const socket_schedule = new Socket_schedule(bot,targets,"find fishing_rod"," fishing_rod","5. go to loggingCamp and find fishing_rod");
+    const socket_schedule = new Socket_schedule(bot,targets,"find fishing_rod"," fishing_rod","5. go to loggingCamp and search fishing_rod from surrounding chest");
     const return_schedule = new Return_schedule(bot, targets, "find fishing_rod", "fishing_rod", "1. fishing");
     const transitions = [
       new StateTransition({

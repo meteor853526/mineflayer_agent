@@ -445,9 +445,9 @@ const {
     const findStick = new FindStickfromChest(bot, targets);  // item , observe' give you the wheat to make some bread'
     const findCoal = new FindCoalfromChest(bot, targets);
     const findCharcoal = new FindCharcoalfromChest(bot, targets);
-    const socket_schedule_coal = new Socket_schedule(bot,targets,"find coal", "coal", "5. go to smeltingPlant and find coal\n")
+    const socket_schedule_coal = new Socket_schedule(bot,targets,"find coal", "coal", "5. go to the smelter and search coal from surrounding chest\n")
     const socket_chat_coal = new Socket_chat(bot,targets,"find coal", "coal","I don't have the coal,so I can't make a torch")
-    const socket_schedule_stick = new Socket_schedule(bot,targets,"stick","I don't have stick")
+    const socket_schedule_stick = new Socket_schedule(bot,targets,"find stick","stick","5. go to the smelter and search coal from surrounding chest")
     const socket_chat_stick = new Socket_chat(bot,targets,"stick","I don't have the stick,so I can't make a torch")
     const transitions = [
         new StateTransition({

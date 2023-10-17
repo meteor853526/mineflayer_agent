@@ -145,7 +145,7 @@ class Return_schedule extends BaseBehavior {
     const exit = new BehaviorIdle();
 
     const findPickaxe = new findStone_pickaxe(bot, targets);
-    const socket_schedule = new Socket_schedule(bot,targets,"find stone_pickaxe"," stone_pickaxe","5. go to the smelter and search ' stone_pickaxe' from surrounding chest");
+    const socket_schedule = new Socket_schedule(bot,targets,"find stone_pickaxe"," stone_pickaxe","5. go to the smelter and search ' stone_pickaxe' from surrounding chest\n6. go to the smelter and craft 'stone_pickaxe'");
     const return_schedule = new Return_schedule(bot, targets, "find stone_pickaxe", "stone_pickaxe", "1. cut down tree\n2. mining");
     const transitions = [
       new StateTransition({
@@ -157,9 +157,6 @@ class Return_schedule extends BaseBehavior {
         parent: findPickaxe,
         child: socket_schedule,
         shouldTransition: () => findPickaxe.isFinished() && !have_stone_pickaxe(bot) && JobCheck(findPickaxe.isFinished()) == true,
-        onTransition: () => {
-          bot.prev_jobs.push("find stone_axe")
-        }
       }),
       new StateTransition({
         parent: socket_schedule,

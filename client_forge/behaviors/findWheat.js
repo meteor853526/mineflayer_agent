@@ -157,9 +157,6 @@ class Return_schedule extends BaseBehavior {
         parent: find_wheat,
         child: socket_schedule,
         shouldTransition: () => find_wheat.isFinished() && !have_wheat(bot) && JobCheck(find_wheat.isFinished()) == true,
-        onTransition: () => {
-          bot.prev_jobs.push("find wheat")
-        }
       }),
       new StateTransition({
         parent: socket_schedule,

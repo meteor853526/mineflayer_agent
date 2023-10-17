@@ -399,9 +399,9 @@ const { BehaviorGoLoggingCamp } = require("./go_loggingCamp");
     const allBack = new putAllBackToChest(bot, targets);
     const findLog = new FindLogfromChest(bot, targets);  // item , observe' give you the wheat to make some bread'
     const findPlanks = new FindPlankfromChest(bot, targets);
-    const socket_schedule_log = new Socket_schedule(bot,targets,"find oak_log","oak_log","5. go to loggingCamp and find oak_log")
+    const socket_schedule_log = new Socket_schedule(bot,targets,"find oak_log","oak_log","5. go to loggingCamp and search oak_log from surrounding chest")
     const socket_chat_log = new Socket_chat(bot,targets,"oak_log","I don't have oak_log, so I can't burn a charcoal")
-    const socket_schedule_planks = new Socket_schedule(bot,targets,"find oak_planks","oak_planks","5. go to loggingCamp and find oak_planks")
+    const socket_schedule_planks = new Socket_schedule(bot,targets,"find oak_planks","oak_planks","5. go to loggingCamp and search oak_planks from surrounding chest")
     const socket_chat_planks = new Socket_chat(bot,targets,"oak_planks","I don't have oak_planks, so I can't burn a charcoal")
     const transitions = [
         new StateTransition({

@@ -143,7 +143,7 @@ function createFindCoal (bot, targets) {
   const exit = new BehaviorIdle();
 
   const FindCoal = new findCoal(bot, targets);
-  const socket_schedule = new Socket_schedule(bot,targets,"find coal"," coal","5. go to smeltingPlant and find coal\n6. go to smeltingPlant and find charcoal\n6. go Guild and find charcoal\n6. go home and find charcoal");
+  const socket_schedule = new Socket_schedule(bot,targets,"find coal"," coal","5. go to the smelter and search coal from surrounding chest\n6. go to the smelter and search charcoal from surrounding chest\n7. go Guild and search charcoal from surrounding chest\n8. go home and search charcoal from surrounding chest");
   const return_schedule = new Return_schedule(bot, targets, "find coal", "coal", "1. craft torch");
   const transitions = [
     new StateTransition({

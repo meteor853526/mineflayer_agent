@@ -143,7 +143,7 @@ class Return_schedule extends BaseBehavior {
     const enter = new BehaviorIdle();
     const exit = new BehaviorIdle();
     const Find_ladder = new findLadder(bot, targets);
-    const socket_schedule = new Socket_schedule(bot,targets,"find ladder"," ladder","5. go to smeltingPlant and find ladder");
+    const socket_schedule = new Socket_schedule(bot,targets,"find ladder"," ladder","5. go to smeltingPlant and search ladder from surrounding chest");
     const return_schedule = new Return_schedule(bot, targets, "find ladder", "ladder", "1. mining");
     const transitions = [
       new StateTransition({

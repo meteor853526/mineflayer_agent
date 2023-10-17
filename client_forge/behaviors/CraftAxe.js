@@ -462,8 +462,8 @@ function createCraftAxeState(bot, targets) {
     const cobblestoneBack = new putCobblestoneBackToChest(bot, targets);
     const find_stick = new FindstickfromChest(bot, targets); 
     const find_cobblestone = new FindcobblestonefromChest(bot, targets);  
-    const socket_schedule_stick = new Socket_schedule(bot,targets,"find stick"," stick","5. go refinery and find 'stick'")
-    const socket_schedule_cobblestone = new Socket_schedule(bot,targets,"find cobblestone"," cobblestone","5. go to the smelter and find 'cobblestone'")
+    const socket_schedule_stick = new Socket_schedule(bot,targets,"find stick"," stick","5. go to the smelter and search 'stick' from surrounding chest")
+    const socket_schedule_cobblestone = new Socket_schedule(bot,targets,"find cobblestone"," cobblestone","5. go to the smelter and search 'cobblestone' from surrounding chest")
     const socket_chat_stick = new Socket_chat(bot,targets,"stick","I don't have the stick,so I cant craft stone_hoe.")
     const socket_chat_cobblestone = new Socket_chat(bot,targets,"cobblestone","I don't have the cobblestone,so I cant craft stone_hoe.")
     const transitions = [

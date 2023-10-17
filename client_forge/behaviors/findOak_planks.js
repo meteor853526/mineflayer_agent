@@ -144,7 +144,7 @@ class Return_schedule extends BaseBehavior {
     const exit = new BehaviorIdle();
 
     const FindPlanks = new findOak_planks(bot, targets);
-    const socket_schedule = new Socket_schedule(bot,targets,"find oak_planks"," oak_planks","5. go to loggingCamp and find oak_planks");
+    const socket_schedule = new Socket_schedule(bot,targets,"find oak_planks"," oak_planks","5. go to loggingCamp and searching oak_planks from surrounding chest\n6. woodtransform");
     const return_schedule = new Return_schedule(bot, targets, "find oak_planks", "oak_planks", "1. craft sticks\n2. burn charcoal");
     const transitions = [
       new StateTransition({

@@ -457,7 +457,7 @@ choosing_backup: |-
   
   Combine the action you want to take and the word you want ot say.
   When replying, you must use a first-person tone and follow the format
-  (ex, [7] : I got so many wheat.),(ex, [19] : I felt tried),(ex,[19] : I saw a cute cat),(ex, [3,1] :I finish my work),(ex, [1,8,6] : I'm so hungry,I'll go home an eat launch).
+  (ex, [7] : I got so many wheat.),(ex, [1,5] : I felt tried, I want to sleep),(ex,[19] : I saw a cute cat),(ex, [3,1] :I finish my work),(ex, [1,8,6] : I'm so hungry,I'll go home an eat launch).
 
 askforhelp: |-
   This is your internal thought and it should be considered first priority:
