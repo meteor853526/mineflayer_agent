@@ -106,7 +106,7 @@ observation_action: |-
     (35 : wood transform),
     (36 : go smelting plant),
     (37 : go poultry farm),
-    (38 : go pigeon),
+    (38 : go pigpen),
     (39 : go to pond),
     (40 : ask someone for help),
     (41 : find wheat_seeds),
@@ -204,7 +204,7 @@ schedule_action: |-
     (35 : wood transform),
     (36 : go smelting plant),
     (37 : go poultry farm),
-    (38 : go pigeon),
+    (38 : go pigpen),
     (39 : go to pond),
     (40 : ask someone for help),
     (41 : find wheat_seeds),
@@ -295,7 +295,7 @@ external_thought: |-
     (35 : wood transform),
     (36 : go smelting plant),
     (37 : go poultry farm),
-    (38 : go pigeon),
+    (38 : go pigpen),
     (39 : go to pond),
     (40 : ask someone for help),
     (41 : find wheat_seeds),
@@ -378,8 +378,7 @@ backup_planning: |-
   You must choose ONE option only and DONT choose the option that has chosen before.
   You CANT find item without going the spot.
 
-  Base on what you've chosen, give some response as like murmuring.
-  When replying, you must use a first-person tone.
+  Base on what you've chosen, repeat what you choose without the choice number but the choice.
 
 choosing_backup: |-
   You live in a minecraft world,you directly observe or respond to real-time events.
@@ -388,9 +387,6 @@ choosing_backup: |-
   '{condition}'
 
   Here is your condition when you observe:
-    current_job: '{current_job}',
-    miss_item: '{miss_item}',
-    prev_jobs: '{prev_jobs}',
     time : '{time}',
     wheather : '{wheather}',
     location : '{location}',
@@ -431,7 +427,7 @@ choosing_backup: |-
     (35 : wood transform),
     (36 : go to the smelter),
     (37 : go poultry farm),
-    (38 : go pigeon),
+    (38 : go pigpen),
     (39 : go to pond),
     (40 : ask someone for help),
     (41 : find wheat_seeds),
@@ -457,7 +453,7 @@ choosing_backup: |-
 
   Based on your observation and your condition. You need choose one of above action to interact or you can choose multiple action to make a action flow.
 
-  You also can say something to respond the observation, When replying, you must use a first-person tone.
+  You also can murmur something to respond the observation, When replying, you must use a first-person tone.
   
   Combine the action you want to take and the word you want ot say.
   When replying, you must use a first-person tone and follow the format
@@ -534,7 +530,7 @@ re_schedule: |-
     (35 : wood transform),
     (36 : go smelting plant),
     (37 : go poultry farm),
-    (38 : go pigeon),
+    (38 : go pigpen),
     (39 : go to pond),
     (40 : ask someone for help),
     (41 : find wheat_seeds),

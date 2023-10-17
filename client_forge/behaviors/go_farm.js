@@ -32,7 +32,7 @@ class BehaviorGoFarm extends BaseBehavior {
   }*/
 
     const goal = new mineflayer_pathfinder.goals.GoalNear(this.bot.diedie_farm_centerPos.x, this.bot.diedie_farm_centerPos.y, this.bot.diedie_farm_centerPos.z, 1);
-    this.bot.prev_jobs.push("go farm")
+    // this.bot.prev_jobs.push("go farm")
     pathfinder.setMovements(this.movements);
     pathfinder.setGoal(goal);
   }

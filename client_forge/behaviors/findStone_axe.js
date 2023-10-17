@@ -159,7 +159,7 @@ class Return_schedule extends BaseBehavior {
         child: socket_schedule,
         shouldTransition: () => findAxe.isFinished() && !have_stone_axe(bot) && JobCheck(findAxe.isFinished()) == true,
         onTransition: () => {
-          bot.prev_jobs.push("find stone_axe")
+          // bot.prev_jobs.push("find stone_axe")
         }
       }),
       new StateTransition({

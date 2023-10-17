@@ -35,7 +35,7 @@ class BehaviorGoHome extends BaseBehavior {
     
     pathfinder.setMovements(this.movements);
     pathfinder.setGoal(goal);
-    this.bot.prev_jobs.push("go home")
+    // this.bot.prev_jobs.push("go home")
     await this.sleep(2000)
   }
   async sleep(ms) {

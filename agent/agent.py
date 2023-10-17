@@ -535,6 +535,7 @@ class agent:
         print(backup_planningPrompt)
         condition = self.generate(backup_planningPrompt)
         print(condition)
+        data['choice'] = condition
         choosing_backupPrompt = choosing_backupPrompt.replace("{condition}", condition).replace("{miss_item}", data['item_name']).replace("{current_job}", data['current_job']).replace("{prev_jobs}", str(data['prev_jobs'])).replace("{time}", data['time']).replace("{wheather}", data['wheather']).replace("{location}",  data['position']).replace("{property}", self.property)
         print("-----SECOND---STEP-----")
         print(choosing_backupPrompt)

@@ -299,6 +299,7 @@ function createSowState(bot, targets) {
           onTransition: () => {
             bot.chat("I didn't found wheat_seeds in chest");
             bot.prev_jobs.push("find seeds for sowwing uncomplete")
+            bot.miss_items.push("wheat_seeds")
             console.log("uncomplete sow find seeds")
           }
       }),

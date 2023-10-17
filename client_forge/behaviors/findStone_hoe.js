@@ -145,7 +145,7 @@ class Return_schedule extends BaseBehavior {
     const exit = new BehaviorIdle();
 
     const findhoe = new findStone_hoe(bot, targets);
-    const socket_schedule = new Socket_schedule(bot,targets,"find stone_hoe", "stone_hoe","5. go farm and search ' stone_hoe' from surrounding chest\n6. craft ' stone_hoe'");
+    const socket_schedule = new Socket_schedule(bot,targets,"find stone_hoe", "stone_hoe","5. go farm and search ' stone_hoe' from surrounding chest\n6. go to the smelter and craft ' stone_hoe'");
     const return_schedule = new Return_schedule(bot, targets, "find stone_hoe", "stone_hoe", "1. Harvest");
     const transitions = [
       new StateTransition({
@@ -157,9 +157,6 @@ class Return_schedule extends BaseBehavior {
         parent: findhoe,
         child: socket_schedule,
         shouldTransition: () => findhoe.isFinished() && !have_stone_hoe(bot) && JobCheck(findhoe.isFinished()) == true,
-        onTransition: () => {
-          bot.prev_jobs.push("find stone_hoe")
-        }
       }),
       new StateTransition({
         parent: socket_schedule,

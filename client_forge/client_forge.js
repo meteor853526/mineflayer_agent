@@ -943,6 +943,11 @@ new BotStateTransition({
               this.bot.agentState = data['agentState']
               
             }
+            if(data.hasOwnProperty("choice")){
+              this.bot.prev_jobs.push(data.choice)
+              this.bot.agentState = data['agentState']
+              
+            }
             if(data.hasOwnProperty("request_id")){
               if(data.state == "waiting"){
                 this.bot.chat("/quests finish imlililili "+data['request_id'].toString())
