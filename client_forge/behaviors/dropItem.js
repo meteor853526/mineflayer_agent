@@ -19,7 +19,7 @@ class dropItem extends BaseBehavior {
         }
     }
     isFinished() {
-        if(his.bot.inventory.items().length == 0)return true
+        if(history.bot.inventory.items().length == 0)return true
         return false
     }
     
