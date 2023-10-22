@@ -249,7 +249,8 @@ function createSowState(bot, targets) {
       new StateTransition({
           parent: enter,
           child: goFarm,
-          shouldTransition: () => have_wheat_seeds(bot),
+          shouldTransition: () => true,
+          // shouldTransition: () => have_wheat_seeds(bot),
       }),
       new StateTransition({
           parent: goFarm,
@@ -257,9 +258,9 @@ function createSowState(bot, targets) {
           shouldTransition: () => goFarm.isFinished() && have_wheat_seeds(bot) && JobCheck(goFarm.isFinished()) == true,
       }),
       new StateTransition({
-          parent: enter,
+          parent: goFarm,
           child: find_WheatSeeds,
-          shouldTransition: () => !have_wheat_seeds(bot),
+          shouldTransition: () => !have_wheat_seeds(bot) && goFarm.isFinished() && JobCheck(goFarm.isFinished()) == true,
           onTransition: () => {
             bot.chat("No wheat_seeds on my body");
         }
@@ -286,10 +287,11 @@ function createSowState(bot, targets) {
 
       new StateTransition({
         parent: find_WheatSeeds,
-        child: goFarm,
+        child: sow,
         shouldTransition: () => find_WheatSeeds.isFinished() && have_wheat_seeds(bot) && JobCheck(find_WheatSeeds.isFinished()) == true,
         onTransition: () => {
           bot.chat("I found wheat_seeds in chest");
+          bot.prev_jobs.push("find_wheat_seeds for sow completed")
         }
       }),
       new StateTransition({
