@@ -100,7 +100,7 @@ class FindWheatSeedsfromChest extends BaseBehavior {
         if(target){
           if(this.bot.inventory.items().filter(item => item.name.includes("wheat_seeds"))[0]){
             var seed_count  = this.bot.inventory.findInventoryItem(wheat_seeds).count
-            if(seed_count > 32) break
+            if(seed_count > 10) break
           }
           var chest_seed = target.count
           await this.withdrawItem(chest_window,'wheat_seeds',chest_seed);
