@@ -91,7 +91,7 @@ def message_diedie(data):
                 
                 print(data['receiverName']+ "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
                 data['message'] = Diedie_instance.action(data['message'], data)
-
+                
                 sio.emit('agi',data)
       
          
@@ -112,7 +112,6 @@ def message_diedie(data):
                     data['request_id'] = quest['request_id'] 
                     sio.emit('agi',data)
                     guild_instance.disable_requestState(data['receiverName'],data['item_name'])
-                    print("???")
             else:
                 match data['agentState']:
                     
@@ -146,7 +145,6 @@ def message_guild(data):
     if 'message' in data:
         if data['message'] == 'skipjob':
             return
-    print("????")
     match data['type']:
 
         case messageType.chat:

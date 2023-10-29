@@ -129,9 +129,7 @@ class MCBot {
       this.countdown = 5000; 
       this.ChatSignal = false
       this.JobQueue = []
-      //this.init_var();
       this.initBot();
-      
   }
 
   // Init bot instance
@@ -957,7 +955,10 @@ new BotStateTransition({
               }
               
             }
-            this.bot.chat(data.message)
+            if(data.hasOwnProperty("message")){
+              this.bot.chat(data.message)
+            }
+            
             
 
           });
@@ -979,14 +980,16 @@ new BotStateTransition({
       
       socket.on('message', (data) => {
         console.log('Received message from Node client:', data);
-  
+        
         io.emit(data.receiverName, data);
+        
   
       });
       socket.on('agi', (data) => {
         console.log('Received message from agi client:', data);
-    
+        
         io.emit('mine', data);
+        io.emit('voice', data['message']);
       });
   
       socket.on('disconnect', () => {

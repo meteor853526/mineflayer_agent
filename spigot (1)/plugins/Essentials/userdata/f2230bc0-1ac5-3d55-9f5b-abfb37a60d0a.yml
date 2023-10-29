@@ -16,18 +16,18 @@ timestamps:
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1697351445619
-  login: 1697358272256
+  logout: 1698127762186
+  login: 1698127258169
 money: '100000.0'
 last-account-name: Dingo_Kez
 logoutlocation:
   world: 9dac70ed-8467-49ef-8617-08d872900ab9
   world-name: world
-  x: -10519.191966223652
-  y: 81.50063554902955
-  z: 12727.559296221707
-  yaw: 63.0701904296875
-  pitch: 25.94895362854004
+  x: -10567.638046033062
+  y: 70.9375
+  z: 12750.277576569712
+  yaw: -129.8814697265625
+  pitch: 18.598541259765625
 lastlocation:
   world: 9dac70ed-8467-49ef-8617-08d872900ab9
   world-name: world

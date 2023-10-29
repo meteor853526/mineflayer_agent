@@ -114,7 +114,6 @@ class agent:
                 
                 sio.emit('agi',
                     {
-                        'message':"system:Job",
                         'sender':self.lastPlayer,
                         'receiverName': self.agent_name,
                         'job': id,
