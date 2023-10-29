@@ -83,10 +83,7 @@ observation_action: |-
     (8 : find food from chest),
     (9 : go to farm),
     (10 : go to Guild),
-    (11 : sell wheat),
     (12 : making bread),
-    (13 : put sign on ground),
-    (14 : drop item from your body),
     (15 : fishing),
     (16 : mining),
     (17 : feed chicken),
@@ -124,10 +121,7 @@ observation_action: |-
     (53 : find stone_hoe),
     (54 : find stone_pickaxe),
     (55 : find stone_sword),
-    (56 : find wheat),
-    (57 : find wooden_axe),
-    (58 : find wooden_hoe),
-    (59 : find wooden_pickaxe).
+    (56 : find wheat).
 
   Based on your observation and your condition. You need choose one of above action to interact or you can choose multiple action to make a action flow.
 
@@ -181,10 +175,7 @@ schedule_action: |-
     (8 : find food from chest),
     (9 : go to farm),
     (10 : go to Guild),
-    (11 : sell wheat),
     (12 : making bread),
-    (13 : put sign on ground),
-    (14 : drop item from your body),
     (15 : fishing),
     (16 : mining),
     (17 : feed chicken),
@@ -222,10 +213,7 @@ schedule_action: |-
     (53 : find stone_hoe),
     (54 : find stone_pickaxe),
     (55 : find stone_sword),
-    (56 : find wheat),
-    (57 : find wooden_axe),
-    (58 : find wooden_hoe),
-    (59 : find wooden_pickaxe).
+    (56 : find wheat).
 
   
   Based on your schedule "{current_schedule}" and your condition. You hacve to choose multiple action to make a action flow with array fromat.
@@ -271,10 +259,7 @@ external_thought: |-
     (8 : find food from chest),
     (9 : go to farm),
     (10 : go to Guild),
-    (11 : sell wheat),
     (12 : making bread),
-    (13 : put sign on ground),
-    (14 : drop item from your body),
     (15 : fishing),
     (16 : mining),
     (17 : feed chicken),
@@ -312,11 +297,8 @@ external_thought: |-
     (53 : find stone_hoe),
     (54 : find stone_pickaxe),
     (55 : find stone_sword),
-    (56 : find wheat),
-    (57 : find wooden_axe),
-    (58 : find wooden_hoe),
-    (59 : find wooden_pickaxe).
-    
+    (56 : find wheat).
+
   
   Based on your internal_thought and your condition. You need choose one of above action to interact or you can choose multiple action to make a action flow with array fromat,
   (E.g., [20,22,16]), [<fill in>].
@@ -403,10 +385,7 @@ choosing_backup: |-
     (8 : find food from chest),
     (9 : go to farm),
     (10 : go to Guild),
-    (11 : sell wheat),
     (12 : making bread),
-    (13 : put sign on ground),
-    (14 : drop item from your body),
     (15 : fishing),
     (16 : mining),
     (17 : feed chicken),
@@ -444,10 +423,7 @@ choosing_backup: |-
     (53 : find stone_hoe),
     (54 : find stone_pickaxe),
     (55 : find stone_sword),
-    (56 : find wheat),
-    (57 : find wooden_axe),
-    (58 : find wooden_hoe),
-    (59 : find wooden_pickaxe).
+    (56 : find wheat).
 
 
   Based on your observation and your condition. You need choose one of above action to interact or you can choose multiple action to make a action flow.
@@ -506,10 +482,7 @@ re_schedule: |-
     (8 : find food from chest),
     (9 : go to farm),
     (10 : go to Guild),
-    (11 : sell wheat),
     (12 : making bread),
-    (13 : put sign on ground),
-    (14 : drop item from your body),
     (15 : fishing),
     (16 : mining),
     (17 : feed chicken),
@@ -547,10 +520,7 @@ re_schedule: |-
     (53 : find stone_hoe),
     (54 : find stone_pickaxe),
     (55 : find stone_sword),
-    (56 : find wheat),
-    (57 : find wooden_axe),
-    (58 : find wooden_hoe),
-    (59 : find wooden_pickaxe).
+    (56 : find wheat).
 
 
   Based on your observation and your condition. You need choose one of above action to interact or you can choose multiple action to make a action flow.
