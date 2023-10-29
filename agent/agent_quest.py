@@ -28,7 +28,7 @@ openai.api_key = "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"
 sio = socketio.Client()
 sio.connect('http://localhost:3000')
 
-agent_list = ['diedie','Jeff']
+agent_list = ['diedie','Jeff','worker']
 class agent_quest:
     
     def __init__(self,name):

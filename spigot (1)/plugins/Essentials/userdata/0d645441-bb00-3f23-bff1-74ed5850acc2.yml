@@ -4,7 +4,7 @@ godmode: false
 muted: false
 jailed: false
 ip-address: 0:0:0:0:0:0:0:1
-afk: true
+afk: false
 socialspy: false
 npc: false
 powertoolsenabled: true
@@ -16,18 +16,18 @@ timestamps:
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1697482106471
-  login: 1698127408982
-money: '100595.0'
+  logout: 1698591028229
+  login: 1698590956511
+money: '100590.0'
 last-account-name: diedie
 logoutlocation:
-  world: ad51f2e8-f8f1-4fcc-bc7e-fb82610a1e46
+  world: 7a0f143b-aad5-4798-bcd7-55a2724e76e3
   world-name: world
-  x: -10565.71714758494
+  x: -10564.5
   y: 70.9375
-  z: 12748.3
-  yaw: 234.79440307617188
-  pitch: -0.06126518175005913
+  z: 12748.5
+  yaw: 135.11196899414062
+  pitch: 1.2976662929972682E-12
 lastlocation:
   world: ad51f2e8-f8f1-4fcc-bc7e-fb82610a1e46
   world-name: world

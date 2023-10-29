@@ -246,9 +246,9 @@ class agent:
                     
                     self.JobQueue.put(id)  # put chat action into jobqueue
         
-        print("JobQueue contents:", list(self.JobQueue.queue))
-        print("waitingQueue contents:", list(self.waitingQueue.queue))
-        print("agent state:", self.agent_state)
+        print(self.agent_name + " JobQueue contents:", list(self.JobQueue.queue))
+        print(self.agent_name + " waitingQueue contents:", list(self.waitingQueue.queue))
+        print(self.agent_name + " agent state:", self.agent_state)
 
     def reOrderJobQueue(self):
         if not self.waitingQueue.empty():

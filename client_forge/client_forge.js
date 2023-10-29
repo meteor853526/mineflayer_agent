@@ -45,7 +45,7 @@ const {
   BehaviorGotoGuild,
   dropItem,
   idleforsometime,
-  craftBread,
+  createCraftBreadState,
   BehaviorGoFarmland,
   sleepOnBed,
   wakeUpFromBed,
@@ -144,10 +144,10 @@ class MCBot {
       autoVersionForge(this.bot._client, options);
       this.bot.loadPlugin(pathfinder)
       new sensor(this.bot);
-      this.bot.B_bread_position = new Vec3(-10493,71,12753)
-      this.bot.S_bread_position = new Vec3(-10493,71,12753)
-      this.bot.B_wheat_position = new Vec3(-10493,71,12753)
-      this.bot.S_wheat_position = new Vec3(-10493,71,12753)
+      this.bot.B_bread_position = new Vec3(-10495,71,12753)
+      this.bot.S_bread_position = new Vec3(-10495,71,12753)
+      this.bot.B_wheat_position = new Vec3(-10495,71,12753)
+      this.bot.S_wheat_position = new Vec3(-10495,71,12753)
       this.bot.B_bread_sign_position = new Vec3(-10494,71,12756)
       this.bot.S_bread_sign_position = new Vec3(-10494,71,12756)
       this.bot.B_wheat_sign_position = new Vec3(-10494,71,12753)
@@ -248,7 +248,7 @@ class MCBot {
     const fishing = createFishingState(this.bot, target);
     const harvest = createHarvestState(this.bot, target);
     const sow = createSowState(this.bot,target);
-    const craftbread = new craftBread(this.bot,target);
+    const craftbread = new createCraftBreadState(this.bot,target);
     const sleep = new sleepOnBed(this.bot,target);
     const wakeup = new wakeUpFromBed(this.bot,target)
     const go_guild = new BehaviorGotoGuild(this.bot,target);
