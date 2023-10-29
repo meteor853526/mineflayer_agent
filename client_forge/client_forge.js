@@ -989,7 +989,8 @@ new BotStateTransition({
         console.log('Received message from agi client:', data);
         
         io.emit('mine', data);
-        io.emit('voice', data['message']);
+     
+        io.emit('voice', data);
       });
   
       socket.on('disconnect', () => {

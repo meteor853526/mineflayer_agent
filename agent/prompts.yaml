@@ -283,7 +283,6 @@ external_thought: |-
     (21 : cut down tree),
     (22 : wake up from bed),
     (23 : kill),
-    (25 : look at {sender}),
     (26 : go logging camp),
     (27 : craft pickaxe),
     (28 : feed pig),
