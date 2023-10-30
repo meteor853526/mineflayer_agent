@@ -221,6 +221,9 @@ class MCBot {
       var transitions = this.createStateTransition(idleState);
       const rootLayer = new NestedStateMachine(transitions, idleState)
       const stateMachine = new BotStateMachine(this.bot, rootLayer)
+      var port = 8935 + this.PortCount;
+      const webserver = new StateMachineWebserver(this.bot, stateMachine, port);
+      webserver.startServer();
       bot_logging(this.bot, `Started a state machine with ${stateMachine.transitions.length} transitions and ${stateMachine.states.length} states`)
     });
   }
