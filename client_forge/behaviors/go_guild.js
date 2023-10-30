@@ -30,7 +30,7 @@ class BehaviorGotoGuild extends BaseBehavior {
     await this.bot.pathfinder.setMovements(defaultMove)
     await this.bot.pathfinder.setGoal(new GoalLookAtBlock(position, this.bot.world))
     // console.log(this.bot.players['Guild'].entity.position)
-    await this.sleep(7000)
+    await this.sleep(10000)
     // this.bot.prev_jobs.push("go Guild")
     this.working = false
   }
