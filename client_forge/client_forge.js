@@ -144,14 +144,14 @@ class MCBot {
       autoVersionForge(this.bot._client, options);
       this.bot.loadPlugin(pathfinder)
       new sensor(this.bot);
-      this.bot.B_bread_position = new Vec3(-10495,71,12753)
-      this.bot.S_bread_position = new Vec3(-10495,71,12753)
-      this.bot.B_wheat_position = new Vec3(-10495,71,12753)
-      this.bot.S_wheat_position = new Vec3(-10495,71,12753)
-      this.bot.B_bread_sign_position = new Vec3(-10494,71,12756)
-      this.bot.S_bread_sign_position = new Vec3(-10494,71,12756)
-      this.bot.B_wheat_sign_position = new Vec3(-10494,71,12753)
-      this.bot.S_wheat_sign_position = new Vec3(-10494,71,12753)
+      this.bot.B_bread_position = new Vec3(-10496,71,12753)
+      this.bot.S_bread_position = new Vec3(-10496,71,12753)
+      this.bot.B_wheat_position = new Vec3(-10496,71,12751)
+      this.bot.S_wheat_position = new Vec3(-10496,71,12751)
+      this.bot.B_bread_sign_position = new Vec3(-10496,71,12753)
+      this.bot.S_bread_sign_position = new Vec3(-10496,71,12753)
+      this.bot.B_wheat_sign_position = new Vec3(-10496,71,12751)
+      this.bot.S_wheat_sign_position = new Vec3(-10496,71,12751)
       this.bot.home_position = new Vec3(-10506,71,12755);
       this.bot.farm_position = new Vec3(-10564,71,12749);
       this.bot.S_diedie_wheat_chest_position = new Vec3(-10567,71,12744);
@@ -178,6 +178,7 @@ class MCBot {
       this.bot.guild_position = new Vec3(-10494, 71, 12750);
       this.bot.Pond_position = new Vec3(-10545,71.5,12678);
       this.bot.coal_chest_position = new Vec3(-10502, 72, 12786);
+      this.bot.mining_position = new Vec3(-10573, 72, 12683);
       this.bot.prev_jobs = [];
       this.bot.miss_items = [];
       this.bot.pos = "outdoors";
