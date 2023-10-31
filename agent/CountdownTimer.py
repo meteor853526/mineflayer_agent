@@ -14,11 +14,11 @@ class CountdownTimer:
    
     def countdown_timer_function(self):
         while self.countdown_timer > 0:
-            print("Countdown (Thread):", self.countdown_timer)
+            # print("Countdown (Thread):", self.countdown_timer)
             time.sleep(1)
             self.countdown_timer -= 1
             if self.reset_event.is_set():
-                print("Countdown reset (Thread).")
+                # print("Countdown reset (Thread).")
                 self.reset_event.clear()
         self.countdown_timer = self.time
         self.active = False

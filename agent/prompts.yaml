@@ -127,7 +127,7 @@ observation_action: |-
 
   You also can say something to respond the observation,
   
-  Combine the action you want to take and the word you want ot say.
+  Combine the action you want to take and the word you want to say.
   When replying, you must use a first-person tone and follow the format
   (ex, [7] : I got so many wheat.),(ex, [19] : I felt tried),(ex,[19] : I saw a cute cat),(ex, [3,1] :I finish my work),(ex, [1,8,6] : I'm so hungry,I'll go home an eat launch).
 
@@ -216,7 +216,7 @@ schedule_action: |-
     (56 : find wheat).
 
   
-  Based on your schedule "{current_schedule}" and your condition. You hacve to choose multiple action to make a action flow with array fromat.
+  Based on your schedule "{current_schedule}" and your condition. You hacve to choose multiple action to make a action flow with array format.
   When replying, you must follow the format(important):
     ([<fill in>] : summary about your schedule)
     (E.g., [20,22,16] : Take a break and interact with fellow villagers, exchanging farming tips and techniques.),
@@ -300,7 +300,7 @@ external_thought: |-
     (56 : find wheat).
 
   
-  Based on your internal_thought and your condition. You need choose one of above action to interact or you can choose multiple action to make a action flow with array fromat,
+  Based on your internal_thought and your condition. You need choose one of above action to interact or you can choose multiple action to make a action flow with array format,
   (E.g., [20,22,16]), [<fill in>].
 
   Based on your internal thought and the {sender}'s words and your condition,you need to reply to {sender}.
@@ -341,7 +341,7 @@ information_thought_memory: |-
   "{observation}"
 
 backup_planning: |-
-  You live in a minecraft world,you directly observe or respond to real-time events.
+  You live in a Minecraft world, you directly observe or respond to real-time events.
   You had done these previous jobs: '{prev_jobs}', after that you were doing '{current_job}', but you don't have '{miss_item}'.
 
   Here is your condition when you observe:
@@ -430,7 +430,7 @@ choosing_backup: |-
 
   You also can murmur something to respond the observation, When replying, you must use a first-person tone.
   
-  Combine the action you want to take and the word you want ot say.
+  Combine the action you want to take and the word you want to say.
   When replying, you must use a first-person tone and follow the format
   (ex, [7] : I got so many wheat.),(ex, [1,5] : I felt tried, I want to sleep),(ex,[19] : I saw a cute cat),(ex, [3,1] :I finish my work),(ex, [1,8,6] : I'm so hungry,I'll go home an eat launch).
 
@@ -527,6 +527,6 @@ re_schedule: |-
 
   You also can say something to respond the observation, When replying, you must use a first-person tone.
   
-  Combine the action you want to take and the word you want ot say.
+  Combine the action you want to take and the word you want to say.
   When replying, you must use a first-person tone and follow the format
   (ex, [7] : I got so many wheat.),(ex, [19] : I felt tried),(ex,[19] : I saw a cute cat),(ex, [3,1] :I finish my work),(ex, [1,8,6] : I'm so hungry,I'll go home an eat launch).

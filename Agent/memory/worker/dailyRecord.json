@@ -8,7 +8,14 @@
         "schedule": {}
     },
     "2": {
-        "schedule": {},
+        "schedule": {
+            "5:00 am": "Wake up, stretch, and get ready for the day. Eat a quick breakfast at home.",
+            "9:00 am": "Go the Guild to start crafting bread. Work together efficiently and share farming insights.",
+            "00:01 pm": "Go home eating lunch and taking a break.",
+            "3:00 pm": "Continue crafting axe or hoe or pickaxe with Dingo, making sure to collect sticks and cobblestones and store them for future crafting.",
+            "6:00 pm": "Finish up any remaining tasks.",
+            "10:00 pm": "Go to bed and rest, ready for another productive day of farming tomorrow."
+        },
         "chat": [
             "(7 : 33 AM) : \nDingo said to diedie: \"hi there\",and diedie thought:\n ''Friendly Dingo is greeting me again. Inviting him for a morning walk around the farm would be a nice way to start the day.''\nthen, diedie responded:\n ' \"Good morning, Dingo! Fancy joining me for a tour around the farm?\"'",
             "(7 : 2 PM) : \n\"Hey, Jeff, I messed up. I need help with finding food. Can you lend me a hand with that? It's been a long day.\""
