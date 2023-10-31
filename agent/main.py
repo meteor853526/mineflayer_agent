@@ -293,11 +293,11 @@ def message_guild(data):
                 sio.emit('agi',data)
       
          
-        case messageType.system:
-            if data['message'] == 'system:time':
-                Diedie_instance.update_current_schedule(data)
-            if data['message'] == 'system:JobFinish':
-                Diedie_instance.update_Job_state(data)
+        # case messageType.system:
+        #     if data['message'] == 'system:time':
+        #         Diedie_instance.update_current_schedule(data)
+        #     if data['message'] == 'system:JobFinish':
+        #         Diedie_instance.update_Job_state(data)
 
             
 @sio.event
