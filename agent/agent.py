@@ -200,7 +200,6 @@ class agent:
             array_str = array_match.group()
             try:
                 array = ast.literal_eval(array_str)
-                print(array)
             except ValueError:
                 print("error")
         else:
@@ -387,7 +386,7 @@ class agent:
             array_str = array_match.group()
             try:
                 array = ast.literal_eval(array_str)
-                print(array)
+
             except ValueError:
                 print("error")
         else:
@@ -398,7 +397,6 @@ class agent:
         except:
             content = external_thought
             id = 999
-        print(array)
         self.putIntoJobQueue(array,state.chat)
 
         internalMemoryPrompt = self.prompt_paragraph["internal_thought_memory"]
@@ -547,7 +545,6 @@ class agent:
             array_str = array_match.group()
             try:
                 array = ast.literal_eval(array_str)
-                print(array)
             except ValueError:
                 print("error")
         else:
@@ -605,7 +602,6 @@ class agent:
             array_str = array_match.group()
             try:
                 array = ast.literal_eval(array_str)
-                print(array)
             except ValueError:
                 print("error")
         else:
