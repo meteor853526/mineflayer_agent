@@ -483,7 +483,7 @@ class agent:
     def update_day_count(self):
         self.day = int(self.day) + 1
     def update_last_player(self,playerName):
-        self.lastPlayer = playerName
+        self.lastPlayer = playerName 
 
     def save_day_count(self):
         with open('memory_count.yaml', 'w') as f:
