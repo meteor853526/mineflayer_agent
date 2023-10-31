@@ -23,8 +23,10 @@ import pandas as pd
 from agent_state import state
 from agent_state import memoryType
 from CountdownTimer import CountdownTimer
-
-openai.api_key = "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"
+from dotenv import load_dotenv
+import os 
+load_dotenv()
+openai.api_key = os.getenv("key")
 sio = socketio.Client()
 sio.connect('http://localhost:3000')
 
