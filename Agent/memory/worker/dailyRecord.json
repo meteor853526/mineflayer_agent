@@ -18,7 +18,29 @@
         },
         "chat": [
             "(7 : 33 AM) : \nDingo said to diedie: \"hi there\",and diedie thought:\n ''Friendly Dingo is greeting me again. Inviting him for a morning walk around the farm would be a nice way to start the day.''\nthen, diedie responded:\n ' \"Good morning, Dingo! Fancy joining me for a tour around the farm?\"'",
-            "(7 : 2 PM) : \n\"Hey, Jeff, I messed up. I need help with finding food. Can you lend me a hand with that? It's been a long day.\""
+            "(7 : 2 PM) : \n\"Hey, Jeff, I messed up. I need help with finding food. Can you lend me a hand with that? It's been a long day.\"",
+            "(2 : 55 PM) : \nLili said to worker: \"hi\",and worker thought:\n 'Since it's raining and I'm outdoors, I should probably head home. It's a bit early, but I don't like the rain.'\nthen, worker responded:\n ' \"Hi Lili, it's raining and I don't want to get wet. I think I'll head home now. Let's catch up later!\"'",
+            "(0 : 23 PM) : \nLili said to worker: \"can you help me make a bread?\",and worker thought:\n 'I'm not too fond of being bothered during my work, but since it's after hours and I have the necessary items, I can help Lili make bread. However, it's raining and I should let her know that I'm heading home.'\nthen, worker responded:\n ' \"Sure Lili, I can help you make bread. But I'll head home afterwards as I don't like the rain much.\"'",
+            "(4 : 59 PM) : \nLili said to worker: \"hi\",and worker thought:\n 'It's raining and nearly the end of my work shift. Being bothered at this time, not good. Better reply stiffly.'\nthen, worker responded:\n ' \"Hey Lili! Can't talk now, just finishing up work. We'll chat later, okay?\"'",
+            "(3 : 39 PM) : \nLili said to worker: \"can you help me make a bread?\",and worker thought:\n 'I'm slightly annoyed as she's bothering me while I'm busy. But I feel obligated to help, \"Alright, but make it quick.\"'\nthen, worker responded:\n ' \"Alright, Lili. I'll help you this once, but please don't interrupt me again when I'm working. Now, let's make that bread.\"'",
+            "(9 : 49 AM) : \nLili said to worker: \"can you help me make a bread?\",and worker thought:\n 'Though it's my work hours and Lili always bothers me, she seems in need. I'll help her quickly and get back to my job.'\nthen, worker responded:\n ' \"Sure Lili, I'll help you this time. I can show you how to make a bread, but after this, please let me work in peace.\"'",
+            "(0 : 47 PM) : \nLili said to worker: \"can you help me make a bread?\",and worker thought:\n ''It's raining, I'm outdoors, and it's not working hours. I can help Lili with making bread, she seems to need help.''\nthen, worker responded:\n ' \"Fine Lili, I will help you. But you owe me one, got it?\"'",
+            "(9 : 45 AM) : \nLili said to worker: \"hi\",and worker thought:\n 'I'm busy making bread right now and I don't like being disturbed. I'd probably respond rudely and ignore the person.'\nthen, worker responded:\n ' \"I'm busy right now, Lili. Please, let me work in peace.\"'",
+            "(3 : 44 PM) : \nLili said to worker: \"can you help me make a bread?\",and worker thought:\n 'As I am not busy at the moment, I could help Lili now. But I will act in a tsundere manner and ask for something in return.'\nthen, worker responded:\n ' \"I can make bread, Lili. But you gotta help me, too. Do we have a deal or not?\"'",
+            "(1 : 25 AM) : \nLili said to worker: \"do you have time doing some farming task with me tomorrow?\",and worker thought:\n ''I despise farming tasks, especially in the rain. But I should at least pretend to consider it. I might ask for something in return.''\nthen, worker responded:\n ' \"Farming, huh? I guess I could consider it... if you help me with some tool crafting later on. Now let's cut the chatter, I have things to do!\"'",
+            "(1 : 44 AM) : \n\"Lili, it's raining and I'm outdoors - the worst combo. I need your help, please. If you refuse, I promise to be nicer.\"",
+            "(2 : 20 AM) : \nLili said to worker: \"can you make me a bread tommorrow?\",and worker thought:\n ''This is an odd request, considering it's pouring and we're outdoors. But I could certainly help out by making bread tomorrow.''\nthen, worker responded:\n ' \"Sure Lili, I'll prepare the bread for you tomorrow. Enjoy the rest of your day, see you then.\"'",
+            "(3 : 18 AM) : \nLili said to worker: \"tommorrow can you stay with me at home?\",and worker thought:\n 'Staying home with Lili could be troublesome, especially as I'm not fond of company. However, I'll agree but I'll want something in return.'\nthen, worker responded:\n ' \"Alright Lili, I can stay with you, but remember, I don't like to be bothered while working. Let's have a peaceful day.\"'"
         ]
+    },
+    "3": {
+        "schedule": {
+            "5:00 am": "Wake up, eat something.",
+            "9:00 am": "Continue working on the farm, prepare bread for Lili.",
+            "12:01 pm": "Return home, eat lunch.",
+            "3:00 pm": "Go back to farm, work until evening.",
+            "6:00 pm": "Prepare tools for crafting, request Lili's assistance.",
+            "10:00 pm": "Go to sleep."
+        }
     }
 }

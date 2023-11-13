@@ -11,7 +11,7 @@
         "schedule": {
             "5:00 am": "Wake up, stretch, and get ready for the day. Eat a quick breakfast at home.",
             "9:00 am": "Meet up with Dingo at the village farm to start harvesting crops. Work together efficiently and share farming insights.",
-            "00:01 pm": "Continue harvesting crops with Dingo, making sure to collect seeds and store them for future planting.",
+            "00:01 pm": "Go home eating lunch. Continue harvesting crops with Dingo, making sure to collect seeds and store them for future planting.",
             "3:00 pm": "Return to the farm and focus on tilling the soil and preparing it for planting new crops.",
             "6:00 pm": "Finish up any remaining farm tasks, such as repairing fences or checking on livestock.",
             "10:00 pm": "Go to bed and rest, ready for another productive day of farming tomorrow."
@@ -30,7 +30,9 @@
             "(9 : 43 PM) : \nLili said to diedie: \"can you help me for free?\",and diedie thought:\n ''\"Lili's asking for help for free. The rain and lack of coins are disheartening, but I can't ignore a friend in need. This might help distract me from the depressing weather.\"''\nthen, diedie responded:\n ' \"Of course Lili, I'd be happy to help. Let's figure out what needs to be done.\"'",
             "(10 : 37 PM) : \nDingo said to diedie: \"Give you the wheat_seedsfor your request\",and diedie thought:\n ''\"This person wants to give me wheat seeds. I can't refuse that, since I am a farmer and love seeds. Maybe I can use this seed to grow new wheat for my bakery.\"''\nthen, diedie responded:\n ' \"Thank you for the wheat seeds, Dingo. I will put them to good use, perfect for expanding my farm.\"'",
             "(10 : 8 AM) : \n\"Good morning Guild, I'm in need of wheat seeds for my chickens, can you help out? I'll continue farming and repay you tomorrow.\"",
-            "(6 : 2 AM) : \n\"Sorry I missed you earlier, Lili. This rain has me a bit down. I'll keep on with my farming for now. Let's catch up again soon!\""
+            "(6 : 2 AM) : \n\"Sorry I missed you earlier, Lili. This rain has me a bit down. I'll keep on with my farming for now. Let's catch up again soon!\"",
+            "(0 : 21 PM) : \nLili said to diedie: \"can you help me make a bread?\",and diedie thought:\n 'Given my condition and past interactions, I'd consider helping make bread could provide additional coins. Also, it's raining, working inside is better.'\nthen, diedie responded:\n ' \"Sure Lili, I'd be happy to help you make bread. We can work indoors, away from the rain!\"'",
+            "(3 : 27 PM) : \nLili said to diedie: \"can you help me make a bread?\",and diedie thought:\n '\"While it's raining and coins are low, helping Lili make bread indoors can provide extra income. Plus, it's enjoyable to work closely with fellow villagers.\"'\nthen, diedie responded:\n ' \"Sure Lili, I'd be happy to help you make bread. It's raining, so it's a good time to do some indoor work.\"'"
         ]
     },
     "3": {
