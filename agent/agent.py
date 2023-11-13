@@ -157,10 +157,23 @@ class agent:
     def Reflact(self):
         allText = ""
         ReflactPrompt = self.prompt_paragraph["Reflect"]
-        
+        jsonFile = "uuid\\" + self.agent_name +'.json'
+        with open(jsonFile, 'r') as file:
+            jsonData = json.load(file)
+            find_money = "..\\spigot (1)\\plugins\\Essentials\\userdata\\" + jsonData["uuid"]
+            file.close
+        with open(find_money, 'r') as file:
+            dataYml = yaml.safe_load(file)
+            self.property = dataYml['money']
+            jsonData['property'] = dataYml['money']
+            file.close
+        with open('agent_info.json', 'r') as file:
+            jsonData = json.load(file)
+            personality = jsonData[self.agent_name]
+            file.close
         for text in self.agent_dailyRecord[self.day]['chat']:
             allText += text + "\n"
-        ReflactPrompt = ReflactPrompt.replace("{dailyRecord}", allText)
+        ReflactPrompt = ReflactPrompt.replace("{dailyRecord}", allText).replace("{personality}", personality).replace("{property}", self.property)
         print(ReflactPrompt)
         print("-------------------------------")
         ReflactMemory = self.generateByTurbo(ReflactPrompt)
@@ -174,8 +187,22 @@ class agent:
         self.schedule(lines[len(lines)-1].strip())
 
     def schedule(self,summary):
+        jsonFile = "uuid\\" + self.agent_name +'.json'
+        with open(jsonFile, 'r') as file:
+            jsonData = json.load(file)
+            find_money = "..\\spigot (1)\\plugins\\Essentials\\userdata\\" + jsonData["uuid"]
+            file.close
+        with open(find_money, 'r') as file:
+            dataYml = yaml.safe_load(file)
+            self.property = dataYml['money']
+            jsonData['property'] = dataYml['money']
+            file.close
+        with open('agent_info.json', 'r') as file:
+            jsonData = json.load(file)
+            personality = jsonData[self.agent_name]
+            file.close
         SchedulePrompt = self.prompt_paragraph["schedule"]
-        SchedulePrompt = SchedulePrompt.replace("{summary}", summary)
+        SchedulePrompt = SchedulePrompt.replace("{summary}", summary).replace("{personality}", personality).replace("{property}", self.property)
         ScheduleThought = self.generate(SchedulePrompt)
         lines = ScheduleThought.strip().split('\n')
         schedule_dict = {}

@@ -45,8 +45,8 @@ const {
       this.bot.equip(target, "hand");
       await this.sleep(2000)
       for(var y = 0; y<6; y++){
-        for(var x = -2; x <= 2; x++) {
-            for(var z = -2; z <= 2; z++) {
+        for(var x = -3; x <= 3; x++) {
+            for(var z = -3; z <= 3; z++) {
                 var block = this.bot.blockAt(this.bot.entity.position.offset(x, y, z));
                 console.log("????")
                 console.log(block.type)

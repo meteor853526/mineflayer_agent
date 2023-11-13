@@ -33,6 +33,10 @@ Reflect: |-
   'The people who said something to you' also shuold be part of high-level insights.
   Also summarize the event that you are going to do tomorrow.
 
+  Here is your personality information and your property when you planning your schedule:
+  personality: {personality}
+  property: {property} coins
+
   when you reply,you have to follow the format:
   1. <fill in>
   2. <fill in>
@@ -139,6 +143,10 @@ schedule: |-
   Every day you wake up around 5 am, then you eat something at home. after that you go to farm and works
   At midday, you go home and find something to eat, after you finish launch , you go back to farm and work until launch time.
   You go sleep around 10 pm.
+
+  Here is your personality information and your property when you planning your schedule:
+  personality: {personality}
+  property: {property} coins
 
   Base on your summary from yesterday and above information,plan your schedule for today:
   (5:00 am): <fill in>,
